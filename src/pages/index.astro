@@ -1,0 +1,27 @@
+---
+import MainLayout from '../components/MainLayout.astro';
+import Navigation from '../components/Navigation.astro';
+import Hero from '../components/Hero';
+import Pillars from '../components/Pillars.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/hero.css';
+---
+
+<MainLayout title="DVGE | Dynamic Vector Graphics Engine">
+	<Navigation />
+	
+	<main>
+		<Hero client:load />
+		<Pillars />
+		
+		<!-- More sections will go here -->
+	</main>
+
+	<Footer />
+</MainLayout>
+
+<style>
+	main {
+		width: 100%;
+	}
+</style>

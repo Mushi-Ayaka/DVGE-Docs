@@ -1,0 +1,260 @@
+/* ============================================================
+   DVGE — STARLIGHT THEME "Obsidian & Ember"
+   Strategy: Only override --sl-* CSS Custom Properties.
+   Zero layout-breaking selectors.
+   ============================================================ */
+
+/* ----- 1. FONTS ----- */
+:root {
+  --sl-font:      'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --sl-font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  color-scheme: dark;
+}
+
+/* ----- 2. COLOR TOKENS — Applies to ALL theme states ----- */
+:root,
+:root[data-theme='dark'],
+:root[data-theme='light'] {
+  /* Accent — Ember */
+  --sl-color-accent-low:  #3a120b;
+  --sl-color-accent:      #e44c30;
+  --sl-color-accent-high: #ff7a5c;
+
+  /* Backgrounds */
+  --sl-color-bg:             #080808;
+  --sl-color-bg-nav:         #080808;
+  --sl-color-bg-sidebar:     #0a0a0a;
+  --sl-color-bg-inline-code: #161616;
+  --sl-color-bg-badge:       rgba(228, 76, 48, 0.12);
+
+  /* Dividers */
+  --sl-color-hairline-light: rgba(255, 255, 255, 0.05);
+  --sl-color-hairline:       rgba(255, 255, 255, 0.07);
+  --sl-color-hairline-shade: rgba(255, 255, 255, 0.04);
+
+  /* Gray scale */
+  --sl-color-white:  #f5f5f5;
+  --sl-color-gray-1: #e0e0e0;
+  --sl-color-gray-2: #b0b0b0;
+  --sl-color-gray-3: #6e6e6e;
+  --sl-color-gray-4: #3a3a3a;
+  --sl-color-gray-5: #1e1e1e;
+  --sl-color-gray-6: #111111;
+  --sl-color-black:  #080808;
+
+  /* Text */
+  --sl-color-text:        #c0c0c0;
+  --sl-color-text-accent: #e44c30;
+  --sl-color-text-invert: #080808;
+}
+
+/* ----- 3. SIDEBAR GROUP LABELS ----- */
+.group-label span {
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* ----- 4. MARKDOWN HEADINGS ----- */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4,
+.sl-markdown-content h5 {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #f0f0f0;
+}
+
+.sl-markdown-content h2 {
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+/* ----- 5. BODY TEXT ----- */
+.sl-markdown-content p,
+.sl-markdown-content li {
+  color: #a0a0a0;
+  line-height: 1.85;
+}
+
+.sl-markdown-content strong {
+  color: #e0e0e0;
+  font-weight: 600;
+}
+
+/* ----- 6. INLINE CODE ----- */
+.sl-markdown-content :not(pre) > code {
+  background: #161616;
+  color: #ff8a6e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 5px;
+  padding: 0.15em 0.45em;
+  font-size: 0.87em;
+  font-family: var(--sl-font-mono);
+}
+
+/* ----- 7. CODE BLOCKS ----- */
+.sl-markdown-content pre {
+  background: #0e0e0e !important;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  overflow-x: auto;
+}
+
+.sl-markdown-content pre code {
+  background: transparent !important;
+  border: none;
+  color: #d0d0d0;
+  padding: 0;
+  font-size: 0.88rem;
+}
+
+/* ----- 8. TABLES ----- */
+.sl-markdown-content table {
+  border-collapse: separate;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 1.5rem 0;
+}
+
+.sl-markdown-content th {
+  background: rgba(228, 76, 48, 0.08);
+  color: #f0f0f0;
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(228, 76, 48, 0.15);
+  text-align: left;
+}
+
+.sl-markdown-content td {
+  padding: 0.75rem 1rem;
+  color: #a0a0a0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  font-size: 0.9rem;
+  vertical-align: top;
+}
+
+.sl-markdown-content tr:last-child td {
+  border-bottom: none;
+}
+
+/* ----- 9. BLOCKQUOTES ----- */
+.sl-markdown-content blockquote {
+  border-left: 3px solid var(--sl-color-accent);
+  background: rgba(228, 76, 48, 0.04);
+  border-radius: 0 8px 8px 0;
+  padding: 0.85rem 1.25rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: #808080;
+}
+
+/* ----- 10. HR ----- */
+.sl-markdown-content hr {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  margin: 2.5rem 0;
+}
+
+/* ----- 11. LINKS ----- */
+.sl-markdown-content a {
+  color: var(--sl-color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(228, 76, 48, 0.2);
+  transition: border-color 0.2s ease;
+}
+.sl-markdown-content a:hover {
+  border-color: var(--sl-color-accent);
+}
+
+/* ----- 12. ADMONITIONS ----- */
+.starlight-aside {
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+.starlight-aside--note    { border-left: 3px solid #60a5fa; background: rgba(96,  165, 250, 0.04); }
+.starlight-aside--tip     { border-left: 3px solid #34d399; background: rgba(52,  211, 153, 0.04); }
+.starlight-aside--caution { border-left: 3px solid #e44c30; background: rgba(228, 76,  48,  0.04); }
+.starlight-aside--danger  { border-left: 3px solid #f87171; background: rgba(248, 113, 113, 0.04); }
+
+.starlight-aside__title {
+  font-family: 'Outfit', sans-serif;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+/* ----- 13. PAGINATION ----- */
+.pagination-links a:hover {
+  border-color: rgba(228, 76, 48, 0.4) !important;
+  background: rgba(228, 76, 48, 0.05) !important;
+}
+
+/* ----- 14. SCROLLBAR ----- */
+::-webkit-scrollbar       { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #080808; }
+::-webkit-scrollbar-thumb { background: #2a2a2a; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--sl-color-accent); }
+
+/* Forzar Dark Mode y ocultar selector */
+:root { color-scheme: dark !important; }
+starlight-theme-select, .theme-select { display: none !important; }
+
+/* ----- 15. USABILIDAD: DESENFOQUE DE CONTENIDO Y FOCO EN ÍNDICE ----- */
+
+/* Desenfoque del contenido principal cuando el menú lateral móvil está abierto */
+html[data-mobile-menu-open] .main-frame {
+  filter: blur(8px);
+  pointer-events: none;
+  transition: filter 0.3s ease;
+}
+
+/* Desenfoque del contenido principal cuando el índice móvil (TOC) está abierto */
+/* Usamos :has para detectar el estado abierto del dropdown nativo <details> */
+body:has(details#starlight__mobile-toc[open]) .sl-markdown-content,
+body:has(details#starlight__mobile-toc[open]) footer {
+  filter: blur(10px);
+  opacity: 0.3;
+  transition: all 0.3s ease;
+  pointer-events: none;
+}
+
+/* Mejora de visibilidad de los enlaces del índice al pasar el mouse */
+.sidebar-pane a:hover {
+  background-color: rgba(228, 76, 48, 0.1) !important;
+  color: var(--sl-color-accent-high) !important;
+  padding-left: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+/* Resaltado de la sección activa en el índice */
+.sidebar-pane a[aria-current="page"] {
+  background-color: rgba(228, 76, 48, 0.15) !important;
+  border-left: 2px solid var(--sl-color-accent);
+  color: var(--sl-color-white) !important;
+}
+
+/* Efecto de foco en escritorio: desenfoca el contenido al interactuar con el índice */
+@media (min-width: 50rem) {
+  .main-frame:has(.sidebar-pane:hover) .content-panel {
+    filter: blur(4px);
+    opacity: 0.6;
+    transition: all 0.4s ease;
+  }
+}
+
+
+
