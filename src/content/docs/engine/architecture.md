@@ -35,7 +35,7 @@ Se ejecuta en un entorno Node.js y es responsable de:
 
 ## Sandbox de Seguridad y Aislamiento
 
-DVGE v4.1.0 implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
+DVGE v4.1.5 implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
 
 ### 1. Proxy `fakeWindow`
 Los plugins no tienen acceso al objeto `window` real ni a las APIs de Electron. El motor inyecta un **Proxy** que restringe el acceso únicamente a los métodos permitidos y al Shadow DOM.

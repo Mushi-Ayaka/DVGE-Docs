@@ -8,7 +8,7 @@ sidebar:
 Esta guía te llevará paso a paso para crear tu primer plugin de DVGE desde cero. No se requiere experiencia previa con el motor.
 
 ## Requisitos Previos
-- DVGE v4.1.0+ instalado y ejecutándose.
+- DVGE v4.1.5+ instalado y ejecutándose.
 - Un editor de texto (se recomienda VS Code).
 
 ---

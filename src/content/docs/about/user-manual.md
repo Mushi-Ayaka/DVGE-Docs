@@ -19,7 +19,7 @@ Explorar Catálogo → Crear Proyecto → Exportar y Usar
 
 ## 1. El Catálogo de Plugins
 
-A partir de v4.1.0, puedes ampliar tu biblioteca de gráficos con un solo clic:
+A partir de v4.1.5, puedes ampliar tu biblioteca de gráficos con un solo clic:
 
 1. En la pantalla de inicio, haz clic en **"🛍️ Catálogo de Plugins"**.
 2. Explora todos los diseños disponibles en el repositorio oficial.
