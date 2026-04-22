@@ -7,7 +7,7 @@ sidebar:
 
 Todos los cambios notables en DVGE están documentados aquí. El versionado sigue el estándar [Semantic Versioning](https://semver.org/).
 
-## [4.1.5] — 2026-04-22 (GA Actual) ✅
+## [4.1.5] — 2026-04-22 (GA Actual)
 ### Smart Engine y Capa de Auto-Rescate
 - **Motor Inteligente**: Detección y auto-envoltura de scripts mal formados. El motor ahora rescata plugins que no sigan el estándar de registro oficial.
 - **Sandbox Resiliente**: Silenciamiento de llamadas no determinísticas (`requestAnimationFrame`) para proteger la integridad del renderizado.

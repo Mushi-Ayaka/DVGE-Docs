@@ -138,6 +138,17 @@ const base = import.meta.env.BASE_URL;
     margin-top: 0.5rem;
   }
 
+  /* Puente para evitar que se cierre el dropdown al mover el mouse */
+  .dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -0.5rem;
+    left: 0;
+    right: 0;
+    height: 0.5rem;
+    background: transparent;
+  }
+
   .dropdown-content a {
     color: var(--color-text-muted);
     padding: 12px 16px;

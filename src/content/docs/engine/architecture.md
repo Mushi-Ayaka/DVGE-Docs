@@ -11,22 +11,12 @@ El **Motor de Gráficos Vectoriales Dinámicos (DVGE)** está construido sobre u
 
 La aplicación opera usando un modelo de proceso dual separado por un puente de comunicación interna (IPC). Esto asegura que las tareas pesadas de la interfaz de usuario no bloqueen la lógica central del motor.
 
-```mermaid
-graph TD
-    subgraph RendererProcess ["Proceso Renderizador (UI)"]
-        A[Interfaz React] --> B[Estado Zustand]
-        B --> C[Motor de Previsualización]
-        C --> D[Generador de Formularios Dinámicos]
-    end
+| Proceso | Responsabilidades Principales | Tecnologías |
+| :--- | :--- | :--- |
+| **Renderizador (UI)** | Interfaz React, Estado Zustand, Previsualización 60FPS | React + Vite |
+| **Principal (Backend)** | Gestor de Plugins, E/S de Archivos, Render Headless | Node.js + Electron |
 
-    subgraph MainProcess ["Proceso Principal (Backend)"]
-        E[Gestor de Plugins] --> F[E/S de Archivos]
-        G[Gestor de Proyectos] --> F
-        H[Renderizador Headless] --> I[Exportación ProRes 4444]
-    end
-
-    RendererProcess <--> MainProcess
-```
+Los procesos se comunican a través de un **Puente IPC** robusto que garantiza la integridad de los datos en cada fotograma.
 
 ### 1. Proceso Renderizador (Frontend)
 Maneja la interfaz de usuario, la previsualización en tiempo real a 60FPS y la gestión de propiedades. Traduce el código del plugin en fotogramas visuales instantáneamente usando un mecanismo de **Hard Reset** para asegurar cero fugas de estado entre proyectos.
