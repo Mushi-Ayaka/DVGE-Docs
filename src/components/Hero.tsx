@@ -12,15 +12,11 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="badge">
-              <Cpu size={14} style={{ marginRight: '6px' }} />
-              <span>v4.1.5 GA — Smart Engine</span>
-            </div>
             <h1 className="hero-title">
               Dynamic Vector Graphics <span className="text-gradient">Engine</span>
             </h1>
             <p className="hero-subtitle">
-              El motor de renderizado determinista de alto rendimiento para gráficos broadcast profesionales. 
+              El motor de renderizado determinista de alto rendimiento para gráficos broadcast profesionales.
               Seguro, preciso y ahora potenciado con una Capa de Inteligencia para flujos de trabajo optimizados.
             </p>
 
