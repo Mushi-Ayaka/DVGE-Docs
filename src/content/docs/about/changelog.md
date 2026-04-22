@@ -16,7 +16,7 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ---
 
-## [4.1.0] — 2026-04-21 ✅
+## [4.1.0] — 2026-04-21
 
 ### Catálogo de Plugins y Ecosistema
 - **Catálogo Integrado**: Nuevo panel para descubrir y descargar plugins directamente desde el repositorio oficial de GitHub.
