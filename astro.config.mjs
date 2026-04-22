@@ -19,7 +19,7 @@ export default defineConfig({
   integrations: [
     starlight({
       title: 'DVGE',
-      favicon: './public/icon.png',
+      favicon: './src/assets/icon.png',
       logo: {
         src: './src/assets/icon.png',
       },
