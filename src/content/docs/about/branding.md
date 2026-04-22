@@ -38,7 +38,7 @@ Si necesitas instalar el motor en su versión más reciente para Windows:
 <div style="padding: 2rem; background: var(--color-surface); border-radius: 8px; border: 1px solid var(--glass-border); text-align: center; margin-top: 2rem;">
   <h3>Instalador de DVGE v4.1.5</h3>
   <p>Versión estable para Windows 10/11 (x64)</p>
-  <a href="https://github.com/Mushi-Ayaka/DVGE-Docs/releases/download/v4.1.5/DVGE-Setup-4.1.5.exe" style="display: inline-block; padding: 1rem 2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(228, 76, 48, 0.3);">
+  <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v4.1.5/DVGE-Setup-4.1.5.exe" style="display: inline-block; padding: 1rem 2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(228, 76, 48, 0.3);">
     Descargar Instalador (.exe)
   </a>
   <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted);">Tamaño: ~1 GB | Hash SHA-256 verificado</p>
