@@ -5,7 +5,8 @@ import rehypeMermaid from 'rehype-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://dvge.jonatanbaron.com',
+  site: 'https://mushi-ayaka.github.io',
+  base: '/DVGE-Docs/',
   markdown: {
     rehypePlugins: [
       [rehypeMermaid, { strategy: 'img-svg', dark: true, mermaidConfig: { theme: 'dark' } }]
