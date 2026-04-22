@@ -7,6 +7,10 @@ import rehypeMermaid from 'rehype-mermaid';
 export default defineConfig({
   site: 'https://mushi-ayaka.github.io',
   base: '/DVGE-Docs/',
+  trailingSlash: 'always',
+  build: {
+    format: 'directory'
+  },
   markdown: {
     rehypePlugins: [
       [rehypeMermaid, { strategy: 'img-svg', dark: true, mermaidConfig: { theme: 'dark' } }]
