@@ -7,9 +7,6 @@ sidebar:
 
 El **Motor de Gráficos Vectoriales Dinámicos (DVGE)** está construido sobre una arquitectura híbrida de alto rendimiento diseñada para la confiabilidad en la transmisión profesional.
 
-> [!NOTE]
-> **VERSIÓN ACTUALIZADA (22-04-2026):** Si ves esta nota, la documentación está al día y los errores de caché se han resuelto.
-
 ## Modelo de Procesos Híbrido
 
 La aplicación opera usando un modelo de proceso dual separado por un puente de comunicación interna (IPC). Esto asegura que las tareas pesadas de la interfaz de usuario no bloqueen la lógica central del motor.
