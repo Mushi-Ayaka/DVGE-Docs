@@ -9,6 +9,6 @@ Soy **Jonatan Barón**, un Desarrollador Full-Stack especializado en la construc
 
 A través de la metodología Spec-Driven Development (SDD) y Property-Based Testing (PBT), mi enfoque radica en asegurar que aplicaciones complejas, como motores gráficos y ecosistemas web, mantengan una estabilidad absoluta desde su arquitectura base hasta el despliegue final.
 
-Con experiencia profunda en tecnologías como React 19, Node.js y arquitecturas deterministas, mi objetivo es unir las capacidades del desarrollo web moderno con las estrictas demandas técnicas de las industrias de producción y radiodifusión (broadcast).
+Con experiencia en tecnologías como React 19, Node.js y arquitecturas deterministas, mi objetivo es unir las capacidades del desarrollo web moderno con las demandas técnicas de las industrias de producción.
 
-🔗 [Visita mi Portafolio Profesional](https://portafolio-jonatan-baron.vercel.app/) para conocer más sobre mis proyectos y metodologías de trabajo.
+🔗 [Visita mi Portafolio](https://portafolio-jonatan-baron.vercel.app/) para conocer más sobre mis proyectos y metodologías de trabajo.

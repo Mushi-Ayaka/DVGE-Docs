@@ -16,16 +16,16 @@ DVGE cuenta con dos variantes oficiales del logotipo. Puedes descargarlas direct
 <div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
   <div style="text-align: center; padding: 2rem; background: var(--color-surface); border-radius: 8px; border: 1px solid var(--glass-border); flex: 1; min-width: 250px;">
     <h3 style="margin-top: 0;">Logo Estándar</h3>
-    <img src="/icon.png" alt="Logo Estándar de DVGE" width="128" height="128" style="margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.2));" />
+    <img src="/DVGE-Docs/icon.png" alt="Logo Estándar de DVGE" width="128" height="128" style="margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.2));" />
     <br/>
-    <a href="/icon.png" download="DVGE_Logo_Standard.png" style="display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Descargar Standard (PNG)</a>
+    <a href="/DVGE-Docs/icon.png" download="DVGE_Logo_Standard.png" style="display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Descargar Standard (PNG)</a>
   </div>
 
   <div style="text-align: center; padding: 2rem; background: var(--color-surface); border-radius: 8px; border: 1px solid var(--glass-border); flex: 1; min-width: 250px;">
     <h3 style="margin-top: 0;">Logo Highlight</h3>
-    <img src="/icon_highlight.png" alt="Logo Highlight de DVGE" width="128" height="128" style="margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.4));" />
+    <img src="/DVGE-Docs/icon_highlight.png" alt="Logo Highlight de DVGE" width="128" height="128" style="margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.4));" />
     <br/>
-    <a href="/icon_highlight.png" download="DVGE_Logo_Highlight.png" style="display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Descargar Highlight (PNG)</a>
+    <a href="/DVGE-Docs/icon_highlight.png" download="DVGE_Logo_Highlight.png" style="display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Descargar Highlight (PNG)</a>
   </div>
 </div>
 

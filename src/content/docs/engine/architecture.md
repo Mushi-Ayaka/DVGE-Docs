@@ -25,7 +25,7 @@ graph TD
         H[Renderizador Headless] --> I[Exportación ProRes 4444]
     end
 
-    RendererProcess <--> |Puente IPC| MainProcess
+    RendererProcess <--> MainProcess
 ```
 
 ### 1. Proceso Renderizador (Frontend)
