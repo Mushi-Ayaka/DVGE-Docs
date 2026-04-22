@@ -1,50 +1,51 @@
 ---
 import icon from '../assets/icon.png';
+const base = import.meta.env.BASE_URL;
 ---
 
 <nav class="nav-container">
   <div class="nav-content">
-    <a href="/" class="logo">
+    <a href={base} class="logo">
       <img src={icon.src} alt="Logo de DVGE" width="32" height="32" />
       <span>DVGE</span>
     </a>
     
     <div class="nav-links">
       <div class="dropdown">
-        <a href="/engine/architecture/" class="dropbtn">Motor <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a href={`${base}engine/architecture/`} class="dropbtn">Motor <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="dropdown-content">
-          <a href="/engine/architecture/">Arquitectura Central</a>
-          <a href="/engine/performance/">Rendimiento</a>
-          <a href="/engine/benchmarks/">Benchmarks</a>
-          <a href="/engine/roadmap/">Hoja de Ruta (Roadmap)</a>
+          <a href={`${base}engine/architecture/`}>Arquitectura Central</a>
+          <a href={`${base}engine/performance/`}>Rendimiento</a>
+          <a href={`${base}engine/benchmarks/`}>Benchmarks</a>
+          <a href={`${base}engine/roadmap/`}>Hoja de Ruta (Roadmap)</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <a href="/ecosystem/repository/" class="dropbtn">Ecosistema <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a href={`${base}ecosystem/repository/`} class="dropbtn">Ecosistema <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="dropdown-content">
-          <a href="/ecosystem/repository/">Galería de Plugins</a>
-          <a href="/ecosystem/api/">API de Extensión</a>
+          <a href={`${base}ecosystem/repository/`}>Galería de Plugins</a>
+          <a href={`${base}ecosystem/api/`}>API de Extensión</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <a href="/development/quick-start/" class="dropbtn">Desarrollo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a href={`${base}development/quick-start/`} class="dropbtn">Desarrollo <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="dropdown-content">
-          <a href="/development/quick-start/">Guía de Inicio</a>
-          <a href="/development/ai-guide/">Plugins con IA</a>
-          <a href="/development/contributing/">Contribuir</a>
+          <a href={`${base}development/quick-start/`}>Guía de Inicio</a>
+          <a href={`${base}development/ai-guide/`}>Plugins con IA</a>
+          <a href={`${base}development/contributing/`}>Contribuir</a>
         </div>
       </div>
 
       <div class="dropdown">
-        <a href="/about/vision/" class="dropbtn">Proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
+        <a href={`${base}about/vision/`} class="dropbtn">Proyecto <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"/></svg></a>
         <div class="dropdown-content">
-          <a href="/about/vision/">La Visión</a>
-          <a href="/about/user-manual/">Manual de Usuario</a>
-          <a href="/about/me/">Sobre el Autor</a>
-          <a href="/about/branding/">Identidad Visual</a>
-          <a href="/about/changelog/">Changelog</a>
+          <a href={`${base}about/vision/`}>La Visión</a>
+          <a href={`${base}about/user-manual/`}>Manual de Usuario</a>
+          <a href={`${base}about/me/`}>Sobre el Autor</a>
+          <a href={`${base}about/branding/`}>Identidad Visual</a>
+          <a href={`${base}about/changelog/`}>Changelog</a>
         </div>
       </div>
 

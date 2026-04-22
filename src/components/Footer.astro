@@ -1,4 +1,5 @@
 ---
+const base = import.meta.env.BASE_URL;
 ---
 
 <footer class="footer">
@@ -18,23 +19,23 @@
     <div class="footer-nav">
       <div class="nav-column">
         <h4>Producto</h4>
-        <a href="/engine/architecture/">Arquitectura</a>
-        <a href="/engine/performance/">Rendimiento</a>
-        <a href="/engine/roadmap/">Hoja de Ruta</a>
+        <a href={`${base}engine/architecture/`}>Arquitectura</a>
+        <a href={`${base}engine/performance/`}>Rendimiento</a>
+        <a href={`${base}engine/roadmap/`}>Hoja de Ruta</a>
       </div>
       <div class="nav-column">
         <h4>Ecosistema</h4>
-        <a href="/ecosystem/repository/">Galería de Plugins</a>
-        <a href="/ecosystem/api/">API de Extensión</a>
+        <a href={`${base}ecosystem/repository/`}>Galería de Plugins</a>
+        <a href={`${base}ecosystem/api/`}>API de Extensión</a>
       </div>
       <div class="nav-column">
         <h4>Acerca de</h4>
-        <a href="/about/vision/">La Visión</a>
-        <a href="/about/me/">Jonatan Barón</a>
-        <a href="/about/branding/">Identidad Visual</a>
-        <a href="/about/license/">Licencia</a>
-        <a href="/about/privacy/">Privacidad</a>
-        <a href="/about/terms/">Términos</a>
+        <a href={`${base}about/vision/`}>La Visión</a>
+        <a href={`${base}about/me/`}>Jonatan Barón</a>
+        <a href={`${base}about/branding/`}>Identidad Visual</a>
+        <a href={`${base}about/license/`}>Licencia</a>
+        <a href={`${base}about/privacy/`}>Privacidad</a>
+        <a href={`${base}about/terms/`}>Términos</a>
       </div>
     </div>
   </div>

@@ -26,7 +26,7 @@ const Hero = () => {
               <Download size={20} />
               Descargar para Windows
             </a>
-            <a href="/development/quick-start" className="btn btn-secondary">
+            <a href={`${import.meta.env.BASE_URL}development/quick-start/`} className="btn btn-secondary">
               <BookOpen size={20} />
               Explorar Documentación
             </a>
@@ -42,7 +42,7 @@ const Hero = () => {
       >
         <div className="mockup-container">
           <div className="mockup-glow" />
-          <img src="/icon_highlight.png" alt="DVGE Mockup" className="mockup-image" />
+          <img src={`${import.meta.env.BASE_URL}icon_highlight.png`} alt="DVGE Mockup" className="mockup-image" />
         </div>
       </motion.div>
     </section>
