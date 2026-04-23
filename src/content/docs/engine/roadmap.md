@@ -7,8 +7,9 @@ sidebar:
 
 DVGE ha evolucionado de ser una simple herramienta de previsualización a un motor robusto de calidad broadcast. Hacia aquí nos dirigimos.
 
-## Estado Actual: v5.0.0 GA (Smart Engine)
-El motor se encuentra actualmente en su versión más estable y segura hasta la fecha.
+## Estado Actual: v5.5.0 GA (Artifact Edition)
+El motor se encuentra en su versión más estable y feature-complete hasta la fecha.
+- **Knowledge Bridge AI**: Inyecta el contexto del motor a tu IA favorita vía PDF nativo.
 - **Mercado de Plugins**: Instala gráficos directamente desde la aplicación.
 - **Sandbox de Seguridad**: Aislamiento total del código de terceros.
 - **Motor Determinista**: Lógica de renderizado con precisión de fotogramas.
@@ -18,7 +19,8 @@ El motor se encuentra actualmente en su versión más estable y segura hasta la 
 
 ## Horizonte Futuro: Motor de Siguiente Generación
 
-La próxima actualización importante (v5.0) se enfoca en expandir el poder creativo del motor manteniendo sus estrictos estándares de confiabilidad.
+La próxima actualización importante se enfoca en expandir el poder creativo del motor manteniendo sus estrictos estándares de confiabilidad.
+
 
 ### 1. Flujos de Trabajo Basados en Datos
 Actualmente, las propiedades se editan manualmente en el inspector. Estamos trabajando en:

@@ -5,28 +5,32 @@ sidebar:
   order: 4
 ---
 
-Los asistentes de programación modernos con IA pueden generar plugins completos y listos para producción para DVGE. Esta guía te muestra la estrategia exacta de "prompting" para lograrlo al primer intento.
+Los asistentes de programación modernos con IA pueden generar plugins completos y listos para producción para DVGE. A partir de **v5.5.0 GA**, el motor incluye el **Knowledge Bridge** — el método más rápido y preciso para dar contexto a cualquier IA.
 
-## Por qué los Plugins Necesitan un Prompt Específico
+## Método Recomendado: Knowledge Bridge (v5.5.0 GA)
 
-DVGE tiene reglas estrictas y poco convencionales:
-- **No se permiten bibliotecas de animación en tiempo real** (ni GSAP, Anime.js, etc.)
-- **Aislamiento Shadow DOM** — `document` está prohibido, usa `ctx.root`
-- **Determinismo basado en fotogramas** — toda la matemática de animación se deriva de `ctx.frame` o `ctx.timeline`
+El motor compila automáticamente todas sus reglas (Sandbox, Shadow DOM, API completa) en un archivo PDF. Al inyectarlo directamente en tu IA favorita, eliminas el 90% de los errores habituales de generación de código.
 
-Sin instrucciones explícitas, las herramientas de IA generarán código usando prácticas web estándar que **no funcionarán** en el motor. El "Prompt Maestro" a continuación resuelve esto.
+### Pasos
+1. Abre el plugin **DVGE Studio Master** en cualquier proyecto.
+2. En el inspector lateral, localiza el campo **"DVGE Master Rules"**.
+3. **Arrastra** la zona indicada directamente al chat de tu IA (Claude, Gemini, ChatGPT).
+4. El motor envía el PDF via drag nativo — la IA recibe el contexto completo del motor.
+5. Describe el plugin que necesitas. La IA ya conoce todas las restricciones.
+
+:::tip[Flujo Óptimo]
+El PDF incluye ejemplos de código, la tabla de `ctx.utils`, los tipos del `schema` y las reglas del Sandbox. No necesitas repetir nada manualmente.
+:::
 
 ---
 
-## El Prompt Maestro (v5.0.0 GA - Smart Engine)
+## Método Manual: Prompt Maestro (v5.0.0+)
 
-A partir de la versión v5.0.0, el motor incluye una **Capa de Inteligencia** que permite generar plugins con un código mucho más simple. La IA ya no necesita gestionar el registro del plugin; solo necesita definir la apariencia y el comportamiento.
-
-Copia este bloque en cualquier asistente de IA:
+Si no tienes acceso al Knowledge Bridge, copia este bloque en cualquier asistente de IA:
 
 ```text
 Act as a senior Motion Graphics developer. Generate a plugin for the
-DVGE engine v5.0.0 GA following these simplified rules:
+DVGE engine v5.5.0 GA following these simplified rules:
 
 SMART ENGINE COMPATIBILITY:
 - Do NOT use dvEngine.register(). The engine will wrap your code.

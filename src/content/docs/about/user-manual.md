@@ -19,7 +19,7 @@ Explorar Catálogo → Crear Proyecto → Exportar y Usar
 
 ## 1. El Catálogo de Plugins
 
-A partir de v5.0.0, puedes ampliar tu biblioteca de gráficos con un solo clic:
+A partir de v5.5.0, puedes ampliar tu biblioteca de gráficos con un solo clic:
 
 1. En la pantalla de inicio, haz clic en **"🛍️ Catálogo de Plugins"**.
 2. Explora todos los diseños disponibles en el repositorio oficial.
@@ -51,7 +51,7 @@ Modifica texto, colores e imágenes — los cambios son **instantáneos** en la 
 
 - **Identidad de Marca (Branding)**: Si la plantilla lo admite, una sección de "Branding" te permite cargar tu logo y elegir su posición (ej. Abajo a la Derecha) con un solo clic.
 - **Alineación**: Controla la posición global del gráfico sin tocar una sola línea de código.
-- **Smart Engine (v5.0.0)**: El motor ahora corrige automáticamente pequeños errores en las plantillas de terceros, asegurando que tus gráficos siempre se vean bien.
+- **Transparency Transformer (v5.4.0)**: El motor ahora garantiza una transparencia perfecta y profesional para broadcast, eliminando artefactos y fondos negros accidentales.
 
 ### Seguridad de Datos
 Gracias al **Guardado Atómico** (Atomic Saving), tu trabajo está protegido contra cierres inesperados. El indicador de guardado en la esquina inferior izquierda confirma cuando tu archivo está escrito de forma segura en el disco.
@@ -64,7 +64,27 @@ Gracias al **Guardado Atómico** (Atomic Saving), tu trabajo está protegido con
 2. El motor genera un video **ProRes 4444 con canal Alfa** (transparencia nativa).
 3. **Arrastrar y Soltar**: Arrastra el archivo `.mov` exportado directamente desde la aplicación a tu línea de tiempo en **DaVinci Resolve, Premiere Pro o After Effects**.
 
+:::important[Tip para DaVinci Resolve]
+Si al importar el video ves un fondo negro, haz clic derecho sobre el clip en el **Media Pool** → **Clip Attributes** → Pestaña **Video** → Cambia **Alpha Mode** a **"Straight"** o **"Premultiplied"**.
+:::
+
 La transparencia se preservará automáticamente — gracias al motor determinista, lo que ves en la previsualización es exactamente lo que obtienes en el archivo final.
+
+---
+
+## 5. Knowledge Bridge AI (v5.5.0)
+
+El nuevo flujo de trabajo para generar gráficos con asistentes de IA:
+
+1. Abre cualquier proyecto con el plugin **"DVGE Studio Master"**.
+2. En el panel de propiedades, localiza el campo **"DVGE Master Rules"**.
+3. **Arrastra** la zona indicada directamente al chat de tu IA (Claude, Gemini, ChatGPT).
+4. El motor entrega un PDF con todas las reglas del sandbox — la IA genera el plugin correcto al primer intento.
+5. Pega la respuesta en el campo **"Artefacto Universal"** del inspector — el motor extrae el HTML, CSS y JS automáticamente.
+
+:::tip[Sin copiar texto]
+El Knowledge Bridge usa drag nativo de Electron. No necesitas copiar ni pegar el texto de las reglas — el PDF lo hace todo.
+:::
 
 ---
 

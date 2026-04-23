@@ -7,108 +7,143 @@ sidebar:
 
 Todos los cambios notables en DVGE están documentados aquí. El versionado sigue el estándar [Semantic Versioning](https://semver.org/).
 
-## [5.0.0] — 2026-04-23 (GA Actual)
-### Motor de Renderizado: Pre-Bundling y ASAR Híbrido
-- **Pre-Bundling Estático**: Migración completa de la transpilación en tiempo real a una pre-construcción estática de las librerías de Remotion (`remotion-bundle`), eliminando la sobrecarga de esbuild en producción.
-- **Desempaquetado Quirúrgico (ASAR)**: Resolución definitiva de los errores de tubería rota (`EPIPE`/`ENOENT`) extrayendo de forma selectiva los binarios dependientes (`esbuild`, `ffmpeg`, `compositor`) al disco duro físico para evitar bloqueos del sistema de archivos de solo lectura de Electron.
-- **Instalador Optimizado ("Store")**: Desactivación de la compresión iterativa de archivos en el paquete NSIS para lograr tiempos de build ultra-rápidos y arranques de aplicación estables.
+---
+
+## [5.5.0] — 2026-04-23 ✦ Versión Actual
+### GA Artifact Edition (Knowledge Bridge)
+- **Knowledge Bridge Nativo**: Inyección de reglas de motor (DVGE Master Rules) directamente desde el inspector mediante Arrastrar y Soltar (Drag & Drop) de un archivo `.pdf` físico auto-generado, garantizando que las IAs (Gemini, Claude, ChatGPT) obtengan el contexto de desarrollo exacto y sin errores de parseo.
+- **Auto-Generador PDF Interno**: Integración de una ventana silenciosa de Electron que compila `Rules.ts` a un archivo PDF temporal en caché, evadiendo las restricciones de "texto plano" de las IAs.
+- **Studio Master Refactor**: El plugin "DVGE Studio Master" ha sido optimizado con soporte `promptHelper` estandarizado, manteniendo la fidelidad de UI.
+- **Bugfix Build Pipeline**: Corregido Error #310 de React en `RenderWrapper` — el `early return` previo a los hooks causaba colisión de firma de hooks entre renders.
 
 ---
 
-## [4.1.5] — 2026-04-22
-### Smart Engine y Capa de Auto-Rescate
-- **Motor Inteligente**: Detección y auto-envoltura de scripts mal formados. El motor ahora rescata plugins que no sigan el estándar de registro oficial.
-- **Sandbox Resiliente**: Silenciamiento de llamadas no determinísticas (`requestAnimationFrame`) para proteger la integridad del renderizado.
-- **Simplificación de API**: Nueva utilidad `ctx.utils.loop(frame, duration)` para loops perfectos.
-- **Flujo AI 'One-Shot'**: Optimización de la tasa de éxito al ejecutar código generado por LLMs.
+## [5.4.0] — 2026-04-23
+### Estabilización de Producción y Canal Alfa (The Alpha Fix)
+- **Transparency Transformer**: Implementación de flags críticos de Chromium (`--transparent-background-color=0`) y `evaluatePage` para garantizar transparencia real en ProRes 4444.
+- **Data Probe System**: Nuevo sistema de inyección de datos vía endpoint interno (`/props.json`) para evitar pérdida de efectos complejos por límites de CLI en Windows.
+- **Engine Compatibility**: Polyfill de `getElementById` en el contenedor root de plugins para soportar lógica heredada y compleja.
+- **Chrome System Bypass**: Forzado de uso del ejecutable de Chrome del sistema para mayor fiabilidad en entornos Windows.
+- **Optimización DaVinci**: Ajuste de pixel format a `yuva444p10le` con metadatos de transparencia verificados.
 
 ---
 
-## [4.1.0] — 2026-04-21
+## [5.3.0] — 2026-04-23
+### Auditoría de Infraestructura y Estabilización (Kernel Hardening)
+- **Resolución definitiva de "Black Background"**: Diagnóstico del problema de transparencia en ProRes 4444 y restauración del canal alfa profesional para broadcast.
+- **Bypass de Chrome de Sistema**: Uso del binario oficial de Google Chrome en lugar de `chrome-headless-shell` de Remotion, resolviendo fallos de captura silenciosos.
+- **Kernel Logging (Caja Negra)**: Sistema de registro físico (`render_debug.log`) que captura peticiones del servidor interno, errores 404 y logs de consola en tiempo real.
+- **Hardening de Rasterización**: Forzado de flags de CPU (`--force-cpu-rasterization`) para garantizar la captura de frames ante fallos de drivers de GPU en Windows.
 
-### Catálogo de Plugins y Ecosistema
+---
+
+## [5.2.0] — 2026-04-23
+### Aislamiento "Muro de Hierro" (Bug Purge)
+- **Servidor de Aislamiento Manual**: Servidor HTTP independiente (`serve()`) para el renderizado headless, eliminando el conflicto con el puerto 3000 de Vite que causaba el "Fondo Negro".
+- **Naming Convention Strict**: Migración de IDs de composición a `kebab-case` para cumplir con las validaciones de Remotion 4.x.
+- **Motor Síncrono Determinista**: Refactorización de `RenderWrapper` para garantizar que la inyección del DOM ocurra de forma atómica antes de la captura del frame.
+- **Transparencia Nativa**: Restauración del canal alfa real para exportaciones ProRes 4444.
+
+---
+
+## [5.1.0] — 2026-04-23 (GA)
+### Motor de Renderizado de Nueva Generación (Zero-Bundle Runtime)
+- **Arquitectura Zero-Bundle**: Eliminación de `@remotion/bundler` del runtime. El entry point de Remotion se pre-compila en tiempo de build, reduciendo el instalador de 12,466 archivos a un único `app.asar`.
+- **Instalación Rápida**: El tiempo de instalación pasa de minutos a segundos.
+- **`binariesDirectory` Explícito**: Los binarios nativos (`remotion.exe`, `ffmpeg.exe`) se resuelven desde `app.asar.unpacked`, eliminando errores `ENOENT` en producción.
+- **CWD Seguro**: El proceso de renderizado redirige el directorio de trabajo a `%TEMP%`, evitando errores `EPERM`.
+- **Compatibilidad Total**: El render en `npm run dev` y en producción es idéntico. Sin cambios en la API de plugins.
+
+---
+
+## [5.0.0] — 2026-04-22 (GA)
+### Smart Engine & Auto-Rescue
+- **Capa de Inteligencia (Auto-Rescate)**: El motor detecta y envuelve automáticamente scripts que no sigan el estándar de registro oficial (detectando funciones globales como `update` o `renderDVGE`).
+- **Sandbox Resiliente**: `fakeWindow` inteligente que silencia `requestAnimationFrame`, protegiendo la integridad del renderizado ProRes 4444.
+- **Simplificación de API**: Introducción de `ctx.utils.loop(frame, duration)` para animaciones cíclicas perfectas.
+- **AI-Native Workflow**: Tasa de éxito "One-Shot" significativamente mayor al ejecutar código generado por IA.
+
+---
+
+## [4.1.0] — 2026-04-21 (GA)
+### Catálogo de Plugins & Ecosystem
 - **Catálogo Integrado**: Nuevo panel para descubrir y descargar plugins directamente desde el repositorio oficial de GitHub.
-- **Gestión Dinámica**: Instalación, actualización y eliminación de plugins a través de la interfaz (UI).
-- **Identidad Profesional**: Enlaces sociales (GitHub, Portafolio) y contacto directo por Gmail en el modal "Acerca de".
+- **Gestión Dinámica**: Instalación, actualización y borrado de plugins desde la UI.
+- **Identidad Profesional**: Redes sociales (GitHub, Portafolio) y contacto directo vía Gmail en el modal "Acerca de".
 
 ---
 
-## [4.0.0] — 2026-04-21
-
-### Remediación QA y Arquitectura GA
-- **Caja de Arena Sellada (Sandbox)**: Los plugins ahora se ejecutan con un proxy `fakeWindow` — cero acceso a APIs de Electron o Node.
-- **E/S Atómica (Atomic I/O)**: Guardado automático atómico asíncrono (`.tmp` + renombrado) evita la corrupción del archivo del proyecto en apagados bruscos.
-- **Degradación Elegante**: Los cierres inesperados (crashes) de plugins se aíslan sin congelar el bucle principal de la aplicación.
-- **Límite de Errores Reactivo (Error Boundary)**: La UI está protegida contra archivos `manifest.json` mal formados.
-- **API Determinista**: Bibliotecas en tiempo real (GSAP) desaprobadas en favor de `ctx.timeline` (matemática de fotogramas). Añadidos `ctx.state`, `ctx.refs`, `utils.spring`, `utils.typewriter`, `utils.tickerOffset`.
+## [4.0.0] — 2026-04-21 (GA)
+### QA Remediation & GA Architecture
+- **Sandbox Aislado**: Los plugins se ejecutan con `fakeWindow` sin acceso a APIs de Electron.
+- **I/O Seguro**: Autoguardado asíncrono y atómico (`.tmp`), impidiendo corrupción de proyectos.
+- **Graceful Degradation**: Aislamiento de crashes en el código del plugin sin congelar la app.
+- **Error Boundary Reactivo**: Interfaz protegida contra `manifest.json` malformados.
+- **API Determinística**: Deprecado GSAP en favor de `ctx.timeline`. Añadidos `ctx.state`, `ctx.refs`, `utils.spring`, `utils.typewriter`, `utils.tickerOffset`.
 
 ---
 
 ## [3.3.0] — 2026-04-21
-
-### Edición del Editor
-- **Campos de Código**: Edición de HTML/CSS multilínea directamente en la barra lateral mediante campos de esquema tipo `code`.
-- **Renderizador Maestro HTML**: Plantilla oficial de alto rendimiento para renderizar código HTML crudo.
-- **Guardado Manual**: Nuevo botón en la barra lateral para forzar una escritura inmediata en el disco junto al sistema de autoguardado.
+### Editor Edition (HTML-a-Video Profesional)
+- **Campos de Código**: Edición multilínea de HTML/CSS directamente en el sidebar con campos tipo `code`.
+- **Plugin HTML Master Renderer**: Plantilla de alto rendimiento para renderizar código HTML puro.
+- **Guardado Manual**: Botón en el sidebar para forzar escritura en disco del proyecto.
 
 ---
 
 ## [3.2.1] — 2026-04-21
+### Corrección Crítica — Motor de Plugins Universal
+- **Bug Resuelto**: El motor mostraba siempre la forma del primer plugin cargado al cambiar de proyecto; los campos del formulario tampoco se actualizaban.
 
-### Corrección de Bug Crítico — Motor de Plugins Universal
-- **Corregido**: El motor mostraba previamente la forma del primer plugin cargado al cambiar de proyecto. Los campos del formulario también fallaban al actualizarse al cambiar de proyecto.
-
-### Motor Dinámico de Plugins
-- **Formularios Generativos**: La barra lateral ya no tiene campos fijos. Lee el `manifest.json` del plugin activo y genera dinámicamente los inputs correctos.
-- **Insignia del Plugin**: La barra lateral muestra el nombre y versión del plugin activo.
-- **Reinicio Forzado al Cambiar Proyecto**: El reproductor de vista previa se destruye completamente y se recrea al cambiar de proyecto (`key={activeProject.id}`), eliminando cualquier residuo visual o de estado.
+### Motor de Plugins Dinámico
+- **Formulario Generativo**: El panel lateral lee el `manifest.json` del plugin activo y genera dinámicamente los inputs correctos (`string`, `color`, `number`, `image`).
+- **Plugin Badge**: El sidebar muestra el nombre y versión del plugin activo.
+- **Hard Reset en Cambio de Proyecto**: El reproductor se destruye y recrea completamente al cambiar de proyecto.
 
 ---
 
 ## [3.1.0] — 2026-04-21
-
-### Núcleo y Experiencia de Desarrollador (DX)
-- **Biblioteca de Utilidades Nativa (`dvEngine.utils`)**: Inyección automática de funciones matemáticas (`lerp`, `clamp`) y curvas de suavizado (`easeOutCubic`, `easeOutBounce`, etc.).
-- **Autoguardado Silencioso**: Persistencia automática con debouncing de 500ms — no requiere acción del usuario.
-- **Indicador de Persistencia**: Nuevo elemento UI que muestra el estado de guardado en tiempo real ("Guardando..." / "Guardado a las HH:MM").
+### Core & Developer Experience (DX)
+- **Librería de Utilidades Nativa (`dvEngine.utils`)**: Funciones matemáticas (`lerp`, `clamp`) y de suavizado (`easeOutCubic`, `easeOutBounce`, etc.) inyectadas automáticamente.
+- **Autoguardado Silencioso**: Persistencia automática basada en debouncing de 500ms.
+- **Indicador de Persistencia**: UI en el panel lateral que muestra el estado del guardado en tiempo real.
 
 ---
 
 ## [3.0.0] — 2026-04-21
-
-### Arquitectura del Espacio de Trabajo (Workspace)
-- **Backend del Gestor de Proyectos**: Núcleo rediseñado para admitir proyectos persistentes en `Documentos/DVG_Projects/<id>`.
-- **Inyección de Ciclo de Vida V3**: Migración obligatoria a `{ awake, start, update }` para rendimiento máximo de 60fps.
-- **Vinculación Reactiva Nativa**: Las variables de UI ahora impactan directamente el ciclo `update()` para una reactividad inmediata.
+### Arquitectura de Espacios de Trabajo (Workspace Architecture)
+- **Project Manager Backend**: Soporte de proyectos persistentes en `Documents/DVG_Projects/<id>`.
+- **Inyección V3 Lifecycle**: Migración obligatoria a `{ awake, start, update }` para rendimiento máximo a 60fps.
+- **Enlace Reactivo Nativo**: Las variables de la UI ahora impactan directamente el ciclo `update()`.
 
 ---
 
 ## [2.3.0] — 2026-04-21
-
-### Arquitectura de Intercambio en Caliente (Hot-Swap)
-- **Patrón Puente Estable (Stable Bridge)**: Gestión de eventos centralizada para evitar fugas de memoria.
-- **Detección de Fugas**: Limpieza automática del Shadow DOM y devoluciones de llamada (callbacks) antes de cada recarga de código.
-- **Sincronización Dual**: Diferenciación entre actualización de datos (Soft-Sync) y recarga lógica (Hard-Sync).
+### Arquitectura Hot-Swap
+- **Stable Bridge Pattern**: Gestión de eventos centralizada fuera del script del plugin para evitar fugas de memoria.
+- **Detección de Fugas**: Limpieza automática del Shadow DOM y callbacks antes de cada recarga.
+- **Sync Dual**: Diferenciación entre actualización de datos (Soft-Sync) y recarga de lógica (Hard-Sync).
 
 ---
 
 ## [2.2.0] — 2026-04-21
-
 ### Añadido
-- **API `dvEngine.register`**: Nuevo método oficial para sincronizar fotogramas y recibir de manera segura el Shadow Root.
-- **Compatibilidad con Versiones Anteriores**: Soporte para scripts heredados que usan `window.dvContext` y `renderFrame()`.
+- **API `dvEngine.register`**: Nuevo método oficial para sincronizar frames y recibir el Shadow Root de forma segura.
+- **Retrocompatibilidad**: Soporte para scripts heredados que usan `window.dvContext` y `renderFrame()`.
 
 ### Corregido
-- **Corrección de Pantalla Negra**: Consolidación del ciclo de vida de `PluginWrapper` para prevenir bloqueos (crashes) de inicialización del Shadow DOM.
-- **Reactividad Completa**: Los cambios en la barra lateral (título, color, etc.) ahora se reflejan al instante en tiempo real.
+- **Black Screen Fix**: Consolidación del ciclo de vida del `PluginWrapper` para evitar colapsos en la inicialización del Shadow DOM.
+- **Reactividad Total**: Los cambios en el panel lateral se reflejan instantáneamente en tiempo real.
 
 ---
 
-## [2.0.0] — "La Revolución Genética"
-- Migración de plantillas estáticas de React a un motor de inyección dinámica a través de Shadow DOM.
-- Sistema de comunicación IPC para cargar plugins externos desde `Documentos/DV_Engine_Plugins`.
+## [2.0.0] — "The Genetic Revolution"
+- Migración de plantillas estáticas React a un motor de inyección dinámica mediante Shadow DOM.
+- Sistema IPC para carga de plugins externos desde `Documentos/DV_Engine_Plugins`.
 - Sincronización determinista a 60fps basada en eventos `dv-update`.
 
-## [1.0.0] — "La Era Nativa"
-- Versión inicial con componentes React hardcodeados `LowerThirdBasic`.
-- Renderizado básico ProRes 4444.
+---
+
+## [1.0.0] — "The Native Era"
+- Versión inicial con componentes `LowerThirdBasic` cableados en React.
+- Renderizado ProRes 4444 básico.

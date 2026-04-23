@@ -21,9 +21,9 @@ const Hero = () => {
             </p>
 
             <div className="hero-actions">
-              <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.0.0/DVGE-Setup-5.0.0.exe" className="btn btn-primary">
+              <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.5.0/DVGE-Setup-5.5.0.exe" className="btn btn-primary">
                 <Download size={20} />
-                Descargar v5.0.0
+                Descargar v5.5.0
               </a>
               <a href={`${import.meta.env.BASE_URL}development/quick-start/`} className="btn btn-secondary">
                 <BookOpen size={20} />

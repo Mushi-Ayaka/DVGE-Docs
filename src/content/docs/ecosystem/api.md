@@ -136,6 +136,9 @@ update: (ctx) => {
 | `number` | Deslizador numérico | Devuelve un número. |
 | `image` | Subida de archivo | Devuelve una URL de datos base64. |
 | `code` | Editor de código | Devuelve una cadena de texto HTML cruda. |
+| `prompt` | Zona draggable (PDF) | **v5.5.0** — Genera y expone el PDF de reglas del motor para drag-to-AI. |
+| `artifact` | Zona de pegado universal | Acepta bloques `[[[HTML]]]`, `[[[CSS]]]`, `[[[JS]]]` de la IA y los distribuye automáticamente. |
+| `info` | Texto de sólo lectura | Muestra información copiable al usuario (ej. prompts, IDs). |
 
 ### Banderas de Presets
 | Preset | Campos Inyectados Automáticamente |

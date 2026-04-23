@@ -46,4 +46,6 @@ El proceso de exportación es un **renderizado headless** de alto rendimiento qu
 
 ### Optimizaciones de Rendimiento
 - **Hard Reset**: El DOM se limpia por completo y se reconstruye entre cambios de proyecto para prevenir fugas de memoria y contaminación CSS.
-- **Caché de Recursos**: Las imágenes y fuentes se precargan para evitar parpadeos durante los primeros fotogramas del render.
+- **Caché de Recursos**: Las imágenes y fuentes se precargan para evitar parpadeos durante los primeros frames del render.
+- **Data Probe Hydration (v5.4.0+)**: Las propiedades del proyecto se transmiten vía servidor HTTP efímero (`/props.json`) en lugar de CLI, eliminando el límite de caracteres de Windows.
+- **Knowledge Bridge PDF (v5.5.0)**: El motor genera en caché un PDF de reglas que la IA usa para producir código determinista al primer intento, reduciendo ciclos de corrección.
