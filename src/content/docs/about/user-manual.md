@@ -19,7 +19,7 @@ Explorar Catálogo → Crear Proyecto → Exportar y Usar
 
 ## 1. El Catálogo de Plugins
 
-A partir de v4.1.5, puedes ampliar tu biblioteca de gráficos con un solo clic:
+A partir de v5.0.0, puedes ampliar tu biblioteca de gráficos con un solo clic:
 
 1. En la pantalla de inicio, haz clic en **"🛍️ Catálogo de Plugins"**.
 2. Explora todos los diseños disponibles en el repositorio oficial.
@@ -51,7 +51,7 @@ Modifica texto, colores e imágenes — los cambios son **instantáneos** en la 
 
 - **Identidad de Marca (Branding)**: Si la plantilla lo admite, una sección de "Branding" te permite cargar tu logo y elegir su posición (ej. Abajo a la Derecha) con un solo clic.
 - **Alineación**: Controla la posición global del gráfico sin tocar una sola línea de código.
-- **Smart Engine (v4.1.5)**: El motor ahora corrige automáticamente pequeños errores en las plantillas de terceros, asegurando que tus gráficos siempre se vean bien.
+- **Smart Engine (v5.0.0)**: El motor ahora corrige automáticamente pequeños errores en las plantillas de terceros, asegurando que tus gráficos siempre se vean bien.
 
 ### Seguridad de Datos
 Gracias al **Guardado Atómico** (Atomic Saving), tu trabajo está protegido contra cierres inesperados. El indicador de guardado en la esquina inferior izquierda confirma cuando tu archivo está escrito de forma segura en el disco.

@@ -7,7 +7,7 @@ sidebar:
 
 DVGE ha evolucionado de ser una simple herramienta de previsualización a un motor robusto de calidad broadcast. Hacia aquí nos dirigimos.
 
-## Estado Actual: v4.1.5 GA (Smart Engine)
+## Estado Actual: v5.0.0 GA (Smart Engine)
 El motor se encuentra actualmente en su versión más estable y segura hasta la fecha.
 - **Mercado de Plugins**: Instala gráficos directamente desde la aplicación.
 - **Sandbox de Seguridad**: Aislamiento total del código de terceros.

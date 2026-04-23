@@ -18,15 +18,15 @@ Sin instrucciones explícitas, las herramientas de IA generarán código usando 
 
 ---
 
-## El Prompt Maestro (v4.1.5 GA - Smart Engine)
+## El Prompt Maestro (v5.0.0 GA - Smart Engine)
 
-A partir de la versión v4.1.5, el motor incluye una **Capa de Inteligencia** que permite generar plugins con un código mucho más simple. La IA ya no necesita gestionar el registro del plugin; solo necesita definir la apariencia y el comportamiento.
+A partir de la versión v5.0.0, el motor incluye una **Capa de Inteligencia** que permite generar plugins con un código mucho más simple. La IA ya no necesita gestionar el registro del plugin; solo necesita definir la apariencia y el comportamiento.
 
 Copia este bloque en cualquier asistente de IA:
 
 ```text
 Act as a senior Motion Graphics developer. Generate a plugin for the
-DVGE engine v4.1.5 GA following these simplified rules:
+DVGE engine v5.0.0 GA following these simplified rules:
 
 SMART ENGINE COMPATIBILITY:
 - Do NOT use dvEngine.register(). The engine will wrap your code.

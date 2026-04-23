@@ -32,7 +32,7 @@ Se ejecuta en un entorno Node.js y es responsable de:
 
 ## Sandbox de Seguridad y Aislamiento
 
-DVGE v4.1.5 implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
+DVGE v5.0.0 implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
 
 ### 1. Proxy `fakeWindow`
 Los plugins no tienen acceso al objeto `window` real ni a las APIs de Electron. El motor inyecta un **Proxy** que restringe el acceso únicamente a los métodos permitidos y al Shadow DOM.
@@ -48,9 +48,9 @@ El código del plugin se evalúa utilizando un constructor `new Function` restri
 
 ---
 
-## Smart Engine: Capa de Auto-Rescate (v4.1.5)
+## Smart Engine: Capa de Auto-Rescate (v5.0.0)
 
-La versión v4.1.5 introduce una capa de inteligencia entre el código del plugin y el motor de renderizado.
+La versión v5.0.0 introduce una capa de inteligencia entre el código del plugin y el motor de renderizado.
 
 ### Inteligencia de Inyección
 Si un plugin (especialmente los generados por IA) no implementa el estándar `dvEngine.register`, el motor:
@@ -60,6 +60,20 @@ Si un plugin (especialmente los generados por IA) no implementa el estándar `dv
 
 ### Neutralización de No-Determinismo
 El Sandbox ahora intercepta llamadas a APIs de tiempo real como `requestAnimationFrame` y las anula silenciosamente. Esto fuerza a los desarrolladores a utilizar el tiempo basado en cuadros del motor, garantizando que el video exportado sea idéntico a la previsualización, sin importar el rendimiento del hardware.
+
+---
+
+## Motor de Renderizado: Estrategia de Pre-Bundling y ASAR (v5.0.0)
+
+Para resolver los bloqueos críticos de recursos causados por los entornos empaquetados (`EPIPE`/`ENOENT`), DVGE v5.0.0 rediseñó por completo su flujo de empaquetado y renderizado con Remotion:
+
+### 1. Pre-Bundling Estático
+En lugar de empaquetar y transpilar las librerías de Remotion en tiempo real durante la producción, la app utiliza un script de pre-construcción. Todo el ecosistema de Remotion se "empaqueta" (bundle) en una carpeta estática (`remotion-bundle`) **antes** de que Electron selle la aplicación, eliminando la necesidad de transpilar dependencias pesadas sobre la marcha.
+
+### 2. Estrategia "Store" de ASAR Híbrido
+La aplicación mantiene los beneficios del archivo virtual `.asar` para la lógica central (carga ultra-rápida), pero emplea una técnica de **desempaquetado quirúrgico** (`asarUnpack`). Los binarios pesados que requieren ser ejecutados como procesos hijo (como el `compositor` de Remotion, `esbuild` y `ffmpeg`) se extraen a una carpeta `app.asar.unpacked` en el disco duro físico.
+
+Además, el instalador ahora utiliza compresión `store` pura, evitando cuellos de botella en la instalación y asegurando que las dependencias nativas se mantengan estables y accesibles.
 
 ---
 
