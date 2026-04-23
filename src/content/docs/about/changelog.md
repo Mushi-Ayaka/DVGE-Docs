@@ -7,7 +7,15 @@ sidebar:
 
 Todos los cambios notables en DVGE están documentados aquí. El versionado sigue el estándar [Semantic Versioning](https://semver.org/).
 
-## [4.1.5] — 2026-04-22 (GA Actual)
+## [5.0.0] — 2026-04-23 (GA Actual)
+### Motor de Renderizado: Pre-Bundling y ASAR Híbrido
+- **Pre-Bundling Estático**: Migración completa de la transpilación en tiempo real a una pre-construcción estática de las librerías de Remotion (`remotion-bundle`), eliminando la sobrecarga de esbuild en producción.
+- **Desempaquetado Quirúrgico (ASAR)**: Resolución definitiva de los errores de tubería rota (`EPIPE`/`ENOENT`) extrayendo de forma selectiva los binarios dependientes (`esbuild`, `ffmpeg`, `compositor`) al disco duro físico para evitar bloqueos del sistema de archivos de solo lectura de Electron.
+- **Instalador Optimizado ("Store")**: Desactivación de la compresión iterativa de archivos en el paquete NSIS para lograr tiempos de build ultra-rápidos y arranques de aplicación estables.
+
+---
+
+## [4.1.5] — 2026-04-22
 ### Smart Engine y Capa de Auto-Rescate
 - **Motor Inteligente**: Detección y auto-envoltura de scripts mal formados. El motor ahora rescata plugins que no sigan el estándar de registro oficial.
 - **Sandbox Resiliente**: Silenciamiento de llamadas no determinísticas (`requestAnimationFrame`) para proteger la integridad del renderizado.
