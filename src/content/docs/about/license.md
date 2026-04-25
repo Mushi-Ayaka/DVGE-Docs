@@ -5,7 +5,19 @@ sidebar:
   order: 6
 ---
 
-DVGE se publica bajo la **Licencia MIT**. Eres libre de usar, modificar y distribuir el motor para fines comerciales y personales, sujeto a las siguientes condiciones:
+DVGE se publica bajo la **Licencia MIT**. Eres libre de usar, modificar y distribuir el motor para fines comerciales y personales, sujeto a las condiciones de la licencia.
+
+## Modelo de Negocio (Open Core)
+
+Para garantizar que DVGE sea sostenible a largo plazo y que la tecnología siga avanzando, operamos bajo un modelo transparente:
+
+- **Core Engine (FREE)**: El motor base es completamente gratuito y de código abierto bajo la licencia MIT. Es ideal para la comunidad, estudiantes y uso individual. Tienes control total sobre el motor.
+- **PRO (Próximamente)**: Diseñado para Power Users. Añadirá herramientas nativas exclusivas como el **Panel de Batch Render** para procesamiento masivo automatizado sin tocar código.
+- **ENTERPRISE (Próximamente)**: Pensado para productoras masivas y workflows críticos. Incluirá plugins hiper-potentes compilados en C++/Rust para orquestación de render farms.
+
+> **Nota de Infraestructura**: Todo el procesamiento comercial está manejado de manera segura vía *Lemon Squeezy* y *Cloudflare*, sin cuentas de usuario invasivas. Simplemente se valida a través de una *License Key*.
+
+---
 
 ## MIT License
 

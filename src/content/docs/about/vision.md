@@ -1,29 +1,23 @@
 ---
 title: La Visión
-description: Por qué Jonatan Barón construyó un motor de gráficos broadcast a medida utilizando tecnología web.
+description: Por qué Jonatan Barón construyó DVGE utilizando tecnología web.
 sidebar:
   order: 3
 ---
 
-## El Problema
+## El Pitch Central
 
-Los gráficos broadcast profesionales — tercios inferiores (lower thirds), marcadores deportivos, cintas de noticias — siempre han vivido en un mundo desconectado de la web moderna. Herramientas como Adobe After Effects y el Fusion de DaVinci Resolve requieren conocimientos costosos para operar y producen resultados opacos y no extensibles.
+> **Crea overlays 10x más rápido. Automatiza tus gráficos de broadcast sin tocar código.**
 
-La alternativa era peor: usar animaciones web para video. Las bibliotecas de animación JavaScript estándar funcionan genial en un navegador web, donde los fotogramas son una sugerencia. Pero en el momento en que intentas exportar esas animaciones a video fotograma por fotograma, se desmoronan.
+## La Filosofía
 
-**El fallo principal**: las bibliotecas en tiempo real como GSAP funcionan basándose en el reloj del sistema. Cuando un renderizador de video procesa el fotograma 1, luego el fotograma 2, luego el fotograma 1 de nuevo (para verificar), esas bibliotecas producen resultados diferentes porque el "tiempo" es distinto. El resultado es inestable.
+No competimos con After Effects. **Automatizamos lo que a After Effects le toma horas.**
 
----
+La industria tradicional exige flujos de trabajo lentos, pesados y manuales. DVGE está diseñado para ser la columna vertebral de la automatización gráfica:
 
-## La Solución: Determinismo Matemático
-
-DVGE se construyó sobre un principio único e inquebrantable:
-
-> *Un gráfico renderizado en el fotograma 47 hoy debe ser **idéntico a nivel de bits** a un gráfico renderizado en el fotograma 47 el próximo año, en cualquier máquina.*
-
-El motor logra esto otorgando al plugin un número de fotograma discreto y preguntando: "Dado este fotograma exacto, ¿cómo debería verse la pantalla?". La animación es pura matemática. No hay reloj. No hay desviación (drift).
-
-Esta es la API de `ctx.timeline`. En lugar de `"cuántos milisegundos han pasado"`, pregunta `"¿cuál es el progreso de esta animación?"`. El resultado es un motor de renderizado en el que puedes confiar — el tipo que exigen los profesionales del broadcast.
+- **Renderizado Determinista**: Un render hoy o en un año producirá exactamente los mismos píxeles.
+- **Frame-Math Perfecto**: Animaciones matemáticas puras sin depender de la variación del reloj del sistema.
+- **Calidad de Emisión**: Exportación nativa en **ProRes 4444** con canal alfa puro y sin pérdida.
 
 ---
 
@@ -39,11 +33,8 @@ DVGE demuestra que la tecnología web, cuando se restringe correctamente, puede 
 
 ---
 
-## La Filosofía de la Arquitectura
+## ¿Para quién es DVGE?
 
-> **Seguridad por defecto. Resiliencia ante fallos. Rendimiento a través de matemáticas.**
-
-Cada decisión arquitectónica en DVGE se tomó para servir a estos tres principios:
-- La **caja de arena (sandbox)** existe porque los plugins son código de terceros — nunca se debe confiar en ellos.
-- La **E/S atómica (atomic I/O)** existe porque el trabajo del usuario es sagrado — nunca debe corromperse.
-- La **matemática de fotogramas (frame-math)** existe porque el video profesional exige perfección — la desviación es un fracaso.
+1. **Para Editores y Creadores**: Plantillas y gráficos listos para usar directamente en tus proyectos de video sin saber programar.
+2. **Para Desarrolladores**: Infraestructura robusta, aislada y lista para automatizar flujos completos de producción de video a través de código.
+3. **Para IAs**: Integración nativa con nuestro *Knowledge Bridge*, permitiendo que la Inteligencia Artificial lea, entienda y genere gráficos por ti.

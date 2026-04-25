@@ -16,8 +16,8 @@ const Hero = () => {
               Dynamic Vector Graphics <span className="text-gradient">Engine</span>
             </h1>
             <p className="hero-subtitle">
-              El motor de renderizado determinista de alto rendimiento para gráficos broadcast profesionales.
-              Seguro, preciso y ahora potenciado con una Capa de Inteligencia para flujos de trabajo optimizados.
+              Crea overlays y tercios inferiores 10x más rápido. 
+              Automatiza tus gráficos de broadcast sin tocar una sola línea de código, garantizando un renderizado perfecto con exportación nativa ProRes 4444.
             </p>
 
             <div className="hero-actions">
@@ -27,7 +27,7 @@ const Hero = () => {
               </a>
               <a href={`${import.meta.env.BASE_URL}development/quick-start/`} className="btn btn-secondary">
                 <BookOpen size={20} />
-                Documentación
+                Leer la Documentación
               </a>
             </div>
           </motion.div>

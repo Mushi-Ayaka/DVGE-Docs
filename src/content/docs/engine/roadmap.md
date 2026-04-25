@@ -5,46 +5,23 @@ sidebar:
   order: 3
 ---
 
-DVGE ha evolucionado de ser una simple herramienta de previsualización a un motor robusto de calidad broadcast. Hacia aquí nos dirigimos.
+El futuro de DVGE se construye en torno a lo que realmente necesitas: velocidad, automatización y herramientas de nivel broadcast. Sin promesas vacías, solo evolución continua.
 
-## Estado Actual: v5.5.0 GA (Artifact Edition)
-El motor se encuentra en su versión más estable y feature-complete hasta la fecha.
-- **Knowledge Bridge AI**: Inyecta el contexto del motor a tu IA favorita vía PDF nativo.
-- **Mercado de Plugins**: Instala gráficos directamente desde la aplicación.
-- **Sandbox de Seguridad**: Aislamiento total del código de terceros.
-- **Motor Determinista**: Lógica de renderizado con precisión de fotogramas.
-- **Soporte ProRes 4444**: Exportación de video nativa con canal alfa.
+## 1. Un Espacio de Trabajo Más Rápido y Profesional
 
----
+- **Nueva Identidad Visual**: Un diseño moderno e intuitivo que se siente como en casa para los profesionales del video.
+- **Interfaz Multi-Ventana**: Desacoplamos el *Studio*, la *Librería* y el *Render* para que puedas organizar tu espacio de trabajo en múltiples monitores y evitar el desorden.
+- **Instalación de un Clic**: El motor descargará y gestionará internamente todo lo que necesita para funcionar. Te olvidas de las configuraciones pesadas; solo abres y creas.
 
-## Horizonte Futuro: Motor de Siguiente Generación
+## 2. Producción Masiva Automatizada
 
-La próxima actualización importante se enfoca en expandir el poder creativo del motor manteniendo sus estrictos estándares de confiabilidad.
+- **Panel de Renderizado por Lotes (Batch Render)**: Inyecta hojas de datos (como Excel o CSV) para generar decenas o cientos de variaciones de un gráfico en segundos. Crea los tercios inferiores de todo un equipo de fútbol sin duplicar capas ni escribir código.
 
+## 3. Composiciones Modulares Avanzadas
 
-### 1. Flujos de Trabajo Basados en Datos
-Actualmente, las propiedades se editan manualmente en el inspector. Estamos trabajando en:
-- **Inyección de Datos Externos**: Soporte para archivos CSV/JSON para generar múltiples versiones de un gráfico automáticamente (ej., 50 tercios inferiores para los créditos finales).
-- **Fuentes en Vivo**: Integración con APIs externas (como marcadores deportivos o datos electorales) para actualización de gráficos en tiempo real durante la transmisión.
+- **Gráficos Conectados**: Permite que el resultado de una animación alimente directamente a otra en tiempo real. Imagina componer flujos visuales complejos donde cada elemento reacciona a los demás.
 
-### 2. Kit Vectorial Nativo (`svg-kit`)
-Una nueva capa de API para hacer que la animación vectorial sea fácil:
-- **`animateStroke`**: Animar trazos SVG programáticamente sin manipulación directa de cadenas de texto.
-- **Aislamiento de Canvas SVG**: Un canvas dedicado de 1920x1080 con funciones de ayuda para dibujar e interpolar formas.
+## 4. Visión a Futuro: Estabilidad Absoluta y Control Remoto
 
-### 3. Disparadores Interactivos (`ctx.triggers`)
-Soporte para eventos de interacción en vivo:
-- **Botones de Acción**: Botones personalizados en el inspector que activan eventos específicos del plugin (ej., agregar un punto a un marcador).
-- **Historial de Disparos**: Cada clic se registra como un evento específico del fotograma, asegurando que la acción sea reproducible durante el render final.
-
-### 4. Presets Avanzados
-Expansión del esquema del manifiesto para incluir:
-- `3d-canvas`: Integración básica de Three.js dentro del sandbox.
-- `physics-engine`: Físicas de cuerpo rígido simplificadas para una sensación de movimiento "premium".
-
----
-
-## Deuda Técnica y Mantenimiento
-También estamos comprometidos con el endurecimiento interno continuo:
-- **Expansión I/O Atómico**: Avanzando hacia un sistema de proyectos respaldado por base de datos, aún más resistente.
-- **Perfilado de Rendimiento**: Reduciendo los tiempos de renderizado headless en un 20% adicional a través de caché de fotogramas binario.
+- **Estabilidad para Transmisiones Críticas**: Lanzaremos una versión "Lite" hiper-reducida enfocada únicamente en estabilidad ininterrumpida (LTS) para emisiones en vivo de larga duración.
+- **Control Remoto Móvil**: Una aplicación satélite en tu teléfono o tablet para disparar gráficos, actualizar marcadores o enviar alertas a la transmisión en vivo, sin tocar la computadora principal.

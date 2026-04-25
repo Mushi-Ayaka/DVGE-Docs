@@ -121,8 +121,10 @@
   width: 100%;
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 10px;
-  overflow: hidden;
   margin: 1.5rem 0;
+  display: block;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .sl-markdown-content th {
@@ -256,5 +258,17 @@ body:has(details#starlight__mobile-toc[open]) footer {
   }
 }
 
+/* ----- 16. RESPONSIVE MEDIA & MERMAID ----- */
+.sl-markdown-content img,
+.sl-markdown-content svg {
+  max-width: 100%;
+  height: auto;
+}
 
-
+/* Permitir scroll horizontal en contenedores Mermaid/SVG que sigan siendo muy anchos */
+.sl-markdown-content .mermaid,
+.sl-markdown-content pre.mermaid {
+  overflow-x: auto;
+  max-width: 100%;
+  -webkit-overflow-scrolling: touch;
+}
