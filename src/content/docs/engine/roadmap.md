@@ -22,7 +22,8 @@ Esta fase se centra en eliminar la fricción técnica y garantizar que el motor 
   - Sección de **Créditos OSS** (Reconocimiento a las bibliotecas que hacen posible DVGE).
   - Nueva sección "About" detallada.
 - **🔲 v5.9.0**: 
-  - Adquisición de **Certificados de Firma Digital (EV)** para eliminar avisos de SmartScreen (sujeto a estabilidad de ingresos).
+  - Optimizaciones de Shader & Native Previews.
+  - Refactorización del kernel de audio para mayor fidelidad en ProRes.
 
 ## Fase 2: Expansión y Sostenibilidad (v6.0+)
 
