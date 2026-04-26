@@ -5,23 +5,36 @@ sidebar:
   order: 3
 ---
 
-El futuro de DVGE se construye en torno a lo que realmente necesitas: velocidad, automatización y herramientas de nivel broadcast. Sin promesas vacías, solo evolución continua.
+El futuro de DVGE se construye en torno a la autonomía, la profesionalización y la sostenibilidad. Esta hoja de ruta refleja el compromiso de transformar un motor experimental en un estándar de la industria broadcast.
 
-## 1. Un Espacio de Trabajo Más Rápido y Profesional
+## Fase 1: Estabilización Atmosférica (v5.6 - v5.9)
 
-- **Nueva Identidad Visual**: Un diseño moderno e intuitivo que se siente como en casa para los profesionales del video.
-- **Interfaz Multi-Ventana**: Desacoplamos el *Studio*, la *Librería* y el *Render* para que puedas organizar tu espacio de trabajo en múltiples monitores y evitar el desorden.
-- **Instalación de un Clic**: El motor descargará y gestionará internamente todo lo que necesita para funcionar. Te olvidas de las configuraciones pesadas; solo abres y creas.
+Esta fase se centra en eliminar la fricción técnica y garantizar que el motor sea 100% autónomo.
 
-## 2. Producción Masiva Automatizada
+- **✅ v5.6.0 GA (Actual)**: 
+  - Gestión integral de proyectos (Galería).
+  - **Auto-Fetch**: Descarga autónoma de Chromium y FFmpeg.
+  - Remodelación del layout para mayor neutralidad profesional.
+- **🔲 v5.7.0**: 
+  - Lanzamiento del **Manifest v5.x** (soporte para sub-categorías de Plugins).
+  - Benchmarks de Transparencia nativos.
+- **🔲 v5.8.0**: 
+  - Sección de **Créditos OSS** (Reconocimiento a las bibliotecas que hacen posible DVGE).
+  - Nueva sección "About" detallada.
+- **🔲 v5.9.0**: 
+  - Adquisición de **Certificados de Firma Digital (EV)** para eliminar avisos de SmartScreen (sujeto a estabilidad de ingresos).
 
-- **Panel de Renderizado por Lotes (Batch Render)**: Inyecta hojas de datos (como Excel o CSV) para generar decenas o cientos de variaciones de un gráfico en segundos. Crea los tercios inferiores de todo un equipo de fútbol sin duplicar capas ni escribir código.
+## Fase 2: Expansión y Sostenibilidad (v6.0+)
 
-## 3. Composiciones Modulares Avanzadas
+El salto hacia la producción masiva y el modelo profesional.
 
-- **Gráficos Conectados**: Permite que el resultado de una animación alimente directamente a otra en tiempo real. Imagina componer flujos visuales complejos donde cada elemento reacciona a los demás.
+- **🔲 v6.0.0**: 
+  - **Batch Render Panel**: Renderizado masivo mediante CSV/Excel.
+  - Implementación del sistema de licencias (Lemon Squeezy) para funciones PRO.
+  - Transición a código cerrado para el núcleo del motor (manteniendo los plugins abiertos).
 
-## 4. Visión a Futuro: Estabilidad Absoluta y Control Remoto
+## Visión a Largo Plazo
 
-- **Estabilidad para Transmisiones Críticas**: Lanzaremos una versión "Lite" hiper-reducida enfocada únicamente en estabilidad ininterrumpida (LTS) para emisiones en vivo de larga duración.
-- **Control Remoto Móvil**: Una aplicación satélite en tu teléfono o tablet para disparar gráficos, actualizar marcadores o enviar alertas a la transmisión en vivo, sin tocar la computadora principal.
+- **Gráficos Conectados**: Flujos visuales reactivos donde un plugin alimenta a otro.
+- **Control Remoto**: App móvil satélite para disparar gráficos en vivo.
+- **LTS Edition**: Versión hiper-reducida enfocada únicamente en estabilidad ininterrumpida para transmisiones 24/7.

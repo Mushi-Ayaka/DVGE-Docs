@@ -9,12 +9,18 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ---
 
-## [5.5.0] — 2026-04-23 ✦ Versión Actual
+## [5.6.0] — 2026-04-26 ✦ Versión Actual
+### Gestión de Proyectos & Autonomía (The Freedom Update)
+- **Auto-Fetch de Dependencias (Chromium & FFmpeg)**: El motor ahora detecta y descarga automáticamente sus propios motores de renderizado en `%APPDATA%\DVGE\bin`, eliminando la dependencia de Chrome instalado globalmente.
+- **Gestión Integral de Proyectos**: Nueva interfaz en la Galería que permite renombrar y eliminar proyectos de forma atómica y segura mediante IPC.
+- **Control de Integridad de Plugins**: El sistema ahora detecta plugins faltantes o corruptos antes de abrir el editor, mostrando badges de error y bloqueando el acceso para evitar cierres inesperados.
+- **Estabilización del Frame 0**: Corrección crítica en `RenderWrapper` para asegurar que las propiedades se inyecten antes de la captura del primer fotograma, eliminando el parpadeo transparente.
+- **Identidad Solo Developer**: Actualización de la narrativa de la landing y documentación para reflejar su naturaleza independiente y compromiso de certificación futura.
+
+---
+
+## [5.5.0] — 2026-04-23
 ### GA Artifact Edition (Knowledge Bridge)
-- **Knowledge Bridge Nativo**: Inyección de reglas de motor (DVGE Master Rules) directamente desde el inspector mediante Arrastrar y Soltar (Drag & Drop) de un archivo `.pdf` físico auto-generado, garantizando que las IAs (Gemini, Claude, ChatGPT) obtengan el contexto de desarrollo exacto y sin errores de parseo.
-- **Auto-Generador PDF Interno**: Integración de una ventana silenciosa de Electron que compila `Rules.ts` a un archivo PDF temporal en caché, evadiendo las restricciones de "texto plano" de las IAs.
-- **Studio Master Refactor**: El plugin "DVGE Studio Master" ha sido optimizado con soporte `promptHelper` estandarizado, manteniendo la fidelidad de UI.
-- **Bugfix Build Pipeline**: Corregido Error #310 de React en `RenderWrapper` — el `early return` previo a los hooks causaba colisión de firma de hooks entre renders.
 
 ---
 

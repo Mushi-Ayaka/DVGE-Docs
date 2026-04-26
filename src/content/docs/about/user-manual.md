@@ -32,15 +32,19 @@ Si un plugin instalado recibe una mejora, el Catálogo mostrará un botón de **
 
 ---
 
-## 2. Gestión de Proyectos
+## 2. Gestión de Proyectos (v5.6.0)
+
+A partir de la versión 5.6, tienes control total sobre tu flujo de trabajo directamente desde la Galería de Proyectos:
 
 ### Crear un Nuevo Proyecto
 1. Ingresa un nombre para el proyecto.
 2. Selecciona una **plantilla gráfica** (local o instalada desde el Catálogo).
 3. Haz clic en **"Crear Proyecto"**.
 
-### Acceder a Proyectos Recientes
-Tus proyectos se guardan en **Documentos/DVG_Projects**. Cada tarjeta muestra la plantilla utilizada. Haz clic en **"Abrir"** para reanudar tu trabajo.
+### Organización y Mantenimiento
+- **Renombrar Proyectos**: Haz clic en el botón de configuración (engranaje) de cualquier tarjeta para cambiar el nombre del proyecto. El sistema renombrará la carpeta en el disco de forma segura.
+- **Eliminar Proyectos**: Limpia tu espacio de trabajo eliminando proyectos antiguos o erróneos directamente desde la Galería.
+- **Control de Integridad**: Si un plugin necesario para un proyecto ha sido borrado o movido, verás un aviso de **"MISSING PLUGIN"**. El motor bloqueará la apertura de ese proyecto para proteger la estabilidad de la aplicación hasta que el plugin sea restaurado.
 
 ---
 
