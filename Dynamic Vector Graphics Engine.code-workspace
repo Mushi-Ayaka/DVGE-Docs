@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"path": "../Dynamic Vector Graphics Engine"
+		},
+		{
+			"path": "."
+		},
+		{
+			"path": "../Dynamic-Vector-Engine-Plugins"
+		}
+	],
+	"settings": {}
+}

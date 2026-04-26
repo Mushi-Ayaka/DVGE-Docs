@@ -14,7 +14,29 @@ import '../styles/hero.css';
 		<Hero client:load />
 		<Pillars />
 		
-		<!-- More sections will go here -->
+		<section class="project-status">
+			<div class="status-card">
+				<div class="status-grid">
+					<div class="status-info">
+						<h3>Estado del Proyecto & Licencia</h3>
+						<p>
+							DVGE es actualmente un proyecto **Open Source** bajo la licencia **MIT**. Creemos en la transparencia y la colaboración durante esta fase crítica de desarrollo (v5.6.0 GA).
+						</p>
+						<p>
+							Nuestro objetivo es profesionalizar el motor. A medida que alcancemos la madurez técnica, introduciremos un modelo de monetización para financiar la infraestructura, soporte dedicado y, lo más importante, el **coste de certificados de firma digital (EV)** para garantizar una instalación sin avisos de SmartScreen.
+						</p>
+					</div>
+					<div class="status-roadmap">
+						<ul class="roadmap-list">
+							<li class="done">✅ v5.6.0: Gestión de Proyectos & Estabilidad</li>
+							<li>🔲 v6.0.0: Editor de Código Integrado</li>
+							<li>🔲 Firma Digital Oficial (EV Certificate)</li>
+							<li>🔲 Marketplace de Plugins Premium</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</section>
 	</main>
 
 	<Footer />
@@ -23,5 +45,79 @@ import '../styles/hero.css';
 <style>
 	main {
 		width: 100%;
+	}
+
+	.project-status {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 2rem 8rem;
+	}
+
+	.status-card {
+		background: rgba(255, 255, 255, 0.03);
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		border-radius: 24px;
+		padding: 3rem;
+		backdrop-filter: blur(20px);
+	}
+
+	.status-grid {
+		display: grid;
+		grid-template-columns: 1.5fr 1fr;
+		gap: 4rem;
+		align-items: center;
+	}
+
+	.status-info h3 {
+		font-size: 1.8rem;
+		margin-bottom: 1.5rem;
+		color: #fff;
+	}
+
+	.status-info p {
+		color: rgba(255, 255, 255, 0.6);
+		line-height: 1.7;
+		margin-bottom: 1rem;
+		font-size: 1.1rem;
+	}
+
+	.status-roadmap {
+		background: rgba(0, 0, 0, 0.2);
+		padding: 2rem;
+		border-radius: 16px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.roadmap-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+		gap: 12px;
+	}
+
+	.roadmap-list li {
+		font-size: 0.95rem;
+		color: rgba(255, 255, 255, 0.8);
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
+	.roadmap-list li.done {
+		color: #4ade80;
+		font-weight: 600;
+	}
+
+	@media (max-width: 968px) {
+		.status-grid {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+		}
+		
+		.status-card {
+			padding: 2rem;
+		}
 	}
 </style>

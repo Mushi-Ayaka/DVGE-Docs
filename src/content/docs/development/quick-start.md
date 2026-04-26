@@ -1,11 +1,11 @@
 ---
 title: Inicio Rápido
-description: Construye tu primer plugin para DVGE desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
+description: Construye tu primer Template para DVGE desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
 sidebar:
   order: 1
 ---
 
-Esta guía te llevará paso a paso para crear tu primer plugin de DVGE desde cero. No se requiere experiencia previa con el motor.
+Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) de DVGE desde cero. No se requiere experiencia previa con el motor.
 
 ## Requisitos Previos
 - DVGE v5.5.0+ instalado y ejecutándose.
@@ -13,13 +13,13 @@ Esta guía te llevará paso a paso para crear tu primer plugin de DVGE desde cer
 
 ---
 
-## Paso 1: Crear la Carpeta del Plugin
+## Paso 1: Crear la Carpeta del Template
 
-Abre DVGE, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-plugin`.
+Abre DVGE, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
 
 ```
 DVG_Plugins/
-└── mi-primer-plugin/    ← Crea esta carpeta
+└── mi-primer-template/    ← Crea esta carpeta
     ├── manifest.json
     ├── index.html
     ├── style.css
@@ -30,15 +30,18 @@ DVG_Plugins/
 
 ## Paso 2: El Manifiesto (`manifest.json`)
 
-Este archivo es el descriptor del plugin. Le indica al motor qué es el plugin y qué propiedades expone al usuario.
+Este archivo es el descriptor. Le indica al motor qué tipo de módulo es (`type: "template"`) y qué propiedades expone al usuario.
 
 ```json
 {
-  "id": "mi-primer-plugin",
-  "name": "Mi Primer Plugin",
+  "id": "com.dev.mi-primer-template",
+  "name": "Mi Primer Template",
   "version": "1.0.0",
+  "author": "Tu Nombre",
+  "type": "template",
   "description": "Un tercio inferior (lower third) simple y animado.",
   "presets": ["branding", "motion"],
+  "permissions": [],
   "schema": [
     {
       "type": "string",
@@ -139,7 +142,7 @@ Toda la lógica de animación debe basarse en `ctx.timeline` o `ctx.frame`. Esto
 ## Paso 6: Cargar y Previsualizar
 
 1. En DVGE, crea un **Nuevo Proyecto**.
-2. Selecciona `mi-primer-plugin` de la lista de plugins.
+2. Selecciona `Mi Primer Template` de la lista de plantillas disponibles en el Studio.
 3. El gráfico debería aparecer inmediatamente en la ventana de vista previa.
 4. Edita los campos de **Nombre** y **Rol** en el inspector — el gráfico se actualizará en tiempo real.
 

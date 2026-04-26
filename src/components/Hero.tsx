@@ -12,6 +12,10 @@ const Hero = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
+            <div style={{ display: 'inline-flex', alignItems: 'center', gap: '8px', background: 'rgba(228, 76, 48, 0.1)', border: '1px solid #E44C30', padding: '4px 12px', borderRadius: '100px', marginBottom: '24px' }}>
+              <span style={{ width: '8px', height: '8px', background: '#E44C30', borderRadius: '50%', boxShadow: '0 0 10px #E44C30' }}></span>
+              <span style={{ fontSize: '12px', fontWeight: 600, color: '#E44C30', textTransform: 'uppercase', letterSpacing: '1px' }}>Open Source / En Desarrollo</span>
+            </div>
             <h1 className="hero-title">
               Dynamic Vector Graphics <span className="text-gradient">Engine</span>
             </h1>
@@ -21,9 +25,9 @@ const Hero = () => {
             </p>
 
             <div className="hero-actions">
-              <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.5.0/DVGE-Setup-5.5.0.exe" className="btn btn-primary">
+              <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe" className="btn btn-primary">
                 <Download size={20} />
-                Descargar v5.5.0
+                Descargar v5.6.0
               </a>
               <a href={`${import.meta.env.BASE_URL}development/quick-start/`} className="btn btn-secondary">
                 <BookOpen size={20} />
