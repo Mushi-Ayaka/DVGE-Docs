@@ -8,14 +8,45 @@ import '../styles/hero.css';
 ---
 
 <MainLayout
-	title="DVGE — Motor de Gráficos Broadcast | Overlays y Lower Thirds ProRes 4444"
-	description="Crea overlays, lower thirds y títulos animados para broadcast en Windows. Exportación nativa ProRes 4444 con canal alfa. Open Source MIT, sin instalaciones previas."
+	title="DVGE — Lower Thirds y Overlays Broadcast para Windows | ProRes 4444"
+	description="DVGE es una aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects. Open Source MIT."
 >
 	<Navigation />
 	
 	<main>
 		<Hero client:load />
 		<Pillars />
+		
+		<!-- Sección de casos de uso — vocabulario de editores de video -->
+		<section class="use-cases">
+			<div class="use-cases-inner">
+				<p class="use-cases-label">Para quién es</p>
+				<h2 class="use-cases-title">No es un motor vectorial.<br />Es una herramienta de producción.</h2>
+				<p class="use-cases-desc">
+					DVGE es una aplicación de escritorio para Windows diseñada para editores de video,
+					productores broadcast y desarrolladores que necesitan gráficos animados listos para
+					arrastrar a DaVinci Resolve, Premiere Pro o After Effects.
+				</p>
+				<div class="use-cases-grid">
+					<div class="use-case-item">
+						<span class="use-case-tag">Lower Thirds</span>
+						<p>Bandas de texto animadas para entrevistas, noticias y documentales. Exportación directa como .mov con canal alfa.</p>
+					</div>
+					<div class="use-case-item">
+						<span class="use-case-tag">Overlays Broadcast</span>
+						<p>Marcadores, relojes, widgets de clima y scoreboard para transmisiones en vivo. Compatible con OBS y vMix.</p>
+					</div>
+					<div class="use-case-item">
+						<span class="use-case-tag">Títulos Animados</span>
+						<p>Aperturas cinemáticas y títulos de sección con animaciones frame-perfect reproducibles en cualquier hardware.</p>
+					</div>
+					<div class="use-case-item">
+						<span class="use-case-tag">Automatización</span>
+						<p>Genera gráficos en lote desde datos externos. Ideal para producción de noticias y deportes con datos en tiempo real.</p>
+					</div>
+				</div>
+			</div>
+		</section>
 		
 		<section class="project-status">
 			<div class="status-inner">
@@ -66,10 +97,12 @@ import '../styles/hero.css';
 		"@type": "SoftwareApplication",
 		"name": "Dynamic Vector Graphics Engine (DVGE)",
 		"alternateName": "DVGE",
-		"description": "Motor de gráficos broadcast para Windows. Crea overlays, lower thirds y títulos animados con exportación nativa ProRes 4444 + Alpha. Open Source MIT.",
+		"description": "Aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects.",
 		"applicationCategory": "MultimediaApplication",
+		"applicationSubCategory": "Broadcast Graphics Software",
 		"operatingSystem": "Windows 10, Windows 11",
 		"softwareVersion": "5.6.0",
+		"keywords": "lower thirds, overlays broadcast, gráficos broadcast, ProRes 4444, DaVinci Resolve graphics, broadcast animation, lower third software Windows",
 		"releaseNotes": "https://mushi-ayaka.github.io/DVGE-Docs/about/changelog/",
 		"downloadUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe",
 		"installUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe",
@@ -85,7 +118,16 @@ import '../styles/hero.css';
 			"price": "0",
 			"priceCurrency": "USD"
 		},
-		"url": "https://mushi-ayaka.github.io/DVGE-Docs/"
+		"url": "https://mushi-ayaka.github.io/DVGE-Docs/",
+		"featureList": [
+			"Exportación ProRes 4444 con canal alfa",
+			"Lower thirds animados",
+			"Overlays broadcast",
+			"Compatible con DaVinci Resolve, Premiere Pro, After Effects",
+			"Sistema de plugins extensible",
+			"Preview en tiempo real a 60fps",
+			"Sin instalación de dependencias previas"
+		]
 	}
 	</script>
 
@@ -108,6 +150,92 @@ import '../styles/hero.css';
 <style>
 	main {
 		width: 100%;
+	}
+
+	/* ── Casos de uso ── */
+	.use-cases {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 4rem;
+	}
+
+	@media (min-width: 768px) {
+		.use-cases { padding: 2rem 4rem 6rem; }
+	}
+
+	.use-cases-inner {
+		border-top: 1px solid rgba(255,255,255,0.06);
+		padding-top: 4rem;
+	}
+
+	.use-cases-label {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.65rem;
+		font-weight: 500;
+		color: #E44C30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin: 0 0 1rem 0;
+	}
+
+	.use-cases-title {
+		font-family: 'Outfit', sans-serif;
+		font-size: clamp(1.75rem, 4vw, 2.75rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.02em;
+		color: #fff;
+		margin: 0 0 1.25rem 0;
+	}
+
+	.use-cases-desc {
+		font-size: 0.9rem;
+		color: #555;
+		line-height: 1.7;
+		max-width: 600px;
+		margin: 0 0 3rem 0;
+	}
+
+	.use-cases-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1px;
+		background: rgba(255,255,255,0.06);
+		border: 1px solid rgba(255,255,255,0.06);
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	@media (max-width: 600px) {
+		.use-cases-grid { grid-template-columns: 1fr; }
+	}
+
+	.use-case-item {
+		background: #050505;
+		padding: 1.75rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.use-case-item:hover {
+		background: rgba(255,255,255,0.02);
+	}
+
+	.use-case-tag {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.7rem;
+		font-weight: 600;
+		color: #E44C30;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	.use-case-item p {
+		font-size: 0.875rem;
+		color: #555;
+		line-height: 1.65;
+		margin: 0;
 	}
 
 	/* ── Sección de Estado ── */

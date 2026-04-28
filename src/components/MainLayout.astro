@@ -9,7 +9,7 @@ interface Props {
 
 const {
 	title,
-	description = "Motor de gráficos broadcast para Windows. Crea overlays, lower thirds y títulos animados con exportación nativa ProRes 4444 + Alpha. Open Source, MIT.",
+	description = "DVGE es una aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects. Open Source MIT.",
 	ogImage = "https://mushi-ayaka.github.io/DVGE-Docs/icon_highlight.png"
 } = Astro.props;
 
@@ -27,6 +27,11 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mushi-ayaka.github.io"
 		<link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.png`} />
 
 		<title>{title}</title>
+
+		<!-- Keywords explícitas para diferenciación semántica -->
+		<meta name="keywords" content="broadcast graphics software, lower thirds Windows, overlays DaVinci Resolve, gráficos broadcast, lower thirds animados, overlay broadcast, ProRes 4444 Windows, Electron broadcast app, DVGE, Dynamic Vector Graphics Engine" />
+		<meta name="application-name" content="DVGE" />
+		<meta name="category" content="Broadcast Graphics Software" />
 
 		<!-- Open Graph -->
 		<meta property="og:type"        content="website" />
