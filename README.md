@@ -1,43 +1,59 @@
-# Astro Starter Kit: Minimal
+# DVGE Docs — Landing & Documentación Oficial
 
-```sh
-npm create astro@latest -- --template minimal
+Sitio web oficial del **Dynamic Vector Graphics Engine (DVGE)**.
+Construido con Astro + Starlight. Desplegado en GitHub Pages.
+
+**Producción:** https://mushi-ayaka.github.io/DVGE-Docs/
+
+---
+
+## Stack
+
+- [Astro 6](https://astro.build) — framework principal
+- [Starlight](https://starlight.astro.build) — sistema de documentación
+- [React 19](https://react.dev) — componentes interactivos (Hero, PluginGallery)
+- [Framer Motion](https://www.framer.com/motion/) — animaciones del hero
+- [Rehype Mermaid](https://github.com/remcohaszing/rehype-mermaid) — diagramas en docs
+
+## Estructura
+
+```
+src/
+├── components/       # Nav, Hero, Pillars, Footer, PluginGallery
+├── content/docs/     # 22 páginas de documentación (Starlight)
+│   ├── engine/       # Arquitectura, Rendimiento, Benchmarks, Roadmap
+│   ├── ecosystem/    # API, Comunidad, Repositorio de plugins
+│   ├── development/  # Quick Start, Manifest, AI Guide, Contributing
+│   └── about/        # Manual, Changelog, Visión, Licencia, etc.
+├── pages/
+│   └── index.astro   # Página de inicio (landing)
+└── styles/           # Variables, hero.css, starlight-theme.css
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Desarrollo local
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
+```bash
+npm install
+npm run dev       # http://localhost:4321
+npm run build     # build de producción
+npm run preview   # preview del build
 ```
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploy
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+El deploy es automático vía GitHub Actions al hacer push a `main`.
+El workflow está en `.github/workflows/`.
 
-Any static assets, like images, can be placed in the `public/` directory.
+## Sincronización con el motor
 
-## 🧞 Commands
+El contenido de esta landing se sincroniza con el engine mediante la CLI `dvge-sync`,
+ubicada en `Dynamic Vector Graphics Engine/tools/dvge-sync/`.
 
-All commands are run from the root of the project, from a terminal:
+Para propagar una nueva versión del motor a esta landing:
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+```bash
+cd "Dynamic Vector Graphics Engine/tools/dvge-sync"
+node index.js sync all
+```
 
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Ver `AGENT-MANUAL.md` en la CLI para el flujo completo de release.
