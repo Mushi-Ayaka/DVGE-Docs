@@ -7,7 +7,10 @@ import Footer from '../components/Footer.astro';
 import '../styles/hero.css';
 ---
 
-<MainLayout title="DVGE | Dynamic Vector Graphics Engine">
+<MainLayout
+	title="DVGE — Motor de Gráficos Broadcast | Overlays y Lower Thirds ProRes 4444"
+	description="Crea overlays, lower thirds y títulos animados para broadcast en Windows. Exportación nativa ProRes 4444 con canal alfa. Open Source MIT, sin instalaciones previas."
+>
 	<Navigation />
 	
 	<main>
@@ -15,32 +18,91 @@ import '../styles/hero.css';
 		<Pillars />
 		
 		<section class="project-status">
-			<div class="status-card">
-				<div class="status-grid">
-					<div class="status-info">
-						<h3>Estado del Proyecto & Licencia</h3>
-						<p>
-							DVGE es actualmente un proyecto <strong>Open Source</strong> bajo la licencia <strong>MIT</strong>, impulsado de forma independiente. Creemos en la transparencia absoluta durante esta fase de desarrollo (v5.6.0 GA).
-						</p>
-						<p>
-							Como desarrollador único, mi objetivo es transformar este motor en un estándar profesional. Durante esta fase crítica, nos centramos en la madurez técnica y la estabilidad del núcleo para ofrecer la mejor experiencia posible a la comunidad broadcast.
-						</p>
-					</div>
-					<div class="status-roadmap">
-						<ul class="roadmap-list">
-							<li class="done">✅ v5.6.0: Gestión de Proyectos & Remodelación del layout</li>
-							<li>🔲 v5.7.0: Manifest v5.x+ para tools y templates</li>
-							<li>🔲 v5.8.0: Panel de Créditos & Mejoras en render queue</li>
-							<li>🔲 v5.9.0: Optimizaciones de Shader & Native Previews</li>
-							<li>🔲 v6.0.0: Render en Lote</li>
-						</ul>
-					</div>
+			<div class="status-inner">
+				<div class="status-left">
+					<p class="status-label">Estado del proyecto</p>
+					<h3 class="status-title">Open Source.<br />En desarrollo activo.</h3>
+					<p class="status-desc">
+						DVGE es un proyecto <strong>MIT</strong> impulsado de forma independiente.
+						El foco actual está en la madurez técnica del núcleo y la estabilidad
+						del ecosistema de plugins.
+					</p>
+					<a href="/DVGE-Docs/engine/roadmap/" class="status-link">Ver hoja de ruta completa →</a>
+				</div>
+				<div class="status-right">
+					<ul class="roadmap-list">
+						<li class="done">
+							<span class="roadmap-version">v5.6.0</span>
+							<span class="roadmap-desc">Gestión de Proyectos & Autonomía</span>
+						</li>
+						<li>
+							<span class="roadmap-version">v5.7.0</span>
+							<span class="roadmap-desc">Manifest v5.x+ para tools y templates</span>
+						</li>
+						<li>
+							<span class="roadmap-version">v5.8.0</span>
+							<span class="roadmap-desc">Panel de Créditos & render queue</span>
+						</li>
+						<li>
+							<span class="roadmap-version">v5.9.0</span>
+							<span class="roadmap-desc">Shader & Native Previews</span>
+						</li>
+						<li>
+							<span class="roadmap-version">v6.0.0</span>
+							<span class="roadmap-desc">Render en Lote</span>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</section>
 	</main>
 
 	<Footer />
+
+	<!-- JSON-LD: SoftwareApplication -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "SoftwareApplication",
+		"name": "Dynamic Vector Graphics Engine (DVGE)",
+		"alternateName": "DVGE",
+		"description": "Motor de gráficos broadcast para Windows. Crea overlays, lower thirds y títulos animados con exportación nativa ProRes 4444 + Alpha. Open Source MIT.",
+		"applicationCategory": "MultimediaApplication",
+		"operatingSystem": "Windows 10, Windows 11",
+		"softwareVersion": "5.6.0",
+		"releaseNotes": "https://mushi-ayaka.github.io/DVGE-Docs/about/changelog/",
+		"downloadUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe",
+		"installUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe",
+		"license": "https://opensource.org/licenses/MIT",
+		"isAccessibleForFree": true,
+		"author": {
+			"@type": "Person",
+			"name": "Jonatan Barón",
+			"url": "https://github.com/Mushi-Ayaka"
+		},
+		"offers": {
+			"@type": "Offer",
+			"price": "0",
+			"priceCurrency": "USD"
+		},
+		"url": "https://mushi-ayaka.github.io/DVGE-Docs/"
+	}
+	</script>
+
+	<!-- JSON-LD: WebSite -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "DVGE — Dynamic Vector Graphics Engine",
+		"url": "https://mushi-ayaka.github.io/DVGE-Docs/",
+		"description": "Documentación oficial y descarga del motor de gráficos broadcast DVGE.",
+		"author": {
+			"@type": "Person",
+			"name": "Jonatan Barón"
+		}
+	}
+	</script>
 </MainLayout>
 
 <style>
@@ -48,77 +110,108 @@ import '../styles/hero.css';
 		width: 100%;
 	}
 
+	/* ── Sección de Estado ── */
 	.project-status {
 		max-width: 1200px;
 		margin: 0 auto;
-		padding: 4rem 2rem 8rem;
+		padding: 2rem 1.5rem 6rem;
+		border-top: 1px solid rgba(255,255,255,0.06);
 	}
 
-	.status-card {
-		background: rgba(255, 255, 255, 0.03);
-		border: 1px solid rgba(255, 255, 255, 0.08);
-		border-radius: 24px;
-		padding: 3rem;
-		backdrop-filter: blur(20px);
+	@media (min-width: 768px) {
+		.project-status { padding: 4rem 4rem 8rem; }
 	}
 
-	.status-grid {
+	.status-inner {
 		display: grid;
-		grid-template-columns: 1.5fr 1fr;
-		gap: 4rem;
-		align-items: center;
+		grid-template-columns: 1fr;
+		gap: 3rem;
 	}
 
-	.status-info h3 {
-		font-size: 1.8rem;
-		margin-bottom: 1.5rem;
+	@media (min-width: 768px) {
+		.status-inner {
+			grid-template-columns: 1fr 1fr;
+			gap: 6rem;
+			align-items: start;
+		}
+	}
+
+	.status-label {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.65rem;
+		font-weight: 500;
+		color: #E44C30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin: 0 0 1rem 0;
+	}
+
+	.status-title {
+		font-family: 'Outfit', sans-serif;
+		font-size: clamp(1.5rem, 4vw, 2.25rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.02em;
 		color: #fff;
+		margin: 0 0 1.25rem 0;
 	}
 
-	.status-info p {
-		color: rgba(255, 255, 255, 0.6);
+	.status-desc {
+		font-size: 0.9rem;
+		color: #666;
 		line-height: 1.7;
-		margin-bottom: 1rem;
-		font-size: 1.1rem;
+		margin: 0 0 1.5rem 0;
 	}
 
-	.status-roadmap {
-		background: rgba(0, 0, 0, 0.2);
-		padding: 2rem;
-		border-radius: 16px;
-		border: 1px solid rgba(255, 255, 255, 0.05);
-	}
+	.status-desc strong { color: #999; font-weight: 600; }
 
+	.status-link {
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: #E44C30;
+		text-decoration: none;
+		letter-spacing: 0.02em;
+		transition: opacity 0.2s;
+	}
+	.status-link:hover { opacity: 0.7; }
+
+	/* Roadmap list — estilo tabla técnica */
 	.roadmap-list {
 		list-style: none;
 		padding: 0;
 		margin: 0;
 		display: flex;
 		flex-direction: column;
-		gap: 12px;
 	}
 
 	.roadmap-list li {
-		font-size: 0.95rem;
-		color: rgba(255, 255, 255, 0.8);
-		display: flex;
-		align-items: center;
-		gap: 10px;
+		display: grid;
+		grid-template-columns: 4.5rem 1fr;
+		gap: 1rem;
+		align-items: baseline;
+		padding: 0.85rem 0;
+		border-bottom: 1px solid rgba(255,255,255,0.05);
+		font-size: 0.85rem;
 	}
 
-	.roadmap-list li.done {
-		color: #4ade80;
-		font-weight: 600;
+	.roadmap-list li:first-child { border-top: 1px solid rgba(255,255,255,0.05); }
+
+	.roadmap-version {
+		font-family: 'JetBrains Mono', 'Fira Code', monospace;
+		font-size: 0.7rem;
+		color: #444;
+		letter-spacing: 0.05em;
 	}
 
-	@media (max-width: 968px) {
-		.status-grid {
-			grid-template-columns: 1fr;
-			gap: 2rem;
-		}
-		
-		.status-card {
-			padding: 2rem;
-		}
+	.roadmap-desc {
+		color: #555;
+	}
+
+	.roadmap-list li.done .roadmap-version {
+		color: #E44C30;
+	}
+
+	.roadmap-list li.done .roadmap-desc {
+		color: #999;
 	}
 </style>

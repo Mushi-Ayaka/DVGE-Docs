@@ -5,7 +5,7 @@ sidebar:
   order: 7
 ---
 
-Esta Política de Privacidad describe cómo se recopila, utiliza y comparte tu información personal cuando visitas **dvge.jonatanbaron.com** (el "Sitio").
+Esta Política de Privacidad describe cómo se recopila, utiliza y comparte tu información personal cuando visitas la documentación oficial de DVGE en **mushi-ayaka.github.io/DVGE-Docs** (el "Sitio").
 
 ## 1. Recopilación de Datos
 

@@ -68,6 +68,14 @@ Cada hook recibe el mismo objeto `ctx`:
 | `ctx.utils` | `object` | Biblioteca integrada de funciones matemáticas y de suavizado (easing). |
 | `ctx.settings` | `object` | Metadatos del motor: `fps`, `duration`, `width`, `height`. |
 
+**Valores de `ctx.settings`:**
+```javascript
+ctx.settings.fps        // number — fotogramas por segundo (ej. 60)
+ctx.settings.duration   // number — duración total en fotogramas (ej. 120 para 2s a 60fps)
+ctx.settings.width      // number — ancho del lienzo en píxeles (ej. 1920)
+ctx.settings.height     // number — alto del lienzo en píxeles (ej. 1080)
+```
+
 ---
 
 ## `ctx.timeline`

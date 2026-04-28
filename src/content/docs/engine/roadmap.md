@@ -32,10 +32,11 @@ El salto hacia la producción masiva y el modelo profesional.
 - **🔲 v6.0.0**: 
   - **Batch Render Panel**: Renderizado masivo mediante CSV/Excel.
   - Implementación del sistema de licencias (Lemon Squeezy) para funciones PRO.
-  - Transición a código cerrado para el núcleo del motor (manteniendo los plugins abiertos).
+  - Módulos premium con licencia comercial (el núcleo del motor permanece MIT).
 
 ## Visión a Largo Plazo
 
 - **Gráficos Conectados**: Flujos visuales reactivos donde un plugin alimenta a otro.
 - **Control Remoto**: App móvil satélite para disparar gráficos en vivo.
 - **LTS Edition**: Versión hiper-reducida enfocada únicamente en estabilidad ininterrumpida para transmisiones 24/7.
+

@@ -19,6 +19,8 @@ DVGE no existiría sin el trabajo colosal de los desarrolladores de estas infrae
 
 - [Repositorio de Remotion](https://github.com/remotion-dev/remotion)
 
+> **Nota de licencia:** Remotion no es MIT. Opera bajo una licencia dual: gratuita para individuos y organizaciones sin fines de lucro o con hasta 3 empleados, y de pago (licencia corporativa) para organizaciones con fines de lucro de mayor tamaño. DVGE actualmente califica bajo la licencia gratuita. Consulta [remotion.pro](https://www.remotion.pro) antes de usar DVGE como base de un producto comercial.
+
 ### 2. Electron & Chromium
 
 **El contenedor y el lienzo.** Electron nos permite llevar el ecosistema web al escritorio interactuando con el sistema de archivos de forma atómica. Chromium, con su motor V8 y WebGL, actúa como nuestro lienzo de renderizado ultrarrápido.
@@ -35,5 +37,5 @@ DVGE no existiría sin el trabajo colosal de los desarrolladores de estas infrae
 
 **La interfaz y la lógica.** React nos permite construir la arquitectura multi-ventana y ofrecer a la comunidad una forma estándar, declarativa e inmensamente popular de programar animaciones.
 
- [Repositorio de React](https://github.com/facebook/react)
+- [Repositorio de React](https://github.com/facebook/react)
 

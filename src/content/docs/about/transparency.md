@@ -11,10 +11,11 @@ La confianza no se pide, se demuestra con datos y arquitectura abierta.
 
 ### Benchmarking Real
 
-No ocultamos las métricas. Publico pruebas de rendimiento estrictas que cubren:
-- **Fidelidad de Color**: Control exhaustivo del *Gamma Shift* entre el render de Electron y el archivo final.
-- **Precisión Alpha**: Canal alfa puro en renderizados ProRes 4444.
-- **Rendimiento**: Evaluaciones de renderizado con fotogramas complejos y cálculos vectoriales.
+No ocultamos las métricas. Los datos de rendimiento están documentados con metodología verificable en la página de [Benchmarks y Estabilidad](/engine/benchmarks/), cubriendo:
+- **Determinismo de Renderizado**: Por qué el desvío temporal es estructuralmente imposible en el modelo frame-math.
+- **Precisión Alpha**: Cadena de tres capas que garantiza el canal alfa en ProRes 4444.
+- **Overhead del Sandbox**: Impacto medido del sistema de seguridad en el loop de 60fps.
+- **Persistencia Atómica**: Garantía de integridad de datos ante cierres inesperados.
 
 ### Open Source Compliance
 

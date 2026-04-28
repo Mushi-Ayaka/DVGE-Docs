@@ -24,13 +24,15 @@ El PDF incluye ejemplos de código, la tabla de `ctx.utils`, los tipos del `sche
 
 ---
 
-## Método Manual: Prompt Maestro (v5.0.0+)
+## Método Manual: Prompt (v5.0.0+)
 
-Si no tienes acceso al Knowledge Bridge, copia este bloque en cualquier asistente de IA:
+Si no tienes acceso al Knowledge Bridge, copia este bloque en cualquier asistente de IA.
+
+Este prompt usa el modo **Smart Engine / Auto-Rescue**: en lugar del registro estándar `dvEngine.register()`, define una función global `window.renderDVGE` que el motor detecta y conecta automáticamente al ciclo de vida. Es el modo recomendado para código generado por IA porque tolera errores estructurales comunes. Para desarrollo manual de plugins, usa `dvEngine.register()` como se describe en la [Guía de Inicio Rápido](/development/quick-start/).
 
 ```text
 Act as a senior Motion Graphics developer. Generate a plugin for the
-DVGE engine v5.5.0 GA following these simplified rules:
+DVGE engine v5.6.0 GA following these simplified rules:
 
 SMART ENGINE COMPATIBILITY:
 - Do NOT use dvEngine.register(). The engine will wrap your code.

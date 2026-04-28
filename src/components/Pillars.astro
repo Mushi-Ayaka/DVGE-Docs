@@ -5,123 +5,252 @@ import IconZap from './icons/IconZap.astro';
 
 const pillars = [
   {
-    title: "Knowledge Bridge (v5.6)",
-    description: "Inyección nativa de reglas para IAs. Genera PDFs maestros para que Claude, Gemini o GPT entiendan el motor y generen plugins perfectos al primer intento.",
+    title: "AI-Native Workflow",
+    description: "Arrastra el PDF de reglas del motor directamente a Claude, Gemini o ChatGPT. La IA recibe el contexto exacto del sandbox y produce código compatible al primer intento, sin iteraciones.",
     color: "#E44C30",
-    icon: IconZap
+    icon: IconZap,
+    featured: true
   },
   {
-    title: "Auto-Fetch Deps",
-    description: "Independencia total. El motor detecta y descarga automáticamente Chromium y FFmpeg en el primer inicio, garantizando el renderizado sin instalaciones previas.",
-    color: "#00f2ff",
-    icon: IconCpu
+    title: "ProRes 4444 + Alpha",
+    description: "Canal alfa puro desde el fotograma 0. Compatible con DaVinci Resolve, Premiere Pro y After Effects sin configuración adicional.",
+    color: "#ffffff",
+    icon: IconZap,
+    featured: false
+  },
+  {
+    title: "Sin Dependencias Previas",
+    description: "Chromium y FFmpeg se descargan automáticamente en el primer inicio. Cero configuración del entorno.",
+    color: "#ffffff",
+    icon: IconCpu,
+    featured: false
   },
   {
     title: "Sandbox de Seguridad",
-    description: "Caja de arena inquebrantable. Ejecuta plugins de la comunidad con total confianza mediante Shadow DOM y aislamiento de procesos nativo.",
-    color: "#ffd700",
-    icon: IconShield
-  },
-  {
-    title: "Transparencia Pro",
-    description: "Exportación nativa en ProRes 4444 con canal alfa puro. Estabilidad garantizada desde el fotograma 0 para los pipelines de broadcast más exigentes.",
-    color: "#a855f7",
-    icon: IconZap
+    description: "Shadow DOM + proxy fakeWindow. Ningún plugin de terceros accede al sistema host.",
+    color: "#ffffff",
+    icon: IconShield,
+    featured: false
   }
 ];
 ---
 
 <section class="pillars-section">
+
+  <!-- Encabezado de sección — alineado a la izquierda, no centrado -->
   <div class="section-header">
-    <h2 class="section-title">Construido para <span class="text-gradient">Confiabilidad</span></h2>
-    <p class="section-subtitle">Los gráficos de transmisión profesional requieren más que solo animación. Requieren excelencia en ingeniería.</p>
+    <p class="section-label">Arquitectura</p>
+    <h2 class="section-title">Construido para<br /><em>producción real</em></h2>
   </div>
 
-  <div class="pillars-grid">
-    {pillars.map((pillar) => (
-      <div class="pillar-card">
-        <div class="pillar-icon" style={`--icon-color: ${pillar.color}`}>
-          <pillar.icon color={pillar.color} size={32} />
-        </div>
-        <h3>{pillar.title}</h3>
-        <p>{pillar.description}</p>
+  <!-- Layout asimétrico: card grande izquierda + columna de cards pequeñas derecha -->
+  <div class="pillars-layout">
+
+    <!-- Card destacada -->
+    <div class="pillar-featured">
+      <div class="pillar-featured-inner">
+        <div class="pillar-number" aria-hidden="true">01</div>
+        <h3>AI-Native Workflow</h3>
+        <p>Arrastra el PDF de reglas del motor directamente a Claude, Gemini o ChatGPT. La IA recibe el contexto exacto del sandbox y produce código compatible al primer intento, sin iteraciones.</p>
+        <div class="pillar-featured-rule" aria-hidden="true" />
+        <a href="/DVGE-Docs/development/ai-guide/" class="pillar-link">
+          Ver guía de IA →
+        </a>
       </div>
-    ))}
+    </div>
+
+    <!-- Columna de cards secundarias -->
+    <div class="pillars-secondary">
+      {pillars.slice(1).map((pillar, i) => (
+        <div class="pillar-card">
+          <span class="pillar-number" aria-hidden="true">0{i + 2}</span>
+          <h3>{pillar.title}</h3>
+          <p>{pillar.description}</p>
+        </div>
+      ))}
+    </div>
+
   </div>
 </section>
-
 
 <style>
   .pillars-section {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 8rem 2rem;
+    padding: 6rem 1.5rem 6rem;
   }
 
+  @media (min-width: 768px) {
+    .pillars-section {
+      padding: 8rem 4rem 8rem;
+    }
+  }
+
+  /* Encabezado — izquierda, no centrado */
   .section-header {
-    text-align: center;
     margin-bottom: 4rem;
   }
 
+  .section-label {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.65rem;
+    font-weight: 500;
+    color: #E44C30;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 0 0 1rem 0;
+  }
+
   .section-title {
-    font-size: 3rem;
-    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: #fff;
+    margin: 0;
   }
 
-  .section-subtitle {
-    color: var(--color-text-muted);
-    font-size: 1.2rem;
-    max-width: 700px;
-    margin: 0 auto;
+  .section-title em {
+    font-style: normal;
+    color: #444;
+    -webkit-text-stroke: 0;
   }
 
-  .pillars-grid {
+  /* Layout asimétrico */
+  .pillars-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .pillars-layout {
+      grid-template-columns: 1.4fr 1fr;
+      align-items: start;
+    }
+  }
+
+  /* Card destacada */
+  .pillar-featured {
+    border: 1px solid rgba(228, 76, 48, 0.25);
+    border-radius: 4px;
+    background: rgba(228, 76, 48, 0.04);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pillar-featured::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(to right, #E44C30, transparent);
+  }
+
+  .pillar-featured-inner {
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-height: 280px;
+  }
+
+  @media (min-width: 768px) {
+    .pillar-featured-inner {
+      padding: 3rem;
+      min-height: 360px;
+    }
+  }
+
+  .pillar-featured h3 {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(1.3rem, 3vw, 1.75rem);
+    font-weight: 700;
+    color: #fff;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+
+  .pillar-featured p {
+    font-size: 0.95rem;
+    color: #888;
+    line-height: 1.7;
+    margin: 0;
+    flex: 1;
+  }
+
+  .pillar-featured-rule {
+    width: 40px;
+    height: 1px;
+    background: rgba(228, 76, 48, 0.4);
+  }
+
+  .pillar-link {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #E44C30;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .pillar-link:hover { opacity: 0.7; }
+
+  /* Número de card */
+  .pillar-number {
+    font-family: 'JetBrains Mono', 'Fira Code', monospace;
+    font-size: 0.65rem;
+    color: #333;
+    letter-spacing: 0.1em;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Cards secundarias */
+  .pillars-secondary {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
   }
 
   .pillar-card {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    padding: 3rem 2rem;
-    backdrop-filter: var(--glass-blur);
-    transition: transform 0.3s ease, border-color 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    padding: 1.75rem;
+    background: rgba(255, 255, 255, 0.02);
+    transition: border-color 0.2s ease, background 0.2s ease;
   }
 
   .pillar-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(228, 76, 48, 0.4);
-  }
-
-  .pillar-icon {
-    width: 64px;
-    height: 64px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: var(--radius-md);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 2rem;
-    color: var(--icon-color);
-    box-shadow: 0 0 20px rgba(0,0,0,0.2);
+    border-color: rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .pillar-card h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #e0e0e0;
+    margin: 0 0 0.5rem 0;
+    letter-spacing: -0.01em;
   }
 
   .pillar-card p {
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.6;
+    font-size: 0.875rem;
+    color: #666;
+    line-height: 1.65;
+    margin: 0;
   }
 
-  @media (max-width: 968px) {
-    .pillars-grid {
-      grid-template-columns: 1fr;
+  /* Mobile: stack vertical limpio */
+  @media (max-width: 767px) {
+    .pillar-featured-inner {
+      min-height: auto;
+    }
+    .section-title {
+      font-size: 2rem;
     }
   }
 </style>

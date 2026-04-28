@@ -15,11 +15,24 @@ Para garantizar que DVGE sea sostenible a largo plazo y que la tecnología siga 
 - **PRO (Próximamente)**: Diseñado para Power Users. Añadirá herramientas nativas exclusivas como el **Panel de Batch Render** para procesamiento masivo automatizado sin tocar código.
 - **ENTERPRISE (Próximamente)**: Pensado para productoras masivas y workflows críticos. Incluirá plugins hiper-potentes compilados en C++/Rust para orquestación de render farms.
 
-> **Nota de Infraestructura**: Todo el procesamiento comercial está manejado de manera segura vía *Lemon Squeezy* y *Cloudflare*, sin cuentas de usuario invasivas. Simplemente se valida a través de una *License Key*.
+> **Nota sobre el modelo a largo plazo**: Las funciones PRO y ENTERPRISE se distribuirán como módulos separados con licencia comercial. El núcleo del motor permanecerá bajo MIT. La transición mencionada en el roadmap (v6.0.0) se refiere al cierre del código de los módulos premium, no del core.
+
+> **Nota de Infraestructura**: Todo el procesamiento comercial está manejado de manera segura vía *Lemon Squeezy* y *Cloudflare*, sin cuentas de usuario invasivas. La validación se realiza a través de una *License Key*.
+
+## Dependencias con Licencias Propias
+
+DVGE se apoya en tecnologías de terceros que tienen sus propias condiciones de uso. La licencia MIT de DVGE aplica únicamente al código propio del motor.
+
+### Remotion
+
+Remotion opera bajo una **licencia dual**, no MIT:
+
+- **Gratuita**: individuos, organizaciones sin fines de lucro, y organizaciones con fines de lucro de hasta 3 empleados.
+- **Corporativa (de pago)**: organizaciones con fines de lucro que superen ese umbral.
+
+DVGE actualmente califica bajo la licencia gratuita (proyecto de un solo desarrollador). Si planeas usar DVGE como base de un producto comercial o construir encima de él, revisa los términos en [remotion.pro](https://www.remotion.pro) para determinar si tu caso de uso requiere licencia corporativa.
 
 ---
-
-## MIT License
 
 Copyright (c) 2026 Jonatan Barón
 

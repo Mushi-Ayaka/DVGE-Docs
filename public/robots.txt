@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mushi-ayaka.github.io/DVGE-Docs/sitemap-index.xml

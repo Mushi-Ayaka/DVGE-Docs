@@ -92,7 +92,7 @@ El Knowledge Bridge usa drag nativo de Electron. No necesitas copiar ni pegar el
 
 ---
 
-## 5. Solución de Problemas
+## 6. Solución de Problemas
 
 | Problema | Solución |
 | :--- | :--- |

@@ -8,7 +8,7 @@ sidebar:
 Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) de DVGE desde cero. No se requiere experiencia previa con el motor.
 
 ## Requisitos Previos
-- DVGE v5.5.0+ instalado y ejecutándose.
+- DVGE v5.6.0+ instalado y ejecutándose.
 - Un editor de texto (se recomienda VS Code).
 
 ---
@@ -114,6 +114,7 @@ dvEngine.register({
   awake: (ctx) => {
     ctx.refs.nameEl = ctx.root.getElementById('name-el');
     ctx.refs.roleEl = ctx.root.getElementById('role-el');
+    ctx.refs.card   = ctx.root.getElementById('card');
   },
 
   // Se ejecuta cada fotograma. Vincula datos y aplica animaciones.
@@ -127,8 +128,8 @@ dvEngine.register({
     // 2. Anima la entrada usando timeline (sin GSAP, sin setTimeout)
     const opacity = utils.easeOutCubic(timeline.introProgress);
     const xOffset = utils.lerp(-30, 0, timeline.introProgress);
-    ctx.root.getElementById('card').style.opacity = opacity;
-    ctx.root.getElementById('card').style.transform = `translateX(${xOffset}px)`;
+    refs.card.style.opacity = opacity;
+    refs.card.style.transform = `translateX(${xOffset}px)`;
   }
 });
 ```

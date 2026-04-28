@@ -19,7 +19,7 @@ Todo `manifest.json` debe contar con la siguiente estructura mínima:
   "author": "Tu Nombre",
   "type": "template", 
   "description": "Descripción corta de lo que hace.",
-  "minEngineVersion": "5.5.0",
+  "minEngineVersion": "5.6.0",
   "permissions": [],
   "schema": []
 }
@@ -73,6 +73,10 @@ Define los controles que el usuario final verá en el **Inspector** (Panel derec
 - `color`: Selector de color (devuelve Hexadecimal o RGBA).
 - `image`: Input para cargar imágenes locales (DVGE maneja la ruta absoluta).
 - `select`: Menú desplegable (requiere un array de `options` anidado).
+- `code`: Editor de código multilínea. Devuelve una cadena HTML cruda. Útil para el plugin Studio Master.
+- `prompt`: Zona de arrastre (drag) que genera y expone el PDF de reglas del motor para inyección directa en IAs. Introducido en v5.5.0.
+- `artifact`: Zona de pegado universal. Acepta bloques `[[[HTML]]]`, `[[[CSS]]]`, `[[[JS]]]` generados por una IA y los distribuye automáticamente a los archivos correspondientes del plugin.
+- `info`: Texto de solo lectura en el inspector. Muestra información copiable al usuario (prompts, IDs, instrucciones).
 
 ---
 

@@ -15,7 +15,7 @@ El ecosistema de DVGE se basa en una taxonomía clara. Bajo la arquitectura del 
 
 ## El Catálogo Oficial
 
-Creemos en un entorno de desarrollo abierto. El catálogo oficial es un **repositorio transparente** donde todo es código abierto (MIT) y no ofuscado. El ecosistema es mantenido activamente por la comunidad a través de Pull Requests (PRs).
+El catálogo oficial es un repositorio público donde todo el código es abierto (MIT) y auditable. Actualmente cuenta con plugins desarrollados por el autor del motor, y está abierto a contribuciones externas mediante Pull Requests.
 
 ## Libertad Comercial
 
@@ -25,7 +25,9 @@ Las empresas y creadores son 100% libres de crear, ofuscar y vender sus propios 
 
 ## El Hub Comunitario
 
-El lugar para estar es **GitHub Discussions**. Lo utilizamos como nuestro foro central para:
-- **Showcase**: Muestra tus creaciones y templates.
+El lugar central es **GitHub Discussions** del repositorio del motor. Lo usamos como foro para:
+- **Showcase**: Comparte tus templates y plugins.
 - **Ideas**: Propón nuevas funcionalidades para el motor.
-- **Soporte**: Ayuda comunitaria técnica y debug de plugins.
+- **Soporte**: Ayuda técnica y debug de plugins.
+
+[Ir a GitHub Discussions →](https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/discussions)

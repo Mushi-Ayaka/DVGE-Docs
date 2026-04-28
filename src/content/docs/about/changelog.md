@@ -21,8 +21,9 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ## [5.5.0] — 2026-04-23
 ### GA Artifact Edition (Knowledge Bridge)
-
----
+- **Knowledge Bridge Nativo**: El motor genera un archivo `DVGE-Master-Rules.pdf` en caché y lo expone como zona de arrastre en el inspector del plugin "DVGE Studio Master". Al arrastrar directamente al chat de una IA (Claude, Gemini, ChatGPT), el asistente recibe el contexto completo del motor — reglas del Sandbox, API de `ctx`, restricciones del Shadow DOM y tabla de utilidades — sin necesidad de copiar texto.
+- **Auto-Generador PDF Interno**: Una ventana silenciosa de Electron compila las reglas del motor a un archivo PDF temporal en caché (`%TEMP%/DVGE-Master-Rules.pdf`), eludiendo las restricciones de texto plano de las interfaces de IA.
+- **Studio Master Refactor**: El plugin "DVGE Studio Master" incorpora soporte estandarizado para el campo `prompt`, manteniendo la fidelidad de la interfaz de usuario.
 
 ## [5.4.0] — 2026-04-23
 ### Estabilización de Producción y Canal Alfa (The Alpha Fix)

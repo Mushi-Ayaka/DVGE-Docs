@@ -1,218 +1,246 @@
+/* ============================================================
+   Hero — Estilo Editorial Broadcast
+   Mobile-first. Sin grid simétrico. Tipografía como visual.
+   ============================================================ */
+
 .hero-section {
-  min-height: calc(100vh - 80px);
+  position: relative;
+  min-height: 100svh;
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
+  padding: 7rem 1.5rem 4rem;
   overflow: hidden;
-  position: relative;
 }
 
+/* Línea de acento vertical — solo desktop */
+.hero-accent-line {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .hero-accent-line {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      #E44C30 30%,
+      #E44C30 70%,
+      transparent 100%
+    );
+    opacity: 0.6;
+  }
+}
+
+/* Contenedor principal — asimétrico, alineado a la izquierda */
 .hero-container {
-  max-width: 1200px;
   width: 100%;
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: center;
-  gap: 4rem;
-}
-
-.hero-content {
-  text-align: left;
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  gap: 0;
 }
 
-.badge {
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 8rem 4rem 5rem;
+  }
+  .hero-container {
+    margin: 0 0 0 4rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .hero-container {
+    margin: 0 0 0 8rem;
+  }
+}
+
+/* Etiqueta técnica superior */
+.hero-label {
   display: flex;
   align-items: center;
-  padding: 0.5rem 1rem;
-  background: rgba(228, 76, 48, 0.1);
-  border: 1px solid rgba(228, 76, 48, 0.2);
-  border-radius: 100px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  color: var(--color-primary);
+  gap: 8px;
   margin-bottom: 2rem;
-  backdrop-filter: blur(10px);
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #555;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
+.label-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #E44C30;
+  box-shadow: 0 0 8px rgba(228, 76, 48, 0.8);
+  flex-shrink: 0;
+  animation: pulse-dot 2.5s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; box-shadow: 0 0 8px rgba(228, 76, 48, 0.8); }
+  50%       { opacity: 0.5; box-shadow: 0 0 4px rgba(228, 76, 48, 0.3); }
+}
+
+/* Título — tipografía como elemento visual dominante */
 .hero-title {
-  font-size: clamp(3rem, 5vw, 4.5rem);
-  font-weight: 800;
-  margin-bottom: 1.5rem;
-  line-height: 1.1;
-  letter-spacing: -0.02em;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 0 0 2rem 0;
   font-family: 'Outfit', sans-serif;
+  font-weight: 800;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
 }
 
-.text-gradient {
-  background: var(--grad-hero);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.title-line {
+  display: block;
+  font-size: clamp(2.8rem, 10vw, 7rem);
+  color: #ffffff;
 }
 
+/* "Vector" — la palabra de acento, ligeramente desplazada */
+.title-line--accent {
+  color: #E44C30;
+  -webkit-text-stroke: 0;
+  padding-left: clamp(1rem, 4vw, 3rem);
+}
+
+@media (min-width: 768px) {
+  .title-line--accent {
+    color: #E44C30;
+  }
+}
+
+/* Separador horizontal */
+.hero-rule {
+  width: 100%;
+  max-width: 480px;
+  height: 1px;
+  background: linear-gradient(to right, #E44C30, transparent);
+  margin-bottom: 2rem;
+  transform-origin: left;
+}
+
+/* Subtítulo */
 .hero-subtitle {
-  font-size: clamp(1.1rem, 2vw, 1.3rem);
-  color: var(--color-text-muted);
-  line-height: 1.6;
-  margin-bottom: 2.5rem;
-  max-width: 550px;
+  font-size: clamp(0.95rem, 2.5vw, 1.15rem);
+  color: #888;
+  line-height: 1.7;
+  max-width: 520px;
+  margin: 0 0 2.5rem 0;
+  font-weight: 400;
 }
 
+/* CTAs */
 .hero-actions {
   display: flex;
-  gap: 1rem;
-  justify-content: flex-start;
   flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
 }
 
 .btn {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.85rem 1.75rem;
-  border-radius: 10px;
-  font-weight: 700;
-  font-size: 0.95rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
   text-decoration: none;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
 .btn-primary {
-  background: var(--color-primary);
-  color: white;
-  border: 1px solid var(--color-primary);
-  box-shadow: 0 4px 15px rgba(228, 76, 48, 0.2);
+  background: #E44C30;
+  color: #fff;
+  padding: 0.7rem 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 0 20px rgba(228, 76, 48, 0.2);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(228, 76, 48, 0.4);
-  background: #f05a3e;
+  background: #F05A3E;
+  box-shadow: 0 0 30px rgba(228, 76, 48, 0.4);
+  transform: translateY(-1px);
 }
 
-.btn-secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: white;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
+.btn-ghost {
+  background: transparent;
+  color: #888;
+  padding: 0.7rem 0;
+  border-bottom: 1px solid #333;
+  border-radius: 0;
 }
 
-.btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.2);
-  transform: translateY(-2px);
+.btn-ghost:hover {
+  color: #fff;
+  border-color: #E44C30;
 }
 
-.hero-visual {
+/* Metadatos técnicos */
+.hero-meta {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
+  flex-wrap: wrap;
+  gap: 0.5rem 0;
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.65rem;
+  color: #3a3a3a;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
-.mockup-container {
-  position: relative;
-  width: 100%;
-  max-width: 400px;
-  aspect-ratio: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.hero-meta span {
+  white-space: nowrap;
 }
 
-.mockup-frame {
-  position: relative;
-  z-index: 1;
-  padding: 2rem;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.5s ease;
-}
-
-.mockup-glow {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle, rgba(228, 76, 48, 0.15) 0%, transparent 70%);
-  filter: blur(40px);
-  z-index: 0;
-}
-
-.mockup-image {
-  width: 100%;
-  height: auto;
-  max-width: 280px;
-  display: block;
-  filter: drop-shadow(0 15px 30px rgba(0,0,0,0.5));
-  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-}
-
-.mockup-container:hover .mockup-image {
-  transform: scale(1.1) rotate(5deg);
-}
-
-@media (max-width: 968px) {
-  .hero-section {
-    padding: 6rem 1.5rem 4rem;
-  }
-
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 3.5rem;
-  }
-
-  .hero-content {
-    text-align: center;
-    align-items: center;
-    order: 1;
-  }
-
-  .hero-visual {
-    order: 2;
-    margin-top: 1rem;
-  }
-
-  .mockup-container {
-    max-width: 280px;
-  }
-
-  .mockup-frame {
-    padding: 1rem;
-  }
-
-  .hero-actions {
-    justify-content: center;
-    flex-direction: row;
-    width: 100%;
-    gap: 1rem;
-  }
-
-  .btn {
-    width: fit-content;
-    padding: 0.75rem 1.5rem;
-    font-size: 0.9rem;
-  }
+.meta-sep {
+  margin: 0 0.5rem;
+  color: #2a2a2a;
 }
 
 @media (max-width: 480px) {
+  .hero-title {
+    gap: 0.1rem;
+  }
+  .title-line--accent {
+    padding-left: 0.75rem;
+  }
   .hero-actions {
     flex-direction: column;
-    align-items: center;
+    align-items: flex-start;
   }
-  
-  .btn {
-    width: 240px;
+  .btn-primary {
+    width: 100%;
+    justify-content: center;
   }
+  .meta-sep {
+    display: none;
+  }
+  .hero-meta {
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+}
+
+/* ============================================================
+   Utilidades compartidas
+   ============================================================ */
+
+.text-gradient {
+  background: linear-gradient(135deg, #ffffff 0%, #888888 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

@@ -11,6 +11,36 @@ El **Motor de Gráficos Vectoriales Dinámicos (DVGE)** está construido sobre u
 
 La aplicación opera usando un modelo de proceso dual separado por un puente de comunicación interna (IPC). Esto asegura que las tareas pesadas de la interfaz de usuario no bloqueen la lógica central del motor.
 
+```mermaid
+graph TD
+    subgraph Renderer["Proceso Renderizador (UI)"]
+        R1[React + Zustand]
+        R2[Preview 60fps]
+        R3[Inspector de Propiedades]
+    end
+
+    subgraph Main["Proceso Principal (Backend)"]
+        M1[PluginManager]
+        M2[ProjectManager]
+        M3[Remotion Headless Render]
+        M4[DependencyManager]
+    end
+
+    subgraph Plugin["Plugin — Shadow DOM"]
+        P1[index.html + style.css]
+        P2[script.js — dvEngine.register]
+        P3[fakeWindow Proxy]
+    end
+
+    R1 <-->|IPC| M1
+    R1 <-->|IPC| M2
+    R1 -->|start-render| M3
+    M3 -->|props.json HTTP :5555| M3
+    M4 -->|Chromium path| M3
+    R2 -->|Shadow DOM| Plugin
+    P3 -->|bloquea window real| P2
+```
+
 | Proceso | Responsabilidades Principales | Tecnologías |
 | :--- | :--- | :--- |
 | **Renderizador (UI)** | Interfaz React, Estado Zustand, Previsualización 60FPS | React + Vite |
