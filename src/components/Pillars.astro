@@ -40,7 +40,12 @@ const pillars = [
   <!-- Encabezado de sección — alineado a la izquierda, no centrado -->
   <div class="section-header">
     <p class="section-label">Arquitectura</p>
-    <h2 class="section-title">Construido para<br /><em>producción real</em></h2>
+    <div class="section-header-flex">
+      <h2 class="section-title">Construido para<br /><em>producción real</em></h2>
+      <a href="/DVGE-Docs/engine/architecture/" class="section-link">
+        Ver arquitectura completa →
+      </a>
+    </div>
   </div>
 
   <!-- Layout asimétrico: card grande izquierda + columna de cards pequeñas derecha -->
@@ -66,6 +71,11 @@ const pillars = [
           <span class="pillar-number" aria-hidden="true">0{i + 2}</span>
           <h3>{pillar.title}</h3>
           <p>{pillar.description}</p>
+          {pillar.title === "Sandbox de Seguridad" && (
+            <a href="/DVGE-Docs/engine/architecture/#sandbox-de-seguridad-y-aislamiento" class="pillar-card-link">
+              Detalles técnicos →
+            </a>
+          )}
         </div>
       ))}
     </div>
@@ -109,6 +119,36 @@ const pillars = [
     letter-spacing: -0.02em;
     color: #fff;
     margin: 0;
+  }
+
+  .section-header-flex {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: flex-start;
+  }
+
+  @media (min-width: 768px) {
+    .section-header-flex {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+  }
+
+  .section-link {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #E44C30;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(228, 76, 48, 0.3);
+    transition: all 0.2s;
+  }
+  .section-link:hover {
+    border-bottom-color: #E44C30;
+    opacity: 0.8;
   }
 
   .section-title em {
@@ -241,8 +281,18 @@ const pillars = [
     font-size: 0.875rem;
     color: #666;
     line-height: 1.65;
-    margin: 0;
+    margin: 0 0 1rem 0;
   }
+
+  .pillar-card-link {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #E44C30;
+    text-decoration: none;
+    letter-spacing: 0.02em;
+    transition: opacity 0.2s;
+  }
+  .pillar-card-link:hover { opacity: 0.7; }
 
   /* Mobile: stack vertical limpio */
   @media (max-width: 767px) {
