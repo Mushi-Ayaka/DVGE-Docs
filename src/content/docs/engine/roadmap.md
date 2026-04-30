@@ -11,17 +11,22 @@ El futuro de DVGE se construye en torno a la autonomía, la profesionalización 
 
 Esta fase se centra en eliminar la fricción técnica y garantizar que el motor sea 100% autónomo.
 
-- **✅ v5.6.0 GA (Actual)**: 
+- **✅ v5.6.0**:
+
   - Gestión integral de proyectos (Galería).
   - **Auto-Fetch**: Descarga autónoma de Chromium y FFmpeg.
   - Remodelación del layout para mayor neutralidad profesional.
-- **🔲 v5.7.0**: 
-  - Lanzamiento del **Manifest v5.x** (soporte para sub-categorías de Plugins).
-  - Benchmarks de Transparencia nativos.
-- **🔲 v5.8.0**: 
-  - Sección de **Créditos OSS** (Reconocimiento a las bibliotecas que hacen posible DVGE).
-  - Nueva sección "About" detallada.
-- **🔲 v5.9.0**: 
+- **✅ v5.7.0**:
+
+  - Transparencia Técnica: Visualización del proceso de compilación (esbuild) en UI.
+  - Implementación del Loader Dinámico para eliminar la pantalla negra.
+- **✅ v5.8.0 Master (Actual)**:
+
+  - **Secuencia de Carga Real**: Escaneo de Hardware y montaje de módulos reportado al usuario.
+  - **Cumplimiento Legal**: Nuevo EULA detallado para dependencias de terceros (Remotion).
+  - **UX Polish**: Gestión de enlaces externos y refinamiento de modales de contacto.
+- **🔲 v5.9.0**:
+
   - Optimizaciones de Shader & Native Previews.
   - Refactorización del kernel de audio para mayor fidelidad en ProRes.
 
@@ -29,7 +34,8 @@ Esta fase se centra en eliminar la fricción técnica y garantizar que el motor 
 
 El salto hacia la producción masiva y el modelo profesional.
 
-- **🔲 v6.0.0**: 
+- **🔲 v6.0.0**:
+
   - **Batch Render Panel**: Renderizado masivo mediante CSV/Excel.
   - Implementación del sistema de licencias (Lemon Squeezy) para funciones PRO.
   - Módulos premium con licencia comercial (el núcleo del motor permanece MIT).
@@ -39,4 +45,3 @@ El salto hacia la producción masiva y el modelo profesional.
 - **Gráficos Conectados**: Flujos visuales reactivos donde un plugin alimenta a otro.
 - **Control Remoto**: App móvil satélite para disparar gráficos en vivo.
 - **LTS Edition**: Versión hiper-reducida enfocada únicamente en estabilidad ininterrumpida para transmisiones 24/7.
-

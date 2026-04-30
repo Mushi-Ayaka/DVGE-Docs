@@ -11,7 +11,7 @@ DVGE es una herramienta de producción diseñada para que editores, productores 
 
 Tres pasos desde la idea hasta el video final:
 
-```
+```txt
 Explorar Catálogo → Crear Proyecto → Exportar y Usar
 ```
 
@@ -32,25 +32,28 @@ Si un plugin instalado recibe una mejora, el Catálogo mostrará un botón de **
 
 ---
 
-## 2. Gestión de Proyectos (v5.6.0)
+A partir de la versión 5.8.0 Master, tienes control total sobre tu flujo de trabajo directamente desde la Galería de Proyectos:
 
-A partir de la versión 5.6, tienes control total sobre tu flujo de trabajo directamente desde la Galería de Proyectos:
+### Secuencia de Carga Real (v5.8.0 Master)
 
 ### Crear un Nuevo Proyecto
+
 1. Ingresa un nombre para el proyecto.
 2. Selecciona una **plantilla gráfica** (local o instalada desde el Catálogo).
 3. Haz clic en **"Crear Proyecto"**.
 
 ### Organización y Mantenimiento
+
 - **Renombrar Proyectos**: Haz clic en el botón de configuración (engranaje) de cualquier tarjeta para cambiar el nombre del proyecto. El sistema renombrará la carpeta en el disco de forma segura.
 - **Eliminar Proyectos**: Limpia tu espacio de trabajo eliminando proyectos antiguos o erróneos directamente desde la Galería.
 - **Control de Integridad**: Si un plugin necesario para un proyecto ha sido borrado o movido, verás un aviso de **"MISSING PLUGIN"**. El motor bloqueará la apertura de ese proyecto para proteger la estabilidad de la aplicación hasta que el plugin sea restaurado.
 
 ---
 
-## 3. El Editor
+## El Editor
 
 ### Panel de Propiedades
+
 Modifica texto, colores e imágenes — los cambios son **instantáneos** en la vista previa.
 
 - **Identidad de Marca (Branding)**: Si la plantilla lo admite, una sección de "Branding" te permite cargar tu logo y elegir su posición (ej. Abajo a la Derecha) con un solo clic.
@@ -58,11 +61,12 @@ Modifica texto, colores e imágenes — los cambios son **instantáneos** en la 
 - **Transparency Transformer (v5.4.0)**: El motor ahora garantiza una transparencia perfecta y profesional para broadcast, eliminando artefactos y fondos negros accidentales.
 
 ### Seguridad de Datos
+
 Gracias al **Guardado Atómico** (Atomic Saving), tu trabajo está protegido contra cierres inesperados. El indicador de guardado en la esquina inferior izquierda confirma cuando tu archivo está escrito de forma segura en el disco.
 
 ---
 
-## 4. Exportación Profesional
+## Exportación Profesional
 
 1. Haz clic en **"Renderizar"** (Render).
 2. El motor genera un video **ProRes 4444 con canal Alfa** (transparencia nativa).
@@ -76,7 +80,7 @@ La transparencia se preservará automáticamente — gracias al motor determinis
 
 ---
 
-## 5. Knowledge Bridge AI (v5.5.0)
+## Knowledge Bridge AI (v5.5.0)
 
 El nuevo flujo de trabajo para generar gráficos con asistentes de IA:
 
@@ -92,7 +96,7 @@ El Knowledge Bridge usa drag nativo de Electron. No necesitas copiar ni pegar el
 
 ---
 
-## 6. Solución de Problemas
+## Solución de Problemas
 
 | Problema | Solución |
 | :--- | :--- |

@@ -8,7 +8,8 @@ sidebar:
 Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) de DVGE desde cero. No se requiere experiencia previa con el motor.
 
 ## Requisitos Previos
-- DVGE v5.6.0+ instalado y ejecutándose.
+
+- DVGE v5.8.0+ instalado y ejecutándose.
 - Un editor de texto (se recomienda VS Code).
 
 ---
@@ -17,7 +18,7 @@ Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla 
 
 Abre DVGE, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
 
-```
+```txt
 DVG_Plugins/
 └── mi-primer-template/    ← Crea esta carpeta
     ├── manifest.json

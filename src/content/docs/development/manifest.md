@@ -19,7 +19,7 @@ Todo `manifest.json` debe contar con la siguiente estructura mínima:
   "author": "Tu Nombre",
   "type": "template", 
   "description": "Descripción corta de lo que hace.",
-  "minEngineVersion": "5.6.0",
+  "minEngineVersion": "5.8.0",
   "permissions": [],
   "schema": []
 }
@@ -43,6 +43,7 @@ Para mantener el ecosistema completamente seguro, DVGE bloquea los scripts por d
     "storage"   // Permite leer/escribir archivos en el disco local
   ]
 ```
+
 *Nota de seguridad: Si un template intenta hacer un `fetch()` sin declarar el permiso `network`, el Sandbox de DVGE bloqueará la petición.*
 
 ## Esquema de Propiedades (`schema`)
@@ -67,6 +68,7 @@ Define los controles que el usuario final verá en el **Inspector** (Panel derec
 ```
 
 ### Tipos de Inputs Soportados
+
 - `string`: Campo de texto estándar.
 - `number`: Valor numérico (útil para modificar posiciones X/Y o escalas).
 - `boolean`: Toggle/Checkbox de encendido y apagado.
