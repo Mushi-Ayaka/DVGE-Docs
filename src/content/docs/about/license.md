@@ -23,14 +23,17 @@ Para garantizar que DVGE sea sostenible a largo plazo y que la tecnología siga 
 
 DVGE se apoya en tecnologías de terceros que tienen sus propias condiciones de uso. La licencia MIT de DVGE aplica únicamente al código propio del motor.
 
-### Remotion
+### Remotion (Motor de Renderizado)
 
 Remotion opera bajo una **licencia dual**, no MIT:
 
-- **Gratuita**: individuos, organizaciones sin fines de lucro, y organizaciones con fines de lucro de hasta 3 empleados.
-- **Corporativa (de pago)**: organizaciones con fines de lucro que superen ese umbral.
+- **Gratuita**: Individuos, organizaciones sin fines de lucro, y pequeñas empresas de hasta 3 empleados.
+- **Comercial (de pago)**: Empresas u organizaciones que superen ese umbral.
 
-DVGE actualmente califica bajo la licencia gratuita (proyecto de un solo desarrollador). Si planeas usar DVGE como base de un producto comercial o construir encima de él, revisa los términos en [remotion.pro](https://www.remotion.pro) para determinar si tu caso de uso requiere licencia corporativa.
+**Al utilizar DVGE, usted acepta que:**
+1. El uso de los componentes de Remotion integrados está sujeto a la [Remotion License](https://www.remotion.dev/license).
+2. Si su organización requiere una licencia comercial de Remotion, es **su responsabilidad** adquirirla directamente con ellos.
+3. Jonatan Barón no otorga, ni pretende otorgar, ninguna sublicencia sobre el código de Remotion que contravenga sus términos originales.
 
 ---
 

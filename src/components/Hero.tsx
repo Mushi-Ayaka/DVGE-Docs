@@ -18,7 +18,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="label-dot" />
-          <span>v5.6.0 GA — Windows x64 — MIT License</span>
+          <span>v5.8.0 — Windows x64 — MIT License</span>
         </motion.div>
 
         {/* Título principal: tipografía como elemento visual */}
@@ -49,7 +49,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          De idea a ProRes 4444 en minutos.
+          De idea a video en minutos.
           Overlays y lower thirds broadcast con canal alfa nativo,
           sin configurar entornos ni instalar dependencias.
         </motion.p>
@@ -62,11 +62,11 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.65 }}
         >
           <a
-            href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe"
+            href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe"
             className="btn btn-primary"
           >
             <Download size={18} />
-            Descargar v5.6.0
+            Descargar v5.8.0
           </a>
           <a
             href={`${import.meta.env.BASE_URL}development/quick-start/`}
