@@ -5,7 +5,7 @@ sidebar:
   order: 1
 ---
 
-DVGE es una herramienta de producción diseñada para que editores, productores y creadores de contenido construyan, personalicen y exporten gráficos broadcast rápidamente — sin necesidad de conocimientos técnicos avanzados.
+**Ember Motion Studio** es una herramienta de producción diseñada para que editores, productores y creadores de contenido construyan, personalicen y exporten gráficos broadcast rápidamente — sin necesidad de conocimientos técnicos avanzados. El sistema está impulsado por el motor de renderizado **DVGE**.
 
 ## El Flujo de Trabajo
 
@@ -22,7 +22,7 @@ Explorar Catálogo → Crear Proyecto → Exportar y Usar
 A partir de v5.5.0, puedes ampliar tu biblioteca de gráficos con un solo clic:
 
 1. En la pantalla de inicio, haz clic en **"🛍️ Catálogo de Plugins"**.
-2. Explora todos los diseños disponibles en el repositorio oficial.
+2. Explora todos los diseños disponibles en el repositorio oficial de **Ember**.
 3. Haz clic en **"Instalar"** en cualquier gráfico que te guste.
 4. El plugin aparecerá automáticamente en tu lista de plantillas de proyecto.
 
@@ -33,8 +33,6 @@ Si un plugin instalado recibe una mejora, el Catálogo mostrará un botón de **
 ---
 
 A partir de la versión 5.8.0 Master, tienes control total sobre tu flujo de trabajo directamente desde la Galería de Proyectos:
-
-### Secuencia de Carga Real (v5.8.0 Master)
 
 ### Crear un Nuevo Proyecto
 
@@ -70,7 +68,7 @@ Gracias al **Guardado Atómico** (Atomic Saving), tu trabajo está protegido con
 
 1. Haz clic en **"Renderizar"** (Render).
 2. El motor genera un video **ProRes 4444 con canal Alfa** (transparencia nativa).
-3. **Arrastrar y Soltar**: Arrastra el archivo `.mov` exportado directamente desde la aplicación a tu línea de tiempo en **DaVinci Resolve, Premiere Pro o After Effects**.
+3. **Arrastrar y Soltar**: Arrastra el archivo `.mov` exportado directamente desde **Ember Motion Studio** a tu línea de tiempo en **DaVinci Resolve, Premiere Pro o After Effects**.
 
 :::important[Tip para DaVinci Resolve]
 Si al importar el video ves un fondo negro, haz clic derecho sobre el clip en el **Media Pool** → **Clip Attributes** → Pestaña **Video** → Cambia **Alpha Mode** a **"Straight"** o **"Premultiplied"**.
@@ -84,8 +82,8 @@ La transparencia se preservará automáticamente — gracias al motor determinis
 
 El nuevo flujo de trabajo para generar gráficos con asistentes de IA:
 
-1. Abre cualquier proyecto con el plugin **"DVGE Studio Master"**.
-2. En el panel de propiedades, localiza el campo **"DVGE Master Rules"**.
+1. Abre cualquier proyecto con el plugin **"Ember Studio Master"**.
+2. En el panel de propiedades, localiza el campo **"Ember Master Rules"**.
 3. **Arrastra** la zona indicada directamente al chat de tu IA (Claude, Gemini, ChatGPT).
 4. El motor entrega un PDF con todas las reglas del sandbox — la IA genera el plugin correcto al primer intento.
 5. Pega la respuesta en el campo **"Artefacto Universal"** del inspector — el motor extrae el HTML, CSS y JS automáticamente.
@@ -101,6 +99,6 @@ El Knowledge Bridge usa drag nativo de Electron. No necesitas copiar ni pegar el
 | Problema | Solución |
 | :--- | :--- |
 | Pantalla de vista previa en blanco | Abre las Herramientas de Desarrollador (`Ctrl+Shift+I`) y revisa la consola en busca de errores. |
-| El plugin no aparece | Verifica que la carpeta del plugin contiene los 4 archivos requeridos. |
+| El plugin no aparece | Verifica que la carpeta del plugin contiene los archivos requeridos. |
 | Desincronización en el Render | Asegúrate de que el plugin no utilice bibliotecas de animación externas en tiempo real. |
 | Error I/O al guardar | Confirma que la aplicación tiene permisos de escritura en tu carpeta de Documentos. |

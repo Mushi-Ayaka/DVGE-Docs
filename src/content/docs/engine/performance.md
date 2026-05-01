@@ -1,11 +1,11 @@
 ---
 title: Rendimiento y Determinismo
-description: Por qué la animación basada en fotogramas es crítica para la producción de video profesional.
+description: Por qué la animación basada en fotogramas es crítica para la producción de video profesional en Ember Motion Studio.
 sidebar:
   order: 2
 ---
 
-En el mundo de los gráficos para transmisión, el **determinismo** no es una característica; es un requisito. DVGE está diseñado para proporcionar fotogramas idénticos cada vez que se renderiza un gráfico.
+En el mundo de los gráficos para transmisión, el **determinismo** no es una característica; es un requisito. **Ember Motion Studio** (impulsado por el motor **DVGE**) está diseñado para proporcionar fotogramas idénticos cada vez que se renderiza un gráfico.
 
 ## El Problema con la Animación en Tiempo Real
 
@@ -17,7 +17,7 @@ Las bibliotecas web estándar (como GSAP o Anime.js) se basan en `requestAnimati
 
 ## La Solución: Arquitectura Basada en Fotogramas
 
-DVGE v4.0+ impone un **bucle determinista**. El motor controla el "reloj" y le dice al plugin exactamente qué fotograma renderizar.
+El motor **DVGE** impone un **bucle determinista**. El sistema controla el "reloj" y le dice al plugin exactamente qué fotograma renderizar.
 
 ### API `ctx.timeline`
 
@@ -50,6 +50,6 @@ El proceso de exportación es un **renderizado headless** de alto rendimiento qu
 
 - **Hard Reset**: El DOM se limpia por completo y se reconstruye entre cambios de proyecto para prevenir fugas de memoria y contaminación CSS.
 - **Caché de Recursos**: Las imágenes y fuentes se precargan para evitar parpadeos durante los primeros frames del render.
-- **Data Probe Hydration (v5.4.0+)**: Las propiedades del proyecto se transmiten vía servidor HTTP efímero (`/props.json`) en lugar de CLI, eliminando el límite de caracteres de Windows.
-- **Knowledge Bridge PDF (v5.5.0)**: El motor genera en caché un PDF de reglas que la IA usa para producir código determinista al primer intento, reduciendo ciclos de corrección.
+- **Data Probe Hydration**: Las propiedades del proyecto se transmiten vía servidor HTTP efímero (`/props.json`) en lugar de CLI, eliminando el límite de caracteres de Windows.
+- **Knowledge Bridge AI**: El motor genera en caché un contexto que la IA usa para producir código determinista al primer intento, reduciendo ciclos de corrección.
 - **Secuencia de Carga Real (v5.8.0 Master)**: Eliminación definitiva de la "pantalla negra" mediante reporte visual en tiempo real del escaneo de hardware (GPU/CPU) y sincronización del pipeline de esbuild antes de permitir la interacción.

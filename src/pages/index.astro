@@ -8,7 +8,7 @@ import "../styles/hero.css";
 ---
 
 <MainLayout
-	title="DVGE — Lower Thirds y Overlays Broadcast para Windows | ProRes 4444"
+	title="Ember Motion Studio — Lower Thirds y Overlays Broadcast para Windows | ProRes 4444"
 	description="DVGE es una aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects. Open Source MIT."
 >
 	<Navigation />
@@ -22,14 +22,14 @@ import "../styles/hero.css";
 			<div class="use-cases-inner">
 				<p class="use-cases-label">Para quién es</p>
 				<h2 class="use-cases-title">
-					No es un motor vectorial.<br />Es una herramienta de
-					producción.
+					Un entorno de diseño.<br />Un motor de producción.
 				</h2>
 				<p class="use-cases-desc">
-					DVGE es una aplicación de escritorio para Windows diseñada
-					para editores de video, productores broadcast y
-					desarrolladores que necesitan gráficos animados listos para
-					arrastrar a DaVinci Resolve, Premiere Pro o After Effects.
+					Ember Motion Studio es un entorno de producción profesional
+					impulsado por el motor DVGE, diseñado para editores de
+					video, productores broadcast y desarrolladores que necesitan
+					gráficos animados listos para arrastrar a DaVinci Resolve,
+					Premiere Pro o After Effects.
 				</p>
 				<div class="use-cases-grid">
 					<div class="use-case-item">
@@ -67,6 +67,99 @@ import "../styles/hero.css";
 				</div>
 			</div>
 		</section>
+    
+    <!-- Nueva Sección: Ejemplos de Producción -->
+    <section class="home-examples">
+      <div class="examples-inner">
+        <div class="examples-header">
+          <p class="section-label">Showcase</p>
+          <h2 class="section-title">Resultados de Nivel Broadcast</h2>
+          <p class="section-subtitle">Visualiza la potencia del motor DVGE en acción a través de nuestras plantillas integradas.</p>
+        </div>
+
+        <div class="examples-grid">
+          <div class="example-item">
+            <div class="video-preview">
+              <video autoplay muted loop playsinline poster={`${import.meta.env.BASE_URL}logo-square.png`}>
+                <source src={`${import.meta.env.BASE_URL}multimedia/demo1.mp4`} type="video/mp4" />
+              </video>
+            </div>
+            <h4>Template Horizons</h4>
+          </div>
+          <div class="example-item">
+            <div class="video-preview">
+              <video autoplay muted loop playsinline poster={`${import.meta.env.BASE_URL}logo-square.png`}>
+                <source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
+              </video>
+            </div>
+            <h4>Social Minimal</h4>
+          </div>
+          <div class="example-item">
+            <div class="video-preview">
+              <video autoplay muted loop playsinline poster={`${import.meta.env.BASE_URL}logo-square.png`}>
+                <source src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`} type="video/mp4" />
+              </video>
+            </div>
+            <h4>Gráficos Dinámicos</h4>
+          </div>
+        </div>
+
+        <div class="examples-cta">
+          <a href={`${import.meta.env.BASE_URL}ejemplos/`} class="btn-more-examples">
+            Ver más ejemplos y tutoriales →
+          </a>
+        </div>
+      </div>
+    </section>
+
+		<!-- Sección de Evidencias (Showcase) -->
+		<!-- Sección de Evidencias (Showcase) -->
+		<!--
+		<section class="home-showcase">
+			<div class="showcase-inner">
+				<div class="showcase-header">
+					<p class="section-label">Evidencias</p>
+					<h2 class="section-title">Casos de Éxito</h2>
+					<a
+						href={`${import.meta.env.BASE_URL}evidencias/`}
+						class="section-link">Ver todas las evidencias →</a
+					>
+				</div>
+				<div class="showcase-preview">
+					<div class="preview-card">
+						<div class="preview-img">
+							<img
+								src={`${import.meta.env.BASE_URL}logo-square.png`}
+								alt="Broadcast"
+								width="50"
+							/>
+						</div>
+						<h4>Broadcast de Deportes</h4>
+						<p class="preview-desc">Marcadores en tiempo real para ligas regionales.</p>
+						<div class="preview-comment">
+							"Ember profesionalizó nuestras transmisiones."
+						</div>
+						<a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" class="preview-link">Ver Proyecto →</a>
+					</div>
+					<div class="preview-card">
+						<div class="preview-img">
+							<img
+								src={`${import.meta.env.BASE_URL}logo-square.png`}
+								alt="Corporativo"
+								width="50"
+							/>
+						</div>
+						<h4>Streaming Corporativo</h4>
+						<p class="preview-desc">Overlays minimalistas para eventos híbridos.</p>
+						<div class="preview-comment">
+							"Ahorramos horas de renderizado manual."
+						</div>
+						<a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" class="preview-link">Ver Proyecto →</a>
+					</div>
+				</div>
+			</div>
+		</section>
+		-->
 
 		<section class="project-status">
 			<div class="status-inner">
@@ -76,9 +169,10 @@ import "../styles/hero.css";
 						Open Source.<br />En desarrollo activo.
 					</h3>
 					<p class="status-desc">
-						DVGE es un proyecto <strong>MIT</strong> impulsado de forma
-						independiente. El foco actual está en la madurez técnica del
-						núcleo y la estabilidad del ecosistema de plugins.
+						Ember Motion Studio es una plataforma <strong
+							>MIT</strong
+						> impulsada por el motor DVGE. El foco actual está en la madurez
+						técnica del núcleo y la estabilidad del ecosistema de plugins.
 					</p>
 					<a href="/DVGE-Docs/engine/roadmap/" class="status-link"
 						>Ver hoja de ruta completa →</a
@@ -120,6 +214,37 @@ import "../styles/hero.css";
 				</div>
 			</div>
 		</section>
+
+		<!-- Sección de Historias (Testimonios) 
+		<section class="home-stories">
+			<div class="stories-inner">
+				<p class="section-label">Comunidad</p>
+				<h2 class="section-title">Historias de Usuarios</h2>
+				<div class="story-preview-grid">
+					<div class="story-bubble">
+						<p>
+							"Ember cambió la forma en que entrego mis proyectos.
+							Ya no espero renders pesados."
+						</p>
+						<span class="story-author">— Alejandro M.</span>
+					</div>
+					<div class="story-bubble">
+						<p>
+							"La precisión del canal alfa en el motor DVGE es
+							impecable."
+						</p>
+						<span class="story-author">— Sofía R.</span>
+					</div>
+				</div>
+				<div style="text-align: center; margin-top: 3rem;">
+					<a
+						href={`${import.meta.env.BASE_URL}historias/`}
+						class="btn-stories">Leer más historias →</a
+					>
+				</div>
+			</div>
+		</section>
+		Sección de Historias (Testimonios) -->
 	</main>
 
 	<Footer />
@@ -137,9 +262,9 @@ import "../styles/hero.css";
 			"operatingSystem": "Windows 10, Windows 11",
 			"softwareVersion": "5.8.0",
 			"keywords": "lower thirds, overlays broadcast, gráficos broadcast, ProRes 4444, DaVinci Resolve graphics, broadcast animation, lower third software Windows",
-			"releaseNotes": "https://mushi-ayaka.github.io/DVGE-Docs/about/changelog/",
-			"downloadUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe",
-			"installUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe",
+			"releaseNotes": "/about/changelog/",
+			"downloadUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe",
+			"installUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe",
 			"license": "https://opensource.org/licenses/MIT",
 			"isAccessibleForFree": true,
 			"author": {
@@ -274,6 +399,243 @@ import "../styles/hero.css";
 		color: #555;
 		line-height: 1.65;
 		margin: 0;
+	}
+
+	/* ── Ejemplos (Home) ── */
+	.home-examples {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 6rem 1.5rem;
+	}
+	.examples-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+	.section-label {
+		font-family: "JetBrains Mono", monospace;
+		color: #e44c30;
+		text-transform: uppercase;
+		font-size: 0.7rem;
+		letter-spacing: 0.2em;
+		margin-bottom: 1rem;
+	}
+	.section-title {
+		font-family: "Outfit", sans-serif;
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 800;
+		color: #fff;
+		margin-bottom: 1.5rem;
+	}
+	.section-subtitle {
+		color: #666;
+		font-size: 1.1rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.examples-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+	@media (max-width: 900px) {
+		.examples-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.example-item {
+		background: #080808;
+		border-radius: 8px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		transition: all 0.3s ease;
+	}
+	.example-item:hover {
+		transform: translateY(-5px);
+		border-color: rgba(228, 76, 48, 0.3);
+	}
+	.video-preview {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: #000;
+		overflow: hidden;
+	}
+	.video-preview video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+	}
+	.example-item:hover video {
+		opacity: 1;
+	}
+	.example-item h4 {
+		padding: 1.5rem;
+		color: #fff;
+		font-family: "Outfit", sans-serif;
+		font-size: 1.1rem;
+		text-align: center;
+	}
+
+	.examples-cta {
+		text-align: center;
+	}
+	.btn-more-examples {
+		display: inline-block;
+		padding: 1rem 2rem;
+		border: 1px solid #e44c30;
+		color: #e44c30;
+		text-decoration: none;
+		border-radius: 4px;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+	.btn-more-examples:hover {
+		background: #e44c30;
+		color: #fff;
+		box-shadow: 0 5px 20px rgba(228, 76, 48, 0.3);
+	}
+
+	/* ── Showcase (Home) ── */
+	.home-showcase {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+	@media (min-width: 768px) {
+		.home-showcase {
+			padding: 6rem 4rem;
+		}
+	}
+
+	.showcase-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		padding-bottom: 2rem;
+	}
+	.section-label {
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.65rem;
+		color: #e44c30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin-bottom: 0.5rem;
+	}
+	.section-title {
+		font-family: "Outfit", sans-serif;
+		font-size: 2rem;
+		color: #fff;
+		margin: 0;
+	}
+	.section-link {
+		font-size: 0.85rem;
+		color: #e44c30;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.showcase-preview {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+	.preview-card {
+		background: #0d0d0d;
+		padding: 2rem;
+		border-radius: 12px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		transition: transform 0.3s ease;
+	}
+	.preview-card:hover {
+		transform: translateY(-5px);
+		border-color: rgba(228, 76, 48, 0.2);
+	}
+	.preview-img {
+		margin-bottom: 1.5rem;
+		opacity: 0.6;
+	}
+	.preview-card h4 { color: #fff; font-family: "Outfit", sans-serif; margin-bottom: 0.75rem; font-size: 1.1rem; }
+	.preview-desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.25rem; }
+	.preview-comment { 
+		font-style: italic; 
+		color: #999; 
+		font-size: 0.8rem; 
+		border-left: 2px solid #e44c30; 
+		padding-left: 0.75rem; 
+		margin-bottom: 1.5rem;
+		line-height: 1.4;
+	}
+	.preview-link {
+		font-size: 0.75rem;
+		color: #e44c30;
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	.preview-link:hover { text-decoration: underline; }
+
+	/* ── Historias (Home) ── */
+	.home-stories {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 8rem;
+	}
+	@media (min-width: 768px) {
+		.home-stories {
+			padding: 6rem 4rem 10rem;
+		}
+	}
+
+	.story-preview-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+	@media (max-width: 768px) {
+		.story-preview-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.story-bubble {
+		background: rgba(228, 76, 48, 0.03);
+		border-left: 3px solid #e44c30;
+		padding: 2rem;
+		border-radius: 0 16px 16px 0;
+	}
+	.story-bubble p {
+		color: #ccc;
+		font-style: italic;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+	.story-author {
+		color: #e44c30;
+		font-weight: 700;
+		font-size: 0.8rem;
+	}
+
+	.btn-stories {
+		display: inline-block;
+		padding: 0.8rem 2rem;
+		border: 1px solid rgba(228, 76, 48, 0.3);
+		color: #fff;
+		text-decoration: none;
+		border-radius: 6px;
+		font-weight: 600;
+		transition: all 0.2s ease;
+	}
+	.btn-stories:hover {
+		background: rgba(228, 76, 48, 0.1);
+		border-color: #e44c30;
 	}
 
 	/* ── Sección de Estado ── */

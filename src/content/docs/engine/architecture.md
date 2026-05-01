@@ -1,11 +1,11 @@
 ---
 title: Arquitectura Central
-description: Análisis profundo de la arquitectura del motor DVGE, la comunicación de procesos y el sandbox de seguridad.
+description: Análisis profundo de la arquitectura de Ember Motion Studio, la comunicación de procesos y el motor de renderizado DVGE.
 sidebar:
   order: 1
 ---
 
-El **Motor de Gráficos Vectoriales Dinámicos (DVGE)** está construido sobre una arquitectura híbrida de alto rendimiento diseñada para la confiabilidad en la transmisión profesional.
+**Ember Motion Studio** está construido sobre una arquitectura híbrida de alto rendimiento diseñada para la confiabilidad en la transmisión profesional. El núcleo del sistema es el motor de renderizado **DVGE**.
 
 ## Modelo de Procesos Híbrido
 
@@ -35,7 +35,7 @@ graph TD
     R1 <-->|IPC| M1
     R1 <-->|IPC| M2
     R1 -->|start-render| M3
-    M3 -->|props.json HTTP :5555| M3
+    M3 -->|props.json HTTP :PORT| M3
     M4 -->|Chromium path| M3
     R2 -->|Shadow DOM| PluginDOM
     P3 -->|bloquea window real| P2
@@ -50,26 +50,26 @@ Los procesos se comunican a través de un **Puente IPC** robusto que garantiza l
 
 ### 1. Proceso Renderizador (Frontend)
 
-Maneja la interfaz de usuario, la previsualización en tiempo real a 60FPS y la gestión de propiedades. Traduce el código del plugin en fotogramas visuales instantáneamente usando un mecanismo de **Hard Reset** para asegurar cero fugas de estado entre proyectos.
+Maneja la interfaz de usuario de **Ember**, la previsualización en tiempo real a 60FPS y la gestión de propiedades. Traduce el código del plugin en fotogramas visuales instantáneamente usando un mecanismo de **Hard Reset** para asegurar cero fugas de estado entre proyectos.
 
 ### 2. Proceso Principal (Backend)
 
 Se ejecuta en un entorno Node.js y es responsable de:
 
-- Leer y escribir archivos de proyecto.
-- Orquestar el renderizado de video headless.
+- Leer y escribir archivos de proyecto de forma atómica.
+- Orquestar el renderizado de video headless mediante **DVGE**.
 - Escanear el sistema en busca de plugins compatibles.
 - **[v5.8.0]** Secuencia de Carga Determinista (Hardware Scanner + esbuild Sync).
 - **[v5.6.0]** Gestión de Proyectos (Renombrado, Eliminación Atómica).
 - **[v5.6.0]** Auto-Fetch de dependencias (Chromium/FFmpeg).
 - Gestionar el Servidor Local WebSocket para integraciones externas.
-- Compilar y servir el PDF de reglas del motor vía IPC `generate-rules-pdf`.
+- Compilar y servir el contexto de reglas del motor vía IPC.
 
 ---
 
 ## Sandbox de Seguridad y Aislamiento
 
-DVGE v5.8.0 implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
+**Ember Motion Studio** implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
 
 ### 1. Proxy `fakeWindow`
 
@@ -85,17 +85,17 @@ Cada plugin se renderiza dentro de un **Shadow Root**. Esta tecnología asegura 
 
 ---
 
-## Knowledge Bridge Nativo (v5.8.0 Master)
+## Knowledge Bridge AI (v5.8.0 Master)
 
 El **Knowledge Bridge** es un sistema de inyección de contexto diseñado para eliminar la fricción entre el motor y los asistentes de IA.
 
-### 1. Generación de PDF de Reglas (IPC `generate-rules-pdf`)
+### 1. Generación de Contexto Técnico
 
-El backend expone un handler IPC que compila todas las reglas del motor (Sandbox, API, Shadow DOM, Utils) en un archivo `.pdf` físico almacenado en caché en el sistema del usuario.
+El backend expone un handler IPC que compila todas las reglas del motor (Sandbox, API, Shadow DOM, Utils) para que la IA entienda el entorno de ejecución.
 
 ### 2. Drag-to-AI UI
 
-En el plugin "DVGE Studio Master", el campo tipo `prompt` del inspector expone una zona draggable. Al arrastrar esta zona a una IA, se lanza el evento `startDrag` nativo de Electron con la ruta del PDF como payload, permitiendo inyección directa de contexto sin copiar texto.
+En el plugin "Ember Studio Master", el campo tipo `prompt` del inspector expone una zona draggable. Al arrastrar esta zona a una IA, se inyecta directamente el contexto técnico, permitiendo que la IA genere código determinista al primer intento.
 
 ---
 
@@ -105,43 +105,36 @@ La versión 5.8 introduce la **Secuencia de Carga Determinista** y refina la cap
 
 ### 1. Secuencia de Carga Honest (v5.8.0 Master)
 
-El motor ya no oculta su proceso de inicialización. La UI reporta en tiempo real:
+El motor ya no oculta su proceso de inicialización. La UI de **Ember** reporta en tiempo real:
 
 - **Hardware Scan**: Detección de GPU (VRAM) y CPU para optimizar el renderizado.
 - **esbuild Sync**: Preparación del pipeline de compilación de plugins antes de permitir la interacción.
 - **Module Assembly**: Carga secuencial de los gestores de proyectos y plugins.
 
-### 1. Dependency Manager
+### 2. Dependency Manager
 
 El motor ya no depende de que el usuario tenga Chrome instalado globalmente. En el primer inicio:
 
 - Detecta la ausencia de Chromium.
-- Descarga una versión *headless* certificada en `%APPDATA%\DVGE\bin`.
+- Descarga una versión *headless* certificada en el directorio de la aplicación.
 - Resuelve dinámicamente la ruta de FFmpeg para la codificación ProRes 4444.
 
-### 2. Transparency Transformer
+### 3. Transparency Transformer
 
 El motor asegura una transparencia profesional mediante tres capas:
 
 - **Chromium Flags**: Inyección de `--transparent-background-color=0`.
 - **JS Injection**: Uso de `evaluatePage` para forzar `background-color: transparent` antes de cada captura de cuadro.
-- **Formato ProRes**: Exportación en `yuva444p10le` para compatibilidad nativa con DaVinci Resolve.
-
-### 3. Data Probe Hydration (Resolución de Límites CLI)
-
-Para evitar la pérdida de datos en Windows (causada por el límite de caracteres en la línea de comandos), el motor utiliza un sistema de **Sonda de Datos**:
-
-- El backend levanta un servidor HTTP efímero.
-- El renderizador solicita las propiedades del proyecto vía un fetch local a `/props.json`.
+- **Formato ProRes**: Exportación en `yuva444p10le` para compatibilidad nativa con editores de video profesionales.
 
 ---
 
 ## Persistencia Atómica (I/O)
 
-Para prevenir la corrupción de proyectos, DVGE utiliza una estrategia de **E/S Asíncrona Atómica**:
+Para prevenir la corrupción de proyectos, **Ember** utiliza una estrategia de **E/S Asíncrona Atómica**:
 
 1. **Debouncing**: Los cambios se almacenan en un búfer durante 500ms para reducir las escrituras en disco.
 2. **Escritura Temporal**: El estado se escribe primero en un archivo `.tmp`.
-3. **Renombrado Atómico**: Sólo tras una escritura exitosa, el archivo `.tmp` reemplaza al `project.json` real.
+3. **Renombrado Atómico**: Sólo tras una escritura exitosa, el archivo `.tmp` reemplaza al archivo de proyecto real.
 
 Este flujo garantiza que una caída del sistema o un fallo de energía durante un autoguardado nunca destruirá el trabajo del usuario.

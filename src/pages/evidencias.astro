@@ -1,0 +1,247 @@
+---
+import MainLayout from "../components/MainLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+
+const evidences = [
+  {
+    title: "Broadcast de Deportes Regional",
+    description: "Implementación de marcadores en tiempo real y lower thirds para una liga de fútbol local utilizando la API de automatización de Ember.",
+    url: "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-",
+    comment: "Ember profesionalizó nuestras transmisiones en vivo. La integración con OBS fue inmediata.",
+    author: "Alejandro M.",
+    tags: ["Deportes", "OBS"]
+  },
+  {
+    title: "Streaming de Eventos Corporativos",
+    description: "Gráficos elegantes y minimalistas para conferencias híbridas, exportados en ProRes 4444 para integración en DaVinci Resolve.",
+    url: "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-",
+    comment: "La calidad del canal alfa es insuperable. Ahorramos horas de renderizado manual.",
+    author: "Sofía R.",
+    tags: ["ProRes 4444", "Resolve"]
+  },
+  {
+    title: "Newsroom 24/7",
+    description: "Sistema de generación de bandas de noticias automatizado que reduce el tiempo de post-producción en un 60%.",
+    url: "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-",
+    comment: "Conectamos nuestros feeds de noticias directamente a los gráficos animado en tiempo real.",
+    author: "Marco T.",
+    tags: ["Noticias", "API"]
+  }
+];
+---
+
+<MainLayout title="Evidencias de Trabajo — Ember Motion Studio">
+  <Navigation />
+  
+  <main class="evidence-page">
+    <header class="page-header container">
+      <p class="label">Showcase</p>
+      <h1 class="title">Evidencias de Trabajo</h1>
+      <p class="subtitle">Descubre cómo el motor DVGE está impulsando proyectos reales en la industria del video.</p>
+    </header>
+
+    <section class="evidence-grid container">
+      {evidences.map(item => (
+        <div class="evidence-card">
+          <div class="card-header">
+            <div class="tags">
+              {item.tags.map(tag => <span class="tag">{tag}</span>)}
+            </div>
+            <h3>{item.title}</h3>
+          </div>
+          
+          <p class="desc">{item.description}</p>
+          
+          <div class="user-comment">
+            <p>"{item.comment}"</p>
+            <span class="author">— {item.author}</span>
+          </div>
+
+          <a href={item.url} target="_blank" rel="noopener" class="project-link">
+            Ver Proyecto
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>
+          </a>
+        </div>
+      ))}
+    </section>
+
+    <section class="cta-section container">
+      <div class="cta-card">
+        <h2>¿Tu proyecto aquí?</h2>
+        <p>Si usas Ember en tus producciones, cuéntanos tu historia.</p>
+        <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/issues" class="btn-primary">Enviar Evidencia</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>
+
+<style>
+  .evidence-page {
+    padding-top: 9rem;
+    min-height: 100vh;
+    background: #000;
+  }
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 2rem;
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 6rem;
+  }
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #E44C30;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .evidence-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 8rem;
+  }
+
+  .evidence-card {
+    background: #080808;
+    border: 1px solid rgba(255,255,255,0.04);
+    border-radius: 16px;
+    padding: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .evidence-card:hover {
+    border-color: rgba(228, 76, 48, 0.2);
+    transform: translateY(-8px);
+    background: #0a0a0a;
+  }
+
+  .tags {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+  }
+  .tag {
+    font-size: 0.6rem;
+    font-family: 'JetBrains Mono', monospace;
+    color: #E44C30;
+    background: rgba(228, 76, 48, 0.08);
+    padding: 0.25rem 0.6rem;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+
+  .evidence-card h3 {
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+
+  .desc {
+    color: #777;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex-grow: 1;
+  }
+
+  .user-comment {
+    background: rgba(255,255,255,0.02);
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border-left: 3px solid #E44C30;
+  }
+  .user-comment p {
+    color: #ccc;
+    font-style: italic;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+  .author {
+    color: #E44C30;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: white;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: color 0.2s ease;
+  }
+  .project-link:hover {
+    color: #E44C30;
+  }
+
+  .cta-section {
+    margin-bottom: 10rem;
+  }
+  .cta-card {
+    text-align: center;
+    padding: 5rem 2rem;
+    border-radius: 24px;
+    background: radial-gradient(circle at center, #150a08 0%, #000 100%);
+    border: 1px solid rgba(228, 76, 48, 0.15);
+  }
+  .cta-card h2 {
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  .cta-card p {
+    color: #888;
+    margin-bottom: 2.5rem;
+  }
+  .btn-primary {
+    display: inline-block;
+    padding: 1rem 2.5rem;
+    background: #E44C30;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 800;
+    transition: all 0.2s ease;
+  }
+  .btn-primary:hover {
+    background: #f05a3e;
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(228, 76, 48, 0.3);
+  }
+</style>

@@ -1,89 +1,77 @@
 ---
 title: Identidad Visual
-description: Directrices de marca de DVGE, recursos de logo y política de uso para proyectos construidos con el motor.
+description: Recursos de marca de Ember Motion Studio y el motor DVGE.
 sidebar:
   order: 5
 ---
 
-Si has construido un proyecto con DVGE, te invitamos a incluir la insignia de DVGE en tus créditos. A continuación, las directrices oficiales.
+La identidad visual de este proyecto se divide en dos capas: **Ember Motion Studio** (la suite de usuario y entorno de diseño) y **DVGE** (el motor técnico que potencia toda la plataforma).
+
+> **Ember Motion Studio** es la capa comercial y de experiencia de usuario, diseñada para la producción broadcast. **DVGE (Dynamic Vector Graphics Engine)** es el motor de renderizado de código abierto (MIT) que reside en el núcleo y garantiza el determinismo de cada fotograma.
 
 ---
 
-## Uso del Logo
+## Ember Motion Studio (Suite)
 
-DVGE cuenta con dos variantes oficiales del logotipo. Puedes descargarlas directamente a continuación:
+El logo de **Ember** representa la energía y el movimiento de los gráficos broadcast modernos.
 
-<div style="display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; margin: 2rem 0;">
-  <div style="text-align: center; padding: 2rem; background: var(--color-surface); border-radius: 8px; border: 1px solid var(--glass-border); flex: 1; min-width: 250px;">
-    <h3 style="margin-top: 0;">Logo Estándar</h3>
-    <img src="/DVGE-Docs/icon.png" alt="Logo Estándar de DVGE" width="128" height="128" style="margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.2));" />
-    <br/>
-    <a href="/DVGE-Docs/icon.png" download="DVGE_Logo_Standard.png" style="display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Descargar Standard (PNG)</a>
+<div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0;">
+  <div style="text-align: center; padding: 2.5rem; background: #050505; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h3 style="margin-top: 0; color: white; font-size: 1.1rem; margin-bottom: 2rem;">Ember Logo Square</h3>
+    <img src="/DVGE-Docs/logo-square.png" alt="Ember Logo Square" width="160" height="160" style="display: block; margin: 0 auto 2rem; filter: drop-shadow(0 0 15px rgba(228, 76, 48, 0.25));" />
+    <a href="/DVGE-Docs/logo-square.png" download="Ember_Logo_Square.png" style="display: inline-block; padding: 0.6rem 1.2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: opacity 0.2s;">Descargar PNG</a>
   </div>
 
-  <div style="text-align: center; padding: 2rem; background: var(--color-surface); border-radius: 8px; border: 1px solid var(--glass-border); flex: 1; min-width: 250px;">
-    <h3 style="margin-top: 0;">Logo Highlight</h3>
-    <img src="/DVGE-Docs/icon_highlight.png" alt="Logo Highlight de DVGE" width="128" height="128" style="margin-bottom: 1rem; filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.4));" />
-    <br/>
-    <a href="/DVGE-Docs/icon_highlight.png" download="DVGE_Logo_Highlight.png" style="display: inline-block; padding: 0.5rem 1rem; background: var(--color-primary); color: white; text-decoration: none; border-radius: 4px; font-weight: bold;">Descargar Highlight (PNG)</a>
+  <div style="text-align: center; padding: 2.5rem; background: #050505; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <h3 style="margin-top: 0; color: white; font-size: 1.1rem; margin-bottom: 2rem;">Ember Element Mark</h3>
+    <img src="/DVGE-Docs/elementSquare.png" alt="Ember Element Mark" width="300" height="300" style="display: block; margin: 0 auto 2rem; filter: drop-shadow(0 0 15px rgba(228, 76, 48, 0.15));" />
+    <a href="/DVGE-Docs/elementSquare.png" download="Ember_Element_Square.png" style="display: inline-block; padding: 0.6rem 1.2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: opacity 0.2s;">Descargar PNG</a>
   </div>
 </div>
 
 ---
 
-## Descargas Oficiales
+## DVGE (El Motor)
 
-Si necesitas instalar el motor en su versión más reciente para Windows:
+Mantenemos la identidad original del motor para desarrolladores y contribuidores del ecosistema open source.
 
-<div style="padding: 2rem; background: var(--color-surface); border-radius: 8px; border: 1px solid var(--glass-border); text-align: center; margin-top: 2rem;">
-  <h3>Instalador de DVGE v5.6.0</h3>
-  <p>Versión estable para Windows 10/11 (x64)</p>
-  <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe" style="display: inline-block; padding: 1rem 2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 8px; font-weight: bold; font-size: 1.1rem; box-shadow: 0 4px 15px rgba(228, 76, 48, 0.3);">
-    Descargar Instalador (.exe)
-  </a>
-  <p style="margin-top: 1rem; font-size: 0.9rem; color: var(--color-text-muted);">Tamaño: ~130 MB | SHA-256: <code>CD1E89A8DBD4848513D8E489FFA0D55CBE6243D248FBCFB60DC57B1827B42B83</code></p>
+<div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0;">
+  <div style="text-align: center; padding: 2rem; background: #0d0d0d; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04); flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center;">
+    <p style="margin: 0 0 1.25rem 0; font-size: 0.75rem; color: #666; font-family: monospace;">DVGE_STANDARD</p>
+    <img src="/DVGE-Docs/icon.png" alt="DVGE Core Icon" width="64" height="64" style="display: block; margin: 0 auto 1.5rem;" />
+    <a href="/DVGE-Docs/icon.png" download="DVGE_Icon_Standard.png" style="color: #E44C30; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-bottom: 1px solid transparent; transition: border 0.2s;">Descargar PNG</a>
+  </div>
+
+  <div style="text-align: center; padding: 2rem; background: #0d0d0d; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04); flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center;">
+    <p style="margin: 0 0 1.25rem 0; font-size: 0.75rem; color: #666; font-family: monospace;">DVGE_HIGHLIGHT</p>
+    <img src="/DVGE-Docs/icon_highlight.png" alt="DVGE Highlight Icon" width="64" height="64" style="display: block; margin: 0 auto 1.5rem;" />
+    <a href="/DVGE-Docs/icon_highlight.png" download="DVGE_Icon_Highlight.png" style="color: #E44C30; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-bottom: 1px solid transparent; transition: border 0.2s;">Descargar PNG</a>
+  </div>
 </div>
-
-### Usos Aceptados
-- En créditos del proyecto: *"Gráficos potenciados por DVGE"*
-- En documentación para plugins construidos para el motor.
-- En exhibiciones de portafolio de trabajo que usaron DVGE.
-
-### Usos Prohibidos
-- Implicar endoso o asociación oficial.
-- Modificar el logo (cambiar color, distorsionar, añadir texto).
-- Usar el logo para representar un producto de la competencia.
 
 ---
 
-## Paleta de Colores
-
-La marca DVGE utiliza un conjunto específico de colores para consistencia.
+## Paleta de Colores Oficial
 
 | Token | Hex | Uso |
 | :--- | :--- | :--- |
-| **Ember** | `#E44C30` | Acento principal, CTAs, resaltados |
-| **Obsidian** | `#050505` | Fondo |
-| **Surface** | `#121212` | Tarjetas, barras laterales |
-| **Text** | `#FFFFFF` | Texto principal |
-| **Muted** | `#888888` | Texto secundario, subtítulos |
+| **Ember Base** | `#E44C30` | Color de marca, botones principales, acentos. |
+| **Ember Dark** | `#801C0B` | Gradientes profundos y sombras. |
+| **Obsidian** | `#050505` | Fondo de aplicación (OLED Black). |
+| **Surface** | `#121212` | Paneles secundarios, tarjetas y sidebar. |
 
 ---
 
-## Plantilla de Créditos
+## Tipografía
 
-Para proyectos o plugins construidos con DVGE:
-
-```
-Motor Gráfico: Dynamic Vector Graphics Engine (DVGE) v5.6.0
-Autor: Jonatan Barón — github.com/Mushi-Ayaka
-Licencia: MIT
-```
+- **Outfit (900/Extra Bold)**: Para Wordmarks y titulares de Ember.
+- **Inter (Regular/Medium)**: Para cuerpo de texto y controles de la interfaz.
+- **JetBrains Mono**: Para métricas, hashes y documentación técnica del motor.
 
 ---
 
-## Licencia
+## Licencia y Uso
 
-DVGE se publica bajo la **Licencia MIT**. Eres libre de usar, modificar y distribuir el motor, siempre y cuando des la atribución correspondiente.
+Ember Motion Studio se publica bajo la **Licencia MIT**. Si usas el motor en tu proyecto, te agradecemos incluir la siguiente atribución:
 
-Consulta el archivo [LICENSE](https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/blob/main/LICENSE) en el repositorio para el texto legal completo.
+> *"Gráficos potenciados por el motor DVGE en Ember Motion Studio"*

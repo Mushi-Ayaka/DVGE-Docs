@@ -28,9 +28,8 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          <span className="title-line">Dynamic</span>
-          <span className="title-line title-line--accent">Vector</span>
-          <span className="title-line">Graphics Engine</span>
+          <span className="title-line title-line--accent">Ember</span>
+          <span className="title-line">Motion Studio</span>
         </motion.h1>
 
         {/* Separador horizontal */}
@@ -62,7 +61,7 @@ const Hero = () => {
           transition={{ duration: 0.5, delay: 0.65 }}
         >
           <a
-            href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/DVGE-Setup-5.8.0.exe"
+            href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe"
             className="btn btn-primary"
           >
             <Download size={18} />

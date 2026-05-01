@@ -6,8 +6,6 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mushi-ayaka.github.io',
-  base: '/DVGE-Docs/',
   trailingSlash: 'always',
   build: {
     format: 'directory'
@@ -19,10 +17,10 @@ export default defineConfig({
   },
   integrations: [
     starlight({
-      title: 'DVGE',
-      favicon: './src/assets/icon.png',
+      title: 'Ember Motion Studio',
+      favicon: '/logo-square.png',
       logo: {
-        src: './src/assets/icon.png',
+        src: './src/assets/logo-square.png',
       },
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-' },

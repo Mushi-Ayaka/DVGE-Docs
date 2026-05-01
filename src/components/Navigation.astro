@@ -1,20 +1,66 @@
 ---
 import icon from "../assets/icon.png";
 const base = import.meta.env.BASE_URL;
-const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.6.0/DVGE-Setup-5.6.0.exe";
+const downloadUrl =
+  "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe";
 ---
 
 <nav class="nav-container">
   <div class="nav-content">
-    <a href={base} class="logo">
-      <img src={icon.src} alt="Logo de DVGE" width="32" height="32" />
-      <span>DVGE</span>
+    <a href={base} class="logo" id="navLogo">
+      <svg
+        class="ember-mark"
+        viewBox="0 0 100 100"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+      >
+        <defs>
+          <linearGradient id="navEmberGrad" x1="0%" y1="100%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#801C0B"></stop>
+            <stop offset="50%" stop-color="#E44C30"></stop>
+            <stop offset="100%" stop-color="#FFAB99"></stop>
+          </linearGradient>
+        </defs>
+        <polygon
+          class="mark-trail t1"
+          points="20,40 30,50 20,60 10,50"
+          stroke="#801C0B"
+          stroke-width="2.5"
+          opacity="0.3"
+          fill="none"></polygon>
+        <polygon
+          class="mark-trail t2"
+          points="45,36 59,50 45,64 31,50"
+          stroke="#E44C30"
+          stroke-width="4"
+          opacity="0.6"
+          fill="none"></polygon>
+        <polygon
+          class="mark-core"
+          points="75,30 95,50 75,70 55,50"
+          fill="url(#navEmberGrad)"></polygon>
+      </svg>
+      <span>Ember</span>
     </a>
 
-    <button class="mobile-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-links">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+    <button
+      class="mobile-toggle"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+      aria-controls="nav-links"
+    >
+      <svg
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+      >
         <path class="menu-icon" d="M3 12h18M3 6h18M3 18h18"></path>
-        <path class="close-icon" d="M18 6L6 18M6 6l12 12" style="display: none;"></path>
+        <path class="close-icon" d="M18 6L6 18M6 6l12 12" style="display: none;"
+        ></path>
       </svg>
     </button>
 
@@ -22,10 +68,19 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
           Motor
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
+          >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}engine/architecture/`} role="menuitem">Arquitectura Central</a>
+          <a href={`${base}engine/architecture/`} role="menuitem"
+            >Arquitectura Central</a
+          >
           <a href={`${base}engine/performance/`} role="menuitem">Rendimiento</a>
           <a href={`${base}engine/benchmarks/`} role="menuitem">Benchmarks</a>
           <a href={`${base}engine/roadmap/`} role="menuitem">Hoja de Ruta</a>
@@ -35,11 +90,20 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
           Ecosistema
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
+          >
         </button>
         <div class="dropdown-content" role="menu">
           <a href={`${base}ecosystem/community/`} role="menuitem">Comunidad</a>
-          <a href={`${base}ecosystem/repository/`} role="menuitem">Galería de Plugins</a>
+          <a href={`${base}ecosystem/repository/`} role="menuitem"
+            >Galería de Plugins</a
+          >
           <a href={`${base}ecosystem/api/`} role="menuitem">API de Extensión</a>
         </div>
       </div>
@@ -47,33 +111,88 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
           Desarrollo
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
+          >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}development/quick-start/`} role="menuitem">Guía de Inicio</a>
-          <a href={`${base}development/ai-guide/`} role="menuitem">Plugins con IA</a>
-          <a href={`${base}development/contributing/`} role="menuitem">Contribuir</a>
+          <a href={`${base}development/quick-start/`} role="menuitem"
+            >Guía de Inicio</a
+          >
+          <a href={`${base}ejemplos/`} role="menuitem">Ejemplos y Tutoriales</a>
+          <a href={`${base}development/ai-guide/`} role="menuitem"
+            >Plugins con IA</a
+          >
+          <a href={`${base}development/contributing/`} role="menuitem"
+            >Contribuir</a
+          >
         </div>
       </div>
+
+      <!-- 
+      <div class="dropdown">
+        <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
+          Comunidad
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
+          >
+        </button>
+        <div class="dropdown-content" role="menu">
+          <a href={`${base}evidencias/`} role="menuitem"
+            >Evidencias de Trabajo</a
+          >
+          <a href={`${base}historias/`} role="menuitem">Historias de Usuarios</a>
+        </div>
+      </div>
+      -->
 
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
           Proyecto
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
+          >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}about/user-manual/`} role="menuitem">Manual de Usuario</a>
+          <a href={`${base}about/user-manual/`} role="menuitem"
+            >Manual de Usuario</a
+          >
           <a href={`${base}about/changelog/`} role="menuitem">Changelog</a>
           <a href={`${base}about/vision/`} role="menuitem">La Visión</a>
-          <a href={`${base}about/transparency/`} role="menuitem">Transparencia</a>
-          <a href={`${base}about/branding/`} role="menuitem">Identidad Visual</a>
+          <a href={`${base}about/transparency/`} role="menuitem"
+            >Transparencia</a
+          >
+          <a href={`${base}about/branding/`} role="menuitem">Identidad Visual</a
+          >
         </div>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
           Acerca de
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg>
+          <svg
+            width="12"
+            height="12"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
+          >
         </button>
         <div class="dropdown-content" role="menu">
           <a href={`${base}about/me/`} role="menuitem">El Desarrollador</a>
@@ -82,14 +201,36 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
         </div>
       </div>
 
-      <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" rel="noopener" class="github-link" aria-label="Repositorio en GitHub">
-        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
+      <a
+        href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-"
+        target="_blank"
+        rel="noopener"
+        class="github-link"
+        aria-label="Repositorio en GitHub"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="20"
+          height="20"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"
+          ></path>
           <path d="M9 18c-4.51 2-5-2-7-2"></path>
         </svg>
       </a>
 
-      <a href={downloadUrl} class="nav-cta" aria-label="Descargar DVGE v5.6.0">
+      <a
+        href={downloadUrl}
+        class="nav-cta"
+        aria-label="Descargar Ember Motion Studio v5.8.0"
+      >
         Descargar
       </a>
     </div>
@@ -122,7 +263,8 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
       // Solo activar click en móvil (cuando el toggle es visible)
       if (window.innerWidth <= 960) {
         e.preventDefault();
-        const isOpen = content.style.maxHeight && content.style.maxHeight !== "0px";
+        const isOpen =
+          content.style.maxHeight && content.style.maxHeight !== "0px";
         // Cerrar todos los demás
         document.querySelectorAll(".dropdown-content").forEach((el) => {
           (el as HTMLElement).style.maxHeight = "0px";
@@ -151,9 +293,28 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
     });
   });
 
+  // Parallax 3D sutil para el logo
+  const navLogo = document.getElementById("navLogo");
+  if (navLogo) {
+    const MAX_ROTATION = 15;
+    document.addEventListener("mousemove", (e) => {
+      const x = (e.clientX / window.innerWidth) * 2 - 1;
+      const y = (e.clientY / window.innerHeight) * 2 - 1;
+      const rotateX = y * -MAX_ROTATION;
+      const rotateY = x * MAX_ROTATION;
+      navLogo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+    });
+    document.addEventListener("mouseleave", () => {
+      navLogo.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
+    });
+  }
+
   // Cerrar menú móvil al hacer click fuera
   document.addEventListener("click", (e) => {
-    if (!toggle?.contains(e.target as Node) && !navLinks?.contains(e.target as Node)) {
+    if (
+      !toggle?.contains(e.target as Node) &&
+      !navLinks?.contains(e.target as Node)
+    ) {
       navLinks?.classList.remove("active");
       toggle?.setAttribute("aria-expanded", "false");
       if (menuIcon && closeIcon) {
@@ -195,6 +356,48 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
     color: var(--color-text);
     text-decoration: none;
     z-index: 1001;
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .ember-mark {
+    filter: drop-shadow(0 0 10px rgba(228, 76, 48, 0.3));
+    animation: floatGlow 6s infinite alternate ease-in-out;
+  }
+
+  .mark-core {
+    transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    transform-origin: 75px 50px;
+  }
+
+  .mark-trail {
+    transition:
+      transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+      opacity 0.4s ease;
+  }
+
+  .logo:hover .mark-core {
+    transform: translateX(6px) scale(1.05);
+  }
+
+  .logo:hover .mark-trail.t2 {
+    transform: translateX(-4px);
+    opacity: 0.9;
+  }
+
+  .logo:hover .mark-trail.t1 {
+    transform: translateX(-10px);
+    opacity: 0.6;
+  }
+
+  @keyframes floatGlow {
+    0% {
+      filter: drop-shadow(0 0 8px rgba(228, 76, 48, 0.2));
+      transform: translateY(0px);
+    }
+    100% {
+      filter: drop-shadow(0 0 20px rgba(228, 76, 48, 0.5));
+      transform: translateY(-2px);
+    }
   }
 
   .nav-links {
@@ -264,7 +467,7 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
 
   /* Cubre el gap entre botón y panel para que el hover no se interrumpa */
   .dropdown::before {
-    content: '';
+    content: "";
     position: absolute;
     top: 100%;
     left: 0;
@@ -300,7 +503,9 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
     color: var(--color-text-muted);
     transition: color 0.2s ease;
   }
-  .github-link:hover { color: var(--color-primary); }
+  .github-link:hover {
+    color: var(--color-primary);
+  }
   .github-link:focus-visible {
     outline: 2px solid var(--color-primary);
     border-radius: 4px;
@@ -314,7 +519,9 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
     font-size: 0.875rem;
     font-weight: 600;
     text-decoration: none;
-    transition: background 0.2s ease, transform 0.2s ease;
+    transition:
+      background 0.2s ease,
+      transform 0.2s ease;
     white-space: nowrap;
   }
   .nav-cta:hover {
@@ -327,12 +534,20 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
   }
 
   @keyframes fadeIn {
-    from { opacity: 0; transform: translate(-50%, -6px); }
-    to   { opacity: 1; transform: translate(-50%, 0); }
+    from {
+      opacity: 0;
+      transform: translate(-50%, -6px);
+    }
+    to {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
   }
 
   @media (max-width: 960px) {
-    .mobile-toggle { display: block; }
+    .mobile-toggle {
+      display: block;
+    }
 
     .nav-links {
       position: fixed;
@@ -350,9 +565,13 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
       gap: 0;
       overflow-y: auto;
     }
-    .nav-links.active { right: 0; }
+    .nav-links.active {
+      right: 0;
+    }
 
-    .dropdown { width: 100%; }
+    .dropdown {
+      width: 100%;
+    }
 
     .dropbtn {
       width: 100%;
@@ -382,9 +601,13 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
       max-height: 0;
     }
 
-    .dropdown-content a { padding: 0.75rem 0; }
+    .dropdown-content a {
+      padding: 0.75rem 0;
+    }
 
-    .github-link { margin-top: 1rem; }
+    .github-link {
+      margin-top: 1rem;
+    }
 
     .nav-cta {
       margin-top: 1.5rem;

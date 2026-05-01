@@ -1,22 +1,22 @@
 ---
 title: Benchmarks y Estabilidad
-description: Datos técnicos verificados sobre la consistencia de renderizado, rendimiento de exportación y overhead del sistema de seguridad de DVGE.
+description: Datos técnicos verificados sobre la consistencia de renderizado, rendimiento de exportación y overhead del sistema de seguridad de Ember Motion Studio.
 sidebar:
   order: 4
 ---
 
-DVGE está construido para entornos de transmisión profesional donde el fallo no es una opción. Medimos el rendimiento no solo en velocidad, sino en **consistencia y resiliencia**.
+**Ember Motion Studio** está construido para entornos de transmisión profesional donde el fallo no es una opción. Medimos el rendimiento no solo en velocidad, sino en **consistencia y resiliencia**. El motor **DVGE** garantiza que cada fotograma sea perfecto.
 
 ---
 
 ## Consistencia de Renderizado (Determinismo)
 
-A diferencia de los motores en tiempo real, DVGE no usa un reloj del sistema para calcular animaciones. Cada fotograma se calcula a partir de su índice discreto (`frame`), lo que hace que el desvío temporal sea **estructuralmente imposible**.
+A diferencia de los motores en tiempo real, el motor **DVGE** no usa un reloj del sistema para calcular animaciones. Cada fotograma se calcula a partir de su índice discreto (`frame`), lo que hace que el desvío temporal sea **estructuralmente imposible**.
 
 | Tipo de Motor | Método de Tiempo | Resultado bajo Carga |
 | :--- | :--- | :--- |
 | **Tradicional (GSAP / rAF)** | Reloj del sistema (`Date.now()`) | Saltos de fotogramas bajo carga de CPU |
-| **DVGE (Frame-Math)** | Índice de fotograma discreto (`ctx.frame`) | **Salida idéntica en cualquier hardware** |
+| **Ember (Frame-Math)** | Índice de fotograma discreto (`ctx.frame`) | **Salida idéntica en cualquier hardware** |
 
 ### Por qué el desvío es cero por diseño
 
@@ -37,9 +37,13 @@ update: (ctx) => {
 El renderizador headless opera con `concurrency: 1` — un fotograma a la vez — para garantizar la integridad del canal alfa en cada frame. Los tiempos reflejan esta configuración conservadora, optimizada para fidelidad sobre velocidad.
 
 **Configuración de prueba:**
+
 - Resolución: 1920×1080 @ 60 FPS
+
 - Codec: Apple ProRes 4444 (`yuva444p10le`, 10-bit)
+
 - Concurrencia: 1 (por diseño, para integridad alfa)
+
 - Chromium: headless con `--force-cpu-rasterization`
 
 | Complejidad | Duración del clip | Tiempo de exportación estimado |
@@ -54,9 +58,9 @@ El renderizador headless opera con `concurrency: 1` — un fotograma a la vez �
 
 ## Persistencia Atómica — Resiliencia ante Fallos
 
-El sistema de guardado usa escritura atómica asíncrona implementada en `project-manager.ts`:
+El sistema de guardado usa escritura atómica asíncrona implementada en el núcleo de **Ember**:
 
-```
+```txt
 1. Cambio detectado → debounce de 500ms
 2. Escritura en archivo temporal: project.json.tmp
 3. Solo si la escritura tiene éxito: fs.rename(tmp → project.json)
@@ -65,19 +69,19 @@ El sistema de guardado usa escritura atómica asíncrona implementada en `projec
 
 **Garantía:** Un cierre inesperado, fallo de energía o bloqueo del sistema durante el autoguardado **nunca corrompe** el archivo de proyecto. El archivo `.tmp` se descarta automáticamente en el siguiente inicio.
 
-El debounce de `500ms` está implementado directamente en el store de Zustand (`useStore.ts`), acumulando cambios antes de cada escritura para minimizar operaciones de disco.
+El debounce de `500ms` está implementado directamente en el store de Zustand, acumulando cambios antes de cada escritura para minimizar operaciones de disco.
 
 ---
 
 ## Overhead del Sandbox de Seguridad
 
-El sistema de aislamiento de plugins (Shadow DOM + `fakeWindow` Proxy) añade una capa de seguridad con impacto mínimo en el rendimiento:
+El sistema de aislamiento de plugins (**Shadow DOM + fakeWindow Proxy**) añade una capa de seguridad con impacto mínimo en el rendimiento:
 
 | Componente | Implementación | Impacto en el loop de 60fps |
 | :--- | :--- | :--- |
 | **Shadow DOM** | `attachShadow({ mode: 'open' })` | Negligible — nativo del navegador |
 | **fakeWindow Proxy** | Intercepta acceso a `window` real | < 0.1ms por fotograma |
-| **Polyfill `getElementById`** | `shadowRoot.querySelector('#id')` | Equivalente al nativo |
+| **Polyfill getElementById** | `shadowRoot.querySelector('#id')` | Equivalente al nativo |
 | **Total overhead de seguridad** | — | **< 0.5ms por fotograma** |
 
 La ventana disponible para el loop de preview a 60fps es de **16.6ms por fotograma**. El overhead del sandbox representa menos del 3% de ese presupuesto.
@@ -86,7 +90,7 @@ La ventana disponible para el loop de preview a 60fps es de **16.6ms por fotogra
 
 ## Transparency Transformer — Canal Alfa ProRes
 
-La exportación con canal alfa requiere una cadena de tres capas para garantizar transparencia real en DaVinci Resolve:
+La exportación con canal alfa requiere una cadena de tres capas para garantizar transparencia real en **DaVinci Resolve**, **Premiere Pro** o **After Effects**:
 
 | Capa | Implementación | Propósito |
 | :--- | :--- | :--- |
@@ -94,7 +98,7 @@ La exportación con canal alfa requiere una cadena de tres capas para garantizar
 | **JS Injection** | `evaluatePage` → `body.style.backgroundColor = 'transparent'` | Garantiza transparencia antes de la captura del frame 0 |
 | **Pixel Format** | `yuva444p10le` (ProRes 4444, 10-bit) | Preserva el canal alfa completo en el archivo `.mov` |
 
-El **Frame 0 Fix** (v5.6.0) resuelve el bug donde el primer fotograma se capturaba antes de completar la hidratación de datos. Ahora el motor usa `delayRender` / `continueRender` de Remotion para pausar el renderizado hasta que los props estén disponibles, garantizando que el primer frame exportado sea idéntico al que se ve en la previsualización.
+El **Frame 0 Fix** resuelve el bug donde el primer fotograma se capturaba antes de completar la hidratación de datos. Ahora el motor usa `delayRender` / `continueRender` de Remotion para pausar el renderizado hasta que los props estén disponibles, garantizando que el primer frame exportado sea idéntico al que se ve en la previsualización.
 
 ---
 
@@ -102,11 +106,11 @@ El **Frame 0 Fix** (v5.6.0) resuelve el bug donde el primer fotograma se captura
 
 Windows impone un límite de ~32.767 caracteres en argumentos de línea de comandos. Para plugins con HTML/CSS/JS extensos, pasar los datos por CLI causaba truncamiento silencioso.
 
-**Solución implementada (v5.4.0+):**
+**Solución implementada:**
 
-```
-Main Process → levanta servidor HTTP en 127.0.0.1:5555
-RenderWrapper → fetch('http://127.0.0.1:5555/props.json')
+```txt
+Main Process → levanta servidor HTTP efímero en localhost:[PORT]
+RenderWrapper → fetch('http://localhost:[PORT]/props.json')
 Remotion      → recibe los datos completos sin límite de tamaño
 Servidor      → se cierra automáticamente al finalizar el render
 ```

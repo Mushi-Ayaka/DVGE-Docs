@@ -1,0 +1,340 @@
+---
+import MainLayout from "../components/MainLayout.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+const base = import.meta.env.BASE_URL;
+
+const examples = [
+  {
+    title: "Template Horizons",
+    description:
+      "Una composición panorámica diseñada para paisajes informativos y bandas de noticias de gran formato. Incluye transiciones cinemáticas y tipografía optimizada para legibilidad a distancia.",
+    videoSrc: `${base}multimedia/demo1.mp4`,
+  },
+  {
+    title: "Social Minimal",
+    description:
+      "Estética limpia y moderna para creadores de contenido. Overlays diseñados para redes sociales que no distraen pero elevan la calidad visual de cualquier stream o video.",
+    videoSrc: `${base}multimedia/demo2.mp4`,
+  },
+  {
+    title: "Gráfico de Barras Dinámico",
+    description:
+      "Visualización de datos reactiva. Las barras se animan en tiempo real según la entrada de datos, ideal para resultados electorales o estadísticas deportivas en vivo.",
+    videoSrc: `${base}multimedia/demo3.mp4`,
+  },
+  {
+    title: "Gráfico de Donas Interactivo",
+    description:
+      "Representación circular de proporciones con animaciones circulares fluidas. Perfecto para comparativas de cuotas de mercado o distribución de recursos en transmisiones financieras.",
+    videoSrc: `${base}multimedia/demo4.mp4`,
+  },
+  {
+    title: "Animación de Código",
+    description:
+      "Un componente especializado para desarrolladores y educadores técnicos. Simula la escritura de código en tiempo real con resaltado de sintaxis animado.",
+    videoSrc: `${base}multimedia/demo5.mp4`,
+  },
+  {
+    title: "Flujo Creativo con IA",
+    description:
+      "Demostración del flujo 'Dame una animación de introducción profesional'. La IA interpreta el prompt y genera una estructura visual completa desde cero.",
+    videoSrc: `${base}multimedia/demo6.mp4`,
+  },
+];
+---
+
+<MainLayout title="Ejemplos y Casos de Uso — Ember Motion Studio">
+  <Navigation />
+
+  <div class="page-wrapper">
+    <header class="header-section">
+      <div class="content-limit">
+        <p class="tagline">Showcase Técnico</p>
+        <h1 class="main-title">Potencia en Movimiento</h1>
+        <p class="main-subtitle">
+          Explora las posibilidades ilimitadas del motor DVGE a través de
+          nuestras plantillas base y ejemplos.
+        </p>
+      </div>
+    </header>
+
+    <div class="showcase-list">
+      {
+        examples.map((item, index) => (
+          <section
+            class={`showcase-item ${index % 2 === 1 ? "is-reversed" : ""}`}
+          >
+            <div class="content-limit showcase-inner">
+              <div class="visual-side">
+                <div class="video-box">
+                  <video
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    poster={`${base}logo-square.png`}
+                    id={`video-${index}`}
+                  >
+                    <source src={item.videoSrc} type="video/mp4" />
+                  </video>
+                  <button
+                    class="expand-btn"
+                    title="Maximizar video"
+                    data-video-id={`video-${index}`}
+                  >
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7" />
+                    </svg>
+                  </button>
+                </div>
+              </div>
+
+              <div class="text-side">
+                <h2 class="item-title">{item.title}</h2>
+                <p class="item-desc">{item.description}</p>
+                <div class="item-accent" />
+              </div>
+            </div>
+          </section>
+        ))
+      }
+    </div>
+
+    <section class="bottom-cta content-limit">
+      <div class="cta-box">
+        <h3>¿Listo para empezar?</h3>
+        <p>
+          Descarga el motor y comienza a crear tus propias animaciones hoy
+          mismo.
+        </p>
+        <a href="/development/quick-start/" class="primary-button"
+          >Guía de Inicio Rápido →</a
+        >
+      </div>
+    </section>
+  </div>
+
+  <Footer />
+</MainLayout>
+
+<script>
+  const expandButtons = document.querySelectorAll(".expand-btn");
+
+  expandButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const videoId = btn.getAttribute("data-video-id");
+      const video = document.getElementById(videoId);
+
+      if (video) {
+        if (video.requestFullscreen) {
+          video.requestFullscreen();
+        } else if ((video as any).webkitRequestFullscreen) {
+          /* Safari */
+          (video as any).webkitRequestFullscreen();
+        } else if ((video as any).msRequestFullscreen) {
+          /* IE11 */
+          (video as any).msRequestFullscreen();
+        }
+      }
+    });
+  });
+</script>
+
+<style>
+  .page-wrapper {
+    padding-top: 8rem;
+    background-color: #000;
+    color: white;
+    font-family: "Outfit", sans-serif;
+  }
+
+  .content-limit {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+
+  .header-section {
+    padding: 4rem 0 8rem;
+    text-align: center;
+  }
+  .tagline {
+    font-family: "JetBrains Mono", monospace;
+    color: #e44c30;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.25em;
+    margin-bottom: 1rem;
+  }
+  .main-title {
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 800;
+    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    line-height: 1;
+  }
+  .main-subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .showcase-list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .showcase-item {
+    padding: 6rem 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+
+  .showcase-inner {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 5rem;
+    align-items: center;
+  }
+
+  @media (max-width: 900px) {
+    .showcase-inner {
+      grid-template-columns: 1fr;
+      gap: 3rem;
+      text-align: center;
+    }
+  }
+
+  .video-box {
+    width: 100%;
+    aspect-ratio: 16/9;
+    background: #050505;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+    position: relative;
+  }
+  .video-box video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .expand-btn {
+    position: absolute;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    width: 60px;
+    height: 60px;
+    background: #e44c30;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0.4;
+    transform: translateY(0);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 15px rgba(228, 76, 48, 0.4);
+    z-index: 10;
+  }
+  .video-box:hover .expand-btn {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  .expand-btn:hover {
+    background: #f05a3e;
+    transform: scale(1.1);
+    box-shadow: 0 6px 20px rgba(228, 76, 48, 0.6);
+  }
+  .expand-btn svg {
+    transition: transform 0.3s ease;
+  }
+  .expand-btn:active svg {
+    transform: scale(0.9);
+  }
+
+  .showcase-item.is-reversed .visual-side {
+    order: 2;
+  }
+  @media (max-width: 900px) {
+    .showcase-item.is-reversed .visual-side {
+      order: 0;
+    }
+  }
+
+  .item-title {
+    font-size: 2.25rem;
+    font-weight: 700;
+    margin-bottom: 1.25rem;
+    color: #fff;
+    line-height: 1.1;
+  }
+  .item-desc {
+    font-size: 1.05rem;
+    color: #888;
+    line-height: 1.7;
+    margin-bottom: 2rem;
+  }
+  .item-accent {
+    width: 40px;
+    height: 2px;
+    background: #e44c30;
+  }
+  @media (max-width: 900px) {
+    .item-accent {
+      margin: 0 auto;
+    }
+  }
+
+  .bottom-cta {
+    padding: 10rem 1.5rem;
+  }
+  .cta-box {
+    background: radial-gradient(circle at top right, #1a0d0b, #000 70%);
+    border: 1px solid rgba(228, 76, 48, 0.2);
+    padding: 5rem 2rem;
+    border-radius: 20px;
+    text-align: center;
+  }
+  .cta-box h3 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+  .cta-box p {
+    color: #888;
+    margin-bottom: 2.5rem;
+    font-size: 1.1rem;
+  }
+  .primary-button {
+    display: inline-block;
+    background: #e44c30;
+    color: white;
+    text-decoration: none;
+    padding: 0.9rem 2.5rem;
+    border-radius: 6px;
+    font-weight: 700;
+    transition: all 0.2s ease;
+  }
+  .primary-button:hover {
+    background: #f05a3e;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(228, 76, 48, 0.4);
+  }
+</style>

@@ -9,8 +9,8 @@ interface Props {
 
 const {
 	title,
-	description = "DVGE es una aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects. Open Source MIT.",
-	ogImage = "https://mushi-ayaka.github.io/DVGE-Docs/icon_highlight.png"
+	description = "Ember Motion Studio es un entorno de producción profesional para generar overlays, lower thirds y gráficos broadcast animados con el motor DVGE. Exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects.",
+	ogImage = "https://mushi-ayaka.github.io/DVGE-Docs/logo-square.png"
 } = Astro.props;
 
 const canonicalURL = new URL(Astro.url.pathname, "https://mushi-ayaka.github.io");
@@ -24,13 +24,13 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mushi-ayaka.github.io"
 		<meta name="description" content={description} />
 		<meta name="generator" content={Astro.generator} />
 		<link rel="canonical" href={canonicalURL} />
-		<link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}favicon.png`} />
+		<link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}logo-square.png`} />
 
 		<title>{title}</title>
 
 		<!-- Keywords explícitas para diferenciación semántica -->
-		<meta name="keywords" content="broadcast graphics software, lower thirds Windows, overlays DaVinci Resolve, gráficos broadcast, lower thirds animados, overlay broadcast, ProRes 4444 Windows, Electron broadcast app, DVGE, Dynamic Vector Graphics Engine" />
-		<meta name="application-name" content="DVGE" />
+		<meta name="keywords" content="broadcast graphics software, lower thirds Windows, overlays DaVinci Resolve, gráficos broadcast, lower thirds animados, overlay broadcast, ProRes 4444 Windows, Electron broadcast app, Ember Motion Studio, DVGE, Dynamic Vector Graphics Engine" />
+		<meta name="application-name" content="Ember Motion Studio" />
 		<meta name="category" content="Broadcast Graphics Software" />
 
 		<!-- Open Graph -->
@@ -40,7 +40,7 @@ const canonicalURL = new URL(Astro.url.pathname, "https://mushi-ayaka.github.io"
 		<meta property="og:title"       content={title} />
 		<meta property="og:description" content={description} />
 		<meta property="og:image"       content={ogImage} />
-		<meta property="og:site_name"   content="DVGE — Dynamic Vector Graphics Engine" />
+		<meta property="og:site_name"   content="Ember Motion Studio — Powered by DVGE" />
 
 		<!-- Twitter Card -->
 		<meta name="twitter:card"        content="summary_large_image" />

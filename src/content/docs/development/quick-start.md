@@ -1,25 +1,25 @@
 ---
 title: Inicio Rápido
-description: Construye tu primer Template para DVGE desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
+description: Construye tu primer Template para Ember Motion Studio desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
 sidebar:
   order: 1
 ---
 
-Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) de DVGE desde cero. No se requiere experiencia previa con el motor.
+Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) para **Ember Motion Studio** desde cero. No se requiere experiencia previa con el motor **DVGE**.
 
 ## Requisitos Previos
 
-- DVGE v5.8.0+ instalado y ejecutándose.
+- **Ember Motion Studio** (v5.8.0+) instalado y ejecutándose.
 - Un editor de texto (se recomienda VS Code).
 
 ---
 
 ## Paso 1: Crear la Carpeta del Template
 
-Abre DVGE, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
+Abre **Ember Motion Studio**, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
 
 ```txt
-DVG_Plugins/
+Ember_Plugins/
 └── mi-primer-template/    ← Crea esta carpeta
     ├── manifest.json
     ├── index.html
@@ -107,7 +107,7 @@ Los estilos están limitados a un lienzo de 1920x1080. Utiliza posicionamiento a
 
 ## Paso 5: La Lógica (`script.js`)
 
-Punto de entrada al motor. Usa el método `awake` para guardar en caché (cachear) las referencias del DOM, y `update` para animarlas fotograma a fotograma.
+Punto de entrada al motor **DVGE**. Usa el método `awake` para cachear las referencias del DOM, y `update` para animarlas fotograma a fotograma.
 
 ```javascript
 dvEngine.register({
@@ -135,17 +135,19 @@ dvEngine.register({
 });
 ```
 
+---
+
 :::tip[La Regla de Oro]
-Toda la lógica de animación debe basarse en `ctx.timeline` o `ctx.frame`. Esto es lo que hace que los renders de DVGE sean perfectos por fotograma cuando se exportan a ProRes 4444. Nunca uses `requestAnimationFrame`, `setTimeout`, o bibliotecas de tiempo real.
+Toda la lógica de animación debe basarse en `ctx.timeline` o `ctx.frame`. Esto es lo que hace que los renders de **Ember Motion Studio** sean perfectos por fotograma cuando se exportan a ProRes 4444. Nunca uses `requestAnimationFrame`, `setTimeout`, o bibliotecas de tiempo real.
 :::
 
 ---
 
 ## Paso 6: Cargar y Previsualizar
 
-1. En DVGE, crea un **Nuevo Proyecto**.
+1. En **Ember Motion Studio**, crea un **Nuevo Proyecto**.
 2. Selecciona `Mi Primer Template` de la lista de plantillas disponibles en el Studio.
 3. El gráfico debería aparecer inmediatamente en la ventana de vista previa.
 4. Edita los campos de **Nombre** y **Rol** en el inspector — el gráfico se actualizará en tiempo real.
 
-Acabas de construir tu primer gráfico listo para producción broadcast. 🎉
+Acabas de construir tu primer gráfico listo para producción broadcast con **Ember**. 🎉
