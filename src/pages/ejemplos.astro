@@ -133,6 +133,7 @@ const examples = [
   expandButtons.forEach((btn) => {
     btn.addEventListener("click", () => {
       const videoId = btn.getAttribute("data-video-id");
+      if (!videoId) return;
       const video = document.getElementById(videoId);
 
       if (video) {
@@ -338,3 +339,30 @@ const examples = [
     box-shadow: 0 10px 30px rgba(228, 76, 48, 0.4);
   }
 </style>
+
+<script type="application/ld+json" is:inline>
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "itemListElement": [
+    {
+      "@type": "VideoObject",
+      "position": 1,
+      "name": "Template Horizons",
+      "description": "Una composición panorámica diseñada para paisajes informativos y bandas de noticias de gran formato.",
+      "thumbnailUrl": "https://ember-motion-studio.vercel.app/logo-square.png",
+      "contentUrl": "https://ember-motion-studio.vercel.app/multimedia/demo1.mp4",
+      "uploadDate": "2026-05-01T00:00:00Z"
+    },
+    {
+      "@type": "VideoObject",
+      "position": 2,
+      "name": "Social Minimal",
+      "description": "Estética limpia y moderna para creadores de contenido.",
+      "thumbnailUrl": "https://ember-motion-studio.vercel.app/logo-square.png",
+      "contentUrl": "https://ember-motion-studio.vercel.app/multimedia/demo2.mp4",
+      "uploadDate": "2026-05-01T00:00:00Z"
+    }
+  ]
+}
+</script>

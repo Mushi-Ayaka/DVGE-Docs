@@ -10,10 +10,12 @@ interface Props {
 const {
 	title,
 	description = "Ember Motion Studio es un entorno de producción profesional para generar overlays, lower thirds y gráficos broadcast animados con el motor DVGE. Exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects.",
-	ogImage = "https://mushi-ayaka.github.io/DVGE-Docs/logo-square.png"
+	ogImage = "/logo-square.png"
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, "https://mushi-ayaka.github.io");
+// En Vercel, Astro.url.origin nos da la URL base correcta
+const siteUrl = "https://ember-motion-studio.vercel.app"; // Reemplazar con el dominio real si es distinto
+const canonicalURL = new URL(Astro.url.pathname, siteUrl);
 ---
 
 <!DOCTYPE html>
