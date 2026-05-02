@@ -48,25 +48,35 @@ const prefix = currentLang === 'en' ? '' : 'es/';
       <span>Ember</span>
     </a>
 
-    <button
-      class="mobile-toggle"
-      aria-label="Abrir menú"
-      aria-expanded="false"
-      aria-controls="nav-links"
-    >
-      <svg
-        width="24"
-        height="24"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        stroke-width="2"
+    <div class="nav-actions-mobile">
+      <a
+        href={alternateUrl}
+        class="lang-switch mobile-only"
+        aria-label={alternateLang === 'en' ? 'Switch to English' : 'Cambiar a Español'}
       >
-        <path class="menu-icon" d="M3 12h18M3 6h18M3 18h18"></path>
-        <path class="close-icon" d="M18 6L6 18M6 6l12 12" style="display: none;"
-        ></path>
-      </svg>
-    </button>
+        {alternateLang.toUpperCase()}
+      </a>
+
+      <button
+        class="mobile-toggle"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="nav-links"
+      >
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path class="menu-icon" d="M3 12h18M3 6h18M3 18h18"></path>
+          <path class="close-icon" d="M18 6L6 18M6 6l12 12" style="display: none;"
+          ></path>
+        </svg>
+      </button>
+    </div>
 
     <div class="nav-links" id="nav-links">
       <div class="dropdown">
@@ -229,10 +239,10 @@ const prefix = currentLang === 'en' ? '' : 'es/';
         </svg>
       </a>
 
-      <!-- Language Switcher -->
+      <!-- Language Switcher (Desktop) -->
       <a
         href={alternateUrl}
-        class="lang-switch"
+        class="lang-switch desktop-only"
         aria-label={alternateLang === 'en' ? 'Switch to English' : 'Cambiar a Español'}
         title={alternateLang === 'en' ? 'Switch to English' : 'Cambiar a Español'}
       >
@@ -567,22 +577,49 @@ const prefix = currentLang === 'en' ? '' : 'es/';
   }
 
   .lang-switch {
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    color: var(--color-text-muted);
+    color: var(--color-text);
     text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    border-radius: 4px;
-    padding: 0.3rem 0.6rem;
+    border: 1px solid var(--color-primary);
+    background: rgba(228, 76, 48, 0.1);
+    border-radius: 6px;
+    padding: 0.35rem 0.75rem;
     letter-spacing: 0.05em;
     transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .lang-switch:hover {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    background: var(--color-primary);
+    color: white;
+  }
+
+  .desktop-only {
+    display: flex;
+  }
+  .mobile-only {
+    display: none;
+  }
+
+  .nav-actions-mobile {
+    display: none;
+    align-items: center;
+    gap: 0.5rem;
   }
 
   @media (max-width: 960px) {
+    .desktop-only {
+      display: none;
+    }
+    .mobile-only {
+      display: flex;
+    }
+    .nav-actions-mobile {
+      display: flex;
+    }
+
     .mobile-toggle {
       display: block;
     }

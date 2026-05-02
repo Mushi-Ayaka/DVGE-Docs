@@ -1,6 +1,7 @@
 ---
 import '../styles/variables.css';
 import { getLangFromUrl, getAlternateLang, getAlternateUrl } from '../i18n/utils';
+import LanguageNotice from './LanguageNotice.astro';
 
 interface Props {
   title: string;
@@ -94,6 +95,11 @@ const schemaOrg = {
   </head>
   <body>
     <slot />
+    <LanguageNotice 
+      currentLang={lang} 
+      alternateLang={alternateLang} 
+      alternateUrl={new URL(getAlternateUrl(Astro.url, alternateLang), siteUrl)} 
+    />
   </body>
 </html>
 
