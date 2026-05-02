@@ -6,6 +6,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://ember-motion-studio-landing.vercel.app',
   trailingSlash: 'always',
   build: {
     format: 'directory'
