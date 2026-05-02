@@ -8,79 +8,78 @@ import "../styles/hero.css";
 ---
 
 <MainLayout
-	title="Ember Motion Studio — Lower Thirds y Overlays Broadcast para Windows | ProRes 4444"
-	description="DVGE es una aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects. Open Source MIT."
+	title="Ember Motion Studio | Motion Design & Animation Software for OBS, Twitch and Broadcast"
+	description="Create broadcast overlays, lower thirds and motion graphics in real time with Ember Motion Studio. Free animation software for OBS, Twitch and DaVinci Resolve. Open Source MIT."
+	lang="en"
 >
 	<Navigation />
 
 	<main>
-		<Hero client:load />
+		<Hero client:load lang="en" />
 		<Pillars />
 
-		<!-- Sección de casos de uso — vocabulario de editores de video -->
+		<!-- Use cases — semantic vocabulary for broadcast & streaming search -->
 		<section class="use-cases">
 			<div class="use-cases-inner">
-				<p class="use-cases-label">Para quién es</p>
+				<p class="use-cases-label">Who it's for</p>
 				<h2 class="use-cases-title">
-					Un entorno de diseño.<br />Un motor de producción.
+					Motion Design Software<br />for Streamers & Broadcast Producers
 				</h2>
 				<p class="use-cases-desc">
-					Ember Motion Studio es un entorno de producción profesional
-					impulsado por el motor DVGE, diseñado para editores de
-					video, productores broadcast y desarrolladores que necesitan
-					gráficos animados listos para arrastrar a DaVinci Resolve,
-					Premiere Pro o After Effects.
+					Ember Motion Studio is the professional motion design and animation software
+					powered by the DVGE engine — built for video editors, broadcast producers
+					and developers who need animated vector graphics ready for DaVinci Resolve,
+					Premiere Pro, After Effects, OBS and Twitch.
 				</p>
 				<div class="use-cases-grid">
 					<div class="use-case-item">
 						<span class="use-case-tag">Lower Thirds</span>
 						<p>
-							Bandas de texto animadas para entrevistas, noticias
-							y documentales. Exportación directa como .mov con
-							canal alfa.
+							Animated text bands for interviews, news and documentaries.
+							Direct export as .mov with alpha channel. Supports stinger
+							transitions and transparent backgrounds.
 						</p>
 					</div>
 					<div class="use-case-item">
-						<span class="use-case-tag">Overlays Broadcast</span>
+						<span class="use-case-tag">Broadcast Overlays</span>
 						<p>
-							Marcadores, relojes, widgets de clima y scoreboard
-							para transmisiones en vivo. Compatible con OBS y
-							vMix.
+							Markers, clocks, weather widgets and scoreboards for live
+							streams. Browser source compatible with OBS and vMix —
+							CPU-friendly and WebM ready.
 						</p>
 					</div>
 					<div class="use-case-item">
-						<span class="use-case-tag">Títulos Animados</span>
+						<span class="use-case-tag">Animated Titles</span>
 						<p>
-							Aperturas cinemáticas y títulos de sección con
-							animaciones frame-perfect reproducibles en cualquier
-							hardware.
+							Cinematic openings and section titles with frame-perfect
+							vector animations reproducible on any hardware. Full
+							motion graphics control.
 						</p>
 					</div>
 					<div class="use-case-item">
-						<span class="use-case-tag">Automatización</span>
+						<span class="use-case-tag">Automation</span>
 						<p>
-							Genera gráficos en lote desde datos externos. Ideal
-							para producción de noticias y deportes con datos en
-							tiempo real.
+							Generate data-driven graphics in batch from external sources.
+							Ideal for news and sports production with real-time rendering.
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
     
-    <!-- Nueva Sección: Ejemplos de Producción -->
+    <!-- New Section: Production Examples -->
     <section class="home-examples">
       <div class="examples-inner">
         <div class="examples-header">
           <p class="section-label">Showcase</p>
-          <h2 class="section-title">Resultados de Nivel Broadcast</h2>
-          <p class="section-subtitle">Visualiza la potencia del motor DVGE en acción a través de nuestras plantillas integradas.</p>
+          <h2 class="section-title">Animation Software in Action: Overlays, Lower Thirds & Motion Graphics</h2>
+          <p class="section-subtitle">See the DVGE engine power in action through our built-in broadcast and streaming templates.</p>
         </div>
 
         <div class="examples-grid">
           <div class="example-item">
             <div class="video-preview">
-              <video autoplay muted loop playsinline poster={`${import.meta.env.BASE_URL}logo-square.png`}>
+              <video muted loop playsinline preload="metadata" poster={`${import.meta.env.BASE_URL}logo-square.png`} aria-label="Template Horizons Preview" title="Template Horizons Broadcast Overlay" class="lazy-video">
                 <source src={`${import.meta.env.BASE_URL}multimedia/demo1.mp4`} type="video/mp4" />
               </video>
             </div>
@@ -88,7 +87,7 @@ import "../styles/hero.css";
           </div>
           <div class="example-item">
             <div class="video-preview">
-              <video autoplay muted loop playsinline poster={`${import.meta.env.BASE_URL}logo-square.png`}>
+              <video muted loop playsinline preload="metadata" poster={`${import.meta.env.BASE_URL}logo-square.png`} aria-label="Social Minimal Preview" title="Social Minimal Streaming Graphics" class="lazy-video">
                 <source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
               </video>
             </div>
@@ -96,33 +95,33 @@ import "../styles/hero.css";
           </div>
           <div class="example-item">
             <div class="video-preview">
-              <video autoplay muted loop playsinline poster={`${import.meta.env.BASE_URL}logo-square.png`}>
+              <video muted loop playsinline preload="metadata" poster={`${import.meta.env.BASE_URL}logo-square.png`} aria-label="Dynamic Motion Graphics Preview" title="Dynamic Motion Graphics Example" class="lazy-video">
                 <source src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`} type="video/mp4" />
               </video>
             </div>
-            <h4>Gráficos Dinámicos</h4>
+            <h4>Dynamic Motion Graphics</h4>
           </div>
         </div>
 
         <div class="examples-cta">
-          <a href={`${import.meta.env.BASE_URL}ejemplos/`} class="btn-more-examples">
-            Ver más ejemplos y tutoriales →
+          <a href={`${import.meta.env.BASE_URL}examples/`} class="btn-more-examples">
+            View more examples & tutorials →
           </a>
         </div>
       </div>
     </section>
 
-		<!-- Sección de Evidencias (Showcase) -->
-		<!-- Sección de Evidencias (Showcase) -->
+    <!-- Showcase Section -->
+    <!-- Showcase Section -->
 		<!--
 		<section class="home-showcase">
 			<div class="showcase-inner">
 				<div class="showcase-header">
-					<p class="section-label">Evidencias</p>
-					<h2 class="section-title">Casos de Éxito</h2>
+					<p class="section-label">Showcase</p>
+					<h2 class="section-title">Success Stories</h2>
 					<a
-						href={`${import.meta.env.BASE_URL}evidencias/`}
-						class="section-link">Ver todas las evidencias →</a
+						href={`${import.meta.env.BASE_URL}showcase/`}
+						class="section-link">View all showcase →</a
 					>
 				</div>
 				<div class="showcase-preview">
@@ -134,12 +133,12 @@ import "../styles/hero.css";
 								width="50"
 							/>
 						</div>
-						<h4>Broadcast de Deportes</h4>
-						<p class="preview-desc">Marcadores en tiempo real para ligas regionales.</p>
+						<h4>Sports Broadcast</h4>
+						<p class="preview-desc">Real-time scoreboards for regional leagues.</p>
 						<div class="preview-comment">
-							"Ember profesionalizó nuestras transmisiones."
+							"Ember professionalized our streams."
 						</div>
-						<a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" class="preview-link">Ver Proyecto →</a>
+						<a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" class="preview-link">View Project →</a>
 					</div>
 					<div class="preview-card">
 						<div class="preview-img">
@@ -149,12 +148,12 @@ import "../styles/hero.css";
 								width="50"
 							/>
 						</div>
-						<h4>Streaming Corporativo</h4>
-						<p class="preview-desc">Overlays minimalistas para eventos híbridos.</p>
+						<h4>Corporate Streaming</h4>
+						<p class="preview-desc">Minimalist overlays for hybrid events.</p>
 						<div class="preview-comment">
-							"Ahorramos horas de renderizado manual."
+							"We saved hours of manual rendering."
 						</div>
-						<a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" class="preview-link">Ver Proyecto →</a>
+						<a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-" target="_blank" class="preview-link">View Project →</a>
 					</div>
 				</div>
 			</div>
@@ -164,18 +163,18 @@ import "../styles/hero.css";
 		<section class="project-status">
 			<div class="status-inner">
 				<div class="status-left">
-					<p class="status-label">Estado del proyecto</p>
+					<p class="status-label">Project Status</p>
 					<h3 class="status-title">
-						Open Source.<br />En desarrollo activo.
+						Open Source.<br />Actively developed.
 					</h3>
 					<p class="status-desc">
-						Ember Motion Studio es una plataforma <strong
+						Ember Motion Studio is an <strong
 							>MIT</strong
-						> impulsada por el motor DVGE. El foco actual está en la madurez
-						técnica del núcleo y la estabilidad del ecosistema de plugins.
+						> platform powered by the DVGE engine. Current focus is on
+						core technical maturity and plugin ecosystem stability.
 					</p>
-					<a href="/DVGE-Docs/engine/roadmap/" class="status-link"
-						>Ver hoja de ruta completa →</a
+					<a href={`${import.meta.env.BASE_URL}engine/roadmap/`} class="status-link"
+						>View full roadmap →</a
 					>
 				</div>
 				<div class="status-right">
@@ -183,31 +182,29 @@ import "../styles/hero.css";
 						<li class="done">
 							<span class="roadmap-version">v5.6.0</span>
 							<span class="roadmap-desc"
-								>Interfaz Profesional & Control Centralizado</span
+								>Professional UI & Centralized Control</span
 							>
 						</li>
 						<li class="done">
 							<span class="roadmap-version">v5.7.0</span>
-							<span class="roadmap-desc">Carga Transparente</span>
+							<span class="roadmap-desc">Transparent Loading</span>
 						</li>
 						<li class="done">
 							<span class="roadmap-version">v5.8.0</span>
 							<span class="roadmap-desc"
-								>Inicio Optimizado & Panel de
-								Inspector/Artefactos</span
+								>Optimized Startup & Inspector/Artifacts Panel</span
 							>
 						</li>
 						<li>
 							<span class="roadmap-version">v5.9.0</span>
 							<span class="roadmap-desc"
-								>Mejora de Rendimiento</span
+								>Performance Improvements</span
 							>
 						</li>
 						<li>
 							<span class="roadmap-version">v6.0.0</span>
 							<span class="roadmap-desc"
-								>Renderizado Masivo & Nuevo Sistema jerarquico
-								para extensión</span
+								>Batch Rendering & New Hierarchical Extension System</span
 							>
 						</li>
 					</ul>
@@ -215,95 +212,58 @@ import "../styles/hero.css";
 			</div>
 		</section>
 
-		<!-- Sección de Historias (Testimonios) 
+		<!-- Stories Section (Testimonials) 
 		<section class="home-stories">
 			<div class="stories-inner">
-				<p class="section-label">Comunidad</p>
-				<h2 class="section-title">Historias de Usuarios</h2>
+				<p class="section-label">Community</p>
+				<h2 class="section-title">User Stories</h2>
 				<div class="story-preview-grid">
 					<div class="story-bubble">
 						<p>
-							"Ember cambió la forma en que entrego mis proyectos.
-							Ya no espero renders pesados."
+							"Ember changed the way I deliver my projects.
+							I no longer wait for heavy renders."
 						</p>
 						<span class="story-author">— Alejandro M.</span>
 					</div>
 					<div class="story-bubble">
 						<p>
-							"La precisión del canal alfa en el motor DVGE es
-							impecable."
+							"The precision of the alpha channel in the DVGE engine is
+							impeccable."
 						</p>
 						<span class="story-author">— Sofía R.</span>
 					</div>
 				</div>
 				<div style="text-align: center; margin-top: 3rem;">
 					<a
-						href={`${import.meta.env.BASE_URL}historias/`}
-						class="btn-stories">Leer más historias →</a
+						href={`${import.meta.env.BASE_URL}stories/`}
+						class="btn-stories">Read more stories →</a
 					>
 				</div>
 			</div>
 		</section>
-		Sección de Historias (Testimonios) -->
+		Stories Section (Testimonials) -->
 	</main>
 
 	<Footer />
+  
+  <script>
+    // Optimización de videos: solo reproducir cuando son visibles
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {}); // Ignorar errores de autoplay
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.2 });
 
-	<!-- JSON-LD: SoftwareApplication -->
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "SoftwareApplication",
-			"name": "Dynamic Vector Graphics Engine (DVGE)",
-			"alternateName": "DVGE",
-			"description": "Aplicación de escritorio para Windows que genera overlays, lower thirds y gráficos broadcast animados con exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects.",
-			"applicationCategory": "MultimediaApplication",
-			"applicationSubCategory": "Broadcast Graphics Software",
-			"operatingSystem": "Windows 10, Windows 11",
-			"softwareVersion": "5.8.0",
-			"keywords": "lower thirds, overlays broadcast, gráficos broadcast, ProRes 4444, DaVinci Resolve graphics, broadcast animation, lower third software Windows",
-			"releaseNotes": "/about/changelog/",
-			"downloadUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe",
-			"installUrl": "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe",
-			"license": "https://opensource.org/licenses/MIT",
-			"isAccessibleForFree": true,
-			"author": {
-				"@type": "Person",
-				"name": "Jonatan Barón",
-				"url": "https://github.com/Mushi-Ayaka"
-			},
-			"offers": {
-				"@type": "Offer",
-				"price": "0",
-				"priceCurrency": "USD"
-			},
-			"url": "https://mushi-ayaka.github.io/DVGE-Docs/",
-			"featureList": [
-				"Exportación ProRes 4444 con canal alfa",
-				"Lower thirds animados",
-				"Overlays broadcast",
-				"Compatible con DaVinci Resolve, Premiere Pro, After Effects",
-				"Sistema de plugins extensible",
-				"Preview en tiempo real a 60fps",
-				"Sin instalación de dependencias previas"
-			]
-		}
-	</script>
+    document.querySelectorAll('.lazy-video').forEach(video => {
+      observer.observe(video);
+    });
+  </script>
 
-	<!-- JSON-LD: WebSite -->
-	<script type="application/ld+json">
-		{
-			"@context": "https://schema.org",
-			"@type": "WebSite",
-			"name": "DVGE — Dynamic Vector Graphics Engine",
-			"url": "https://mushi-ayaka.github.io/DVGE-Docs/",
-			"description": "Documentación oficial y descarga del motor de gráficos broadcast DVGE.",
-			"author": {
-				"@type": "Person",
-				"name": "Jonatan Barón"
-			}
-		}
-	</script>
 </MainLayout>
 
 <style>

@@ -1,118 +1,115 @@
 ---
-title: Benchmarks y Estabilidad
-description: Datos técnicos verificados sobre la consistencia de renderizado, rendimiento de exportación y overhead del sistema de seguridad de Ember Motion Studio.
+title: Benchmarks & Stability
+description: Verified technical data on rendering consistency, ProRes export performance, and the security sandbox overhead of Ember Motion Studio.
 sidebar:
   order: 4
 ---
 
-**Ember Motion Studio** está construido para entornos de transmisión profesional donde el fallo no es una opción. Medimos el rendimiento no solo en velocidad, sino en **consistencia y resiliencia**. El motor **DVGE** garantiza que cada fotograma sea perfecto.
+**Ember Motion Studio** is built for professional broadcast environments where failure is not an option. We measure performance not just in raw speed, but in **absolute consistency and resilience**. The **DVGE engine** guarantees that every single frame is frame-perfect.
 
 ---
 
-## Consistencia de Renderizado (Determinismo)
+## Rendering Consistency (Determinism)
 
-A diferencia de los motores en tiempo real, el motor **DVGE** no usa un reloj del sistema para calcular animaciones. Cada fotograma se calcula a partir de su índice discreto (`frame`), lo que hace que el desvío temporal sea **estructuralmente imposible**.
+Unlike real-time web engines, the **DVGE engine** does not use a system clock to calculate animations. Every frame is calculated purely from its discrete index (`frame`), making temporal drift **structurally impossible**.
 
-| Tipo de Motor | Método de Tiempo | Resultado bajo Carga |
+| Engine Type | Timing Method | Result under CPU Load |
 | :--- | :--- | :--- |
-| **Tradicional (GSAP / rAF)** | Reloj del sistema (`Date.now()`) | Saltos de fotogramas bajo carga de CPU |
-| **Ember (Frame-Math)** | Índice de fotograma discreto (`ctx.frame`) | **Salida idéntica en cualquier hardware** |
+| **Traditional (GSAP / rAF)** | System clock (`Date.now()`) | Dropped frames under heavy CPU load |
+| **Ember (Frame-Math)** | Discrete frame index (`ctx.frame`) | **Identical output on any hardware** |
 
-### Por qué el desvío es cero por diseño
+### Why drift is zero by design
 
-El motor no pregunta "¿cuánto tiempo ha pasado?". Pregunta "¿cómo se ve el fotograma número X?". La función `calculateTimeline(frame, fps, durationInFrames)` produce siempre el mismo resultado para los mismos parámetros de entrada, independientemente de la carga del sistema o la velocidad del hardware.
+The engine doesn't ask "how much time has passed?". It asks "what does frame number X look like?". The internal `calculateTimeline(frame, fps, durationInFrames)` function always produces the exact same result for the same input parameters, regardless of system load or hardware speed.
 
 ```javascript
-// El fotograma 45 de un clip de 120 frames siempre produce introProgress = 0.375
-// En una laptop de 2015 o en una workstation de 2026. Sin excepción.
+// Frame 45 of a 120-frame clip ALWAYS produces introProgress = 0.375
+// On a 2015 laptop or a 2026 workstation. Without exception.
 update: (ctx) => {
-  refs.title.style.opacity = ctx.timeline.introProgress; // Determinista
+  refs.title.style.opacity = ctx.timeline.introProgress; // Deterministic
 }
 ```
 
 ---
 
-## Rendimiento de Exportación (ProRes 4444)
+## ProRes 4444 Export Performance
 
-El renderizador headless opera con `concurrency: 1` — un fotograma a la vez — para garantizar la integridad del canal alfa en cada frame. Los tiempos reflejan esta configuración conservadora, optimizada para fidelidad sobre velocidad.
+The headless renderer operates with `concurrency: 1` — one frame at a time — to guarantee the integrity of the alpha channel in every single frame. These benchmarks reflect this conservative, quality-first configuration.
 
-**Configuración de prueba:**
+**Test Configuration:**
 
-- Resolución: 1920×1080 @ 60 FPS
-
+- Resolution: 1920×1080 @ 60 FPS
 - Codec: Apple ProRes 4444 (`yuva444p10le`, 10-bit)
+- Concurrency: 1 (by design, for strict alpha integrity)
+- Chromium: Headless mode with `--force-cpu-rasterization`
 
-- Concurrencia: 1 (por diseño, para integridad alfa)
-
-- Chromium: headless con `--force-cpu-rasterization`
-
-| Complejidad | Duración del clip | Tiempo de exportación estimado |
+| Complexity | Clip Duration | Estimated Export Time |
 | :--- | :--- | :--- |
-| **Simple** (Lower Third básico, texto + línea) | 5 seg / 300 frames | ~2–4 segundos |
-| **Media** (News Ticker con scroll, múltiples elementos) | 10 seg / 600 frames | ~5–8 segundos |
-| **Compleja** (Visualización de datos, múltiples capas CSS) | 15 seg / 900 frames | ~10–15 segundos |
+| **Simple** (Basic Lower Third, text + line) | 5 sec / 300 frames | ~2–4 seconds |
+| **Medium** (News Ticker with scrolling, multiple items) | 10 sec / 600 frames | ~5–8 seconds |
+| **Complex** (Data visualization, heavy CSS filters) | 15 sec / 900 frames | ~10–15 seconds |
 
-> Los tiempos varían según el hardware. El factor dominante es la velocidad de rasterización de Chromium headless, no la CPU del sistema.
+> Times vary based on hardware. The dominating factor is Chromium's headless rasterization speed, not the raw CPU of the system.
 
 ---
 
-## Persistencia Atómica — Resiliencia ante Fallos
+## Atomic Persistence — Crash Resilience
 
-El sistema de guardado usa escritura atómica asíncrona implementada en el núcleo de **Ember**:
+The auto-save system uses asynchronous atomic writes implemented in the core of **Ember**:
 
 ```txt
-1. Cambio detectado → debounce de 500ms
-2. Escritura en archivo temporal: project.json.tmp
-3. Solo si la escritura tiene éxito: fs.rename(tmp → project.json)
-4. Si el proceso falla en cualquier punto: project.json original intacto
+1. Change detected → 500ms debounce
+2. Write to temporary file: project.json.tmp
+3. Only if write is successful: fs.rename(tmp → project.json)
+4. If process fails at any point: original project.json remains intact
 ```
 
-**Garantía:** Un cierre inesperado, fallo de energía o bloqueo del sistema durante el autoguardado **nunca corrompe** el archivo de proyecto. El archivo `.tmp` se descarta automáticamente en el siguiente inicio.
+**Guarantee:** An unexpected shutdown, power failure, or system crash during auto-saving will **never corrupt** your project file. The `.tmp` file is automatically discarded on the next boot.
 
-El debounce de `500ms` está implementado directamente en el store de Zustand, acumulando cambios antes de cada escritura para minimizar operaciones de disco.
+The `500ms` debounce is implemented directly in the Zustand store, batching rapid inspector changes before each disk write to minimize IO operations.
 
 ---
 
-## Overhead del Sandbox de Seguridad
+## Security Sandbox Overhead
 
-El sistema de aislamiento de plugins (**Shadow DOM + fakeWindow Proxy**) añade una capa de seguridad con impacto mínimo en el rendimiento:
+The plugin isolation system (**Shadow DOM + fakeWindow Proxy**) adds a critical layer of security with minimal performance impact:
 
-| Componente | Implementación | Impacto en el loop de 60fps |
+| Component | Implementation | Impact on 60fps loop |
 | :--- | :--- | :--- |
-| **Shadow DOM** | `attachShadow({ mode: 'open' })` | Negligible — nativo del navegador |
-| **fakeWindow Proxy** | Intercepta acceso a `window` real | < 0.1ms por fotograma |
-| **Polyfill getElementById** | `shadowRoot.querySelector('#id')` | Equivalente al nativo |
-| **Total overhead de seguridad** | — | **< 0.5ms por fotograma** |
+| **Shadow DOM** | `attachShadow({ mode: 'open' })` | Negligible — native browser feature |
+| **fakeWindow Proxy** | Intercepts access to the real `window` | < 0.1ms per frame |
+| **Polyfill getElementById** | `shadowRoot.querySelector('#id')` | Equivalent to native |
+| **Total security overhead** | — | **< 0.5ms per frame** |
 
-La ventana disponible para el loop de preview a 60fps es de **16.6ms por fotograma**. El overhead del sandbox representa menos del 3% de ese presupuesto.
+The time window available for the 60fps preview loop is **16.6ms per frame**. The sandbox overhead accounts for less than 3% of that budget.
 
 ---
 
-## Transparency Transformer — Canal Alfa ProRes
+## Transparency Transformer — ProRes Alpha Channel
 
-La exportación con canal alfa requiere una cadena de tres capas para garantizar transparencia real en **DaVinci Resolve**, **Premiere Pro** o **After Effects**:
+Exporting with a pure alpha channel requires a three-layer chain to guarantee real transparency when dropped into **DaVinci Resolve**, **Premiere Pro**, or **After Effects**:
 
-| Capa | Implementación | Propósito |
+| Layer | Implementation | Purpose |
 | :--- | :--- | :--- |
-| **Chromium Flag** | `--transparent-background-color=0` | Fuerza fondo transparente en el proceso headless |
-| **JS Injection** | `evaluatePage` → `body.style.backgroundColor = 'transparent'` | Garantiza transparencia antes de la captura del frame 0 |
-| **Pixel Format** | `yuva444p10le` (ProRes 4444, 10-bit) | Preserva el canal alfa completo en el archivo `.mov` |
+| **Chromium Flag** | `--transparent-background-color=0` | Forces a transparent background in the headless process |
+| **JS Injection** | `evaluatePage` → `body.style.backgroundColor = 'transparent'` | Guarantees transparency before frame 0 is captured |
+| **Pixel Format** | `yuva444p10le` (ProRes 4444, 10-bit) | Preserves the full alpha channel in the final `.mov` file |
 
-El **Frame 0 Fix** resuelve el bug donde el primer fotograma se capturaba antes de completar la hidratación de datos. Ahora el motor usa `delayRender` / `continueRender` de Remotion para pausar el renderizado hasta que los props estén disponibles, garantizando que el primer frame exportado sea idéntico al que se ve en la previsualización.
+The **Frame 0 Fix** resolves a critical bug where the first frame was captured before data hydration completed. The engine now leverages Remotion's `delayRender` / `continueRender` to halt rendering until the plugin props are fully injected, guaranteeing the first exported frame is identical to the preview.
 
 ---
 
-## Data Probe Hydration — Límite de CLI en Windows
+## Data Probe Hydration — Windows CLI Limit Bypass
 
-Windows impone un límite de ~32.767 caracteres en argumentos de línea de comandos. Para plugins con HTML/CSS/JS extensos, pasar los datos por CLI causaba truncamiento silencioso.
+Windows imposes a strict limit of ~32,767 characters on command-line arguments. Passing serialized JSON data (like base64 images or heavy code blocks) via CLI caused silent truncation and render failures.
 
-**Solución implementada:**
+**Implemented Solution:**
 
 ```txt
-Main Process → levanta servidor HTTP efímero en localhost:[PORT]
+Main Process → boots ephemeral HTTP server on localhost:[PORT]
 RenderWrapper → fetch('http://localhost:[PORT]/props.json')
-Remotion      → recibe los datos completos sin límite de tamaño
-Servidor      → se cierra automáticamente al finalizar el render
+Remotion      → receives the full payload with no size limit
+Server        → gracefully shuts down after render completes
 ```
 
-Este sistema elimina el límite de tamaño de datos y es transparente para el desarrollador de plugins.
+This system bypasses the CLI character limit entirely and is completely transparent to the plugin developer.

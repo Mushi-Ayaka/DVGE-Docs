@@ -1,40 +1,40 @@
 ---
-title: Política de Privacidad
-description: Información sobre cómo manejo tus datos en DVGE.
+title: Privacy Policy
+description: Information on how your data is handled in DVGE.
 sidebar:
   order: 7
 ---
 
-Esta Política de Privacidad describe cómo se recopila, utiliza y comparte tu información personal cuando visitas la documentación oficial de DVGE en **mushi-ayaka.github.io/DVGE-Docs** (el "Sitio").
+This Privacy Policy describes how your personal information is collected, used, and shared when you visit the official DVGE documentation at **mushi-ayaka.github.io/DVGE-Docs** (the "Site").
 
-## 1. Recopilación de Datos
+## 1. Data Collection
 
-DVGE es un proyecto enfocado en la privacidad. No utilizo cookies de rastreo ni herramientas de análisis invasivas que recopilen datos personales identificables sin tu consentimiento.
+DVGE is a privacy-focused project. I do not use tracking cookies or invasive analytics tools that collect personally identifiable data without your consent.
 
-### Información Recopilada Automáticamente
+### Information Collected Automatically
 
-Cuando visitas el Sitio, se puede recopilar automáticamente cierta información sobre tu dispositivo, incluyendo información sobre tu navegador web, dirección IP, zona horaria y algunas de las cookies que están instaladas en tu dispositivo (si las hubiera para fines técnicos).
+When you visit the Site, certain information about your device may be automatically collected, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device (if any, for technical purposes).
 
-### Información de Contacto
+### Contact Information
 
-Si decides contactarme a través de los enlaces de correo electrónico proporcionados, recopilaré tu dirección de correo electrónico y cualquier otra información que decidas proporcionarme para responder a tu consulta.
+If you choose to contact me via the provided email links, I will collect your email address and any other information you choose to provide in order to respond to your inquiry.
 
-## 2. Uso de la Información
+## 2. Use of Information
 
-Utilizo la información recopilada para:
+I use the collected information to:
 
-- Operar y mantener el Sitio.
-- Responder a tus preguntas y comentarios.
-- Analizar el rendimiento técnico del Sitio para mejorar la experiencia del usuario.
+- Operate and maintain the Site.
+- Respond to your questions and comments.
+- Analyze the technical performance of the Site to improve the user experience.
 
-## 3. Compartir Información
+## 3. Sharing Information
 
-No vendo, alquilo ni comparto tu información personal con terceros para fines de marketing. Solo compartiré información si es requerido por ley o para proteger mis derechos.
+I do not sell, rent, or share your personal information with third parties for marketing purposes. I will only share information if required by law or to protect my rights.
 
-## 4. Tus Derechos
+## 4. Your Rights
 
-Dependiendo de tu ubicación (por ejemplo, si te encuentras en el Espacio Económico Europeo), puedes tener derechos sobre tu información personal, incluyendo el derecho a acceder, corregir o eliminar los datos que tengo sobre ti.
+Depending on your location (for example, if you are in the European Economic Area), you may have rights over your personal information, including the right to access, correct, or delete the data I have about you.
 
-## 5. Contacto
+## 5. Contact
 
-Para más información sobre mis prácticas de privacidad, si tienes preguntas o si deseas presentar una queja, por favor contáctame por correo electrónico a <barojonatan8@gmail.com>.
+For more information about my privacy practices, if you have questions, or if you would like to make a complaint, please contact me by email at <barojonatan8@gmail.com>.

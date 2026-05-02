@@ -1,14 +1,14 @@
 ---
-title: Conóceme
-description: Conoce al desarrollador principal de DVGE.
+title: About Me
+description: Meet the lead developer behind DVGE and Ember Motion Studio.
 sidebar:
   order: 4
 ---
 
-Soy **Jonatan Barón**, un Desarrollador Full-Stack especializado en la construcción de sistemas de alto rendimiento y arquitectura de software. 
+I am **Jonatan Barón**, a Full-Stack Developer specializing in the construction of high-performance systems and robust software architecture.
 
-A través de la metodología Spec-Driven Development (SDD) y Property-Based Testing (PBT), mi enfoque radica en asegurar que aplicaciones complejas, como motores gráficos y ecosistemas web, mantengan una estabilidad absoluta desde su arquitectura base hasta el despliegue final.
+Through the rigorous application of **Spec-Driven Development (SDD)** and **Property-Based Testing (PBT)**, my focus lies in ensuring that complex applications—like graphics engines and web ecosystems—maintain absolute stability from their foundational architecture through to final deployment.
 
-Con experiencia en tecnologías como React 19, Node.js y arquitecturas deterministas, mi objetivo es unir las capacidades del desarrollo web moderno con las demandas técnicas de las industrias de producción.
+With extensive experience in technologies like React 19, Node.js, and deterministic architectures, my goal is to bridge the gap between modern web development capabilities and the strict technical demands of the professional broadcast production industry.
 
-🔗 [Visita mi Portafolio](https://portafolio-jonatan-baron.vercel.app/) para conocer más sobre mis proyectos y metodologías de trabajo.
+🔗 [Visit my Portfolio](https://portafolio-jonatan-baron.vercel.app/) to learn more about my projects and development methodologies.

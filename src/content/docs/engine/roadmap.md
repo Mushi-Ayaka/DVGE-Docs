@@ -1,43 +1,43 @@
 ---
-title: Hoja de Ruta (Roadmap)
-description: El pasado, presente y futuro de Ember Motion Studio y su motor DVGE.
+title: Roadmap
+description: The past, present, and future of Ember Motion Studio and its core DVGE rendering engine.
 sidebar:
   order: 3
 ---
 
-El futuro de **Ember Motion Studio** se construye en torno a la autonomía, la profesionalización y la sostenibilidad. Esta hoja de ruta refleja el compromiso de transformar un motor experimental en un estándar de la industria broadcast.
+The future of **Ember Motion Studio** is built around autonomy, professionalization, and sustainability. This roadmap reflects the commitment to transforming an experimental engine into a broadcast industry standard.
 
-## Fase 1: Estabilización Atmosférica (v5.6 - v5.9)
+## Phase 1: Atmospheric Stabilization (v5.6 - v5.9)
 
-Esta fase se centra en eliminar la fricción técnica y garantizar que la suite sea 100% autónoma.
+This phase focuses on eliminating technical friction and ensuring the software suite is 100% autonomous for motion design professionals.
 
 - **✅ v5.6.0**:
-  - Gestión integral de proyectos (Galería).
-  - **Auto-Fetch**: Descarga autónoma de Chromium y FFmpeg.
-  - Remodelación del layout para mayor neutralidad profesional.
+  - Comprehensive Project Management (Gallery).
+  - **Auto-Fetch**: Autonomous download of Chromium and FFmpeg.
+  - Layout remodeling for enhanced professional neutrality.
 - **✅ v5.7.0**:
-  - Transparencia Técnica: Visualización del proceso de compilación (esbuild) en UI.
-  - Implementación del Loader Dinámico para eliminar la pantalla negra.
-- **✅ v5.8.0 Master (Actual)**:
-  - **Rebranding Completo**: Transición a **Ember Motion Studio**.
-  - **Secuencia de Carga Real**: Escaneo de Hardware y montaje de módulos reportado al usuario.
-  - **Cumplimiento Legal**: Nuevo EULA detallado para dependencias de terceros (Remotion).
-  - **UX Polish**: Gestión de enlaces externos y refinamiento de modales de contacto.
+  - Technical Transparency: Visualization of the compilation process (esbuild) in the UI.
+  - Implementation of the Dynamic Loader to eliminate the black screen.
+- **✅ v5.8.0 Master (Current)**:
+  - **Complete Rebranding**: Transition to **Ember Motion Studio**.
+  - **Honest Boot Sequence**: Hardware scanning and module assembly reported in real-time to the user.
+  - **Legal Compliance**: New detailed EULA for third-party dependencies (Remotion).
+  - **UX Polish**: Management of external links and refinement of contact modals.
 - **🔲 v5.9.0**:
-  - Optimizaciones de Shader & Native Previews.
-  - Refactorización del kernel de audio para mayor fidelidad en ProRes.
+  - Shader Optimizations & Native Previews.
+  - Refactoring of the audio kernel for higher fidelity in ProRes 4444 exports.
 
-## Fase 2: Expansión y Sostenibilidad (v6.0+)
+## Phase 2: Expansion & Sustainability (v6.0+)
 
-El salto hacia la producción masiva y el modelo profesional.
+The leap toward mass production and the professional commercial model.
 
 - **🔲 v6.0.0**:
-  - **Batch Render Panel**: Renderizado masivo mediante CSV/Excel.
-  - Implementación del sistema de licencias (Lemon Squeezy) para funciones PRO.
-  - Módulos premium con licencia comercial (el núcleo del motor permanece MIT).
+  - **Batch Render Panel**: Massive rendering of broadcast overlays using CSV/Excel data.
+  - Implementation of the licensing system (Lemon Squeezy) for PRO features.
+  - Premium modules with commercial licensing (the core engine remains MIT).
 
-## Visión a Largo Plazo
+## Long-Term Vision
 
-- **Gráficos Conectados**: Flujos visuales reactivos donde un plugin alimenta a otro.
-- **Control Remoto**: App móvil satélite para disparar gráficos en vivo.
-- **LTS Edition**: Versión hiper-reducida enfocada únicamente en estabilidad ininterrumpida para transmisiones 24/7.
+- **Connected Graphics**: Reactive visual workflows where one plugin feeds data to another.
+- **Remote Control**: Satellite mobile app to trigger live graphics in environments like OBS or vMix.
+- **LTS Edition**: Hyper-reduced version focused solely on uninterrupted stability for 24/7 broadcast transmissions.

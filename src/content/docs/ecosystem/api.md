@@ -1,15 +1,15 @@
 ---
-title: API de Extensión
-description: Referencia técnica completa para el desarrollo de plugins para Ember Motion Studio. Cubre dvEngine.register, el objeto ctx y todas las utilidades disponibles.
+title: Extension API
+description: Comprehensive technical reference for developing Ember Motion Studio plugins. Covers dvEngine.register, the ctx object, and all available utilities.
 sidebar:
   order: 2
 ---
 
-Cada plugin de **Ember Motion Studio** se registra a través de la interfaz técnica `dvEngine.register()`. Esta página es la referencia completa para construir gráficos compatibles y deterministas que aprovechen la potencia del motor **DVGE**.
+Every **Ember Motion Studio** plugin is registered through the `dvEngine.register()` technical interface. This page serves as the complete reference for building broadcast-ready, deterministic motion graphics that fully utilize the **DVGE engine**.
 
 ## `dvEngine.register(lifecycle)`
 
-El punto de entrada para cualquier plugin. Llama a esto una vez en tu `script.js` con un objeto de ciclo de vida (lifecycle).
+The entry point for any plugin or lower third. Call this once in your `script.js` with a lifecycle object to hook into the frame-rendering loop.
 
 ```javascript
 dvEngine.register({
@@ -21,13 +21,13 @@ dvEngine.register({
 
 ---
 
-## Hooks de Ciclo de Vida
+## Lifecycle Hooks
 
 ### `awake(ctx)`
-Llamado **una vez** cuando el plugin es montado. Úsalo para:
-- Guardar en caché referencias del DOM en `ctx.refs`.
-- Aplicar estilos base estáticos.
-- Inicializar variables de estado en `ctx.state`.
+Called **once** when the plugin is mounted. Use it to:
+- Cache DOM references in `ctx.refs`.
+- Apply base static styles.
+- Initialize persistent state variables in `ctx.state`.
 
 ```javascript
 awake: (ctx) => {
@@ -38,59 +38,59 @@ awake: (ctx) => {
 ```
 
 ### `start(ctx)`
-Llamado cada vez que el cabezal de reproducción vuelve al **fotograma 0**. Úsalo para:
-- Restablecer el estado acumulado.
-- Disparar efectos de "primer fotograma".
+Called every time the playhead resets to **frame 0**. Use it to:
+- Reset accumulated state.
+- Trigger "first frame" effects before the broadcast output starts.
 
 ### `update(ctx)`
-Llamado en **cada fotograma** (60fps durante la previsualización). Úsalo para:
-- Todo el enlace de datos (leyendo desde `ctx.props`).
-- Toda la lógica de animación (leyendo desde `ctx.timeline`).
+Called on **every single frame** (60fps during real-time preview and ProRes rendering). Use it for:
+- All data binding (reading from `ctx.props`).
+- All animation logic (reading from `ctx.timeline`).
 
-:::caution[Rendimiento]
-Guarda en caché las referencias del DOM en `awake`. Nunca llames a `ctx.root.getElementById()` dentro de `update` — se ejecuta 60 veces por segundo.
+:::caution[Performance]
+Cache your DOM references in `awake`. Never call `ctx.root.getElementById()` inside `update` — it executes 60 times per second and will cause frame drops during live streaming.
 :::
 
 ---
 
-## El Objeto de Contexto (`ctx`)
+## The Context Object (`ctx`)
 
-Cada hook recibe el mismo objeto `ctx`:
+Every lifecycle hook receives the same `ctx` object, which provides the sandboxed environment required for transparent backgrounds and alpha channel rendering:
 
-| Propiedad | Tipo | Descripción |
+| Property | Type | Description |
 | :--- | :--- | :--- |
-| `ctx.frame` | `number` | Fotograma de animación actual (comienza en 0). |
-| `ctx.timeline` | `object` | Ayudantes de sincronización normalizados (ver abajo). |
-| `ctx.root` | `ShadowRoot` | La raíz aislada del Shadow DOM. **Usa siempre esto en lugar de `document`.** |
-| `ctx.props` | `object` | Valores en vivo del formulario del inspector, indexados por los IDs del esquema de `manifest.json`. |
-| `ctx.refs` | `object` | Tu propia caché de referencias del DOM (persistente a través de fotogramas). |
-| `ctx.state` | `object` | Tu propio almacén de estado persistente (persistente a través de fotogramas). |
-| `ctx.utils` | `object` | Biblioteca integrada de funciones matemáticas y de suavizado (easing). |
-| `ctx.settings` | `object` | Metadatos del motor: `fps`, `duration`, `width`, `height`. |
+| `ctx.frame` | `number` | Current animation frame (starts at 0). |
+| `ctx.timeline` | `object` | Normalized timing helpers for precise motion design. |
+| `ctx.root` | `ShadowRoot` | The isolated Shadow DOM root. **Always use this instead of `document`.** |
+| `ctx.props` | `object` | Live values from the inspector form, keyed by `manifest.json` schema IDs. |
+| `ctx.refs` | `object` | Your personal DOM reference cache (persists across frames). |
+| `ctx.state` | `object` | Your personal persistent state store (persists across frames). |
+| `ctx.utils` | `object` | Built-in library of math and easing functions. |
+| `ctx.settings` | `object` | Engine metadata: `fps`, `duration`, `width`, `height`. |
 
-**Valores de `ctx.settings`:**
+**`ctx.settings` values:**
 ```javascript
-ctx.settings.fps        // number — fotogramas por segundo (ej. 60)
-ctx.settings.duration   // number — duración total en fotogramas (ej. 120 para 2s a 60fps)
-ctx.settings.width      // number — ancho del lienzo en píxeles (ej. 1920)
-ctx.settings.height     // number — alto del lienzo en píxeles (ej. 1080)
+ctx.settings.fps        // number — frames per second (e.g. 60)
+ctx.settings.duration   // number — total duration in frames (e.g. 120 for 2s at 60fps)
+ctx.settings.width      // number — canvas width in pixels (e.g. 1920)
+ctx.settings.height     // number — canvas height in pixels (e.g. 1080)
 ```
 
 ---
 
 ## `ctx.timeline`
 
-Reemplaza la aritmética directa de fotogramas con valores normalizados basados en intención.
+Replaces raw frame arithmetic with intent-based normalized values. This is crucial for creating adaptive motion graphic templates.
 
-| Propiedad | Tipo | Descripción |
+| Property | Type | Description |
 | :--- | :--- | :--- |
-| `timeline.progress` | `number [0–1]` | Progreso general del clip (0 = inicio, 1 = fin). |
-| `timeline.isIntro` | `boolean` | `true` si el fotograma actual está dentro de la fase de entrada. |
-| `timeline.isOutro` | `boolean` | `true` si el fotograma actual está dentro de la fase de salida. |
-| `timeline.introProgress` | `number [0–1]` | Progreso local dentro de la fase de entrada. |
-| `timeline.outroProgress` | `number [0–1]` | Progreso local dentro de la fase de salida. |
+| `timeline.progress` | `number [0–1]` | Overall clip progress (0 = start, 1 = end). |
+| `timeline.isIntro` | `boolean` | `true` if the current frame is within the intro phase. |
+| `timeline.isOutro` | `boolean` | `true` if the current frame is within the outro phase. |
+| `timeline.introProgress` | `number [0–1]` | Local progress within the intro phase. |
+| `timeline.outroProgress` | `number [0–1]` | Local progress within the outro phase. |
 
-**Ejemplo — aparecer durante la entrada, desaparecer durante la salida:**
+**Example — fade in during intro, fade out during outro:**
 ```javascript
 update: (ctx) => {
   const { timeline, refs } = ctx;
@@ -101,55 +101,57 @@ update: (ctx) => {
 
 ---
 
-## `ctx.utils` — Biblioteca de Suavizado (Easing)
+## `ctx.utils` — Easing Library
 
-| Función | Firma | Descripción |
+Built specifically for high-end animation software needs:
+
+| Function | Signature | Description |
 | :--- | :--- | :--- |
-| `lerp` | `(a, b, t)` | Interpolación lineal. |
-| `clamp` | `(val, min, max)` | Restringe un valor a un rango. |
-| `spring` | `(t)` | Efecto de resorte con rebote. |
-| `easeOutCubic` | `(t)` | Suavizado de salida fluido. |
-| `easeInOutCubic` | `(t)` | Suavizado simétrico. |
-| `easeOutBounce` | `(t)` | Rebote elástico al entrar. |
-| `easeOutElastic` | `(t)` | Efecto elástico tipo resorte. |
-| `hexToRgb` | `(hex)` | Devuelve un string `"r, g, b"` para usar en `rgba()` de CSS. |
-| `typewriter` | `(text, frame, fps)` | Devuelve la subcadena visible para un efecto de máquina de escribir. |
-| `tickerOffset` | `(frame, speed, cW, tW)` | Calcula el desplazamiento en X para una cinta de noticias infinita. |
+| `lerp` | `(a, b, t)` | Linear interpolation. |
+| `clamp` | `(val, min, max)` | Clamps a value to a range. |
+| `spring` | `(t)` | Spring-physics effect with bounce. |
+| `easeOutCubic` | `(t)` | Smooth ease out for elegant stops. |
+| `easeInOutCubic` | `(t)` | Symmetrical easing for organic movement. |
+| `easeOutBounce` | `(t)` | Elastic bounce on entry. |
+| `easeOutElastic` | `(t)` | Spring-like elastic effect. |
+| `hexToRgb` | `(hex)` | Returns an `"r, g, b"` string for use in CSS `rgba()`. |
+| `typewriter` | `(text, frame, fps)` | Returns the visible substring for a typewriter text effect. |
+| `tickerOffset` | `(frame, speed, cW, tW)` | Calculates the X offset for an infinite news ticker. |
 
 ---
 
-## Referencia de `manifest.json`
+## `manifest.json` Reference
 
 ```json
 {
-  "id": "mi-plugin",
-  "name": "Mi Plugin",
+  "id": "my-plugin",
+  "name": "My Plugin",
   "version": "1.0.0",
-  "description": "Una breve descripción del gráfico.",
+  "description": "A brief description of the broadcast graphic.",
   "presets": ["branding", "motion", "layout"],
   "schema": [
-    { "type": "string", "id": "title", "label": "Título Principal", "defaultValue": "Hola" },
-    { "type": "color", "id": "accent", "label": "Color de Acento", "defaultValue": "#E44C30" },
-    { "type": "number", "id": "fontSize", "label": "Tamaño de Fuente (px)", "defaultValue": 48 },
-    { "type": "image", "id": "logo", "label": "Imagen del Logo" }
+    { "type": "string", "id": "title", "label": "Main Title", "defaultValue": "Hello" },
+    { "type": "color", "id": "accent", "label": "Accent Color", "defaultValue": "#E44C30" },
+    { "type": "number", "id": "fontSize", "label": "Font Size (px)", "defaultValue": 48 },
+    { "type": "image", "id": "logo", "label": "Logo Image" }
   ]
 }
 ```
 
-### Tipos de Campos del Esquema
-| Tipo | Control del Inspector | Notas |
+### Schema Field Types
+| Type | Inspector Control | Notes |
 | :--- | :--- | :--- |
-| `string` | Entrada de texto | También se usa para múltiples líneas. |
-| `color` | Selector de color | Devuelve una cadena hexadecimal. |
-| `number` | Deslizador numérico | Devuelve un número. |
-| `image` | Subida de archivo | Devuelve una URL de datos base64. |
-| `code` | Editor de código | Devuelve una cadena de texto HTML cruda. |
-| `prompt` | Zona draggable (PDF) | **v5.5.0** — Genera y expone el PDF de reglas del motor para drag-to-AI. |
-| `artifact` | Zona de pegado universal | Acepta bloques `[[[HTML]]]`, `[[[CSS]]]`, `[[[JS]]]` de la IA y los distribuye automáticamente. |
-| `info` | Texto de sólo lectura | Muestra información copiable al usuario (ej. prompts, IDs). |
+| `string` | Text input | Also used for multiline inputs. |
+| `color` | Color picker | Returns a hex string. |
+| `number` | Numeric slider | Returns a number. |
+| `image` | File upload | Returns a base64 data URL. |
+| `code` | Code editor | Returns a raw HTML string. |
+| `prompt` | Draggable zone (PDF) | **v5.5.0** — Generates and exposes the engine rules PDF for drag-to-AI. |
+| `artifact` | Universal paste zone | Accepts `[[[HTML]]]`, `[[[CSS]]]`, `[[[JS]]]` AI blocks and automatically distributes them. |
+| `info` | Read-only text | Displays copyable information to the user (e.g. prompts, IDs). |
 
-### Banderas de Presets
-| Preset | Campos Inyectados Automáticamente |
+### Preset Flags
+| Preset | Auto-Injected Fields |
 | :--- | :--- |
 | `branding` | `logo` (image), `accentColor` (color) |
 | `motion` | `entryDuration` (number), `exitDuration` (number) |

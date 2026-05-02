@@ -1,40 +1,40 @@
 ---
-title: La Visión
-description: Por qué Jonatan Barón construyó Ember Motion Studio utilizando tecnología web.
+title: The Vision
+description: Why Jonatan Barón built Ember Motion Studio using web technology and how it revolutionizes broadcast motion graphics automation.
 sidebar:
   order: 3
 ---
 
-## El Pitch Central
+## The Core Pitch
 
-> **Crea overlays 10x más rápido. Automatiza tus gráficos de broadcast sin tocar código.**
+> **Create broadcast overlays 10x faster. Automate your motion graphics workflow without writing code.**
 
-## La Filosofía
+## The Philosophy
 
-No competimos con After Effects. **Automatizamos lo que a After Effects le toma horas.**
+We do not compete with Adobe After Effects. **We automate what takes After Effects hours to render and adjust.**
 
-La industria tradicional exige flujos de trabajo lentos, pesados y manuales. **Ember Motion Studio** (impulsado por el motor **DVGE**) está diseñado para ser la columna vertebral de la automatización gráfica:
+The traditional broadcasting industry demands slow, heavy, and highly manual workflows. **Ember Motion Studio** (powered by the **DVGE engine**) is designed to be the backbone of graphic automation:
 
-- **Renderizado Determinista**: Un render hoy o en un año producirá exactamente los mismos píxeles.
-- **Frame-Math Perfecto**: Animaciones matemáticas puras sin depender de la variación del reloj del sistema.
-- **Calidad de Emisión**: Exportación nativa en **ProRes 4444** con canal alfa puro y sin pérdida.
-
----
-
-## ¿Por qué Tecnología Web?
-
-La decisión de construir sobre Electron, React y Remotion fue intencional:
-
-1. **Universalidad**: HTML/CSS/JS es el stack de programación más ampliamente comprendido del planeta. Cualquier desarrollador web puede escribir un plugin.
-2. **Extensibilidad**: Un esquema de manifiesto JSON más cuatro archivos es un sistema de plugins infinitamente más accesible que los SDKs en C++ o lenguajes de scripting privativos.
-3. **Portabilidad**: El resultado es un archivo `.mov` estándar con canal alfa, compatible con cualquier editor de video importante.
-
-**Ember Motion Studio** demuestra que la tecnología web, cuando se restringe correctamente, puede cumplir con los estándares de producción de video profesional más exigentes.
+- **Deterministic Rendering**: A render today or in a year will output the mathematically identical pixels.
+- **Frame-Perfect Math**: Pure mathematical animations that never rely on system clock variation.
+- **Broadcast Grade Quality**: Native headless export in **ProRes 4444** with a pure, lossless alpha channel.
 
 ---
 
-## ¿Para quién es Ember?
+## Why Web Technology?
 
-1. **Para Editores y Creadores**: Plantillas y gráficos listos para usar directamente en tus proyectos de video sin saber programar.
-2. **Para Desarrolladores**: Infraestructura robusta, aislada y lista para automatizar flujos completos de producción de video a través de código.
-3. **Para IAs**: Integración nativa con nuestro *Knowledge Bridge*, permitiendo que la Inteligencia Artificial lea, entienda y genere gráficos por ti.
+The decision to build on Electron, React, and Remotion was highly intentional:
+
+1. **Universality**: HTML/CSS/JS is the most widely understood programming stack on the planet. Any web developer can write a broadcast plugin.
+2. **Extensibility**: A JSON manifest schema plus four files is an infinitely more accessible plugin system than C++ SDKs or proprietary scripting languages.
+3. **Portability**: The final output is a standard `.mov` file with an alpha channel, compatible with any major non-linear editor (NLE) like Premiere Pro, DaVinci Resolve, or Final Cut.
+
+**Ember Motion Studio** proves that web technology, when sandboxed and restricted correctly, can meet and exceed the most demanding professional video production standards.
+
+---
+
+## Who is Ember for?
+
+1. **For Video Editors and Creators**: Ready-to-use motion graphic templates and overlays directly in your video projects without needing to code.
+2. **For Developers**: Robust, isolated infrastructure ready to automate entire video production workflows via scripting and logic.
+3. **For AI Assistants**: Native integration with our *Knowledge Bridge*, allowing Artificial Intelligence to read, understand, and generate custom motion graphics for you on the fly.

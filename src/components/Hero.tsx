@@ -1,7 +1,14 @@
 import { motion } from 'framer-motion';
 import { Download, ArrowRight } from 'lucide-react';
+import { ui } from '../i18n/ui';
 
-const Hero = () => {
+interface HeroProps {
+  lang?: 'en' | 'es';
+}
+
+const Hero = ({ lang = 'en' }: HeroProps) => {
+  const t = ui[lang];
+
   return (
     <section className="hero-section">
 
@@ -18,7 +25,7 @@ const Hero = () => {
           transition={{ duration: 0.5 }}
         >
           <span className="label-dot" />
-          <span>v5.8.0 — Windows x64 — MIT License</span>
+          <span>{t['hero.badge']}</span>
         </motion.div>
 
         {/* Título principal: tipografía como elemento visual */}
@@ -28,8 +35,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: 0.1 }}
         >
-          <span className="title-line title-line--accent">Ember</span>
-          <span className="title-line">Motion Studio</span>
+          <span className="title-line title-line--accent">{t['hero.headline.1']}</span>
+          <span className="title-line">{t['hero.headline.2']}</span>
+          <span className="title-line">{t['hero.headline.3']}</span>
         </motion.h1>
 
         {/* Separador horizontal */}
@@ -48,9 +56,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
-          De idea a video en minutos.
-          Overlays y lower thirds broadcast con canal alfa nativo,
-          sin configurar entornos ni instalar dependencias.
+          {t['hero.subheadline']}
         </motion.p>
 
         {/* CTAs */}
@@ -65,13 +71,13 @@ const Hero = () => {
             className="btn btn-primary"
           >
             <Download size={18} />
-            Descargar v5.8.0
+            {t['hero.cta.primary']}
           </a>
           <a
-            href={`${import.meta.env.BASE_URL}development/quick-start/`}
+            href={`${import.meta.env.BASE_URL}${lang === 'en' ? '' : 'es/'}development/quick-start/`}
             className="btn btn-ghost"
           >
-            Guía de Inicio
+            {t['hero.cta.secondary']}
             <ArrowRight size={16} />
           </a>
         </motion.div>

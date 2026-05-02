@@ -1,0 +1,626 @@
+---
+import MainLayout from "../../components/MainLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Hero from "../../components/Hero";
+import Pillars from "../../components/Pillars.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/hero.css";
+---
+
+<MainLayout
+	title="Ember Motion Studio | Software de Motion Design y Animación para OBS, Twitch y Broadcast"
+	description="Crea overlays broadcast, lower thirds y motion graphics en tiempo real con Ember Motion Studio. Software de animación gratuito para OBS, Twitch y DaVinci Resolve. Open Source MIT."
+	lang="es"
+>
+	<Navigation />
+
+	<main>
+		<Hero client:load lang="es" />
+		<Pillars />
+
+		<!-- Casos de uso — vocabulario semántico para búsquedas broadcast y streaming -->
+		<section class="use-cases">
+			<div class="use-cases-inner">
+				<p class="use-cases-label">Para quién es</p>
+				<h2 class="use-cases-title">
+					Software de Motion Design<br />para Streamers y Productores Broadcast
+				</h2>
+				<p class="use-cases-desc">
+					Ember Motion Studio es el software profesional de motion design y animación
+					impulsado por el motor DVGE — diseñado para editores de video, productores
+					broadcast y desarrolladores que necesitan gráficos vectoriales animados listos
+					para DaVinci Resolve, Premiere Pro, After Effects, OBS y Twitch.
+				</p>
+				<div class="use-cases-grid">
+					<div class="use-case-item">
+						<span class="use-case-tag">Tercios Inferiores</span>
+						<p>
+							Bandas de texto animadas para entrevistas, noticias y documentales.
+							Exportación directa como .mov con canal alpha. Compatible con
+							transiciones dinámicas y fondos transparentes.
+						</p>
+					</div>
+					<div class="use-case-item">
+						<span class="use-case-tag">Gráficos de Transmisión</span>
+						<p>
+							Marcadores, relojes, widgets de clima y puntuaciones para transmisiones
+							en vivo. Fuente de navegador compatible con OBS y vMix —
+							eficiente en CPU y listo para WebM.
+						</p>
+					</div>
+					<div class="use-case-item">
+						<span class="use-case-tag">Títulos Animados</span>
+						<p>
+							Aperturas cinemáticas y títulos de sección con animaciones vectoriales
+							de precisión exacta, reproducibles en cualquier hardware.
+							Control total de gráficos en movimiento.
+						</p>
+					</div>
+					<div class="use-case-item">
+						<span class="use-case-tag">Automatización</span>
+						<p>
+							Genera gráficos basados en datos en lote desde fuentes externas. Ideal
+							para producción de noticias y deportes con renderizado en tiempo real.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Sección de Ejemplos de Producción -->
+		<section class="home-examples">
+			<div class="examples-inner">
+				<div class="examples-header">
+					<p class="section-label">Portafolio</p>
+					<h2 class="section-title">Software de Animación en Acción: Overlays, Lower Thirds y Motion Graphics</h2>
+					<p class="section-subtitle">Visualiza la potencia del motor DVGE en acción a través de nuestras plantillas de broadcast y streaming.</p>
+				</div>
+
+				<div class="examples-grid">
+					<div class="example-item">
+						<div class="video-preview">
+							<video muted loop playsinline preload="metadata" poster={`${import.meta.env.BASE_URL}logo-square.png`} aria-label="Vista previa de Plantilla Horizons" title="Plantilla Horizons - Gráficos Broadcast" class="lazy-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo1.mp4`} type="video/mp4" />
+							</video>
+						</div>
+						<h4>Plantilla Horizons</h4>
+					</div>
+					<div class="example-item">
+						<div class="video-preview">
+							<video muted loop playsinline preload="metadata" poster={`${import.meta.env.BASE_URL}logo-square.png`} aria-label="Vista previa de Minimalismo Social" title="Minimalismo Social - Gráficos para Streaming" class="lazy-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
+							</video>
+						</div>
+						<h4>Minimalismo Social</h4>
+					</div>
+					<div class="example-item">
+						<div class="video-preview">
+							<video muted loop playsinline preload="metadata" poster={`${import.meta.env.BASE_URL}logo-square.png`} aria-label="Vista previa de Gráficos Dinámicos" title="Ejemplo de Gráficos Dinámicos en tiempo real" class="lazy-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`} type="video/mp4" />
+							</video>
+						</div>
+						<h4>Gráficos Dinámicos</h4>
+					</div>
+				</div>
+
+				<div class="examples-cta">
+					<a href={`${import.meta.env.BASE_URL}es/ejemplos/`} class="btn-more-examples">
+						Ver más ejemplos y tutoriales →
+					</a>
+				</div>
+			</div>
+		</section>
+
+		<section class="project-status">
+			<div class="status-inner">
+				<div class="status-left">
+					<p class="status-label">Estado del proyecto</p>
+					<h3 class="status-title">
+						Open Source.<br />En desarrollo activo.
+					</h3>
+					<p class="status-desc">
+						Ember Motion Studio es una plataforma <strong
+							>MIT</strong
+						> impulsada por el motor DVGE. El foco actual está en la madurez
+						técnica del núcleo y la estabilidad del ecosistema de plugins.
+					</p>
+					<a href={`${import.meta.env.BASE_URL}es/engine/roadmap/`} class="status-link"
+						>Ver hoja de ruta completa →</a
+					>
+				</div>
+				<div class="status-right">
+					<ul class="roadmap-list">
+						<li class="done">
+							<span class="roadmap-version">v5.6.0</span>
+							<span class="roadmap-desc">Interfaz Profesional & Control Centralizado</span>
+						</li>
+						<li class="done">
+							<span class="roadmap-version">v5.7.0</span>
+							<span class="roadmap-desc">Carga Transparente</span>
+						</li>
+						<li class="done">
+							<span class="roadmap-version">v5.8.0</span>
+							<span class="roadmap-desc">Inicio Optimizado & Panel Inspector/Artefactos</span>
+						</li>
+						<li>
+							<span class="roadmap-version">v5.9.0</span>
+							<span class="roadmap-desc">Mejora de Rendimiento</span>
+						</li>
+						<li>
+							<span class="roadmap-version">v6.0.0</span>
+							<span class="roadmap-desc">Renderizado Masivo & Nuevo Sistema Jerárquico de Extensión</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<Footer />
+
+  <script>
+    // Optimización de videos: solo reproducir cuando son visibles
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target as HTMLVideoElement;
+        if (entry.isIntersecting) {
+          video.play().catch(() => {}); // Ignorar errores de autoplay
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.2 });
+
+    document.querySelectorAll('.lazy-video').forEach(video => {
+      observer.observe(video);
+    });
+  </script>
+</MainLayout>
+
+<style>
+	main {
+		width: 100%;
+	}
+
+	/* â”€â”€ Casos de uso â”€â”€ */
+	.use-cases {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 4rem;
+	}
+
+	@media (min-width: 768px) {
+		.use-cases {
+			padding: 2rem 4rem 6rem;
+		}
+	}
+
+	.use-cases-inner {
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+		padding-top: 4rem;
+	}
+
+	.use-cases-label {
+		font-family: "JetBrains Mono", "Fira Code", monospace;
+		font-size: 0.65rem;
+		font-weight: 500;
+		color: #e44c30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin: 0 0 1rem 0;
+	}
+
+	.use-cases-title {
+		font-family: "Outfit", sans-serif;
+		font-size: clamp(1.75rem, 4vw, 2.75rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.02em;
+		color: #fff;
+		margin: 0 0 1.25rem 0;
+	}
+
+	.use-cases-desc {
+		font-size: 0.9rem;
+		color: #555;
+		line-height: 1.7;
+		max-width: 600px;
+		margin: 0 0 3rem 0;
+	}
+
+	.use-cases-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1px;
+		background: rgba(255, 255, 255, 0.06);
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		border-radius: 4px;
+		overflow: hidden;
+	}
+
+	@media (max-width: 600px) {
+		.use-cases-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.use-case-item {
+		background: #050505;
+		padding: 1.75rem;
+		display: flex;
+		flex-direction: column;
+		gap: 0.75rem;
+	}
+
+	.use-case-item:hover {
+		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.use-case-tag {
+		font-family: "JetBrains Mono", "Fira Code", monospace;
+		font-size: 0.7rem;
+		font-weight: 600;
+		color: #e44c30;
+		text-transform: uppercase;
+		letter-spacing: 0.08em;
+	}
+
+	.use-case-item p {
+		font-size: 0.875rem;
+		color: #555;
+		line-height: 1.65;
+		margin: 0;
+	}
+
+	/* â”€â”€ Ejemplos (Home) â”€â”€ */
+	.home-examples {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 6rem 1.5rem;
+	}
+	.examples-header {
+		text-align: center;
+		margin-bottom: 4rem;
+	}
+	.section-label {
+		font-family: "JetBrains Mono", monospace;
+		color: #e44c30;
+		text-transform: uppercase;
+		font-size: 0.7rem;
+		letter-spacing: 0.2em;
+		margin-bottom: 1rem;
+	}
+	.section-title {
+		font-family: "Outfit", sans-serif;
+		font-size: clamp(2rem, 5vw, 3rem);
+		font-weight: 800;
+		color: #fff;
+		margin-bottom: 1.5rem;
+	}
+	.section-subtitle {
+		color: #666;
+		font-size: 1.1rem;
+		max-width: 600px;
+		margin: 0 auto;
+	}
+
+	.examples-grid {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 2rem;
+		margin-bottom: 4rem;
+	}
+	@media (max-width: 900px) {
+		.examples-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.example-item {
+		background: #080808;
+		border-radius: 8px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		transition: all 0.3s ease;
+	}
+	.example-item:hover {
+		transform: translateY(-5px);
+		border-color: rgba(228, 76, 48, 0.3);
+	}
+	.video-preview {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: #000;
+		overflow: hidden;
+	}
+	.video-preview video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.7;
+		transition: opacity 0.3s ease;
+	}
+	.example-item:hover video {
+		opacity: 1;
+	}
+	.example-item h4 {
+		padding: 1.5rem;
+		color: #fff;
+		font-family: "Outfit", sans-serif;
+		font-size: 1.1rem;
+		text-align: center;
+	}
+
+	.examples-cta {
+		text-align: center;
+	}
+	.btn-more-examples {
+		display: inline-block;
+		padding: 1rem 2rem;
+		border: 1px solid #e44c30;
+		color: #e44c30;
+		text-decoration: none;
+		border-radius: 4px;
+		font-weight: 600;
+		transition: all 0.3s ease;
+	}
+	.btn-more-examples:hover {
+		background: #e44c30;
+		color: #fff;
+		box-shadow: 0 5px 20px rgba(228, 76, 48, 0.3);
+	}
+
+	/* â”€â”€ Showcase (Home) â”€â”€ */
+	.home-showcase {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+	@media (min-width: 768px) {
+		.home-showcase {
+			padding: 6rem 4rem;
+		}
+	}
+
+	.showcase-header {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		margin-bottom: 3rem;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+		padding-bottom: 2rem;
+	}
+	.section-label {
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.65rem;
+		color: #e44c30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin-bottom: 0.5rem;
+	}
+	.section-title {
+		font-family: "Outfit", sans-serif;
+		font-size: 2rem;
+		color: #fff;
+		margin: 0;
+	}
+	.section-link {
+		font-size: 0.85rem;
+		color: #e44c30;
+		text-decoration: none;
+		font-weight: 600;
+	}
+
+	.showcase-preview {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+		gap: 2rem;
+	}
+	.preview-card {
+		background: #0d0d0d;
+		padding: 2rem;
+		border-radius: 12px;
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		transition: transform 0.3s ease;
+	}
+	.preview-card:hover {
+		transform: translateY(-5px);
+		border-color: rgba(228, 76, 48, 0.2);
+	}
+	.preview-img {
+		margin-bottom: 1.5rem;
+		opacity: 0.6;
+	}
+	.preview-card h4 { color: #fff; font-family: "Outfit", sans-serif; margin-bottom: 0.75rem; font-size: 1.1rem; }
+	.preview-desc { color: #666; font-size: 0.85rem; line-height: 1.5; margin-bottom: 1.25rem; }
+	.preview-comment { 
+		font-style: italic; 
+		color: #999; 
+		font-size: 0.8rem; 
+		border-left: 2px solid #e44c30; 
+		padding-left: 0.75rem; 
+		margin-bottom: 1.5rem;
+		line-height: 1.4;
+	}
+	.preview-link {
+		font-size: 0.75rem;
+		color: #e44c30;
+		text-decoration: none;
+		font-weight: 700;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+	}
+	.preview-link:hover { text-decoration: underline; }
+
+	/* â”€â”€ Historias (Home) â”€â”€ */
+	.home-stories {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem 8rem;
+	}
+	@media (min-width: 768px) {
+		.home-stories {
+			padding: 6rem 4rem 10rem;
+		}
+	}
+
+	.story-preview-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+		margin-top: 3rem;
+	}
+	@media (max-width: 768px) {
+		.story-preview-grid {
+			grid-template-columns: 1fr;
+		}
+	}
+
+	.story-bubble {
+		background: rgba(228, 76, 48, 0.03);
+		border-left: 3px solid #e44c30;
+		padding: 2rem;
+		border-radius: 0 16px 16px 0;
+	}
+	.story-bubble p {
+		color: #ccc;
+		font-style: italic;
+		font-size: 1rem;
+		margin-bottom: 1rem;
+	}
+	.story-author {
+		color: #e44c30;
+		font-weight: 700;
+		font-size: 0.8rem;
+	}
+
+	.btn-stories {
+		display: inline-block;
+		padding: 0.8rem 2rem;
+		border: 1px solid rgba(228, 76, 48, 0.3);
+		color: #fff;
+		text-decoration: none;
+		border-radius: 6px;
+		font-weight: 600;
+		transition: all 0.2s ease;
+	}
+	.btn-stories:hover {
+		background: rgba(228, 76, 48, 0.1);
+		border-color: #e44c30;
+	}
+
+	/* â”€â”€ SecciÃ³n de Estado â”€â”€ */
+	.project-status {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 2rem 1.5rem 6rem;
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+	}
+
+	@media (min-width: 768px) {
+		.project-status {
+			padding: 4rem 4rem 8rem;
+		}
+	}
+
+	.status-inner {
+		display: grid;
+		grid-template-columns: 1fr;
+		gap: 3rem;
+	}
+
+	@media (min-width: 768px) {
+		.status-inner {
+			grid-template-columns: 1fr 1fr;
+			gap: 6rem;
+			align-items: start;
+		}
+	}
+
+	.status-label {
+		font-family: "JetBrains Mono", "Fira Code", monospace;
+		font-size: 0.65rem;
+		font-weight: 500;
+		color: #e44c30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin: 0 0 1rem 0;
+	}
+
+	.status-title {
+		font-family: "Outfit", sans-serif;
+		font-size: clamp(1.5rem, 4vw, 2.25rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.02em;
+		color: #fff;
+		margin: 0 0 1.25rem 0;
+	}
+
+	.status-desc {
+		font-size: 0.9rem;
+		color: #666;
+		line-height: 1.7;
+		margin: 0 0 1.5rem 0;
+	}
+
+	.status-desc strong {
+		color: #999;
+		font-weight: 600;
+	}
+
+	.status-link {
+		font-size: 0.8rem;
+		font-weight: 600;
+		color: #e44c30;
+		text-decoration: none;
+		letter-spacing: 0.02em;
+		transition: opacity 0.2s;
+	}
+	.status-link:hover {
+		opacity: 0.7;
+	}
+
+	/* Roadmap list â€” estilo tabla tÃ©cnica */
+	.roadmap-list {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.roadmap-list li {
+		display: grid;
+		grid-template-columns: 4.5rem 1fr;
+		gap: 1rem;
+		align-items: baseline;
+		padding: 0.85rem 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+		font-size: 0.85rem;
+	}
+
+	.roadmap-list li:first-child {
+		border-top: 1px solid rgba(255, 255, 255, 0.05);
+	}
+
+	.roadmap-version {
+		font-family: "JetBrains Mono", "Fira Code", monospace;
+		font-size: 0.7rem;
+		color: #444;
+		letter-spacing: 0.05em;
+	}
+
+	.roadmap-desc {
+		color: #555;
+	}
+
+	.roadmap-list li.done .roadmap-version {
+		color: #e44c30;
+	}
+
+	.roadmap-list li.done .roadmap-desc {
+		color: #999;
+	}
+</style>
+

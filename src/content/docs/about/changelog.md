@@ -1,46 +1,46 @@
 ---
-title: Changelog (Registro de Cambios)
-description: Historial completo de versiones para el Dynamic Vector Graphics Engine (DVGE).
+title: Changelog
+description: Complete version history and release notes for the Dynamic Vector Graphics Engine (DVGE) and Ember Motion Studio.
 sidebar:
   order: 2
 ---
 
-Todos los cambios notables en DVGE están documentados aquí. El versionado sigue el estándar [Semantic Versioning](https://semver.org/).
+All notable changes to the DVGE engine are documented here. Versioning strictly follows the [Semantic Versioning](https://semver.org/) standard.
 
 ---
 
-## [5.8.0] — 2026-04-30 ✦ Versión Actual
+## [5.8.0] — 2026-04-30 ✦ Current Release
 
-### Estabilización Maestro y Cumplimiento Legal (The Master Sync)
+### Master Stabilization and Legal Compliance (The Master Sync)
 
-- **Secuencia de Carga Real (Deterministic Boot)**: Eliminación definitiva de la pantalla negra mediante una secuencia de inicialización honesta. La UI ahora reporta en tiempo real el escaneo de hardware (GPU/CPU), la sincronización del pipeline de esbuild y el montaje de módulos.
-- **Optimización de Enlaces Externos**: Implementación de un handler global en Electron para forzar la apertura de cualquier enlace externo en el navegador del sistema, mejorando la seguridad y la UX.
-- **Refinamiento de UI/UX**:
-  - Unificación estética de enlaces de contacto (GitHub, Portafolio, Gmail).
-  - Eliminación de redundancias en modales (botón cerrar duplicado).
-  - Integración de enlace directo para composición de Gmail.
-- **Sincronización de Roadmap v6**: Preparación del terreno para la arquitectura modular y el renderizado en lote.
+- **Deterministic Boot (Honest Boot Sequence)**: Definitive elimination of the black screen via an honest initialization sequence. The UI now reports real-time hardware scanning (GPU/CPU), esbuild pipeline synchronization, and module mounting.
+- **External Link Optimization**: Implemented a global Electron handler to force all external links to open in the system's default browser, significantly improving security and UX.
+- **UI/UX Refinement**:
+  - Aesthetic unification of contact links (GitHub, Portfolio, Gmail).
+  - Elimination of redundancy in modals (removed duplicate close buttons).
+  - Integration of a direct Gmail compose deep link.
+- **Roadmap v6 Synchronization**: Laid the groundwork for modular architecture and batch rendering capabilities.
 
 ---
 
 ## [5.7.0] — 2026-04-28
 
-### Transparencia Técnica & Loader Pro (The Visibility Update)
+### Technical Transparency & Pro Loader (The Visibility Update)
 
-- **Visualización de esbuild Pipeline**: Integración de logs de compilación en tiempo real dentro de la interfaz. Los desarrolladores ahora pueden ver cuándo un plugin se está transpilando, eliminando la incertidumbre en cambios de lógica complejos.
-- **Loader Dinámico de Inicialización**: Implementación del sistema de carga secuencial que reemplaza la pantalla negra inicial por una barra de progreso informativa sobre el estado de los módulos internos.
+- **esbuild Pipeline Visualization**: Integration of real-time compilation logs inside the UI. Developers can now see exactly when a plugin is transpiling, eliminating uncertainty during complex logic changes.
+- **Dynamic Initialization Loader**: Implementation of a sequential loading system that replaces the initial black screen with an informative progress bar detailing the state of internal modules.
 
 ---
 
 ## [5.6.0] — 2026-04-26
 
-### Gestión de Proyectos & Autonomía (The Freedom Update)
+### Project Management & Autonomy (The Freedom Update)
 
-- **Auto-Fetch de Dependencias (Chromium & FFmpeg)**: El motor ahora detecta y descarga automáticamente sus propios motores de renderizado en `%APPDATA%\DVGE\bin`, eliminando la dependencia de Chrome instalado globalmente.
-- **Gestión Integral de Proyectos**: Nueva interfaz en la Galería que permite renombrar y eliminar proyectos de forma atómica y segura mediante IPC.
-- **Control de Integridad de Plugins**: El sistema ahora detecta plugins faltantes o corruptos antes de abrir el editor, mostrando badges de error y bloqueando el acceso para evitar cierres inesperados.
-- **Estabilización del Frame 0**: Corrección crítica en `RenderWrapper` para asegurar que las propiedades se inyecten antes de la captura del primer fotograma, eliminando el parpadeo transparente.
-- **Identidad Solo Developer**: Actualización de la narrativa de la landing y documentación para reflejar su naturaleza independiente y compromiso de certificación futura.
+- **Dependency Auto-Fetch (Chromium & FFmpeg)**: The engine now automatically detects and downloads its own rendering binaries into `%APPDATA%\DVGE\bin`, eliminating the need for a globally installed Chrome browser.
+- **Comprehensive Project Management**: New Gallery interface allowing users to securely rename and delete projects via atomic IPC calls.
+- **Plugin Integrity Checks**: The system now detects missing or corrupted plugins before opening the editor, displaying error badges and locking access to prevent unexpected crashes.
+- **Frame 0 Stabilization**: Critical fix in `RenderWrapper` ensuring properties are fully injected before the first frame is captured, eliminating transparent flickering.
+- **Solo Developer Identity**: Updated narrative on the landing page and documentation to reflect its independent nature and commitment to future certification.
 
 ---
 
@@ -48,53 +48,53 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ### GA Artifact Edition (Knowledge Bridge)
 
-- **Knowledge Bridge Nativo**: El motor genera un archivo `DVGE-Master-Rules.pdf` en caché y lo expone como zona de arrastre en el inspector del plugin "DVGE Studio Master". Al arrastrar directamente al chat de una IA (Claude, Gemini, ChatGPT), el asistente recibe el contexto completo del motor — reglas del Sandbox, API de `ctx`, restricciones del Shadow DOM y tabla de utilidades — sin necesidad de copiar texto.
-- **Auto-Generador PDF Interno**: Una ventana silenciosa de Electron compila las reglas del motor a un archivo PDF temporal en caché (`%TEMP%/DVGE-Master-Rules.pdf`), eludiendo las restricciones de texto plano de las interfaces de IA.
-- **Studio Master Refactor**: El plugin "DVGE Studio Master" incorpora soporte estandarizado para el campo `prompt`, manteniendo la fidelidad de la interfaz de usuario.
+- **Native Knowledge Bridge**: The engine caches a `DVGE-Master-Rules.pdf` file and exposes it as a drag zone inside the "DVGE Studio Master" plugin inspector. By dragging directly into an AI chat (Claude, Gemini, ChatGPT), the assistant receives the complete engine context — Sandbox rules, `ctx` API, Shadow DOM constraints, and the utility table — without needing to copy raw text.
+- **Internal PDF Auto-Generator**: A silent Electron window compiles engine rules to a temporary cached PDF file (`%TEMP%/DVGE-Master-Rules.pdf`), bypassing AI plain text length restrictions.
+- **Studio Master Refactor**: The "DVGE Studio Master" plugin now incorporates standardized support for the `prompt` schema field while maintaining high UI fidelity.
 
 ## [5.4.0] — 2026-04-23
 
-### Estabilización de Producción y Canal Alfa (The Alpha Fix)
+### Production Stabilization and Alpha Channel (The Alpha Fix)
 
-- **Transparency Transformer**: Implementación de flags críticos de Chromium (`--transparent-background-color=0`) y `evaluatePage` para garantizar transparencia real en ProRes 4444.
-- **Data Probe System**: Nuevo sistema de inyección de datos vía endpoint interno (`/props.json`) para evitar pérdida de efectos complejos por límites de CLI en Windows.
-- **Engine Compatibility**: Polyfill de `getElementById` en el contenedor root de plugins para soportar lógica heredada y compleja.
-- **Chrome System Bypass**: Forzado de uso del ejecutable de Chrome del sistema para mayor fiabilidad en entornos Windows.
-- **Optimización DaVinci**: Ajuste de pixel format a `yuva444p10le` con metadatos de transparencia verificados.
+- **Transparency Transformer**: Implementation of critical Chromium flags (`--transparent-background-color=0`) and `evaluatePage` injection to guarantee true transparency in ProRes 4444.
+- **Data Probe System**: New data injection system via an internal HTTP endpoint (`/props.json`) to prevent complex data truncation caused by Windows CLI limits.
+- **Engine Compatibility**: `getElementById` polyfill inside the plugin root container to support legacy and complex logic structures.
+- **Chrome System Bypass**: Forced usage of the system's Chrome executable for enhanced reliability in Windows environments.
+- **DaVinci Optimization**: Adjusted pixel format to `yuva444p10le` with verified transparency metadata.
 
 ---
 
 ## [5.3.0] — 2026-04-23
 
-### Auditoría de Infraestructura y Estabilización (Kernel Hardening)
+### Infrastructure Audit and Stabilization (Kernel Hardening)
 
-- **Resolución definitiva de "Black Background"**: Diagnóstico del problema de transparencia en ProRes 4444 y restauración del canal alfa profesional para broadcast.
-- **Bypass de Chrome de Sistema**: Uso del binario oficial de Google Chrome en lugar de `chrome-headless-shell` de Remotion, resolviendo fallos de captura silenciosos.
-- **Kernel Logging (Caja Negra)**: Sistema de registro físico (`render_debug.log`) que captura peticiones del servidor interno, errores 404 y logs de consola en tiempo real.
-- **Hardening de Rasterización**: Forzado de flags de CPU (`--force-cpu-rasterization`) para garantizar la captura de frames ante fallos de drivers de GPU en Windows.
+- **Definitive "Black Background" Resolution**: Diagnosed and fixed the transparency issue in ProRes 4444, restoring the professional alpha channel for broadcast.
+- **System Chrome Bypass**: Migrated from Remotion's `chrome-headless-shell` to the official Google Chrome binary, resolving silent capture failures.
+- **Kernel Logging (Black Box)**: Physical logging system (`render_debug.log`) capturing internal server requests, 404 errors, and real-time console logs.
+- **Rasterization Hardening**: Forced CPU flags (`--force-cpu-rasterization`) to guarantee frame capture even during GPU driver failures on Windows.
 
 ---
 
 ## [5.2.0] — 2026-04-23
 
-### Aislamiento "Muro de Hierro" (Bug Purge)
+### "Iron Wall" Isolation (Bug Purge)
 
-- **Servidor de Aislamiento Manual**: Servidor HTTP independiente (`serve()`) para el renderizado headless, eliminando el conflicto con el puerto 3000 de Vite que causaba el "Fondo Negro".
-- **Naming Convention Strict**: Migración de IDs de composición a `kebab-case` para cumplir con las validaciones de Remotion 4.x.
-- **Motor Síncrono Determinista**: Refactorización de `RenderWrapper` para garantizar que la inyección del DOM ocurra de forma atómica antes de la captura del frame.
-- **Transparencia Nativa**: Restauración del canal alfa real para exportaciones ProRes 4444.
+- **Manual Isolation Server**: Independent HTTP server (`serve()`) for headless rendering, eliminating conflict with the Vite port 3000 that caused the "Black Background" bug.
+- **Strict Naming Convention**: Migrated composition IDs to `kebab-case` to comply with Remotion 4.x strict validations.
+- **Deterministic Synchronous Engine**: Refactored `RenderWrapper` to guarantee atomic DOM injection before frame capture.
+- **Native Transparency**: Restored true alpha channel for ProRes 4444 exports.
 
 ---
 
 ## [5.1.0] — 2026-04-23 (GA)
 
-### Motor de Renderizado de Nueva Generación (Zero-Bundle Runtime)
+### Next-Generation Rendering Engine (Zero-Bundle Runtime)
 
-- **Arquitectura Zero-Bundle**: Eliminación de `@remotion/bundler` del runtime. El entry point de Remotion se pre-compila en tiempo de build, reduciendo el instalador de 12,466 archivos a un único `app.asar`.
-- **Instalación Rápida**: El tiempo de instalación pasa de minutos a segundos.
-- **`binariesDirectory` Explícito**: Los binarios nativos (`remotion.exe`, `ffmpeg.exe`) se resuelven desde `app.asar.unpacked`, eliminando errores `ENOENT` en producción.
-- **CWD Seguro**: El proceso de renderizado redirige el directorio de trabajo a `%TEMP%`, evitando errores `EPERM`.
-- **Compatibilidad Total**: El render en `npm run dev` y en producción es idéntico. Sin cambios en la API de plugins.
+- **Zero-Bundle Architecture**: Eliminated `@remotion/bundler` from the runtime. The Remotion entry point is pre-compiled at build time, shrinking the installer from 12,466 files to a single `app.asar`.
+- **Fast Installation**: Installation time plummeted from minutes to seconds.
+- **Explicit `binariesDirectory`**: Native binaries (`remotion.exe`, `ffmpeg.exe`) are now safely resolved from `app.asar.unpacked`, eliminating `ENOENT` errors in production.
+- **Safe CWD**: The rendering process redirects its working directory to `%TEMP%`, avoiding `EPERM` permission errors.
+- **Total Compatibility**: Rendering via `npm run dev` and in production is mathematically identical. No plugin API changes.
 
 ---
 
@@ -102,20 +102,20 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ### Smart Engine & Auto-Rescue
 
-- **Capa de Inteligencia (Auto-Rescate)**: El motor detecta y envuelve automáticamente scripts que no sigan el estándar de registro oficial (detectando funciones globales como `update` o `renderDVGE`).
-- **Sandbox Resiliente**: `fakeWindow` inteligente que silencia `requestAnimationFrame`, protegiendo la integridad del renderizado ProRes 4444.
-- **Simplificación de API**: Introducción de `ctx.utils.loop(frame, duration)` para animaciones cíclicas perfectas.
-- **AI-Native Workflow**: Tasa de éxito "One-Shot" significativamente mayor al ejecutar código generado por IA.
+- **Intelligence Layer (Auto-Rescue)**: The engine detects and automatically wraps scripts that fail to follow the official registration standard (detecting global functions like `update` or `renderDVGE`).
+- **Resilient Sandbox**: Smart `fakeWindow` that silently intercepts and nullifies `requestAnimationFrame`, protecting the integrity of ProRes 4444 rendering.
+- **API Simplification**: Introduced `ctx.utils.loop(frame, duration)` for perfect cyclic animations.
+- **AI-Native Workflow**: Significantly higher "One-Shot" success rate when running AI-generated code.
 
 ---
 
 ## [4.1.0] — 2026-04-21 (GA)
 
-### Catálogo de Plugins & Ecosystem
+### Plugin Catalog & Ecosystem
 
-- **Catálogo Integrado**: Nuevo panel para descubrir y descargar plugins directamente desde el repositorio oficial de GitHub.
-- **Gestión Dinámica**: Instalación, actualización y borrado de plugins desde la UI.
-- **Identidad Profesional**: Redes sociales (GitHub, Portafolio) y contacto directo vía Gmail en el modal "Acerca de".
+- **Integrated Catalog**: New panel to discover and download plugins directly from the official GitHub repository.
+- **Dynamic Management**: Install, update, and delete plugins directly from the UI.
+- **Professional Identity**: Social links (GitHub, Portfolio) and direct Gmail contact in the "About" modal.
 
 ---
 
@@ -123,35 +123,35 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ### QA Remediation & GA Architecture
 
-- **Sandbox Aislado**: Los plugins se ejecutan con `fakeWindow` sin acceso a APIs de Electron.
-- **I/O Seguro**: Autoguardado asíncrono y atómico (`.tmp`), impidiendo corrupción de proyectos.
-- **Graceful Degradation**: Aislamiento de crashes en el código del plugin sin congelar la app.
-- **Error Boundary Reactivo**: Interfaz protegida contra `manifest.json` malformados.
-- **API Determinística**: Deprecado GSAP en favor de `ctx.timeline`. Añadidos `ctx.state`, `ctx.refs`, `utils.spring`, `utils.typewriter`, `utils.tickerOffset`.
+- **Isolated Sandbox**: Plugins run within a `fakeWindow` without access to Electron APIs.
+- **Secure I/O**: Asynchronous and atomic auto-save (`.tmp`), preventing project corruption.
+- **Graceful Degradation**: Crash isolation for plugin code without freezing the main application.
+- **Reactive Error Boundary**: Protected interface against malformed `manifest.json` files.
+- **Deterministic API**: Deprecated GSAP in favor of `ctx.timeline`. Added `ctx.state`, `ctx.refs`, `utils.spring`, `utils.typewriter`, `utils.tickerOffset`.
 
 ---
 
 ## [3.3.0] — 2026-04-21
 
-### Editor Edition (HTML-a-Video Profesional)
+### Editor Edition (Professional HTML-to-Video)
 
-- **Campos de Código**: Edición multilínea de HTML/CSS directamente en el sidebar con campos tipo `code`.
-- **Plugin HTML Master Renderer**: Plantilla de alto rendimiento para renderizar código HTML puro.
-- **Guardado Manual**: Botón en el sidebar para forzar escritura en disco del proyecto.
+- **Code Fields**: Multiline HTML/CSS editing directly in the sidebar with `code` type schema fields.
+- **HTML Master Renderer Plugin**: High-performance template for rendering pure HTML/CSS compositions.
+- **Manual Save**: Button in the sidebar to force a disk write for the project.
 
 ---
 
 ## [3.2.1] — 2026-04-21
 
-### Corrección Crítica — Motor de Plugins Universal
+### Critical Fix — Universal Plugin Engine
 
-- **Bug Resuelto**: El motor mostraba siempre la forma del primer plugin cargado al cambiar de proyecto; los campos del formulario tampoco se actualizaban.
+- **Bug Resolved**: The engine previously always rendered the shape of the very first plugin loaded when switching projects; form fields also failed to update.
 
-### Motor de Plugins Dinámico
+### Dynamic Plugin Engine
 
-- **Formulario Generativo**: El panel lateral lee el `manifest.json` del plugin activo y genera dinámicamente los inputs correctos (`string`, `color`, `number`, `image`).
-- **Plugin Badge**: El sidebar muestra el nombre y versión del plugin activo.
-- **Hard Reset en Cambio de Proyecto**: El reproductor se destruye y recrea completamente al cambiar de proyecto.
+- **Generative Form**: The sidebar reads the active plugin's `manifest.json` and dynamically generates the correct inputs (`string`, `color`, `number`, `image`).
+- **Plugin Badge**: The sidebar displays the name and version of the active plugin.
+- **Hard Reset on Project Switch**: The player is completely destroyed and recreated when switching projects to avoid CSS contamination.
 
 ---
 
@@ -159,55 +159,55 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ### Core & Developer Experience (DX)
 
-- **Librería de Utilidades Nativa (`dvEngine.utils`)**: Funciones matemáticas (`lerp`, `clamp`) y de suavizado (`easeOutCubic`, `easeOutBounce`, etc.) inyectadas automáticamente.
-- **Autoguardado Silencioso**: Persistencia automática basada en debouncing de 500ms.
-- **Indicador de Persistencia**: UI en el panel lateral que muestra el estado del guardado en tiempo real.
+- **Native Utilities Library (`dvEngine.utils`)**: Math functions (`lerp`, `clamp`) and easing functions (`easeOutCubic`, `easeOutBounce`, etc.) automatically injected into the context.
+- **Silent Auto-Save**: Automatic persistence based on 500ms debouncing.
+- **Persistence Indicator**: UI in the sidebar showing the save state in real-time.
 
 ---
 
 ## [3.0.0] — 2026-04-21
 
-### Arquitectura de Espacios de Trabajo (Workspace Architecture)
+### Workspace Architecture
 
-- **Project Manager Backend**: Soporte de proyectos persistentes en `Documents/DVG_Projects/<id>`.
-- **Inyección V3 Lifecycle**: Migración obligatoria a `{ awake, start, update }` para rendimiento máximo a 60fps.
-- **Enlace Reactivo Nativo**: Las variables de la UI ahora impactan directamente el ciclo `update()`.
+- **Project Manager Backend**: Support for persistent projects in `Documents/DVG_Projects/<id>`.
+- **V3 Lifecycle Injection**: Mandatory migration to `{ awake, start, update }` hooks for maximum 60fps performance.
+- **Native Reactive Binding**: UI variables now directly impact the `update()` cycle immediately.
 
 ---
 
 ## [2.3.0] — 2026-04-21
 
-### Arquitectura Hot-Swap
+### Hot-Swap Architecture
 
-- **Stable Bridge Pattern**: Gestión de eventos centralizada fuera del script del plugin para evitar fugas de memoria.
-- **Detección de Fugas**: Limpieza automática del Shadow DOM y callbacks antes de cada recarga.
-- **Sync Dual**: Diferenciación entre actualización de datos (Soft-Sync) y recarga de lógica (Hard-Sync).
+- **Stable Bridge Pattern**: Centralized event management outside the plugin script to prevent memory leaks.
+- **Leak Detection**: Automatic cleanup of Shadow DOM and callbacks before every reload.
+- **Dual Sync**: Differentiation between data updates (Soft-Sync) and logic reloads (Hard-Sync).
 
 ---
 
 ## [2.2.0] — 2026-04-21
 
-### Añadido
+### Added
 
-- **API `dvEngine.register`**: Nuevo método oficial para sincronizar frames y recibir el Shadow Root de forma segura.
-- **Retrocompatibilidad**: Soporte para scripts heredados que usan `window.dvContext` y `renderFrame()`.
+- **`dvEngine.register` API**: New official method to synchronize frames and safely receive the Shadow Root.
+- **Backwards Compatibility**: Support for legacy scripts using `window.dvContext` and `renderFrame()`.
 
-### Corregido
+### Fixed
 
-- **Black Screen Fix**: Consolidación del ciclo de vida del `PluginWrapper` para evitar colapsos en la inicialización del Shadow DOM.
-- **Reactividad Total**: Los cambios en el panel lateral se reflejan instantáneamente en tiempo real.
+- **Black Screen Fix**: Consolidation of the `PluginWrapper` lifecycle to prevent crashes during Shadow DOM initialization.
+- **Total Reactivity**: Changes in the side panel reflect instantly in real-time.
 
 ---
 
 ## [2.0.0] — "The Genetic Revolution"
 
-- Migración de plantillas estáticas React a un motor de inyección dinámica mediante Shadow DOM.
-- Sistema IPC para carga de plugins externos desde `Documentos/DV_Engine_Plugins`.
-- Sincronización determinista a 60fps basada en eventos `dv-update`.
+- Migrated from static React templates to a dynamic injection engine via Shadow DOM.
+- IPC System for loading external plugins from `Documents/DV_Engine_Plugins`.
+- Deterministic 60fps synchronization based on `dv-update` events.
 
 ---
 
 ## [1.0.0] — "The Native Era"
 
-- Versión inicial con componentes `LowerThirdBasic` cableados en React.
-- Renderizado ProRes 4444 básico.
+- Initial release with hardcoded `LowerThirdBasic` React components.
+- Basic ProRes 4444 headless rendering pipeline.

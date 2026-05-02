@@ -1,77 +1,78 @@
 ---
-title: Identidad Visual
-description: Recursos de marca de Ember Motion Studio y el motor DVGE.
+title: Brand Identity
+description: Official brand assets and visual identity for Ember Motion Studio and the DVGE engine.
 sidebar:
   order: 5
 ---
 
-La identidad visual de este proyecto se divide en dos capas: **Ember Motion Studio** (la suite de usuario y entorno de diseño) y **DVGE** (el motor técnico que potencia toda la plataforma).
+The visual identity of this project is divided into two distinct layers: **Ember Motion Studio** (the user-facing production suite and design environment) and **DVGE** (the technical engine that powers the entire platform).
 
-> **Ember Motion Studio** es la capa comercial y de experiencia de usuario, diseñada para la producción broadcast. **DVGE (Dynamic Vector Graphics Engine)** es el motor de renderizado de código abierto (MIT) que reside en el núcleo y garantiza el determinismo de cada fotograma.
+> **Ember Motion Studio** is the commercial and user-experience layer, designed for broadcast production. **DVGE (Dynamic Vector Graphics Engine)** is the open-source (MIT) rendering engine residing at the core, guaranteeing deterministic frame calculations.
 
 ---
 
-## Ember Motion Studio (Suite)
+## Ember Motion Studio (The Suite)
 
-El logo de **Ember** representa la energía y el movimiento de los gráficos broadcast modernos.
+The **Ember** logo represents the energy, heat, and movement of modern broadcast graphics.
 
 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0;">
   <div style="text-align: center; padding: 2.5rem; background: #050505; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
     <h3 style="margin-top: 0; color: white; font-size: 1.1rem; margin-bottom: 2rem;">Ember Logo Square</h3>
-    <img src="/DVGE-Docs/logo-square.png" alt="Ember Logo Square" width="160" height="160" style="display: block; margin: 0 auto 2rem; filter: drop-shadow(0 0 15px rgba(228, 76, 48, 0.25));" />
-    <a href="/DVGE-Docs/logo-square.png" download="Ember_Logo_Square.png" style="display: inline-block; padding: 0.6rem 1.2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: opacity 0.2s;">Descargar PNG</a>
+    <img src="/logo-square.png" alt="Ember Logo Square" width="160" height="160" style="display: block; margin: 0 auto 2rem; filter: drop-shadow(0 0 15px rgba(228, 76, 48, 0.25));" />
+    <a href="/logo-square.png" download="Ember_Logo_Square.png" style="display: inline-block; padding: 0.6rem 1.2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: opacity 0.2s;">Download PNG</a>
   </div>
 
   <div style="text-align: center; padding: 2.5rem; background: #050505; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); flex: 1; min-width: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
     <h3 style="margin-top: 0; color: white; font-size: 1.1rem; margin-bottom: 2rem;">Ember Element Mark</h3>
-    <img src="/DVGE-Docs/elementSquare.png" alt="Ember Element Mark" width="300" height="300" style="display: block; margin: 0 auto 2rem; filter: drop-shadow(0 0 15px rgba(228, 76, 48, 0.15));" />
-    <a href="/DVGE-Docs/elementSquare.png" download="Ember_Element_Square.png" style="display: inline-block; padding: 0.6rem 1.2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: opacity 0.2s;">Descargar PNG</a>
+    <img src="/elementSquare.png" alt="Ember Element Mark" width="300" height="300" style="display: block; margin: 0 auto 2rem; filter: drop-shadow(0 0 15px rgba(228, 76, 48, 0.15));" />
+    <a href="/elementSquare.png" download="Ember_Element_Square.png" style="display: inline-block; padding: 0.6rem 1.2rem; background: #E44C30; color: white; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; transition: opacity 0.2s;">Download PNG</a>
   </div>
 </div>
 
 ---
 
-## DVGE (El Motor)
+## DVGE (The Engine)
 
-Mantenemos la identidad original del motor para desarrolladores y contribuidores del ecosistema open source.
+We maintain the original engine identity for developers and contributors within the open-source ecosystem.
 
 <div style="display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; margin: 2.5rem 0;">
   <div style="text-align: center; padding: 2rem; background: #0d0d0d; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04); flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center;">
     <p style="margin: 0 0 1.25rem 0; font-size: 0.75rem; color: #666; font-family: monospace;">DVGE_STANDARD</p>
-    <img src="/DVGE-Docs/icon.png" alt="DVGE Core Icon" width="64" height="64" style="display: block; margin: 0 auto 1.5rem;" />
-    <a href="/DVGE-Docs/icon.png" download="DVGE_Icon_Standard.png" style="color: #E44C30; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-bottom: 1px solid transparent; transition: border 0.2s;">Descargar PNG</a>
+    <img src="/icon.png" alt="DVGE Core Icon" width="64" height="64" style="display: block; margin: 0 auto 1.5rem;" />
+    <a href="/icon.png" download="DVGE_Icon_Standard.png" style="color: #E44C30; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-bottom: 1px solid transparent; transition: border 0.2s;">Download PNG</a>
   </div>
 
   <div style="text-align: center; padding: 2rem; background: #0d0d0d; border-radius: 8px; border: 1px solid rgba(255,255,255,0.04); flex: 1; min-width: 180px; display: flex; flex-direction: column; align-items: center;">
     <p style="margin: 0 0 1.25rem 0; font-size: 0.75rem; color: #666; font-family: monospace;">DVGE_HIGHLIGHT</p>
-    <img src="/DVGE-Docs/icon_highlight.png" alt="DVGE Highlight Icon" width="64" height="64" style="display: block; margin: 0 auto 1.5rem;" />
-    <a href="/DVGE-Docs/icon_highlight.png" download="DVGE_Icon_Highlight.png" style="color: #E44C30; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-bottom: 1px solid transparent; transition: border 0.2s;">Descargar PNG</a>
+    <img src="/icon_highlight.png" alt="DVGE Highlight Icon" width="64" height="64" style="display: block; margin: 0 auto 1.5rem;" />
+    <a href="/icon_highlight.png" download="DVGE_Icon_Highlight.png" style="color: #E44C30; text-decoration: none; font-size: 0.75rem; font-weight: bold; border-bottom: 1px solid transparent; transition: border 0.2s;">Download PNG</a>
   </div>
 </div>
 
 ---
 
-## Paleta de Colores Oficial
+## Official Color Palette
 
-| Token | Hex | Uso |
+| Token | Hex | Usage |
 | :--- | :--- | :--- |
-| **Ember Base** | `#E44C30` | Color de marca, botones principales, acentos. |
-| **Ember Dark** | `#801C0B` | Gradientes profundos y sombras. |
-| **Obsidian** | `#050505` | Fondo de aplicación (OLED Black). |
-| **Surface** | `#121212` | Paneles secundarios, tarjetas y sidebar. |
+| **Ember Base** | `#E44C30` | Core brand color, primary buttons, accents. |
+| **Ember Dark** | `#801C0B` | Deep gradients and hover states. |
+| **Obsidian** | `#050505` | Main application background (OLED Black). |
+| **Surface** | `#121212` | Secondary panels, cards, and sidebar backgrounds. |
 
 ---
 
-## Tipografía
+## Typography
 
-- **Outfit (900/Extra Bold)**: Para Wordmarks y titulares de Ember.
-- **Inter (Regular/Medium)**: Para cuerpo de texto y controles de la interfaz.
-- **JetBrains Mono**: Para métricas, hashes y documentación técnica del motor.
+- **Outfit (900/Extra Bold)**: For Ember Wordmarks and major headlines.
+- **Inter (Regular/Medium)**: For body text and application UI controls.
+- **JetBrains Mono**: For metrics, hashes, and technical engine documentation.
 
 ---
 
-## Licencia y Uso
+## License & Attribution
 
-Ember Motion Studio se publica bajo la **Licencia MIT**. Si usas el motor en tu proyecto, te agradecemos incluir la siguiente atribución:
+Ember Motion Studio is released under the **MIT License**. If you use the engine in your project, we appreciate including the following attribution:
 
-> *"Gráficos potenciados por el motor DVGE en Ember Motion Studio"*
+> *"Graphics powered by the DVGE engine in Ember Motion Studio"*
+

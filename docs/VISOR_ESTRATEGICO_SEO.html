@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SEO Dashboard Local | Ember Motion Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0a;
+            --card: #151515;
+            --accent: #e44c30;
+            --highlight: #f9cb28;
+            --text: #ffffff;
+            --text-dim: #888888;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background-color: var(--bg); 
+            color: var(--text); 
+            font-family: 'Inter', sans-serif; 
+            padding: 2rem;
+            line-height: 1.5;
+        }
+
+        .container { max-width: 1400px; margin: 0 auto; }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 3rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 2rem;
+        }
+
+        h1 { font-family: 'Outfit', sans-serif; font-size: 2.5rem; }
+        h1 span { color: var(--accent); }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .kpi-card {
+            background: var(--card);
+            padding: 1.5rem;
+            border-radius: 16px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .kpi-card .label { color: var(--text-dim); font-size: 0.9rem; margin-bottom: 0.5rem; display: block; }
+        .kpi-card .value { font-family: 'Outfit', sans-serif; font-size: 2.2rem; font-weight: 800; display: block; }
+        .kpi-card.gold { border-color: var(--highlight); background: linear-gradient(135deg, #151515, #1a1a10); }
+
+        .dashboard-main {
+            display: grid;
+            grid-template-columns: 350px 1fr;
+            gap: 2rem;
+        }
+
+        .section-card {
+            background: var(--card);
+            padding: 2rem;
+            border-radius: 20px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        h2 { font-family: 'Outfit', sans-serif; margin-bottom: 1.5rem; font-size: 1.5rem; }
+
+        /* Vertical Distribution */
+        .vertical-list { display: flex; flex-direction: column; gap: 1.2rem; }
+        .vertical-item { display: flex; flex-direction: column; gap: 0.5rem; }
+        .v-header { display: flex; justify-content: space-between; font-size: 0.9rem; font-weight: 600; }
+        .v-bar-bg { height: 8px; background: rgba(255,255,255,0.05); border-radius: 4px; overflow: hidden; }
+        .v-bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--highlight)); border-radius: 4px; }
+        .v-vol { font-size: 0.8rem; color: var(--accent); text-align: right; font-weight: 800; }
+
+        /* Table */
+        .table-container { overflow-x: auto; }
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th { padding: 1rem; color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; border-bottom: 2px solid rgba(255,255,255,0.05); }
+        td { padding: 1rem; border-bottom: 1px solid rgba(255,255,255,0.03); font-size: 0.9rem; }
+        
+        .kw { font-weight: 600; color: #fff; }
+        .vol { font-family: 'Outfit', sans-serif; color: var(--highlight); font-weight: 700; }
+        .tag { padding: 2px 8px; border-radius: 4px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+        .tag.streaming { background: rgba(249, 203, 40, 0.15); color: var(--highlight); }
+        .tag.broadcast { background: rgba(79, 172, 254, 0.15); color: #4facfe; }
+        .tag.motion-design { background: rgba(250, 112, 154, 0.15); color: #fa709a; }
+        .tag.post-production { background: rgba(0, 242, 254, 0.15); color: #00f2fe; }
+        .tag.technical { background: rgba(152, 236, 45, 0.15); color: #98ec2d; }
+
+        @media (max-width: 1000px) { .dashboard-main { grid-template-columns: 1fr; } }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div>
+                <h1>SEO Strategy <span>Viewer</span></h1>
+                <p style="color: var(--text-dim)">Dashboard local de inteligencia de mercado - Uso Privado</p>
+            </div>
+        </header>
+
+        <section class="kpi-grid" id="kpis"></section>
+
+        <!-- New: Competitive Landscape Section -->
+        <section class="section-card" style="margin-bottom: 2rem;">
+            <h2>Mapa de Paisaje Competitivo</h2>
+            <div class="kpi-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                <div class="kpi-card" style="border-left: 4px solid #fa709a;">
+                    <span class="label">Motion Design</span>
+                    <p style="font-size: 0.85rem; color: #ccc;"><b>Adobe, Rive, Canva.</b> Competencia de alto volumen. Nuestra ventaja es la ligereza y el enfoque técnico en broadcast.</p>
+                </div>
+                <div class="kpi-card" style="border-left: 4px solid var(--highlight);">
+                    <span class="label">Streaming</span>
+                    <p style="font-size: 0.85rem; color: #ccc;"><b>Own3d, H2R, Streamlabs.</b> Competencia ganable. Buscan alternativas gratuitas y personalizables.</p>
+                </div>
+                <div class="kpi-card" style="border-left: 4px solid #4facfe;">
+                    <span class="label">Broadcast / Post-Pro</span>
+                    <p style="font-size: 0.85rem; color: #ccc;"><b>Chyron, Blackmagic (DaVinci).</b> Nicho de alto valor. Ember resuelve el dolor de la exportación compleja.</p>
+                </div>
+                <div class="kpi-card" style="border-left: 4px solid #98ec2d;">
+                    <span class="label">Technical / Libraries</span>
+                    <p style="font-size: 0.85rem; color: #ccc;"><b>Lottie, ThorVG.</b> Competencia por rendimiento. Ember es el motor dinámico de próxima generación.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="dashboard-main">
+            <section class="section-card">
+                <h2>Verticales</h2>
+                <div class="vertical-list" id="verticals"></div>
+            </section>
+
+            <section class="section-card">
+                <h2>Oportunidades Estratégicas</h2>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Keyword</th>
+                                <th>Vertical</th>
+                                <th>Volumen</th>
+                                <th>Relevancia</th>
+                                <th>Word Count</th>
+                            </tr>
+                        </thead>
+                        <tbody id="opp-table"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Datos inyectados desde los JSON generados
+        const opportunities = [
+  {
+    "keyword": "animation softwares",
+    "volume": 14800,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 2
+  },
+  {
+    "keyword": "motion design",
+    "volume": 4400,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 2
+  },
+  {
+    "keyword": "free twitch overlays",
+    "volume": 2900,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 3
+  },
+  {
+    "keyword": "free obs overlays",
+    "volume": 2400,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 3
+  },
+  {
+    "keyword": "animation programs",
+    "volume": 1600,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 2
+  },
+  {
+    "keyword": "rive animation",
+    "volume": 1000,
+    "relevance": "Media",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 2
+  },
+  {
+    "keyword": "chyron tv",
+    "volume": 590,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Broadcast",
+    "wordCount": 2
+  },
+  {
+    "keyword": "score graphics sports",
+    "volume": 320,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Broadcast",
+    "wordCount": 3
+  },
+  {
+    "keyword": "easy motion graphic software",
+    "volume": 210,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 4
+  },
+  {
+    "keyword": "overlay español",
+    "volume": 140,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 2
+  },
+  {
+    "keyword": "easy motion graphics software",
+    "volume": 140,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 4
+  },
+  {
+    "keyword": "sports broadcast graphics",
+    "volume": 110,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Broadcast",
+    "wordCount": 3
+  },
+  {
+    "keyword": "live streaming graphics",
+    "volume": 110,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 3
+  },
+  {
+    "keyword": "thorvg",
+    "volume": 50,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Technical",
+    "wordCount": 1
+  },
+  {
+    "keyword": "lower third transparent",
+    "volume": 40,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 3
+  },
+  {
+    "keyword": "2d vector graphics",
+    "volume": 40,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Technical",
+    "wordCount": 3
+  },
+  {
+    "keyword": "video graphics software",
+    "volume": 40,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Motion Design",
+    "wordCount": 3
+  },
+  {
+    "keyword": "football video board graphics",
+    "volume": 40,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Broadcast",
+    "wordCount": 4
+  },
+  {
+    "keyword": "davinci resolve transparency",
+    "volume": 40,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Post-Production",
+    "wordCount": 3
+  },
+  {
+    "keyword": "vector graphics library",
+    "volume": 30,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Technical",
+    "wordCount": 3
+  },
+  {
+    "keyword": "overlays gratis para obs",
+    "volume": 30,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 4
+  },
+  {
+    "keyword": "transparent background davinci",
+    "volume": 30,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Post-Production",
+    "wordCount": 3
+  },
+  {
+    "keyword": "how to make video transparent davinci",
+    "volume": 30,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Post-Production",
+    "wordCount": 6
+  },
+  {
+    "keyword": "vector drawing library",
+    "volume": 20,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Technical",
+    "wordCount": 3
+  },
+  {
+    "keyword": "news graphics package",
+    "volume": 20,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Broadcast",
+    "wordCount": 3
+  },
+  {
+    "keyword": "h2r lower thirds",
+    "volume": 10,
+    "relevance": "Alta",
+    "status": "Pendiente",
+    "vertical": "Streaming",
+    "wordCount": 3
+  }
+];
+
+        const stats = opportunities.reduce((acc, curr) => {
+            acc.totalVol += curr.volume;
+            acc.verticals[curr.vertical] = (acc.verticals[curr.vertical] || 0) + curr.volume;
+            acc.counts[curr.vertical] = (acc.counts[curr.vertical] || 0) + 1;
+            return acc;
+        }, { totalVol: 0, verticals: {}, counts: {} });
+
+        // KPIs
+        document.getElementById('kpis').innerHTML = `
+            <div class="kpi-card gold">
+                <span class="label">Potencial Pendiente</span>
+                <span class="value">${stats.totalVol.toLocaleString()}</span>
+                <p style="color: var(--text-dim); font-size: 0.8rem">Búsquedas mensuales sin cubrir</p>
+            </div>
+            <div class="kpi-card">
+                <span class="label">Oportunidades Únicas</span>
+                <span class="value">${opportunities.length}</span>
+                <p style="color: var(--text-dim); font-size: 0.8rem">Keywords de alta relevancia</p>
+            </div>
+        `;
+
+        // Verticals
+        const vList = document.getElementById('verticals');
+        const sortedV = Object.keys(stats.verticals).sort((a,b) => stats.verticals[b] - stats.verticals[a]);
+        const maxV = stats.verticals[sortedV[0]];
+
+        sortedV.forEach(v => {
+            vList.innerHTML += `
+                <div class="vertical-item">
+                    <div class="v-header"><span>${v}</span><span>${stats.counts[v]} KW</span></div>
+                    <div class="v-bar-bg"><div class="v-bar-fill" style="width: ${(stats.verticals[v]/maxV)*100}%"></div></div>
+                    <div class="v-vol">${stats.verticals[v].toLocaleString()} vol.</div>
+                </div>
+            `;
+        });
+
+        // Table
+        const table = document.getElementById('opp-table');
+        opportunities.forEach(o => {
+            table.innerHTML += `
+                <tr>
+                    <td class="kw">${o.keyword}</td>
+                    <td><span class="tag ${o.vertical.toLowerCase().replace(' ', '-')}">${o.vertical}</span></td>
+                    <td class="vol">${o.volume.toLocaleString()}</td>
+                    <td><span style="color: #4CAF50; font-weight: 800">${o.relevance}</span></td>
+                    <td style="color: var(--text-dim)">${o.wordCount}</td>
+                </tr>
+            `;
+        });
+    </script>
+</body>
+</html>

@@ -1,9 +1,43 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
 import IconCpu from './icons/IconCpu.astro';
 import IconShield from './icons/IconShield.astro';
 import IconZap from './icons/IconZap.astro';
 
-const pillars = [
+const currentLang = getLangFromUrl(Astro.url);
+const prefix = currentLang === 'en' ? '' : 'es/';
+const base = import.meta.env.BASE_URL;
+
+const pillars = currentLang === 'en' ? [
+  {
+    title: "AI-Native Workflow",
+    description: "Drag and drop the engine rules PDF directly to Claude, Gemini, or ChatGPT. The AI receives the exact context of the sandbox and outputs working code on the first try, zero iterations.",
+    color: "#E44C30",
+    icon: IconZap,
+    featured: true
+  },
+  {
+    title: "ProRes 4444 + Alpha",
+    description: "Pure alpha channel from frame 0. Seamlessly compatible with DaVinci Resolve, Premiere Pro, and After Effects with zero configuration.",
+    color: "#ffffff",
+    icon: IconZap,
+    featured: false
+  },
+  {
+    title: "Zero Dependencies",
+    description: "Chromium and FFmpeg are automatically downloaded on the first run. Zero environment setup required.",
+    color: "#ffffff",
+    icon: IconCpu,
+    featured: false
+  },
+  {
+    title: "Security Sandbox",
+    description: "Shadow DOM + proxy fakeWindow. No third-party plugins can access the host system.",
+    color: "#ffffff",
+    icon: IconShield,
+    featured: false
+  }
+] : [
   {
     title: "AI-Native Workflow",
     description: "Arrastra el PDF de reglas del motor directamente a Claude, Gemini o ChatGPT. La IA recibe el contexto exacto del sandbox y produce código compatible al primer intento, sin iteraciones.",
@@ -39,11 +73,14 @@ const pillars = [
 
   <!-- Encabezado de sección — alineado a la izquierda, no centrado -->
   <div class="section-header">
-    <p class="section-label">Arquitectura</p>
+    <p class="section-label">{currentLang === 'en' ? 'Architecture' : 'Arquitectura'}</p>
     <div class="section-header-flex">
-      <h2 class="section-title">Construido para<br /><em>producción real</em></h2>
-      <a href="/DVGE-Docs/engine/architecture/" class="section-link">
-        Ver arquitectura completa →
+      <h2 class="section-title">
+        {currentLang === 'en' ? 'Built for' : 'Construido para'}
+        <br /><em>{currentLang === 'en' ? 'real production' : 'producción real'}</em>
+      </h2>
+      <a href={`${base}${prefix}engine/architecture/`} class="section-link">
+        {currentLang === 'en' ? 'View full architecture →' : 'Ver arquitectura completa →'}
       </a>
     </div>
   </div>
@@ -55,11 +92,11 @@ const pillars = [
     <div class="pillar-featured">
       <div class="pillar-featured-inner">
         <div class="pillar-number" aria-hidden="true">01</div>
-        <h3>AI-Native Workflow</h3>
-        <p>Arrastra el PDF de reglas del motor directamente a Claude, Gemini o ChatGPT. La IA recibe el contexto exacto del sandbox y produce código compatible al primer intento, sin iteraciones.</p>
+        <h3>{pillars[0].title}</h3>
+        <p>{pillars[0].description}</p>
         <div class="pillar-featured-rule" aria-hidden="true" />
-        <a href="/DVGE-Docs/development/ai-guide/" class="pillar-link">
-          Ver guía de IA →
+        <a href={`${base}${prefix}development/ai-guide/`} class="pillar-link">
+          {currentLang === 'en' ? 'View AI guide →' : 'Ver guía de IA →'}
         </a>
       </div>
     </div>
@@ -71,9 +108,9 @@ const pillars = [
           <span class="pillar-number" aria-hidden="true">0{i + 2}</span>
           <h3>{pillar.title}</h3>
           <p>{pillar.description}</p>
-          {pillar.title === "Sandbox de Seguridad" && (
-            <a href="/DVGE-Docs/engine/architecture/#sandbox-de-seguridad-y-aislamiento" class="pillar-card-link">
-              Detalles técnicos →
+          {(pillar.title === "Sandbox de Seguridad" || pillar.title === "Security Sandbox") && (
+            <a href={`${base}${prefix}engine/architecture/#sandbox-de-seguridad-y-aislamiento`} class="pillar-card-link">
+              {currentLang === 'en' ? 'Technical details →' : 'Detalles técnicos →'}
             </a>
           )}
         </div>

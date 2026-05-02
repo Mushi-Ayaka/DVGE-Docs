@@ -1,14 +1,21 @@
 ---
+import { getLangFromUrl } from '../i18n/utils';
 const base = import.meta.env.BASE_URL;
 const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe";
+const currentLang = getLangFromUrl(Astro.url);
+const prefix = currentLang === 'en' ? '' : 'es/';
 ---
 
 <footer class="footer">
   <div class="footer-content">
     <div class="footer-info">
-      <p class="footer-tagline">Motor de gráficos broadcast de código abierto. ProRes 4444 con canal alfa, sin configuración.</p>
+      <p class="footer-tagline">
+        {currentLang === 'en' 
+          ? 'Open source broadcast graphics engine. ProRes 4444 with alpha channel, zero configuration.' 
+          : 'Motor de gráficos broadcast de código abierto. ProRes 4444 con canal alfa, sin configuración.'}
+      </p>
       <div class="footer-actions">
-        <a href={downloadUrl} class="footer-cta">Descargar v5.8.0</a>
+        <a href={downloadUrl} class="footer-cta">{currentLang === 'en' ? 'Download v5.8.0' : 'Descargar v5.8.0'}</a>
       </div>
       <div class="social-links">
         <a href="https://github.com/Mushi-Ayaka" target="_blank" rel="noopener" aria-label="GitHub de Jonatan Barón">
@@ -22,40 +29,44 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
 
     <div class="footer-nav">
       <div class="nav-column">
-        <h4>Motor</h4>
-        <a href={`${base}engine/architecture/`}>Arquitectura Central</a>
-        <a href={`${base}engine/performance/`}>Rendimiento</a>
-        <a href={`${base}engine/benchmarks/`}>Benchmarks</a>
-        <a href={`${base}engine/roadmap/`}>Hoja de Ruta</a>
+        <h4>{currentLang === 'en' ? 'Engine' : 'Motor'}</h4>
+        <a href={`${base}${prefix}engine/architecture/`}>{currentLang === 'en' ? 'Core Architecture' : 'Arquitectura Central'}</a>
+        <a href={`${base}${prefix}engine/performance/`}>{currentLang === 'en' ? 'Performance' : 'Rendimiento'}</a>
+        <a href={`${base}${prefix}engine/benchmarks/`}>Benchmarks</a>
+        <a href={`${base}${prefix}engine/roadmap/`}>{currentLang === 'en' ? 'Roadmap' : 'Hoja de Ruta'}</a>
       </div>
       <div class="nav-column">
-        <h4>Ecosistema</h4>
-        <a href={`${base}ecosystem/community/`}>Comunidad</a>
-        <a href={`${base}ecosystem/repository/`}>Galería de Plugins</a>
-        <a href={`${base}ecosystem/api/`}>API de Extensión</a>
-        <a href={`${base}development/quick-start/`}>Guía de Inicio</a>
-        <a href={`${base}development/contributing/`}>Contribuir</a>
+        <h4>{currentLang === 'en' ? 'Ecosystem' : 'Ecosistema'}</h4>
+        <a href={`${base}${prefix}ecosystem/community/`}>{currentLang === 'en' ? 'Community' : 'Comunidad'}</a>
+        <a href={`${base}${prefix}ecosystem/repository/`}>{currentLang === 'en' ? 'Plugin Gallery' : 'Galería de Plugins'}</a>
+        <a href={`${base}${prefix}ecosystem/api/`}>{currentLang === 'en' ? 'Extension API' : 'API de Extensión'}</a>
+        <a href={`${base}${prefix}development/quick-start/`}>{currentLang === 'en' ? 'Quick Start' : 'Guía de Inicio'}</a>
+        <a href={`${base}${prefix}development/contributing/`}>{currentLang === 'en' ? 'Contributing' : 'Contribuir'}</a>
       </div>
       <div class="nav-column">
-        <h4>Proyecto</h4>
-        <a href={`${base}about/user-manual/`}>Manual de Usuario</a>
-        <a href={`${base}about/changelog/`}>Changelog</a>
-        <a href={`${base}about/vision/`}>La Visión</a>
-        <a href={`${base}about/me/`}>Jonatan Barón</a>
-        <a href={`${base}about/credits/`}>Créditos</a>
+        <h4>{currentLang === 'en' ? 'Project' : 'Proyecto'}</h4>
+        <a href={`${base}${prefix}about/user-manual/`}>{currentLang === 'en' ? 'User Manual' : 'Manual de Usuario'}</a>
+        <a href={`${base}${prefix}about/changelog/`}>Changelog</a>
+        <a href={`${base}${prefix}about/vision/`}>{currentLang === 'en' ? 'Vision' : 'La Visión'}</a>
+        <a href={`${base}${prefix}about/me/`}>Jonatan Barón</a>
+        <a href={`${base}${prefix}about/credits/`}>{currentLang === 'en' ? 'Credits' : 'Créditos'}</a>
       </div>
     </div>
   </div>
 
   <div class="footer-bottom">
     <div class="footer-version">
-      <p>&copy; 2026 Jonatan Barón. Todos los derechos reservados.</p>
+      <p>&copy; 2026 Jonatan Barón. {currentLang === 'en' ? 'All rights reserved.' : 'Todos los derechos reservados.'}</p>
       <p class="footer-legal">
-        <a href={`${base}about/license/`}>Licencia MIT</a>
+        <a href={`${base}${prefix}about/license/`}>{currentLang === 'en' ? 'MIT License' : 'Licencia MIT'}</a>
         &nbsp;·&nbsp;
-        <a href={`${base}about/privacy/`}>Privacidad</a>
+        <a href={`${base}${prefix}about/privacy/`}>{currentLang === 'en' ? 'Privacy' : 'Privacidad'}</a>
         &nbsp;·&nbsp;
-        <a href={`${base}about/terms/`}>Términos</a>
+        <a href={`${base}${prefix}about/terms/`}>{currentLang === 'en' ? 'Terms' : 'Términos'}</a>
+      </p>
+      <!-- EEAT: Autoría y versión — señal de confianza para Google -->
+      <p class="footer-eeat">
+        Developed by <strong>Jonatan Barón</strong> — Ember Motion Studio powered by DVGE
       </p>
     </div>
   </div>
@@ -159,6 +170,17 @@ const downloadUrl = "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engi
   }
 
   .footer-version p { margin: 0; }
+
+  .footer-eeat {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+    opacity: 0.5;
+    margin-top: 0.5rem;
+  }
+  .footer-eeat strong {
+    color: var(--color-text-muted);
+    font-weight: 600;
+  }
 
   .version-badge {
     background: rgba(228, 76, 48, 0.1);

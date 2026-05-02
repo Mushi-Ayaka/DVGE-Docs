@@ -1,85 +1,85 @@
 ---
-title: Referencia del Manifest (v5.x)
-description: Estructura y opciones de configuración para el manifest.json bajo la nueva taxonomía (Templates, Tools, Extensions).
+title: Manifest Reference (v5.x)
+description: Structure and configuration options for manifest.json under the new taxonomy (Templates, Tools, Extensions) for Ember Motion Studio.
 sidebar:
   order: 2
 ---
 
-El archivo `manifest.json` es el corazón de cualquier componente en el ecosistema DVGE. A partir de la versión 5.x, DVGE implementa una taxonomía estricta para diferenciar el propósito de cada módulo y garantizar la seguridad del usuario.
+The `manifest.json` file is the heart of any component in the DVGE ecosystem. As of version 5.x, DVGE implements a strict taxonomy to differentiate the purpose of each module and guarantee broadcast-grade user security.
 
-## Estructura Base
+## Base Structure
 
-Todo `manifest.json` debe contar con la siguiente estructura mínima:
+Every `manifest.json` must have the following minimum structure:
 
 ```json
 {
-  "id": "com.tu-nombre.mi-template",
-  "name": "Mi Primer Template",
+  "id": "com.your-name.my-template",
+  "name": "My First Template",
   "version": "1.0.0",
-  "author": "Tu Nombre",
+  "author": "Your Name",
   "type": "template", 
-  "description": "Descripción corta de lo que hace.",
+  "description": "Short description of what the motion graphic does.",
   "minEngineVersion": "5.8.0",
   "permissions": [],
   "schema": []
 }
 ```
 
-## Taxonomía (`type`)
+## Taxonomy (`type`)
 
-El campo `type` es **obligatorio** y define en qué parte de la interfaz de DVGE vivirá tu código:
+The `type` field is **mandatory** and defines where in the DVGE interface your code will live:
 
-1. **`"template"`**: Plantillas de animación (Lower thirds, Overlays, Tickers). Se renderizan en el *Studio* y son el output final en formato ProRes.
-2. **`"tool"`**: Herramientas de asistencia al desarrollo. Aparecen en la *Library* o paneles dedicados para ayudar a orquestar flujos (ej. un generador de JSON).
-3. **`"extension"`**: Módulos internos que amplían las capacidades del propio motor. Tienen acceso profundo y requieren aprobación explícita del usuario al instalarse.
+1. **`"template"`**: Motion graphics templates (Lower thirds, Overlays, Tickers, Stingers). These render in the *Studio* and become the final ProRes output.
+2. **`"tool"`**: Development assistance tools. They appear in the *Library* or dedicated panels to help orchestrate workflows (e.g., a JSON data generator).
+3. **`"extension"`**: Internal modules that expand the core engine's capabilities. They have deep access and require explicit user approval upon installation.
 
-## Permisos (`permissions`)
+## Permissions (`permissions`)
 
-Para mantener el ecosistema completamente seguro, DVGE bloquea los scripts por defecto. Debes declarar en un array qué recursos del sistema operativo necesitas acceder.
+To keep the ecosystem completely secure, DVGE blocks scripts by default inside its Shadow DOM sandbox. You must declare in an array which operating system resources you need to access.
 
 ```json
   "permissions": [
-    "network",  // Permite hacer peticiones HTTP/Fetch al exterior
-    "storage"   // Permite leer/escribir archivos en el disco local
+    "network",  // Allows HTTP/Fetch requests to the outside world
+    "storage"   // Allows reading/writing files on the local disk
   ]
 ```
 
-*Nota de seguridad: Si un template intenta hacer un `fetch()` sin declarar el permiso `network`, el Sandbox de DVGE bloqueará la petición.*
+*Security Note: If a template attempts to use `fetch()` without declaring the `network` permission, the DVGE Sandbox will block the request.*
 
-## Esquema de Propiedades (`schema`)
+## Property Schema (`schema`)
 
-Define los controles que el usuario final verá en el **Inspector** (Panel derecho) cuando seleccione tu Template. Tú defines la UI, DVGE la construye por ti.
+Defines the controls the end-user will see in the **Inspector** (Right Panel) when they select your Template. You define the UI, and DVGE builds it for you.
 
 ```json
   "schema": [
     {
       "type": "string",
       "id": "title",
-      "label": "Título Principal",
-      "defaultValue": "Noticias de Última Hora"
+      "label": "Main Title",
+      "defaultValue": "Breaking News"
     },
     {
       "type": "color",
       "id": "accentColor",
-      "label": "Color de Acento",
+      "label": "Accent Color",
       "defaultValue": "#FF0000"
     }
   ]
 ```
 
-### Tipos de Inputs Soportados
+### Supported Input Types
 
-- `string`: Campo de texto estándar.
-- `number`: Valor numérico (útil para modificar posiciones X/Y o escalas).
-- `boolean`: Toggle/Checkbox de encendido y apagado.
-- `color`: Selector de color (devuelve Hexadecimal o RGBA).
-- `image`: Input para cargar imágenes locales (DVGE maneja la ruta absoluta).
-- `select`: Menú desplegable (requiere un array de `options` anidado).
-- `code`: Editor de código multilínea. Devuelve una cadena HTML cruda. Útil para el plugin Studio Master.
-- `prompt`: Zona de arrastre (drag) que genera y expone el PDF de reglas del motor para inyección directa en IAs. Introducido en v5.5.0.
-- `artifact`: Zona de pegado universal. Acepta bloques `[[[HTML]]]`, `[[[CSS]]]`, `[[[JS]]]` generados por una IA y los distribuye automáticamente a los archivos correspondientes del plugin.
-- `info`: Texto de solo lectura en el inspector. Muestra información copiable al usuario (prompts, IDs, instrucciones).
+- `string`: Standard text field. Also handles multiline inputs.
+- `number`: Numeric value (useful for modifying X/Y positions or scales).
+- `boolean`: On/Off Toggle/Checkbox.
+- `color`: Color picker (returns Hexadecimal or RGBA).
+- `image`: Input to load local images (DVGE handles the absolute pathing for rendering).
+- `select`: Dropdown menu (requires a nested `options` array).
+- `code`: Multiline code editor. Returns a raw HTML string. Very useful for the Studio Master plugin.
+- `prompt`: Drag zone that generates and exposes the engine rules PDF for direct injection into AI assistants. Introduced in v5.5.0.
+- `artifact`: Universal paste zone. Accepts `[[[HTML]]]`, `[[[CSS]]]`, `[[[JS]]]` blocks generated by AI and automatically distributes them to the corresponding plugin files.
+- `info`: Read-only text in the inspector. Displays copyable info to the user (prompts, IDs, instructions).
 
 ---
 
-> Con estos campos definidos, el motor sabrá exactamente cómo validar tu componente, dónde mostrarlo en la interfaz Multi-ventana y qué datos inyectar en tu archivo `script.js`.
+> With these fields defined, the rendering engine knows exactly how to validate your component, where to display it in the Multi-window interface, and what data to inject into your `script.js` file for frame-perfect rendering.

@@ -1,25 +1,25 @@
 ---
-title: Arquitectura Central
-description: Análisis profundo de la arquitectura de Ember Motion Studio, la comunicación de procesos y el motor de renderizado DVGE.
+title: Core Architecture
+description: Deep dive into the Ember Motion Studio architecture, IPC communication, and the DVGE rendering engine.
 sidebar:
   order: 1
 ---
 
-**Ember Motion Studio** está construido sobre una arquitectura híbrida de alto rendimiento diseñada para la confiabilidad en la transmisión profesional. El núcleo del sistema es el motor de renderizado **DVGE**.
+**Ember Motion Studio** is built on a high-performance hybrid architecture engineered for broadcast-grade reliability. The core of the system is powered by the **DVGE rendering engine**.
 
-## Modelo de Procesos Híbrido
+## Hybrid Process Model
 
-La aplicación opera usando un modelo de proceso dual separado por un puente de comunicación interna (IPC). Esto asegura que las tareas pesadas de la interfaz de usuario no bloqueen la lógica central del motor.
+The application operates using a dual-process model separated by an Inter-Process Communication (IPC) bridge. This ensures that heavy UI tasks do not block the core engine logic, delivering a frame-perfect motion design experience.
 
 ```mermaid
 graph TD
-    subgraph Renderer["Proceso Renderizador (UI)"]
+    subgraph Renderer["Renderer Process (UI)"]
         R1["React + Zustand"]
-        R2["Preview 60fps"]
-        R3["Inspector de Propiedades"]
+        R2["60fps Preview"]
+        R3["Property Inspector"]
     end
 
-    subgraph Main["Proceso Principal (Backend)"]
+    subgraph Main["Main Process (Backend)"]
         M1["PluginManager"]
         M2["ProjectManager"]
         M3["Remotion Headless Render"]
@@ -38,103 +38,103 @@ graph TD
     M3 -->|props.json HTTP :PORT| M3
     M4 -->|Chromium path| M3
     R2 -->|Shadow DOM| PluginDOM
-    P3 -->|bloquea window real| P2
+    P3 -->|blocks real window| P2
 ```
 
-| Proceso | Responsabilidades Principales | Tecnologías |
+| Process | Core Responsibilities | Technologies |
 | :--- | :--- | :--- |
-| **Renderizador (UI)** | Interfaz React, Estado Zustand, Previsualización 60FPS | React + Vite |
-| **Principal (Backend)** | Gestor de Plugins, E/S de Archivos, Render Headless | Node.js + Electron |
+| **Renderer (UI)** | React Interface, Zustand State, 60FPS Real-Time Preview | React + Vite |
+| **Main (Backend)** | Plugin Manager, Atomic File I/O, Headless Video Rendering | Node.js + Electron |
 
-Los procesos se comunican a través de un **Puente IPC** robusto que garantiza la integridad de los datos en cada fotograma.
+Processes communicate via a robust **IPC Bridge** that guarantees data integrity for every broadcast overlay rendered.
 
-### 1. Proceso Renderizador (Frontend)
+### 1. Renderer Process (Frontend)
 
-Maneja la interfaz de usuario de **Ember**, la previsualización en tiempo real a 60FPS y la gestión de propiedades. Traduce el código del plugin en fotogramas visuales instantáneamente usando un mecanismo de **Hard Reset** para asegurar cero fugas de estado entre proyectos.
+Handles the **Ember** user interface, 60FPS real-time preview, and property management. It translates plugin code into visual frames instantaneously using a **Hard Reset** mechanism to ensure zero state leaks between projects.
 
-### 2. Proceso Principal (Backend)
+### 2. Main Process (Backend)
 
-Se ejecuta en un entorno Node.js y es responsable de:
+Runs in a Node.js environment and is responsible for:
 
-- Leer y escribir archivos de proyecto de forma atómica.
-- Orquestar el renderizado de video headless mediante **DVGE**.
-- Escanear el sistema en busca de plugins compatibles.
-- **[v5.8.0]** Secuencia de Carga Determinista (Hardware Scanner + esbuild Sync).
-- **[v5.6.0]** Gestión de Proyectos (Renombrado, Eliminación Atómica).
-- **[v5.6.0]** Auto-Fetch de dependencias (Chromium/FFmpeg).
-- Gestionar el Servidor Local WebSocket para integraciones externas.
-- Compilar y servir el contexto de reglas del motor vía IPC.
+- Reading and writing project files atomically.
+- Orchestrating headless video rendering via **DVGE**.
+- Scanning the system for compatible plugins.
+- **[v5.8.0]** Deterministic Boot Sequence (Hardware Scanner + esbuild Sync).
+- **[v5.6.0]** Project Management (Atomic Rename/Delete).
+- **[v5.6.0]** Dependency Auto-Fetch (Chromium/FFmpeg).
+- Managing the Local WebSocket Server for external integrations (OBS, Twitch, vMix).
+- Compiling and serving engine rule contexts via IPC.
 
 ---
 
-## Sandbox de Seguridad y Aislamiento
+## Security Sandbox & Isolation
 
-**Ember Motion Studio** implementa una estrategia de seguridad de múltiples capas para asegurar que los plugins de terceros no puedan comprometer el sistema anfitrión.
+**Ember Motion Studio** implements a multi-layer security strategy to ensure that third-party plugins cannot compromise the host system.
 
-### 1. Proxy `fakeWindow`
+### 1. `fakeWindow` Proxy
 
-Los plugins no tienen acceso al objeto `window` real ni a las APIs de Electron. El motor inyecta un **Proxy** que restringe el acceso únicamente a los métodos permitidos y al Shadow DOM.
+Plugins do not have access to the real `window` object or Electron APIs. The engine injects a **Proxy** that restricts access strictly to allowed methods and the Shadow DOM.
 
-### 2. Encapsulación con Shadow DOM
+### 2. Shadow DOM Encapsulation
 
-Cada plugin se renderiza dentro de un **Shadow Root**. Esta tecnología asegura un aislamiento total de estilos:
+Each plugin is rendered inside a **Shadow Root**. This technology ensures total style isolation:
 
-- Ningún CSS de la aplicación afecta al plugin.
-- Ningún CSS del plugin se filtra hacia la interfaz de la aplicación.
-- El posicionamiento absoluto (1920x1080) se mantiene consistente en todos los entornos.
+- No application CSS affects the plugin.
+- No plugin CSS leaks into the application UI.
+- Absolute positioning (1920x1080) remains consistent across all environments, perfect for lower thirds and stingers.
 
 ---
 
 ## Knowledge Bridge AI (v5.8.0 Master)
 
-El **Knowledge Bridge** es un sistema de inyección de contexto diseñado para eliminar la fricción entre el motor y los asistentes de IA.
+The **Knowledge Bridge** is a context injection system designed to eliminate friction between the engine and AI assistants.
 
-### 1. Generación de Contexto Técnico
+### 1. Technical Context Generation
 
-El backend expone un handler IPC que compila todas las reglas del motor (Sandbox, API, Shadow DOM, Utils) para que la IA entienda el entorno de ejecución.
+The backend exposes an IPC handler that compiles all engine rules (Sandbox, API, Shadow DOM, Utils) so the AI understands the execution environment.
 
 ### 2. Drag-to-AI UI
 
-En el plugin "Ember Studio Master", el campo tipo `prompt` del inspector expone una zona draggable. Al arrastrar esta zona a una IA, se inyecta directamente el contexto técnico, permitiendo que la IA genere código determinista al primer intento.
+In the "Ember Studio Master" plugin, the `prompt` inspector field exposes a draggable zone. Dragging this zone into an AI (Claude, ChatGPT) directly injects the technical context, allowing the AI to generate deterministic, working code on the very first try.
 
 ---
 
-## Motor de Renderizado: Independencia y Carga Real (v5.8.0+)
+## Rendering Engine: Independence and Honest Boot (v5.8.0+)
 
-La versión 5.8 introduce la **Secuencia de Carga Determinista** y refina la capa de independencia para eliminar la "pantalla negra" de inicio:
+Version 5.8 introduces the **Deterministic Boot Sequence** and refines the independence layer to eliminate the startup "black screen":
 
-### 1. Secuencia de Carga Honest (v5.8.0 Master)
+### 1. Honest Boot Sequence (v5.8.0 Master)
 
-El motor ya no oculta su proceso de inicialización. La UI de **Ember** reporta en tiempo real:
+The engine no longer hides its initialization process. The **Ember** UI reports in real-time:
 
-- **Hardware Scan**: Detección de GPU (VRAM) y CPU para optimizar el renderizado.
-- **esbuild Sync**: Preparación del pipeline de compilación de plugins antes de permitir la interacción.
-- **Module Assembly**: Carga secuencial de los gestores de proyectos y plugins.
+- **Hardware Scan**: GPU (VRAM) and CPU detection to optimize real-time rendering.
+- **esbuild Sync**: Preparing the plugin build pipeline before allowing interaction.
+- **Module Assembly**: Sequential loading of project and plugin managers.
 
 ### 2. Dependency Manager
 
-El motor ya no depende de que el usuario tenga Chrome instalado globalmente. En el primer inicio:
+The engine no longer relies on a globally installed Chrome instance. On first launch:
 
-- Detecta la ausencia de Chromium.
-- Descarga una versión *headless* certificada en el directorio de la aplicación.
-- Resuelve dinámicamente la ruta de FFmpeg para la codificación ProRes 4444.
+- It detects the absence of Chromium.
+- Downloads a certified *headless* version into the application directory.
+- Dynamically resolves the FFmpeg path for ProRes 4444 encoding.
 
 ### 3. Transparency Transformer
 
-El motor asegura una transparencia profesional mediante tres capas:
+The engine ensures broadcast-grade transparent backgrounds through three layers:
 
-- **Chromium Flags**: Inyección de `--transparent-background-color=0`.
-- **JS Injection**: Uso de `evaluatePage` para forzar `background-color: transparent` antes de cada captura de cuadro.
-- **Formato ProRes**: Exportación en `yuva444p10le` para compatibilidad nativa con editores de video profesionales.
+- **Chromium Flags**: Injection of `--transparent-background-color=0`.
+- **JS Injection**: Utilizing `evaluatePage` to enforce `background-color: transparent` before each frame capture.
+- **ProRes Format**: Exporting in `yuva444p10le` for native alpha channel compatibility with professional video editors like DaVinci Resolve and Premiere Pro.
 
 ---
 
-## Persistencia Atómica (I/O)
+## Atomic Persistence (I/O)
 
-Para prevenir la corrupción de proyectos, **Ember** utiliza una estrategia de **E/S Asíncrona Atómica**:
+To prevent project corruption, **Ember** uses an **Asynchronous Atomic I/O** strategy:
 
-1. **Debouncing**: Los cambios se almacenan en un búfer durante 500ms para reducir las escrituras en disco.
-2. **Escritura Temporal**: El estado se escribe primero en un archivo `.tmp`.
-3. **Renombrado Atómico**: Sólo tras una escritura exitosa, el archivo `.tmp` reemplaza al archivo de proyecto real.
+1. **Debouncing**: Changes are buffered for 500ms to reduce disk writes.
+2. **Temporary Write**: State is first written to a `.tmp` file.
+3. **Atomic Rename**: Only after a successful write does the `.tmp` file replace the actual project file.
 
-Este flujo garantiza que una caída del sistema o un fallo de energía durante un autoguardado nunca destruirá el trabajo del usuario.
+This workflow guarantees that a system crash or power failure during an autosave will never destroy user work.

@@ -1,29 +1,29 @@
 ---
-title: Transparencia y Ética
-description: Por qué Ember Motion Studio genera confianza a nivel Enterprise.
+title: Transparency & Ethics
+description: Why Ember Motion Studio builds trust at an Enterprise level. Read about our benchmark data and open-source compliance.
 sidebar:
   order: 5
 ---
 
-La confianza se demuestra con datos y arquitectura abierta.
+Trust is proven with verifiable data and open architecture.
 
-### Benchmarking Real
+## Real Benchmarking
 
-No ocultamos las métricas. Los datos de rendimiento están documentados con metodología verificable en la página de [Benchmarks y Estabilidad](/DVGE-Docs/engine/benchmarks/), cubriendo:
+We do not hide our metrics. Performance data is documented with verifiable methodologies on the [Benchmarks & Stability](/engine/benchmarks/) page, covering:
 
-- **Determinismo de Renderizado**: Por qué el desvío temporal es estructuralmente imposible en el modelo frame-math.
-- **Precisión Alpha**: Cadena de tres capas que garantiza el canal alfa en ProRes 4444.
-- **Overhead del Sandbox**: Impacto medido del sistema de seguridad en el loop de 60fps.
-- **Persistencia Atómica**: Garantía de integridad de datos ante cierres inesperados.
+- **Rendering Determinism**: Why temporal drift is structurally impossible in our frame-math model.
+- **Alpha Precision**: The three-layer chain that guarantees true alpha channel support in ProRes 4444 exports.
+- **Sandbox Overhead**: Measured impact of the security isolation system on the 60fps preview loop.
+- **Atomic Persistence**: Our guarantee of data integrity in the face of unexpected application crashes or power failures.
 
-### Open Source Compliance
+## Open Source Compliance
 
-**Ember Motion Studio** se apoya en los hombros de gigantes tecnológicos. Reconocemos públicamente y respetamos las licencias de las infraestructuras open source críticas que hacen posible la existencia de este proyecto:
+**Ember Motion Studio** stands on the shoulders of technological giants. We publicly acknowledge and strictly respect the licenses of the critical open-source infrastructure that makes this project possible:
 
-- **Electron** (Capa de sistema y ventanas)
-- **Chromium** (Motor V8 y WebGL)
-- **FFmpeg** (Procesamiento de medios y codificación ProRes)
-- **React** (Interfaz de usuario interactiva)
-- **Remotion** (Motor de matemáticas de tiempo de fotogramas)
+- **Electron** (System layer and window management)
+- **Chromium** (V8 Engine and WebGL rasterization)
+- **FFmpeg** (Media processing and ProRes encoding)
+- **React** (Interactive user interface)
+- **Remotion** (Frame-time mathematics engine)
 
-Toda nuestra plataforma respeta el ecosistema y contribuye a la evolución del "WebTech" en la industria del video broadcast.
+Our entire platform respects the ecosystem and strives to contribute to the evolution of "WebTech" within the professional broadcast video industry.

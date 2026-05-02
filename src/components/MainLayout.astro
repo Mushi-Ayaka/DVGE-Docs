@@ -1,68 +1,104 @@
 ---
 import '../styles/variables.css';
+import { getLangFromUrl, getAlternateLang, getAlternateUrl } from '../i18n/utils';
 
 interface Props {
-	title: string;
-	description?: string;
-	ogImage?: string;
+  title: string;
+  description?: string;
+  ogImage?: string;
+  lang?: 'en' | 'es';
 }
 
 const {
-	title,
-	description = "Ember Motion Studio es un entorno de producción profesional para generar overlays, lower thirds y gráficos broadcast animados con el motor DVGE. Exportación ProRes 4444 + Alpha para DaVinci Resolve, Premiere Pro y After Effects.",
-	ogImage = "/logo-square.png"
+  title,
+  description = "Ember Motion Studio is the real-time motion design and animation software for broadcast overlays, lower thirds and vector graphics. Free for OBS, Twitch and DaVinci Resolve.",
+  ogImage = "/logo-square.png",
+  lang: propLang,
 } = Astro.props;
 
-// En Vercel, Astro.url.origin nos da la URL base correcta
-const siteUrl = "https://ember-motion-studio.vercel.app"; // Reemplazar con el dominio real si es distinto
+const lang = propLang ?? getLangFromUrl(Astro.url);
+const siteUrl = "https://ember-motion-studio-landing.vercel.app";
 const canonicalURL = new URL(Astro.url.pathname, siteUrl);
+const alternateLang = getAlternateLang(lang);
+const alternateURL = new URL(getAlternateUrl(Astro.url, alternateLang), siteUrl);
+
+// Schema.org SoftwareApplication — señal EEAT para Google
+const schemaOrg = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "Ember Motion Studio",
+  "applicationCategory": "MultimediaApplication",
+  "operatingSystem": "Windows",
+  "description": "Real-time motion design and animation software for broadcast overlays, lower thirds and vector graphics. Powered by DVGE.",
+  "author": {
+    "@type": "Person",
+    "name": "Jonatan Barón"
+  },
+  "softwareVersion": "6.0.0",
+  "offers": {
+    "@type": "Offer",
+    "price": "0",
+    "priceCurrency": "USD"
+  },
+  "keywords": "motion design, animation software, broadcast overlays, obs overlays, twitch overlays, lower thirds, vector graphics, streaming"
+};
 ---
 
 <!DOCTYPE html>
-<html lang="es">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="google-site-verification" content="tgGwe9f50ZycuDIxG7l6n_dUOVT0kEdIoLVpfpCfDrE" />
-		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<meta name="description" content={description} />
-		<meta name="generator" content={Astro.generator} />
-		<link rel="canonical" href={canonicalURL} />
-		<link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}logo-square.png`} />
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="google-site-verification" content="tgGwe9f50ZycuDIxG7l6n_dUOVT0kEdIoLVpfpCfDrE" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
 
-		<title>{title}</title>
+    <!-- Canonical + hreflang para bilingüe -->
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="alternate" hreflang="en" href={new URL(getAlternateUrl(Astro.url, 'en'), siteUrl)} />
+    <link rel="alternate" hreflang="es" href={new URL(getAlternateUrl(Astro.url, 'es'), siteUrl)} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/', siteUrl)} />
 
-		<!-- Keywords estratégicas: Broadcast, Streaming y Motores de Gráficos -->
-		<meta name="keywords" content="chyron, broadcast graphics software, obs overlay, stream overlays, vector graphics, davinci resolve overlays, premiere pro, after effects, h2r graphics alternative, lower thirds png, motion graphics software, free animation software, ember motion studio, dvge, live stream graphics, transparent lower thirds" />
-		<meta name="application-name" content="Ember Motion Studio" />
-		<meta name="category" content="Broadcast Graphics Software" />
+    <link rel="icon" type="image/png" href={`${import.meta.env.BASE_URL}logo-square.png`} />
 
-		<!-- Open Graph -->
-		<meta property="og:type"        content="website" />
-		<meta property="og:locale"      content="es_ES" />
-		<meta property="og:url"         content={canonicalURL} />
-		<meta property="og:title"       content={title} />
-		<meta property="og:description" content={description} />
-		<meta property="og:image"       content={ogImage} />
-		<meta property="og:site_name"   content="Ember Motion Studio — Powered by DVGE" />
+    <title>{title}</title>
 
-		<!-- Twitter Card -->
-		<meta name="twitter:card"        content="summary_large_image" />
-		<meta name="twitter:title"       content={title} />
-		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image"       content={ogImage} />
+    <!-- Keywords estratégicas — Broadcast, Streaming, Motion Design -->
+    <meta name="keywords" content="motion design, animation software, broadcast overlays, obs overlays, free twitch overlays, lower thirds, vector graphics, streaming graphics, chyron alternative, h2r graphics, ember motion studio, dvge, live stream graphics, transparent lower thirds, animation programs" />
+    <meta name="application-name" content="Ember Motion Studio" />
+    <meta name="category" content="Motion Design & Broadcast Graphics Software" />
 
-		<!-- Google Fonts -->
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet" />
-	</head>
-	<body>
-		<slot />
-	</body>
+    <!-- Open Graph -->
+    <meta property="og:type"        content="website" />
+    <meta property="og:locale"      content={lang === 'en' ? 'en_US' : 'es_ES'} />
+    <meta property="og:locale:alternate" content={lang === 'en' ? 'es_ES' : 'en_US'} />
+    <meta property="og:url"         content={canonicalURL} />
+    <meta property="og:title"       content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image"       content={ogImage} />
+    <meta property="og:site_name"   content="Ember Motion Studio — Powered by DVGE" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card"        content="summary_large_image" />
+    <meta name="twitter:title"       content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image"       content={ogImage} />
+
+    <!-- Schema.org SoftwareApplication (EEAT) -->
+    <script type="application/ld+json" set:html={JSON.stringify(schemaOrg)} />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <slot />
+  </body>
 </html>
 
 <style is:global>
-	:root {
-		/* Additional global styles if needed */
-	}
+  :root {
+    /* Additional global styles if needed */
+  }
 </style>

@@ -1,72 +1,72 @@
 ---
-title: Contribuir
-description: Cómo enviar tu plugin a la Galería Oficial de DVGE.
+title: Contributing
+description: How to submit your custom plugin to the Official DVGE Gallery and share your broadcast graphics.
 sidebar:
   order: 5
 ---
 
-Damos la bienvenida a todas las contribuciones al repositorio **Dynamic Vector Engine Plugins**. Comparte tus gráficos con toda la comunidad de DVGE.
+We welcome all contributions to the **Dynamic Vector Engine Plugins** repository. Share your broadcast templates and tools with the entire Ember Motion Studio community.
 
-## Repositorio
-**Repositorio de Plugins**: [github.com/Mushi-Ayaka/Dynamic-Vector-Engine-Plugins](https://github.com/Mushi-Ayaka/Dynamic-Vector-Engine-Plugins)
-
----
-
-## Requisitos para Enviar un Plugin
-
-Antes de abrir un Pull Request (PR), verifica que tu plugin cumpla con estos requisitos. Asegúrate de cumplir con cada punto:
-
-### Requisitos Obligatorios
-- La carpeta del plugin sigue el formato `kebab-case` (`mi-plugin-increible`).
-- Los 4 archivos obligatorios están presentes: `manifest.json`, `index.html`, `style.css`, `script.js`.
-- `manifest.json` tiene un `id` único, `name`, `version` y `description`.
-- El plugin es **determinista**: cero usos de `requestAnimationFrame`, `setTimeout` o bibliotecas en tiempo real.
-- El acceso al DOM se hace exclusivamente a través de `ctx.root` — nunca mediante `document`.
-- Se ha añadido la entrada en `registry.json` con los metadatos correctos.
-
-### Estándares de Calidad
-- El plugin se renderiza correctamente a **1920x1080**.
-- Si el plugin tiene una introducción/salida, las animaciones utilizan `ctx.timeline.introProgress` / `ctx.timeline.outroProgress`.
-- Todas las consultas al DOM se almacenan en caché (se guardan) en el método `awake` a través de `ctx.refs`.
-- No hay importaciones externas desde CDNs (nada de `<script src="...">` o CSS `@import`).
+## Repository
+**Plugins Repository**: [github.com/Mushi-Ayaka/Dynamic-Vector-Engine-Plugins](https://github.com/Mushi-Ayaka/Dynamic-Vector-Engine-Plugins)
 
 ---
 
-## Estructura de la Carpeta del Plugin
+## Requirements for Submitting a Plugin
+
+Before opening a Pull Request (PR), verify that your plugin meets these requirements. Ensure you comply with each point:
+
+### Mandatory Requirements
+- The plugin folder follows the `kebab-case` format (`my-awesome-plugin`).
+- The 4 mandatory files are present: `manifest.json`, `index.html`, `style.css`, `script.js`.
+- `manifest.json` has a unique `id`, `name`, `version`, and `description`.
+- The plugin is **deterministic**: strictly ZERO usage of `requestAnimationFrame`, `setTimeout`, or real-time web libraries like GSAP.
+- DOM access is done exclusively through `ctx.root` — never via the global `document`.
+- An entry has been added to `registry.json` with the correct metadata.
+
+### Quality Standards
+- The plugin renders correctly at a **1920x1080** canvas size.
+- If the plugin has an intro/outro, the animations properly utilize `ctx.timeline.introProgress` / `ctx.timeline.outroProgress`.
+- All DOM queries are cached inside the `awake` method via the `ctx.refs` object.
+- There are no external imports from CDNs (no `<script src="...">` or CSS `@import`). All assets must be local or encoded.
+
+---
+
+## Plugin Folder Structure
 
 ```
-tu-nombre-de-plugin/
-├── manifest.json   ← Descriptor del Plugin
-├── index.html      ← Fragmento HTML
-├── style.css       ← Estilos encapsulados (1920x1080)
-└── script.js       ← Lógica mediante dvEngine.register()
+your-plugin-name/
+├── manifest.json   ← Plugin Descriptor & Schema
+├── index.html      ← HTML structure
+├── style.css       ← Encapsulated styles (1920x1080)
+└── script.js       ← Logic using dvEngine.register()
 ```
 
 ---
 
-## Añadir tu Entrada a `registry.json`
+## Adding Your Entry to `registry.json`
 
-Abre el archivo `registry.json` en la raíz del repositorio y añade la entrada de tu plugin al array `plugins`:
+Open the `registry.json` file at the root of the plugins repository and append your plugin's entry to the `plugins` array:
 
 ```json
 {
-  "id": "tu-nombre-de-plugin",
-  "name": "Nombre de Tu Plugin",
-  "description": "Breve descripción de lo que hace el gráfico.",
+  "id": "your-plugin-name",
+  "name": "Your Plugin Name",
+  "description": "Brief description of what the graphic does.",
   "version": "1.0.0",
-  "author": "Tu Nombre",
+  "author": "Your Name",
   "updatedAt": "2026-01-01T00:00:00Z"
 }
 ```
 
 ---
 
-## Abrir un Pull Request
+## Opening a Pull Request
 
-1. **Haz un Fork** del repositorio.
-2. Crea una nueva rama: `feat/tu-nombre-de-plugin`.
-3. Añade la carpeta de tu plugin y actualiza `registry.json`.
-4. Haz un Commit con un mensaje descriptivo: `feat: add [plugin-name] lower third`.
-5. Abre un Pull Request dirigido a `main`.
+1. **Fork** the repository.
+2. Create a new branch: `feat/your-plugin-name`.
+3. Add your plugin folder and update `registry.json`.
+4. Commit with a descriptive message: `feat: add [plugin-name] lower third`.
+5. Open a Pull Request targeting the `main` branch.
 
-El proceso de revisión comprobará el cumplimiento del determinismo y la calidad del código antes de fusionarlo (merge).
+The review process will check for determinism compliance and code quality before merging it into the public catalog.

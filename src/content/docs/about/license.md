@@ -1,39 +1,39 @@
 ---
-title: Licencia
-description: Licencia MIT del proyecto Ember Motion Studio (Motor DVGE).
+title: License
+description: MIT License and legal terms for the Ember Motion Studio project and DVGE Engine.
 sidebar:
   order: 6
 ---
 
-**Ember Motion Studio** se publica bajo la **Licencia MIT**. Eres libre de usar, modificar y distribuir el motor para fines comerciales y personales, sujeto a las condiciones de la licencia.
+**Ember Motion Studio** is published under the **MIT License**. You are free to use, modify, and distribute the engine for both commercial and personal purposes, subject to the conditions of the license.
 
-## Modelo de Negocio (Open Core)
+## Business Model (Open Core)
 
-Para garantizar que **Ember** sea sostenible a largo plazo y que la tecnología siga avanzando, operamos bajo un modelo transparente:
+To ensure that **Ember** is sustainable long-term and that the technology continues to advance, we operate under a transparent model:
 
-- **Core Engine (FREE)**: El motor base (**DVGE**) es completamente gratuito y de código abierto bajo la licencia MIT. Es ideal para la comunidad, estudiantes y uso individual. Tienes control total sobre el motor.
-- **PRO (Próximamente)**: Diseñado para Power Users. Añadirá herramientas nativas exclusivas como el **Panel de Batch Render** para procesamiento masivo automatizado sin tocar código.
-- **ENTERPRISE (Próximamente)**: Pensado para productoras masivas y workflows críticos. Incluirá plugins hiper-potentes compilados en C++/Rust para orquestación de render farms.
+- **Core Engine (FREE)**: The base engine (**DVGE**) is completely free and open-source under the MIT license. It is ideal for the community, students, and individual use. You have total control over the engine.
+- **PRO (Coming Soon)**: Designed for Power Users. It will add exclusive native tools like the **Batch Render Panel** for automated mass processing without touching code.
+- **ENTERPRISE (Coming Soon)**: Built for massive production houses and critical workflows. It will include hyper-powerful plugins compiled in C++/Rust for render farm orchestration.
 
-> **Nota sobre el modelo a largo plazo**: Las funciones PRO y ENTERPRISE se distribuirán como módulos separados con licencia comercial. El núcleo del motor permanecerá bajo MIT. La transición mencionada en el roadmap (v6.0.0) se refiere al cierre del código de los módulos premium, no del core.
-> **Nota de Infraestructura**: Todo el procesamiento comercial será manejado de manera segura vía *Lemon Squeezy* y *Cloudflare*, sin cuentas de usuario invasivas. La validación se realizará a través de una *License Key*.
+> **Note on the long-term model**: The PRO and ENTERPRISE features will be distributed as separate modules with a commercial license. The core of the engine will remain under MIT. The transition mentioned in the roadmap (v6.0.0) refers to closing the source code of the premium modules, not the core.
+> **Infrastructure Note**: All commercial processing will be securely handled via *Lemon Squeezy* and *Cloudflare*, without invasive user accounts. Validation will be performed via a *License Key*.
 
-## Dependencias con Licencias Propias
+## Dependencies with Separate Licenses
 
-**Ember Motion Studio** se apoya en tecnologías de terceros que tienen sus propias condiciones de uso. La licencia MIT de este proyecto aplica únicamente al código propio del motor.
+**Ember Motion Studio** relies on third-party technologies that have their own terms of use. The MIT license of this project applies only to the engine's proprietary code.
 
-### Remotion (Motor de Renderizado)
+### Remotion (Rendering Engine)
 
-Remotion opera bajo una **licencia dual**, no MIT:
+Remotion operates under a **dual license**, not MIT:
 
-- **Gratuita**: Individuos, organizaciones sin fines de lucro, y pequeñas empresas de hasta 3 empleados.
-- **Comercial (de pago)**: Empresas u organizaciones que superen ese umbral.
+- **Free**: Individuals, non-profits, and small companies up to 3 employees.
+- **Commercial (Paid)**: Companies or organizations exceeding that threshold.
 
-**Al utilizar Ember Motion Studio, usted acepta que:**
+**By using Ember Motion Studio, you agree that:**
 
-1. El uso de los componentes de Remotion integrados está sujeto a la [Remotion License](https://www.remotion.dev/license).
-2. Si su organización requiere una licencia comercial de Remotion, es **su responsabilidad** adquirirla directamente con ellos.
-3. Jonatan Barón no otorga, ni pretende otorgar, ninguna sublicencia sobre el código de Remotion que contravenga sus términos originales.
+1. The use of the integrated Remotion components is subject to the [Remotion License](https://www.remotion.dev/license).
+2. If your organization requires a commercial Remotion license, it is **your responsibility** to acquire it directly from them.
+3. Jonatan Barón does not grant, nor intend to grant, any sub-license over the Remotion code that contravenes its original terms.
 
 ---
 

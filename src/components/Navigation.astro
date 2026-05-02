@@ -1,8 +1,12 @@
 ---
-import icon from "../assets/icon.png";
+import { getLangFromUrl, getAlternateUrl, getAlternateLang } from '../i18n/utils';
 const base = import.meta.env.BASE_URL;
 const downloadUrl =
   "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.8.0/EmberMotionStudio-Setup-5.8.0.exe";
+const currentLang = getLangFromUrl(Astro.url);
+const alternateLang = getAlternateLang(currentLang);
+const alternateUrl = getAlternateUrl(Astro.url, alternateLang);
+const prefix = currentLang === 'en' ? '' : 'es/';
 ---
 
 <nav class="nav-container">
@@ -67,7 +71,7 @@ const downloadUrl =
     <div class="nav-links" id="nav-links">
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
-          Motor
+          {currentLang === 'en' ? 'Engine' : 'Motor'}
           <svg
             width="12"
             height="12"
@@ -78,18 +82,18 @@ const downloadUrl =
           >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}engine/architecture/`} role="menuitem"
-            >Arquitectura Central</a
-          >
-          <a href={`${base}engine/performance/`} role="menuitem">Rendimiento</a>
-          <a href={`${base}engine/benchmarks/`} role="menuitem">Benchmarks</a>
-          <a href={`${base}engine/roadmap/`} role="menuitem">Hoja de Ruta</a>
+          <a href={`${base}${prefix}engine/architecture/`} role="menuitem">
+            {currentLang === 'en' ? 'Core Architecture' : 'Arquitectura Central'}
+          </a>
+          <a href={`${base}${prefix}engine/performance/`} role="menuitem">{currentLang === 'en' ? 'Performance' : 'Rendimiento'}</a>
+          <a href={`${base}${prefix}engine/benchmarks/`} role="menuitem">Benchmarks</a>
+          <a href={`${base}${prefix}engine/roadmap/`} role="menuitem">{currentLang === 'en' ? 'Roadmap' : 'Hoja de Ruta'}</a>
         </div>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
-          Ecosistema
+          {currentLang === 'en' ? 'Ecosystem' : 'Ecosistema'}
           <svg
             width="12"
             height="12"
@@ -100,17 +104,17 @@ const downloadUrl =
           >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}ecosystem/community/`} role="menuitem">Comunidad</a>
-          <a href={`${base}ecosystem/repository/`} role="menuitem"
-            >Galería de Plugins</a
-          >
-          <a href={`${base}ecosystem/api/`} role="menuitem">API de Extensión</a>
+          <a href={`${base}${prefix}ecosystem/community/`} role="menuitem">{currentLang === 'en' ? 'Community' : 'Comunidad'}</a>
+          <a href={`${base}${prefix}ecosystem/repository/`} role="menuitem">
+            {currentLang === 'en' ? 'Plugin Gallery' : 'Galería de Plugins'}
+          </a>
+          <a href={`${base}${prefix}ecosystem/api/`} role="menuitem">{currentLang === 'en' ? 'Extension API' : 'API de Extensión'}</a>
         </div>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
-          Desarrollo
+          {currentLang === 'en' ? 'Development' : 'Desarrollo'}
           <svg
             width="12"
             height="12"
@@ -121,16 +125,16 @@ const downloadUrl =
           >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}development/quick-start/`} role="menuitem"
-            >Guía de Inicio</a
-          >
-          <a href={`${base}ejemplos/`} role="menuitem">Ejemplos y Tutoriales</a>
-          <a href={`${base}development/ai-guide/`} role="menuitem"
-            >Plugins con IA</a
-          >
-          <a href={`${base}development/contributing/`} role="menuitem"
-            >Contribuir</a
-          >
+          <a href={`${base}${prefix}development/quick-start/`} role="menuitem">
+            {currentLang === 'en' ? 'Quick Start' : 'Guía de Inicio'}
+          </a>
+          <a href={currentLang === 'en' ? `${base}examples/` : `${base}es/ejemplos/`} role="menuitem">{currentLang === 'en' ? 'Examples & Tutorials' : 'Ejemplos y Tutoriales'}</a>
+          <a href={`${base}${prefix}development/ai-guide/`} role="menuitem">
+            {currentLang === 'en' ? 'AI Plugins' : 'Plugins con IA'}
+          </a>
+          <a href={`${base}${prefix}development/contributing/`} role="menuitem">
+            {currentLang === 'en' ? 'Contributing' : 'Contribuir'}
+          </a>
         </div>
       </div>
 
@@ -158,7 +162,7 @@ const downloadUrl =
 
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
-          Proyecto
+          {currentLang === 'en' ? 'Project' : 'Proyecto'}
           <svg
             width="12"
             height="12"
@@ -169,22 +173,21 @@ const downloadUrl =
           >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}about/user-manual/`} role="menuitem"
-            >Manual de Usuario</a
-          >
-          <a href={`${base}about/changelog/`} role="menuitem">Changelog</a>
-          <a href={`${base}about/vision/`} role="menuitem">La Visión</a>
-          <a href={`${base}about/transparency/`} role="menuitem"
-            >Transparencia</a
-          >
-          <a href={`${base}about/branding/`} role="menuitem">Identidad Visual</a
-          >
+          <a href={`${base}${prefix}about/user-manual/`} role="menuitem">
+            {currentLang === 'en' ? 'User Manual' : 'Manual de Usuario'}
+          </a>
+          <a href={`${base}${prefix}about/changelog/`} role="menuitem">Changelog</a>
+          <a href={`${base}${prefix}about/vision/`} role="menuitem">{currentLang === 'en' ? 'Vision' : 'La Visión'}</a>
+          <a href={`${base}${prefix}about/transparency/`} role="menuitem">
+            {currentLang === 'en' ? 'Transparency' : 'Transparencia'}
+          </a>
+          <a href={`${base}${prefix}about/branding/`} role="menuitem">{currentLang === 'en' ? 'Brand Identity' : 'Identidad Visual'}</a>
         </div>
       </div>
 
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
-          Acerca de
+          {currentLang === 'en' ? 'About' : 'Acerca de'}
           <svg
             width="12"
             height="12"
@@ -195,9 +198,9 @@ const downloadUrl =
           >
         </button>
         <div class="dropdown-content" role="menu">
-          <a href={`${base}about/me/`} role="menuitem">El Desarrollador</a>
-          <a href={`${base}about/credits/`} role="menuitem">Créditos</a>
-          <a href={`${base}about/license/`} role="menuitem">Licencia</a>
+          <a href={`${base}${prefix}about/me/`} role="menuitem">{currentLang === 'en' ? 'The Developer' : 'El Desarrollador'}</a>
+          <a href={`${base}${prefix}about/credits/`} role="menuitem">{currentLang === 'en' ? 'Credits' : 'Créditos'}</a>
+          <a href={`${base}${prefix}about/license/`} role="menuitem">{currentLang === 'en' ? 'License' : 'Licencia'}</a>
         </div>
       </div>
 
@@ -226,12 +229,22 @@ const downloadUrl =
         </svg>
       </a>
 
+      <!-- Language Switcher -->
+      <a
+        href={alternateUrl}
+        class="lang-switch"
+        aria-label={alternateLang === 'en' ? 'Switch to English' : 'Cambiar a Español'}
+        title={alternateLang === 'en' ? 'Switch to English' : 'Cambiar a Español'}
+      >
+        {alternateLang.toUpperCase()}
+      </a>
+
       <a
         href={downloadUrl}
         class="nav-cta"
         aria-label="Descargar Ember Motion Studio v5.8.0"
       >
-        Descargar
+        {currentLang === 'en' ? 'Download' : 'Descargar'}
       </a>
     </div>
   </div>
@@ -293,17 +306,26 @@ const downloadUrl =
     });
   });
 
-  // Parallax 3D sutil para el logo
+  // Parallax 3D sutil para el logo con throttling para rendimiento
   const navLogo = document.getElementById("navLogo");
   if (navLogo) {
     const MAX_ROTATION = 15;
+    let ticking = false;
+
     document.addEventListener("mousemove", (e) => {
-      const x = (e.clientX / window.innerWidth) * 2 - 1;
-      const y = (e.clientY / window.innerHeight) * 2 - 1;
-      const rotateX = y * -MAX_ROTATION;
-      const rotateY = x * MAX_ROTATION;
-      navLogo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const x = (e.clientX / window.innerWidth) * 2 - 1;
+          const y = (e.clientY / window.innerHeight) * 2 - 1;
+          const rotateX = y * -MAX_ROTATION;
+          const rotateY = x * MAX_ROTATION;
+          navLogo.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+          ticking = false;
+        });
+        ticking = true;
+      }
     });
+
     document.addEventListener("mouseleave", () => {
       navLogo.style.transform = `perspective(1000px) rotateX(0deg) rotateY(0deg)`;
     });
@@ -542,6 +564,22 @@ const downloadUrl =
       opacity: 1;
       transform: translate(-50%, 0);
     }
+  }
+
+  .lang-switch {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 4px;
+    padding: 0.3rem 0.6rem;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+  .lang-switch:hover {
+    color: var(--color-primary);
+    border-color: var(--color-primary);
   }
 
   @media (max-width: 960px) {

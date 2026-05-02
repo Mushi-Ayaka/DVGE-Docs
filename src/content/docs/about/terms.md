@@ -1,38 +1,38 @@
 ---
-title: Términos de Servicio
-description: Términos y condiciones de uso de la web y el software DVGE.
+title: Terms of Service
+description: Terms and conditions of use for the DVGE website and software.
 sidebar:
   order: 8
 ---
 
-Bienvenido a DVGE. Al acceder a este sitio web y utilizar el software, aceptas cumplir y estar sujeto a los siguientes términos y condiciones.
+Welcome to DVGE. By accessing this website and using the software, you agree to comply with and be bound by the following terms and conditions.
 
-## 1. Uso del Software
+## 1. Software Usage
 
-DVGE (Dynamic Vector Graphics Engine) se distribuye bajo la **Licencia MIT**. El uso del software está sujeto a los términos de dicha licencia, los cuales prevalecen en caso de conflicto con estos términos en lo que respecta al uso del código fuente.
+DVGE (Dynamic Vector Graphics Engine) is distributed under the **MIT License**. The use of the software is subject to the terms of that license, which prevail in case of conflict with these terms regarding the use of the source code.
 
-## 2. Uso del Sitio Web
+## 2. Website Usage
 
-El contenido de este sitio web es para tu información general y uso. Está sujeto a cambios sin previo aviso. Queda prohibido el uso no autorizado de este sitio web que pueda dar lugar a una reclamación por daños y/o ser un delito penal.
+The content of this website is for your general information and use only. It is subject to change without notice. Unauthorized use of this website that may give rise to a claim for damages and/or be a criminal offense is prohibited.
 
-## 3. Exención de Responsabilidad
+## 3. Disclaimer
 
-La información y el software proporcionados en este sitio se ofrecen **"tal cual" (AS IS)**, sin garantías de ningún tipo, expresas o implícitas.
+The information and software provided on this site are offered **"AS IS"**, without warranties of any kind, express or implied.
 
-Jonatan Barón no garantiza que:
+Jonatan Barón does not warrant that:
 
-- El software sea ininterrumpido o esté libre de errores.
-- Los resultados obtenidos del uso del software sean precisos o confiables.
-- El software cumpla con tus requisitos específicos para transmisiones en vivo o producción de video.
+- The software will be uninterrupted or error-free.
+- The results obtained from the use of the software will be accurate or reliable.
+- The software will meet your specific requirements for live broadcasting or video production.
 
-## 4. Limitación de Responsabilidad
+## 4. Limitation of Liability
 
-En ningún caso Jonatan Barón será responsable por cualquier daño directo, indirecto, incidental, especial o consecuente (incluyendo, pero no limitado a, la pérdida de beneficios, interrupción del negocio o pérdida de datos) que surja del uso o la imposibilidad de usar este sitio o el software, incluso si se ha advertido de la posibilidad de tales daños.
+In no event shall Jonatan Barón be liable for any direct, indirect, incidental, special, or consequential damages (including, but not limited to, loss of profits, business interruption, or loss of data) arising from the use or inability to use this site or the software, even if advised of the possibility of such damages.
 
-## 5. Propiedad Intelectual
+## 5. Intellectual Property
 
-A menos que se indique lo contrario, Jonatan Barón posee los derechos de propiedad intelectual del sitio web y del material en el sitio web (excluyendo el código fuente bajo licencia MIT). Todos estos derechos de propiedad intelectual están reservados.
+Unless otherwise stated, Jonatan Barón owns the intellectual property rights for the website and material on the website (excluding the open-source code under the MIT license). All these intellectual property rights are reserved.
 
-## 6. Ley Aplicable
+## 6. Governing Law
 
-Estos términos se regirán e interpretarán de acuerdo con las leyes vigentes en la jurisdicción de residencia de Jonatan Barón, y cualquier disputa relacionada con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales de dicha ubicación.
+These terms shall be governed by and construed in accordance with the laws of the jurisdiction in which Jonatan Barón resides, and any dispute relating to these terms shall be subject to the exclusive jurisdiction of the courts of that location.

@@ -1,0 +1,218 @@
+---
+import MainLayout from "../../components/MainLayout.astro";
+import Navigation from "../../components/Navigation.astro";
+import Footer from "../../components/Footer.astro";
+
+const stories = [
+  {
+    author: "Alejandro M.",
+    role: "Editor de Video Senior",
+    quote: "Ember cambió la forma en que entrego mis proyectos. Ya no tengo que esperar renders pesados de After Effects para un simple lower third. Lo exporto en ProRes y listo.",
+    avatar: "AM"
+  },
+  {
+    author: "Sofía R.",
+    role: "Motion Designer",
+    quote: "La precisión del canal alfa en el motor DVGE es impecable. Mis overlays se integran perfectamente en DaVinci sin artefactos en los bordes.",
+    avatar: "SR"
+  },
+  {
+    author: "Marco T.",
+    role: "Streamer & Productor",
+    quote: "Uso Ember para mis scoreboards en vivo. La estabilidad a 60fps es lo que me convenció de dejar de usar herramientas web inestables.",
+    avatar: "MT"
+  },
+  {
+    author: "Elena V.",
+    role: "Desarrolladora de Plugins",
+    quote: "La API es increíblemente limpia. Pude construir un widget de clima automatizado en menos de una hora. El sandbox de seguridad me da mucha tranquilidad.",
+    avatar: "EV"
+  }
+];
+---
+
+<MainLayout title="Historias de Usuarios — Ember Motion Studio">
+  <Navigation />
+  
+  <main class="stories-page">
+    <header class="page-header">
+      <div class="container">
+        <p class="label">Comunidad</p>
+        <h1 class="title">Historias de Usuarios</h1>
+        <p class="subtitle">Descubre cómo profesionales del video y el broadcast están utilizando Ember para optimizar sus producciones.</p>
+      </div>
+    </header>
+
+    <section class="stories-grid container">
+      {stories.map(story => (
+        <div class="story-card">
+          <div class="quote-icon">
+            <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2H5c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 4-4 6-4 6z"></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.75-2-2-2h-3c-1.25 0-2 .75-2 2v3c0 1.25.75 2 2 2h3c0 4-4 6-4 6z"></path></svg>
+          </div>
+          <p class="quote">"{story.quote}"</p>
+          <div class="author-info">
+            <div class="avatar">{story.avatar}</div>
+            <div>
+              <h4>{story.author}</h4>
+              <p>{story.role}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <section class="join-community container">
+      <div class="join-card">
+        <h2>Comparte tu historia</h2>
+        <p>¿Ember te ha ahorrado tiempo? Cuéntanos tu experiencia y ayuda a otros creadores a descubrir el motor.</p>
+        <a href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/discussions" class="btn-ghost">Unirse a la Discusión</a>
+      </div>
+    </section>
+  </main>
+
+  <Footer />
+</MainLayout>
+
+<style>
+  .stories-page {
+    padding-top: 8rem;
+    min-height: 100vh;
+    background: radial-gradient(circle at top right, rgba(228, 76, 48, 0.03), transparent 400px);
+  }
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+  }
+  .page-header {
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #E44C30;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+  .title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 800;
+    color: white;
+    margin-bottom: 1.5rem;
+  }
+  .subtitle {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .stories-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 2.5rem;
+    margin-bottom: 8rem;
+  }
+  @media (max-width: 500px) {
+    .stories-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .story-card {
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2.5rem;
+    border-radius: 20px;
+    position: relative;
+    transition: all 0.3s ease;
+  }
+  .story-card:hover {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(228, 76, 48, 0.2);
+    transform: translateY(-5px);
+  }
+
+  .quote-icon {
+    color: #E44C30;
+    opacity: 0.3;
+    margin-bottom: 1.5rem;
+  }
+  .quote {
+    font-size: 1.15rem;
+    color: #ccc;
+    line-height: 1.6;
+    font-style: italic;
+    margin-bottom: 2rem;
+  }
+
+  .author-info {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .avatar {
+    width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #E44C30, #801C0B);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9rem;
+    font-family: 'Outfit', sans-serif;
+  }
+  .author-info h4 {
+    color: white;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+  }
+  .author-info p {
+    color: #666;
+    font-size: 0.8rem;
+    margin: 0;
+  }
+
+  .join-community {
+    margin-bottom: 8rem;
+  }
+  .join-card {
+    text-align: center;
+    padding: 4rem 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  .join-card h2 {
+    font-family: 'Outfit', sans-serif;
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  .join-card p {
+    color: #888;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .btn-ghost {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border: 1px solid #E44C30;
+    color: #E44C30;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: all 0.2s ease;
+  }
+  .btn-ghost:hover {
+    background: rgba(228, 76, 48, 0.05);
+    transform: translateY(-2px);
+  }
+</style>

@@ -1,26 +1,26 @@
 ---
-title: Inicio Rápido
-description: Construye tu primer Template para Ember Motion Studio desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
+title: Quick Start
+description: Build your first broadcast template for Ember Motion Studio from scratch. Go from zero to a live motion graphics overlay in 5 minutes.
 sidebar:
   order: 1
 ---
 
-Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) para **Ember Motion Studio** desde cero. No se requiere experiencia previa con el motor **DVGE**.
+This guide will walk you step-by-step through creating your first **Template** (Motion Graphics Overlay) for **Ember Motion Studio** from scratch. No prior experience with the **DVGE engine** is required.
 
-## Requisitos Previos
+## Prerequisites
 
-- **Ember Motion Studio** (v5.8.0+) instalado y ejecutándose.
-- Un editor de texto (se recomienda VS Code).
+- **Ember Motion Studio** (v5.8.0+) installed and running.
+- A code editor (VS Code is recommended).
 
 ---
 
-## Paso 1: Crear la Carpeta del Template
+## Step 1: Create the Template Folder
 
-Abre **Ember Motion Studio**, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
+Open **Ember Motion Studio**, go to **Help → Open Plugins Folder**. Inside that directory, create a new folder named `my-first-template`.
 
 ```txt
 Ember_Plugins/
-└── mi-primer-template/    ← Crea esta carpeta
+└── my-first-template/    ← Create this folder
     ├── manifest.json
     ├── index.html
     ├── style.css
@@ -29,32 +29,32 @@ Ember_Plugins/
 
 ---
 
-## Paso 2: El Manifiesto (`manifest.json`)
+## Step 2: The Manifest (`manifest.json`)
 
-Este archivo es el descriptor. Le indica al motor qué tipo de módulo es (`type: "template"`) y qué propiedades expone al usuario.
+This file is the blueprint. It tells the engine what type of module this is (`type: "template"`) and what customizable properties it exposes to the user via the inspector.
 
 ```json
 {
-  "id": "com.dev.mi-primer-template",
-  "name": "Mi Primer Template",
+  "id": "com.dev.my-first-template",
+  "name": "My First Template",
   "version": "1.0.0",
-  "author": "Tu Nombre",
+  "author": "Your Name",
   "type": "template",
-  "description": "Un tercio inferior (lower third) simple y animado.",
+  "description": "A simple, animated lower third for broadcast.",
   "presets": ["branding", "motion"],
   "permissions": [],
   "schema": [
     {
       "type": "string",
       "id": "name",
-      "label": "Nombre",
-      "defaultValue": "Juan Pérez"
+      "label": "Name",
+      "defaultValue": "John Doe"
     },
     {
       "type": "string",
       "id": "role",
-      "label": "Rol",
-      "defaultValue": "Ingeniero Broadcast"
+      "label": "Role",
+      "defaultValue": "Broadcast Engineer"
     }
   ]
 }
@@ -62,9 +62,9 @@ Este archivo es el descriptor. Le indica al motor qué tipo de módulo es (`type
 
 ---
 
-## Paso 3: La Estructura (`index.html`)
+## Step 3: The Structure (`index.html`)
 
-Fragmento HTML crudo para tu gráfico. Sin etiquetas `<html>`, `<head>`, o `<body>`.
+Raw HTML snippet for your graphic. No `<html>`, `<head>`, or `<body>` tags are needed.
 
 ```html
 <div id="card">
@@ -75,9 +75,9 @@ Fragmento HTML crudo para tu gráfico. Sin etiquetas `<html>`, `<head>`, o `<bod
 
 ---
 
-## Paso 4: El Estilo (`style.css`)
+## Step 4: The Styling (`style.css`)
 
-Los estilos están limitados a un lienzo de 1920x1080. Utiliza posicionamiento absoluto.
+Styles are restricted to a 1920x1080 canvas. Use absolute positioning to place your motion graphics perfectly.
 
 ```css
 #card {
@@ -105,28 +105,28 @@ Los estilos están limitados a un lienzo de 1920x1080. Utiliza posicionamiento a
 
 ---
 
-## Paso 5: La Lógica (`script.js`)
+## Step 5: The Logic (`script.js`)
 
-Punto de entrada al motor **DVGE**. Usa el método `awake` para cachear las referencias del DOM, y `update` para animarlas fotograma a fotograma.
+This is the entry point to the **DVGE engine**. Use the `awake` method to cache DOM references, and the `update` method to animate them frame by frame.
 
 ```javascript
 dvEngine.register({
-  // Se ejecuta una vez. Guarda tus referencias DOM aquí — nunca en update.
+  // Runs once. Store your DOM references here — never in update.
   awake: (ctx) => {
     ctx.refs.nameEl = ctx.root.getElementById('name-el');
     ctx.refs.roleEl = ctx.root.getElementById('role-el');
     ctx.refs.card   = ctx.root.getElementById('card');
   },
 
-  // Se ejecuta cada fotograma. Vincula datos y aplica animaciones.
+  // Runs every frame. Bind data and apply animations.
   update: (ctx) => {
     const { timeline, utils, refs, props } = ctx;
 
-    // 1. Siempre vincula los datos desde props
+    // 1. Always bind data from props
     refs.nameEl.innerText = props.name;
     refs.roleEl.innerText = props.role;
 
-    // 2. Anima la entrada usando timeline (sin GSAP, sin setTimeout)
+    // 2. Animate the intro using timeline (no GSAP, no setTimeout)
     const opacity = utils.easeOutCubic(timeline.introProgress);
     const xOffset = utils.lerp(-30, 0, timeline.introProgress);
     refs.card.style.opacity = opacity;
@@ -137,17 +137,17 @@ dvEngine.register({
 
 ---
 
-:::tip[La Regla de Oro]
-Toda la lógica de animación debe basarse en `ctx.timeline` o `ctx.frame`. Esto es lo que hace que los renders de **Ember Motion Studio** sean perfectos por fotograma cuando se exportan a ProRes 4444. Nunca uses `requestAnimationFrame`, `setTimeout`, o bibliotecas de tiempo real.
+:::tip[The Golden Rule]
+All animation logic must rely on `ctx.timeline` or `ctx.frame`. This ensures that **Ember Motion Studio** renders frame-perfect graphics when exporting to ProRes 4444 with an alpha channel. Never use `requestAnimationFrame`, `setTimeout`, or real-time libraries.
 :::
 
 ---
 
-## Paso 6: Cargar y Previsualizar
+## Step 6: Load and Preview
 
-1. En **Ember Motion Studio**, crea un **Nuevo Proyecto**.
-2. Selecciona `Mi Primer Template` de la lista de plantillas disponibles en el Studio.
-3. El gráfico debería aparecer inmediatamente en la ventana de vista previa.
-4. Edita los campos de **Nombre** y **Rol** en el inspector — el gráfico se actualizará en tiempo real.
+1. In **Ember Motion Studio**, create a **New Project**.
+2. Select `My First Template` from the list of available templates in the Studio.
+3. The graphic should appear immediately in the real-time preview window.
+4. Edit the **Name** and **Role** fields in the property inspector — the graphic will update instantly.
 
-Acabas de construir tu primer gráfico listo para producción broadcast con **Ember**. 🎉
+You have just built your first broadcast-ready motion graphic with **Ember**. 🎉

@@ -1,41 +1,41 @@
 ---
-title: Créditos y Atribuciones
-description: Reconocimiento a las tecnologías que hacen posible a DVGE.
+title: Credits and Attributions
+description: Recognizing the core technologies that make DVGE possible.
 sidebar:
   order: 4
 ---
 
-## A hombros de gigantes
+## Standing on the Shoulders of Giants
 
-Seamos transparentes: DVGE se denomina "Motor Gráfico", pero en realidad es un **orquestador avanzado**. No inventamos la rueda construyendo un rasterizador C++ desde cero.
+Let's be transparent: DVGE is called a "Graphics Engine", but in reality, it is an **advanced orchestrator**. We didn't reinvent the wheel by building a C++ rasterizer from scratch.
 
-El mérito es haber encapsulado, restringido y orquestado las mejores tecnologías web del mundo para que cumplan con los rigurosos estándares de la televisión y el broadcast.
+The real achievement of DVGE lies in encapsulating, restricting, and orchestrating the best web technologies in the world to meet the rigorous and unforgiving standards of television and broadcast.
 
-DVGE no existiría sin el trabajo colosal de los desarrolladores de estas infraestructuras *Open Source*:
+DVGE would not exist without the colossal work of the developers behind these *Open Source* infrastructures:
 
 ### 1. Remotion
 
-**El corazón matemático.** Remotion es la tecnología que nos permite convertir el caótico DOM de la web en una línea de tiempo discreta. Es la razón por la que podemos garantizar que el fotograma 45 siempre será idéntico, eliminando la desviación de tiempo.
+**The mathematical heart.** Remotion is the technology that allows us to convert the chaotic web DOM into a discrete timeline. It is the reason we can guarantee that frame 45 will always be mathematically identical, eliminating temporal drift completely.
 
-- [Repositorio de Remotion](https://github.com/remotion-dev/remotion)
+- [Remotion Repository](https://github.com/remotion-dev/remotion)
 
-> **Nota de licencia:** Remotion no es MIT. Opera bajo una licencia dual: gratuita para individuos y organizaciones sin fines de lucro o con hasta 3 empleados, y de pago (licencia corporativa) para organizaciones con fines de lucro de mayor tamaño. DVGE actualmente califica bajo la licencia gratuita. Consulta [remotion.pro](https://www.remotion.pro) antes de usar DVGE como base de un producto comercial.
+> **License Note:** Remotion is not MIT. It operates under a dual license: free for individuals, non-profits, and very small organizations (up to 3 employees), and paid (Company License) for larger for-profit organizations. DVGE currently qualifies under the free license. Please consult [remotion.pro](https://www.remotion.pro) before using DVGE as the foundation for a large-scale commercial product.
 
 ### 2. Electron & Chromium
 
-**El contenedor y el lienzo.** Electron nos permite llevar el ecosistema web al escritorio interactuando con el sistema de archivos de forma atómica. Chromium, con su motor V8 y WebGL, actúa como nuestro lienzo de renderizado ultrarrápido.
+**The container and the canvas.** Electron allows us to bring the web ecosystem to the desktop, interacting with the file system atomically. Chromium, powered by its V8 engine and WebGL, acts as our ultra-fast rendering canvas.
 
-- [Repositorio de Electron](https://github.com/electron/electron)
+- [Electron Repository](https://github.com/electron/electron)
 
 ### 3. FFmpeg
 
-**El motor de compresión.** Todo el procesamiento masivo, la inyección del canal alfa y la codificación final en el estándar de la industria `ProRes 4444` es manejado por FFmpeg.
+**The compression engine.** All heavy lifting, massive media processing, alpha channel injection, and the final encoding into the industry-standard `ProRes 4444` format is handled by FFmpeg.
 
-- [Sitio oficial de FFmpeg](https://ffmpeg.org/)
+- [FFmpeg Official Site](https://ffmpeg.org/)
 
 ### 4. React
 
-**La interfaz y la lógica.** React nos permite construir la arquitectura multi-ventana y ofrecer a la comunidad una forma estándar, declarativa e inmensamente popular de programar animaciones.
+**The interface and the logic.** React allows us to build the multi-window architecture of the Studio and provides the community with a standard, declarative, and immensely popular way to program interface logic.
 
-- [Repositorio de React](https://github.com/facebook/react)
+- [React Repository](https://github.com/facebook/react)
 
