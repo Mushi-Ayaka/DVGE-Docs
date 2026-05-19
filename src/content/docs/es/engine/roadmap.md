@@ -23,9 +23,11 @@ Esta fase se centra en eliminar la fricción técnica y garantizar que la suite 
   - **Secuencia de Carga Real**: Escaneo de Hardware y montaje de módulos reportado al usuario.
   - **Cumplimiento Legal**: Nuevo EULA detallado para dependencias de terceros (Remotion).
   - **UX Polish**: Gestión de enlaces externos y refinamiento de modales de contacto.
-- **🔲 v5.9.0**:
-  - Optimizaciones de Shader & Native Previews.
-  - Refactorización del kernel de audio para mayor fidelidad en ProRes.
+- **✅ v5.9.0 (Actual)**:
+  - **Studio Master Core**: "Proyecto Vacío" nativo para programación con IA desde cero.
+  - **Dynamic Inspector v2**: Auto-extracción de tags `/* @dv-prop */` y tipos de campo avanzados.
+  - **Motor i18n**: Soporte reactivo completo para Inglés y Español.
+  - **Utilidades Matemáticas**: Expansión de `dvUtils` con `mapRange` para animaciones complejas.
 
 ## Fase 2: Expansión y Sostenibilidad (v6.0+)
 

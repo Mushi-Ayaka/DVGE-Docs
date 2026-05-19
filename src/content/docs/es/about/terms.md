@@ -1,38 +1,37 @@
 ---
-title: Términos de Servicio
-description: Términos y condiciones de uso de la web y el software DVGE.
+title: Aviso Legal y Términos
+description: Términos y condiciones de uso de la web y el software Ember Motion Studio.
 sidebar:
   order: 8
 ---
 
-Bienvenido a DVGE. Al acceder a este sitio web y utilizar el software, aceptas cumplir y estar sujeto a los siguientes términos y condiciones.
+Bienvenido a **Ember Motion Studio**. Al acceder a este sitio web y utilizar el software (versión 5.9.0 y superiores), aceptas cumplir y estar sujeto a los siguientes términos y condiciones.
 
 ## 1. Uso del Software
 
-DVGE (Dynamic Vector Graphics Engine) se distribuye bajo la **Licencia MIT**. El uso del software está sujeto a los términos de dicha licencia, los cuales prevalecen en caso de conflicto con estos términos en lo que respecta al uso del código fuente.
+Ember Motion Studio (anteriormente conocido como DVGE) se distribuye bajo la **Licencia MIT**. El uso del software está sujeto a los términos de dicha licencia, los cuales prevalecen en lo que respecta al uso del código fuente.
 
-## 2. Uso del Sitio Web
+## 2. Plugins y Contenido de Terceros
 
-El contenido de este sitio web es para tu información general y uso. Está sujeto a cambios sin previo aviso. Queda prohibido el uso no autorizado de este sitio web que pueda dar lugar a una reclamación por daños y/o ser un delito penal.
+El software permite la instalación de plugins desde repositorios externos (Catálogo de Plugins). **Ember Motion Studio** no se hace responsable de la estabilidad, seguridad o contenido de los plugins desarrollados por terceros. Es responsabilidad del usuario verificar la procedencia de los mismos antes de su instalación.
 
-## 3. Exención de Responsabilidad
+## 3. Integración con Inteligencia Artificial
 
-La información y el software proporcionados en este sitio se ofrecen **"tal cual" (AS IS)**, sin garantías de ningún tipo, expresas o implícitas.
+El sistema **AI Context Builder** facilita la interacción con modelos de lenguaje externos (Claude, ChatGPT, DeepSeek, etc.). Al utilizar estas funciones, el usuario reconoce que:
+- Los datos enviados a la IA están sujetos a las políticas de privacidad de los proveedores de dichos modelos.
+- Ember Motion Studio no garantiza la precisión del código generado por la IA.
+- El usuario es responsable de auditar el código generado antes de su ejecución en entornos de producción.
 
-Jonatan Barón no garantiza que:
+## 4. Exención de Responsabilidad
 
-- El software sea ininterrumpido o esté libre de errores.
-- Los resultados obtenidos del uso del software sean precisos o confiables.
-- El software cumpla con tus requisitos específicos para transmisiones en vivo o producción de video.
-
-## 4. Limitación de Responsabilidad
-
-En ningún caso Jonatan Barón será responsable por cualquier daño directo, indirecto, incidental, especial o consecuente (incluyendo, pero no limitado a, la pérdida de beneficios, interrupción del negocio o pérdida de datos) que surja del uso o la imposibilidad de usar este sitio o el software, incluso si se ha advertido de la posibilidad de tales daños.
+El software se ofrece **"tal cual" (AS IS)**, sin garantías de ningún tipo. No garantizamos que el software esté libre de errores o que los resultados sean aptos para todos los requisitos específicos de broadcast.
 
 ## 5. Propiedad Intelectual
 
-A menos que se indique lo contrario, Jonatan Barón posee los derechos de propiedad intelectual del sitio web y del material en el sitio web (excluyendo el código fuente bajo licencia MIT). Todos estos derechos de propiedad intelectual están reservados.
+A menos que se indique lo contrario, Jonatan Barón posee los derechos de propiedad intelectual del diseño de la interfaz, marca y materiales del sitio web (excluyendo el código fuente bajo licencia MIT).
 
-## 6. Ley Aplicable
+## 6. Privacidad y Telemetría
 
-Estos términos se regirán e interpretarán de acuerdo con las leyes vigentes en la jurisdicción de residencia de Jonatan Barón, y cualquier disputa relacionada con estos términos estará sujeta a la jurisdicción exclusiva de los tribunales de dicha ubicación.
+El software puede recolectar datos técnicos anónimos (Machine ID, errores de renderizado, uso de funciones) para la mejora continua del producto. Ningún dato personal identificable es recolectado sin consentimiento explícito.
+
+(Actualizado para Ember v5.9.0)

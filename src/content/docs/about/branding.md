@@ -11,6 +11,17 @@ The visual identity of this project is divided into two distinct layers: **Ember
 
 ---
 
+## Ecosistema & Core Terminology
+
+To avoid any confusion within our community and codebase, here is the official definition of the terms used across the ecosystem:
+
+*   **Ember Motion Studio**: The visual desktop application (Electron + React) where video editors create, manage, configure, and render their dynamic graphics.
+*   **DVGE (Dynamic Vector Graphics Engine)**: The underlying high-performance, deterministic core rendering engine. It handles frame-by-frame calculations and media compiling.
+*   **Vibe Motion Workflow**: The design and development methodology where creators style animations by defining their creative "vibe" and using an external AI chat to write deterministic code, then pasting it into the Studio for instant feedback.
+*   **Knowledge Bridge**: The application's native context exporter. It extracts the canvas properties and sandbox limits into a single, structured PDF file designed to perfectly train external LLMs.
+
+---
+
 ## Ember Motion Studio (The Suite)
 
 The **Ember** logo represents the energy, heat, and movement of modern broadcast graphics.

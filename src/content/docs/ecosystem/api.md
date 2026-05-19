@@ -65,15 +65,17 @@ Every lifecycle hook receives the same `ctx` object, which provides the sandboxe
 | `ctx.props` | `object` | Live values from the inspector form, keyed by `manifest.json` schema IDs. |
 | `ctx.refs` | `object` | Your personal DOM reference cache (persists across frames). |
 | `ctx.state` | `object` | Your personal persistent state store (persists across frames). |
-| `ctx.utils` | `object` | Built-in library of math and easing functions. |
-| `ctx.settings` | `object` | Engine metadata: `fps`, `duration`, `width`, `height`. |
+| `ctx.utils` | `object` | Built-in library of math, easing, and responsive functions. |
+| `ctx.env` | `object` | Engine runtime environment parameters: `isExporting`, `resolution`, `aspectRatio`, `isPortrait`, `safeArea`. |
+| `ctx.global` | `object` | Shared global context/settings (persists across the application runtime). |
 
-**`ctx.settings` values:**
+**`ctx.env` values:**
 ```javascript
-ctx.settings.fps        // number — frames per second (e.g. 60)
-ctx.settings.duration   // number — total duration in frames (e.g. 120 for 2s at 60fps)
-ctx.settings.width      // number — canvas width in pixels (e.g. 1920)
-ctx.settings.height     // number — canvas height in pixels (e.g. 1080)
+ctx.env.isExporting     // boolean — true when rendering the high-res ProRes/MOV/WebM output
+ctx.env.resolution      // object — canvas resolution, e.g. { width: 1920, height: 1080 }
+ctx.env.aspectRatio     // number — current canvas aspect ratio (e.g. 1.777 for 16:9)
+ctx.env.isPortrait      // boolean — true if height > width (mobile overlay layout)
+ctx.env.safeArea        // object — margins to prevent cutting off text on broadcast: { top, right, bottom, left }
 ```
 
 ---
@@ -101,22 +103,23 @@ update: (ctx) => {
 
 ---
 
-## `ctx.utils` — Easing Library
+## `ctx.utils` — Animation & Easing Library
 
-Built specifically for high-end animation software needs:
+Built specifically for high-end vector animation and responsive broadcast requirements:
 
 | Function | Signature | Description |
 | :--- | :--- | :--- |
 | `lerp` | `(a, b, t)` | Linear interpolation. |
-| `clamp` | `(val, min, max)` | Clamps a value to a range. |
-| `spring` | `(t)` | Spring-physics effect with bounce. |
-| `easeOutCubic` | `(t)` | Smooth ease out for elegant stops. |
-| `easeInOutCubic` | `(t)` | Symmetrical easing for organic movement. |
-| `easeOutBounce` | `(t)` | Elastic bounce on entry. |
-| `easeOutElastic` | `(t)` | Spring-like elastic effect. |
+| `clamp` | `(val, min, max)` | Clamps a value to a specified range. |
+| `loop` | `(frame, duration)` | Returns a repeating frame value between `0` and `duration - 1` for looping animations. |
+| `mapRange` | `(val, inMin, inMax, outMin, outMax)` | Maps a value from an input range to a corresponding output range. |
+| `bezier` | `(curveParams, t)` | Returns the cubic bezier value at progress `t` (e.g. `curveParams = [0.25, 0.1, 0.25, 1.0]`). |
+| `remapX` | `(x, designWidth, currentWidth)` | Responsive helper: scales coordinates on the X axis from design resolution to runtime resolution. |
+| `remapY` | `(y, designHeight, currentHeight)` | Responsive helper: scales coordinates on the Y axis from design resolution to runtime resolution. |
+| `spring` | `(t, stiffness = 100, damping = 10)` | Organic spring physics solver returning a ratio based on time/progress `t`. |
 | `hexToRgb` | `(hex)` | Returns an `"r, g, b"` string for use in CSS `rgba()`. |
-| `typewriter` | `(text, frame, fps)` | Returns the visible substring for a typewriter text effect. |
-| `tickerOffset` | `(frame, speed, cW, tW)` | Calculates the X offset for an infinite news ticker. |
+| `typewriter` | `(text, frame, framesPerChar = 2)` | Returns the visible substring for a typewriter text effect at the current frame. |
+| `tickerOffset` | `(frame, speed, textWidth)` | Calculates the X offset for an infinite looping news ticker. |
 
 ---
 

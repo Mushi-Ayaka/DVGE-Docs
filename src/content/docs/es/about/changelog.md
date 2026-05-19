@@ -9,7 +9,24 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ---
 
-## [5.8.0] — 2026-04-30 ✦ Versión Actual
+## [5.9.0] — 2026-05-04 ✦ Versión Actual
+
+### Integración Studio Master e Inspector Avanzado (The Power Update)
+
+- **Integración Nativa de Studio Master**: El "Proyecto Vacío" (Proyecto Vacío) ahora es un recurso nativo e integrado. Esto permite un flujo de trabajo 100% nativo para IA, donde puedes programar cualquier animación de broadcast desde cero sin dependencias externas.
+- **Dynamic Inspector v2**: 
+  - **Auto-Extracción de Tags**: El motor ahora analiza automáticamente los comentarios `/* @dv-prop ... */` de tu código para generar la interfaz de usuario.
+  - **Tipos de Campo Avanzados**: Se añadió soporte nativo para `alignment` (rejilla de 9 puntos), `slider`, `easing` (curvas visuales) e `icon`.
+  - **Filtrado de Campos Internos**: Los campos redundantes de código/PDF ahora se ocultan del Inspector para mantener la UI enfocada en los controles de animación.
+- **Motor i18n Multi-Idioma**: Implementación completa de un sistema de traducción reactivo con soporte para Inglés y Español.
+- **Expansión de Utilidades del Motor**: Se añadió `dvUtils.mapRange` para facilitar las matemáticas de animación dentro del sandbox.
+- **Correcciones y Estabilidad**:
+  - Filtrado de IDs de propiedades duplicadas en el Inspector.
+  - Sincronización corregida entre el Inspector y el PreviewPlayer para campos de sistema (FPS, Resolución).
+
+---
+
+## [5.8.0] — 2026-04-30
 
 ### Estabilización Maestro y Cumplimiento Legal (The Master Sync)
 

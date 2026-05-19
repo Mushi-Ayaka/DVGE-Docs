@@ -23,9 +23,11 @@ This phase focuses on eliminating technical friction and ensuring the software s
   - **Honest Boot Sequence**: Hardware scanning and module assembly reported in real-time to the user.
   - **Legal Compliance**: New detailed EULA for third-party dependencies (Remotion).
   - **UX Polish**: Management of external links and refinement of contact modals.
-- **🔲 v5.9.0**:
-  - Shader Optimizations & Native Previews.
-  - Refactoring of the audio kernel for higher fidelity in ProRes 4444 exports.
+- **✅ v5.9.0 (Current)**:
+  - **Studio Master Core**: Native "Empty Project" for AI-native coding from scratch.
+  - **Dynamic Inspector v2**: Auto-extracted `/* @dv-prop */` tags and advanced field types.
+  - **i18n Engine**: Full reactive support for English and Spanish.
+  - **Math Utilities**: Expansion of `dvUtils` with `mapRange` for complex animations.
 
 ## Phase 2: Expansion & Sustainability (v6.0+)
 

@@ -78,15 +78,20 @@ Transparency is automatically preserved — thanks to the deterministic engine, 
 
 ---
 
-## Knowledge Bridge AI (v5.5.0)
+## Vibe Motion Workflow (Knowledge Bridge)
 
-The new workflow for generating broadcast graphics with AI assistants:
+The modern workflow for generating dynamic broadcast graphics with AI assistants:
+
+> [!NOTE]  
+> **No Built-in LLM:** Ember Motion Studio is designed as a high-performance sandbox and rendering engine. It does **not** contain an integrated local AI model or native chat interface. This keeps the application extremely lightweight, eliminates subscription costs, and allows you to always use the most advanced external models (like Claude 3.5 Sonnet or GPT-4o) without hardware constraints.
+
+### How it works:
 
 1. Open any project with the **"Ember Studio Master"** plugin.
 2. In the properties panel, locate the **"Ember Master Rules"** field.
-3. **Drag and drop** the indicated zone directly into your AI chat (Claude, Gemini, ChatGPT).
-4. The engine delivers a PDF with all sandbox rules — the AI generates the correct plugin on the first try.
-5. Paste the response into the **"Universal Artifact"** field in the inspector — the engine extracts the HTML, CSS, and JS automatically.
+3. **Drag and drop** the indicated zone directly into your preferred external AI chat interface.
+4. The engine delivers the compiled technical PDF with all sandbox rules — the AI generates the correct plugin on the first try.
+5. Paste the code response into the **"Universal Artifact"** field in the inspector — the engine automatically parses and renders the HTML, CSS, and JS.
 
 :::tip[No Text Copying]
 The Knowledge Bridge uses native Electron drag-and-drop. You don't need to copy and paste rule text — the PDF handles everything.

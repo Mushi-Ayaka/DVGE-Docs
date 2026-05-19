@@ -25,13 +25,13 @@ export const ui = {
     'nav.download': 'Download',
 
     // Hero
-    'hero.badge': 'Open Source · MIT License',
-    'hero.headline.1': 'Motion Design',
-    'hero.headline.2': 'for Broadcast &',
-    'hero.headline.3': 'Streaming',
-    'hero.subheadline': 'Ember Motion Studio is the real-time animation software for creating broadcast overlays, lower thirds and vector motion graphics — frame-perfect, CPU-friendly, ready for OBS, Twitch and DaVinci Resolve.',
+    'hero.badge': '✓ Virus-Free Verified (v5.9.0) · OBS & DaVinci Resolve Workflow',
+    'hero.headline.1': 'Vibe Motion',
+    'hero.headline.2': 'Professional',
+    'hero.headline.3': 'Animations',
+    'hero.subheadline': 'Describe the animation you want. The AI generates the code. Paste into Ember and export to ProRes 4444 .mov in minutes. Without After Effects.',
     'hero.cta.primary': 'Download Free',
-    'hero.cta.secondary': 'View Examples',
+    'hero.cta.secondary': 'Watch How It Works',
 
     // Use Cases section
     'usecases.label': 'Who it\'s for',
@@ -59,8 +59,8 @@ export const ui = {
     'pillars.label': 'Why Ember',
 
     // Footer
-    'footer.credit': 'Developed by Jonatan Barón — Ember Motion Studio v6.0.0, powered by DVGE',
-    'footer.rights': 'Open Source · MIT License',
+    'footer.credit': 'Developed by Jonatan Barón — Ember Motion Studio v5.9.0, powered by DVGE',
+    'footer.rights': 'MIT License',
 
     // Language switcher
     'lang.switch': 'ES',
@@ -79,13 +79,13 @@ export const ui = {
     'nav.download': 'Descargar',
 
     // Hero
-    'hero.badge': 'Código Abierto · Licencia MIT',
-    'hero.headline.1': 'Motion Design',
-    'hero.headline.2': 'para Broadcast y',
-    'hero.headline.3': 'Streaming',
-    'hero.subheadline': 'Ember Motion Studio es el software de animación en tiempo real para crear overlays broadcast, lower thirds y motion graphics vectoriales — frame-perfect, eficiente en CPU, listo para OBS, Twitch y DaVinci Resolve.',
+    'hero.badge': '✓ Verificado Libre de Virus (v5.9.0) · Flujo para OBS y DaVinci',
+    'hero.headline.1': 'Vibe Motion',
+    'hero.headline.2': 'Animaciones',
+    'hero.headline.3': 'Profesionales',
+    'hero.subheadline': 'Describe la animación que quieres. La IA genera el código. Pégalo en Ember y exporta a .mov en minutos. Sin After Effects.',
     'hero.cta.primary': 'Descargar Gratis',
-    'hero.cta.secondary': 'Ver Ejemplos',
+    'hero.cta.secondary': 'Ver cómo funciona',
 
     // Use Cases section
     'usecases.label': 'Para quién es',
@@ -113,8 +113,8 @@ export const ui = {
     'pillars.label': 'Por qué Ember',
 
     // Footer
-    'footer.credit': 'Desarrollado por Jonatan Barón — Ember Motion Studio v6.0.0, powered by DVGE',
-    'footer.rights': 'Código Abierto · Licencia MIT',
+    'footer.credit': 'Desarrollado por Jonatan Barón — Ember Motion Studio v5.9.0, powered by DVGE',
+    'footer.rights': 'Licencia MIT',
 
     // Language switcher
     'lang.switch': 'EN',

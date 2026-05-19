@@ -16,7 +16,42 @@ import "../styles/hero.css";
 
 	<main>
 		<Hero client:load lang="en" />
+
+
 		<Pillars />
+
+		<!-- Photographer Case Study Section -->
+		<section class="case-study">
+			<div class="case-study-inner">
+				<p class="case-study-label">Real-World Case Study</p>
+				<h2 class="case-study-title">Watch Ember Motion Studio in Action</h2>
+				
+				<div class="case-study-card">
+					<div class="case-study-image-wrapper">
+						<iframe 
+							class="case-study-video"
+							src="https://www.youtube.com/embed/tjsKyZXpngQ" 
+							title="Ember Motion Studio Promo Video" 
+							frameborder="0" 
+							allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+							allowfullscreen
+						></iframe>
+					</div>
+					<div class="case-study-content">
+						<div class="quote-icon">“</div>
+						<p class="case-study-quote">
+							I created the official Ember promotional video myself using the app. I described the animation vibe to the AI, pasted the generated code into Ember, and exported the ProRes 4444 file with an alpha channel. Then, I simply dragged the video into DaVinci Resolve to add sound design and export the final piece in minutes.
+						</p>
+						<div class="case-study-author">
+							<div class="author-details">
+								<strong>Jonatan Barón</strong>
+								<span>Creator of Ember Motion Studio</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
 		<!-- Use cases — semantic vocabulary for broadcast & streaming search -->
 		<section class="use-cases">
@@ -33,6 +68,11 @@ import "../styles/hero.css";
 				</p>
 				<div class="use-cases-grid">
 					<div class="use-case-item">
+						<div class="use-case-preview">
+							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
+							</video>
+						</div>
 						<span class="use-case-tag">Lower Thirds</span>
 						<p>
 							Animated text bands for interviews, news and documentaries.
@@ -41,6 +81,11 @@ import "../styles/hero.css";
 						</p>
 					</div>
 					<div class="use-case-item">
+						<div class="use-case-preview">
+							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo1.mp4`} type="video/mp4" />
+							</video>
+						</div>
 						<span class="use-case-tag">Broadcast Overlays</span>
 						<p>
 							Markers, clocks, weather widgets and scoreboards for live
@@ -49,6 +94,11 @@ import "../styles/hero.css";
 						</p>
 					</div>
 					<div class="use-case-item">
+						<div class="use-case-preview">
+							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo5.mp4`} type="video/mp4" />
+							</video>
+						</div>
 						<span class="use-case-tag">Animated Titles</span>
 						<p>
 							Cinematic openings and section titles with frame-perfect
@@ -57,6 +107,11 @@ import "../styles/hero.css";
 						</p>
 					</div>
 					<div class="use-case-item">
+						<div class="use-case-preview">
+							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`} type="video/mp4" />
+							</video>
+						</div>
 						<span class="use-case-tag">Automation</span>
 						<p>
 							Generate data-driven graphics in batch from external sources.
@@ -68,12 +123,12 @@ import "../styles/hero.css";
 		</section>
     
     <!-- New Section: Production Examples -->
-    <section class="home-examples">
+    <section class="home-examples" id="creative-workflow-showcase">
       <div class="examples-inner">
         <div class="examples-header">
-          <p class="section-label">Showcase</p>
+          <p class="section-label">Portafolio</p>
           <h2 class="section-title">Animation Software in Action: Overlays, Lower Thirds & Motion Graphics</h2>
-          <p class="section-subtitle">See the DVGE engine power in action through our built-in broadcast and streaming templates.</p>
+          <p class="section-subtitle">Choose a professional template, load it in Ember, customize parameters, and export instantly.</p>
         </div>
 
         <div class="examples-grid">
@@ -83,7 +138,11 @@ import "../styles/hero.css";
                 <source src={`${import.meta.env.BASE_URL}multimedia/demo1.mp4`} type="video/mp4" />
               </video>
             </div>
-            <h4>Template Horizons</h4>
+            <div class="example-info">
+              <span class="template-tag">Broadcast & News</span>
+              <h4>Template Horizons</h4>
+              <p class="template-action">Load template in Ember & Customize →</p>
+            </div>
           </div>
           <div class="example-item">
             <div class="video-preview">
@@ -91,7 +150,11 @@ import "../styles/hero.css";
                 <source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
               </video>
             </div>
-            <h4>Social Minimal</h4>
+            <div class="example-info">
+              <span class="template-tag">Streamers & Marketers</span>
+              <h4>Social Minimal</h4>
+              <p class="template-action">Load template in Ember & Customize →</p>
+            </div>
           </div>
           <div class="example-item">
             <div class="video-preview">
@@ -99,13 +162,17 @@ import "../styles/hero.css";
                 <source src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`} type="video/mp4" />
               </video>
             </div>
-            <h4>Dynamic Motion Graphics</h4>
+            <div class="example-info">
+              <span class="template-tag">Data Analysts & Sports</span>
+              <h4>Dynamic Motion Graphics</h4>
+              <p class="template-action">Load template in Ember & Customize →</p>
+            </div>
           </div>
         </div>
 
         <div class="examples-cta">
           <a href={`${import.meta.env.BASE_URL}examples/`} class="btn-more-examples">
-            View more examples & tutorials →
+            View more templates & examples →
           </a>
         </div>
       </div>
@@ -165,13 +232,10 @@ import "../styles/hero.css";
 				<div class="status-left">
 					<p class="status-label">Project Status</p>
 					<h3 class="status-title">
-						Open Source.<br />Actively developed.
+						MIT License.<br />Actively developed.
 					</h3>
 					<p class="status-desc">
-						Ember Motion Studio is an <strong
-							>MIT</strong
-						> platform powered by the DVGE engine. Current focus is on
-						core technical maturity and plugin ecosystem stability.
+						Ember Motion Studio is an <strong>MIT Licensed</strong> platform powered by the DVGE engine. The current v5 release is fully open-source and free, ensuring core technical stability and seamless standard workflows while laying the foundation for advanced commercial extensions in future milestones.
 					</p>
 					<a href={`${import.meta.env.BASE_URL}engine/roadmap/`} class="status-link"
 						>View full roadmap →</a
@@ -195,7 +259,7 @@ import "../styles/hero.css";
 								>Optimized Startup & Inspector/Artifacts Panel</span
 							>
 						</li>
-						<li>
+						<li class="done">
 							<span class="roadmap-version">v5.9.0</span>
 							<span class="roadmap-desc"
 								>Performance Improvements</span
@@ -343,6 +407,29 @@ import "../styles/hero.css";
 
 	.use-case-item:hover {
 		background: rgba(255, 255, 255, 0.02);
+	}
+
+	.use-case-preview {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: #000;
+		border-radius: 6px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.06);
+		margin-bottom: 0.5rem;
+		position: relative;
+	}
+
+	.use-case-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.8;
+		transition: opacity 0.3s ease;
+	}
+
+	.use-case-item:hover .use-case-video {
+		opacity: 1;
 	}
 
 	.use-case-tag {
@@ -710,5 +797,157 @@ import "../styles/hero.css";
 
 	.roadmap-list li.done .roadmap-desc {
 		color: #999;
+	}
+
+
+	/* ── Caso de Estudio ── */
+	.case-study {
+		max-width: 1200px;
+		margin: 0 auto;
+		padding: 4rem 1.5rem;
+	}
+	.case-study-inner {
+		border-top: 1px solid rgba(255, 255, 255, 0.06);
+		padding-top: 4rem;
+	}
+	.case-study-label {
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.65rem;
+		font-weight: 500;
+		color: #e44c30;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
+		margin: 0 0 1rem 0;
+	}
+	.case-study-title {
+		font-family: "Outfit", sans-serif;
+		font-size: clamp(1.75rem, 4vw, 2.75rem);
+		font-weight: 800;
+		line-height: 1.1;
+		letter-spacing: -0.02em;
+		color: #fff;
+		margin: 0 0 3rem 0;
+	}
+	.case-study-card {
+		display: grid;
+		grid-template-columns: 1.1fr 1.2fr;
+		gap: 3.5rem;
+		background: rgba(10, 10, 10, 0.6);
+		border: 1px solid rgba(255, 255, 255, 0.05);
+		border-radius: 16px;
+		padding: 2.5rem;
+		align-items: center;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+	}
+	@media (max-width: 850px) {
+		.case-study-card {
+			grid-template-columns: 1fr;
+			gap: 2rem;
+			padding: 1.5rem;
+		}
+	}
+	.case-study-image-wrapper {
+		width: 100%;
+		aspect-ratio: 16/9;
+		background: #000;
+		border-radius: 8px;
+		overflow: hidden;
+		border: 1px solid rgba(255, 255, 255, 0.08);
+		position: relative;
+	}
+	.case-study-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		opacity: 0.95;
+	}
+	.case-study-badge {
+		position: absolute;
+		top: 1rem;
+		right: 1rem;
+		background: rgba(228, 76, 48, 0.9);
+		color: #fff;
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.65rem;
+		padding: 0.35rem 0.75rem;
+		border-radius: 4px;
+		font-weight: 600;
+		letter-spacing: 0.05em;
+		text-transform: uppercase;
+	}
+	.case-study-content {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+	}
+	.quote-icon {
+		font-family: "Outfit", sans-serif;
+		font-size: 5rem;
+		color: rgba(228, 76, 48, 0.15);
+		position: absolute;
+		top: -2.5rem;
+		left: -0.5rem;
+		line-height: 1;
+	}
+	.case-study-quote {
+		font-size: 1.05rem;
+		color: #ccc;
+		line-height: 1.7;
+		margin-bottom: 2rem;
+		position: relative;
+		z-index: 2;
+	}
+	.case-study-author {
+		display: flex;
+		align-items: center;
+		gap: 1rem;
+	}
+	.author-details {
+		display: flex;
+		flex-direction: column;
+	}
+	.author-details strong {
+		color: #fff;
+		font-size: 1rem;
+		font-family: "Outfit", sans-serif;
+	}
+	.author-details span {
+		color: #e44c30;
+		font-size: 0.8rem;
+		font-family: "JetBrains Mono", monospace;
+	}
+
+	/* ── Template tags & styling ── */
+	.template-tag {
+		display: inline-block;
+		font-family: "JetBrains Mono", monospace;
+		font-size: 0.65rem;
+		color: #e44c30;
+		background: rgba(228, 76, 48, 0.08);
+		padding: 0.25rem 0.6rem;
+		border-radius: 4px;
+		text-transform: uppercase;
+		letter-spacing: 0.05em;
+		margin-bottom: 0.75rem;
+	}
+	.example-info {
+		padding: 1.5rem;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+	.example-item h4 {
+		padding: 0 !important;
+		margin-bottom: 0.5rem;
+		text-align: left !important;
+	}
+	.template-action {
+		font-size: 0.75rem;
+		color: #444;
+		margin: 0;
+		transition: color 0.2s ease;
+	}
+	.example-item:hover .template-action {
+		color: #e44c30;
 	}
 </style>

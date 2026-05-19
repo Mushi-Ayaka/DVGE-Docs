@@ -1,40 +1,38 @@
 ---
 title: Política de Privacidad
-description: Información sobre cómo manejo tus datos en DVGE.
+description: Información sobre cómo Ember Motion Studio maneja tus datos y protege tu privacidad.
 sidebar:
   order: 7
 ---
 
-Esta Política de Privacidad describe cómo se recopila, utiliza y comparte tu información personal cuando visitas la documentación oficial de DVGE en **mushi-ayaka.github.io/DVGE-Docs** (el "Sitio").
+Esta Política de Privacidad describe cómo se recopila y utiliza la información en **Ember Motion Studio** (el "Software") y su documentación oficial (el "Sitio").
 
-## 1. Recopilación de Datos
+## 1. Filosofía de Privacidad
 
-DVGE es un proyecto enfocado en la privacidad. No utilizo cookies de rastreo ni herramientas de análisis invasivas que recopilen datos personales identificables sin tu consentimiento.
+Ember Motion Studio es una herramienta **Local-First**. Esto significa que tus proyectos, assets, claves de API y códigos generados viven en tu máquina y no son enviados a nuestros servidores.
 
-### Información Recopilada Automáticamente
+## 2. Recopilación de Datos Técnicos (Telemetría)
 
-Cuando visitas el Sitio, se puede recopilar automáticamente cierta información sobre tu dispositivo, incluyendo información sobre tu navegador web, dirección IP, zona horaria y algunas de las cookies que están instaladas en tu dispositivo (si las hubiera para fines técnicos).
+Para mejorar la estabilidad de la aplicación (versión 5.9.0+), el Software puede recopilar datos técnicos anónimos:
+- **Diagnóstico de Errores**: Stack traces de fallos en el motor de renderizado.
+- **Rendimiento**: Consumo de GPU/CPU y tiempos de exportación.
+- **Uso de Funciones**: Contador anónimo de uso de herramientas (ej. cuántas veces se usa el Builder).
 
-### Información de Contacto
+Estos datos se asocian a un identificador de máquina anónimo y nunca a tu identidad personal. Puedes desactivar la telemetría opcional desde el panel de **Preferencias** en el Software.
 
-Si decides contactarme a través de los enlaces de correo electrónico proporcionados, recopilaré tu dirección de correo electrónico y cualquier otra información que decidas proporcionarme para responder a tu consulta.
+## 3. Integraciones de Terceros (IA)
 
-## 2. Uso de la Información
+Al usar el **AI Context Builder**, la información de tu proyecto (nombres de capas, descripciones de artefactos, código actual) es procesada por el modelo de IA que tú elijas (Claude, GPT, DeepSeek). 
+- **Ember Motion Studio** no almacena estas conversaciones.
+- Los datos viajan directamente desde tu máquina (o vía tu navegador) al proveedor de la IA.
+- Te recomendamos no incluir datos personales sensibles en las descripciones de los artefactos.
 
-Utilizo la información recopilada para:
+## 4. Datos del Sitio Web
 
-- Operar y mantener el Sitio.
-- Responder a tus preguntas y comentarios.
-- Analizar el rendimiento técnico del Sitio para mejorar la experiencia del usuario.
-
-## 3. Compartir Información
-
-No vendo, alquilo ni comparto tu información personal con terceros para fines de marketing. Solo compartiré información si es requerido por ley o para proteger mis derechos.
-
-## 4. Tus Derechos
-
-Dependiendo de tu ubicación (por ejemplo, si te encuentras en el Espacio Económico Europeo), puedes tener derechos sobre tu información personal, incluyendo el derecho a acceder, corregir o eliminar los datos que tengo sobre ti.
+La documentación alojada en GitHub Pages puede recolectar datos técnicos básicos (navegador, zona horaria) para fines estadísticos de tráfico. No utilizamos cookies de rastreo publicitario.
 
 ## 5. Contacto
 
-Para más información sobre mis prácticas de privacidad, si tienes preguntas o si deseas presentar una queja, por favor contáctame por correo electrónico a <barojonatan8@gmail.com>.
+Si tienes preguntas sobre el tratamiento de datos, puedes contactar al desarrollador en <barojonatan8@gmail.com>.
+
+(Actualizado para Ember v5.9.0)

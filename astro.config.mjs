@@ -1,7 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import react from '@astrojs/react';
-import rehypeMermaid from 'rehype-mermaid';
+import mermaid from 'astro-mermaid';
 import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
@@ -11,12 +11,8 @@ export default defineConfig({
   build: {
     format: 'directory'
   },
-  markdown: {
-    rehypePlugins: [
-      [rehypeMermaid, { strategy: 'img-svg', dark: true, mermaidConfig: { theme: 'dark' } }]
-    ],
-  },
   integrations: [
+    mermaid(),
     starlight({
       title: 'Ember Motion Studio',
       favicon: '/logo-square.png',
@@ -25,6 +21,11 @@ export default defineConfig({
       },
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-' },
+        { icon: 'instagram', label: 'Instagram', href: 'https://www.instagram.com/ember_motion_studio/' },
+        { icon: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@embermotionstudio' },
+        { icon: 'facebook', label: 'Facebook', href: 'https://www.facebook.com/EmberMotionStudio' },
+        { icon: 'threads', label: 'Threads', href: 'https://www.threads.net/@ember_motion_studio' },
+        { icon: 'tiktok', label: 'TikTok', href: 'https://www.tiktok.com/@embermotionstudio' },
       ],
       customCss: [
         './src/styles/variables.css',

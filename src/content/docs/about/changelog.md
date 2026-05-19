@@ -9,7 +9,24 @@ All notable changes to the DVGE engine are documented here. Versioning strictly 
 
 ---
 
-## [5.8.0] — 2026-04-30 ✦ Current Release
+## [5.9.0] — 2026-05-04 ✦ Current Release
+
+### Studio Master Integration & Advanced Inspector (The Power Update)
+
+- **Studio Master Core Integration**: The "Empty Project" (Proyecto Vacío) is now a native, hardcoded resource. This allows for a 100% AI-native workflow where you can program any broadcast-grade animation from scratch without external dependencies.
+- **Dynamic Inspector v2**: 
+  - **Tag Auto-Extraction**: The engine now automatically parses `/* @dv-prop ... */` comments from your code to generate the UI.
+  - **Advanced Field Types**: Added native support for `alignment` (9-point grid), `slider`, `easing` (visual curves), and `icon`.
+  - **Internal Field Filtering**: Redundant code/PDF fields are now hidden from the Inspector to keep the UI focused on animation controls.
+- **i18n Multi-Language Engine**: Full implementation of a reactive translation system supporting English and Spanish.
+- **Engine Utilities Expansion**: Added `dvUtils.mapRange` for easier animation math inside the sandbox.
+- **Bugfixes & Stability**:
+  - Filtered duplicate property IDs in the Inspector.
+  - Fixed synchronization between the Inspector and the PreviewPlayer for system fields (FPS, Resolution).
+
+---
+
+## [5.8.0] — 2026-04-30
 
 ### Master Stabilization and Legal Compliance (The Master Sync)
 

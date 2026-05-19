@@ -1,6 +1,6 @@
-# DVGE Docs — Landing & Documentación Oficial
+# Ember Motion Studio Docs — Landing & Documentación Oficial
 
-Sitio web oficial del **Dynamic Vector Graphics Engine (DVGE)**.
+Sitio web oficial del **Ember Motion Studio**.
 Construido con Astro + Starlight. Desplegado en GitHub Pages.
 
 **Producción:** https://mushi-ayaka.github.io/DVGE-Docs/

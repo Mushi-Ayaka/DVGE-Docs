@@ -1,104 +1,70 @@
 ---
 title: Manual de Usuario
-description: Guía completa para editores y productores. Aprende a crear, personalizar y exportar gráficos broadcast profesionales.
+description: Guía completa para editores y productores. Aprende a crear, personalizar y exportar gráficos broadcast profesionales con Ember Motion Studio.
 sidebar:
   order: 1
 ---
 
-**Ember Motion Studio** es una herramienta de producción diseñada para que editores, productores y creadores de contenido construyan, personalicen y exporten gráficos broadcast rápidamente — sin necesidad de conocimientos técnicos avanzados. El sistema está impulsado por el motor de renderizado **DVGE**.
+**Ember Motion Studio** (v5.9.0) es una herramienta de producción diseñada para que editores, productores y creadores de contenido construyan, personalicen y exporten gráficos broadcast rápidamente. El sistema está impulsado por el motor de renderizado determinista **Ember**.
 
-## El Flujo de Trabajo
+## El Flujo Maestro (5 Pasos)
 
-Tres pasos desde la idea hasta el video final:
+Para dominar el Studio, recomendamos seguir este flujo de trabajo estandarizado:
 
-```txt
-Explorar Catálogo → Crear Proyecto → Exportar y Usar
-```
+1.  **Configuración del Canvas**: Define las dimensiones (16:9, 9:16, etc.), la duración y los FPS de tu proyecto.
+2.  **Gestión de Artefactos**: Agrega imágenes, videos o bases de datos (Excel/CSV). Asegúrate de poner títulos y descripciones claras; la IA usará esta información para entender cómo usar cada recurso.
+3.  **AI Context Builder**: Genera el manual de reglas técnico (PDF) y arrástralo a tu chat de IA favorito (Claude, GPT o **DeepSeek en Modo Experto**).
+4.  **Refinamiento Visual**: Una vez generado el código, ajusta los valores en el **Inspector** en tiempo real para pulir los detalles.
+5.  **Exportación e Iteración**: Renderiza tu video o vuelve al Builder para incluir el código actual y pedir modificaciones a la IA.
 
 ---
 
 ## 1. El Catálogo de Plugins
 
-A partir de v5.5.0, puedes ampliar tu biblioteca de gráficos con un solo clic:
+Amplía tu biblioteca de gráficos con un solo clic:
 
-1. En la pantalla de inicio, haz clic en **"🛍️ Catálogo de Plugins"**.
-2. Explora todos los diseños disponibles en el repositorio oficial de **Ember**.
-3. Haz clic en **"Instalar"** en cualquier gráfico que te guste.
-4. El plugin aparecerá automáticamente en tu lista de plantillas de proyecto.
+1.  En la pantalla de inicio, haz clic en **"🛍️ Catálogo de Plugins"**.
+2.  Explora los diseños disponibles en el repositorio oficial.
+3.  Haz clic en **"Instalar"** y el plugin aparecerá automáticamente en tu lista de plantillas.
 
-:::tip[Actualizaciones Automáticas]
-Si un plugin instalado recibe una mejora, el Catálogo mostrará un botón de **"Actualizar"** — mantén tu biblioteca de gráficos siempre al día.
+:::tip[Smart Tip]
+Si no sabes por dónde empezar, el sistema mostrará un recordatorio sutil en el Studio señalando la **Guía Rápida**. Puedes ocultarlo permanentemente marcando "No volver a mostrar".
 :::
 
 ---
 
-A partir de la versión 5.8.0 Master, tienes control total sobre tu flujo de trabajo directamente desde la Galería de Proyectos:
+## 2. Gestión de Proyectos (Galería)
 
-### Crear un Nuevo Proyecto
-
-1. Ingresa un nombre para el proyecto.
-2. Selecciona una **plantilla gráfica** (local o instalada desde el Catálogo).
-3. Haz clic en **"Crear Proyecto"**.
-
-### Organización y Mantenimiento
-
-- **Renombrar Proyectos**: Haz clic en el botón de configuración (engranaje) de cualquier tarjeta para cambiar el nombre del proyecto. El sistema renombrará la carpeta en el disco de forma segura.
-- **Eliminar Proyectos**: Limpia tu espacio de trabajo eliminando proyectos antiguos o erróneos directamente desde la Galería.
-- **Control de Integridad**: Si un plugin necesario para un proyecto ha sido borrado o movido, verás un aviso de **"MISSING PLUGIN"**. El motor bloqueará la apertura de ese proyecto para proteger la estabilidad de la aplicación hasta que el plugin sea restaurado.
+- **Crear Proyecto**: Elige un nombre, una plantilla base y comienza.
+- **Control de Integridad**: Si falta un plugin necesario, verás un aviso de **"MISSING PLUGIN"**. No podrás abrir el proyecto hasta restaurar el plugin para evitar fallos técnicos.
 
 ---
 
-## El Editor
+## 3. El Editor y el Flujo Vibe Motion
 
-### Panel de Propiedades
+### Flujo Vibe Motion (Knowledge Bridge)
+El corazón del diseño ágil asistido por IA:
 
-Modifica texto, colores e imágenes — los cambios son **instantáneos** en la vista previa.
+> [!NOTE]  
+> **Sin IA Integrada:** Ember Motion Studio es un entorno de ejecución y sandbox de altísimo rendimiento. **No** incluye un modelo de IA local o chat integrado dentro del software. Esto mantiene la aplicación extremadamente ligera, libre de suscripciones de API, y te permite usar siempre el modelo externo más avanzado (como Claude 3.5 Sonnet o GPT-4o) sin restricciones de hardware de tu PC.
 
-- **Identidad de Marca (Branding)**: Si la plantilla lo admite, una sección de "Branding" te permite cargar tu logo y elegir su posición (ej. Abajo a la Derecha) con un solo clic.
-- **Alineación**: Controla la posición global del gráfico sin tocar una sola línea de código.
-- **Transparency Transformer (v5.4.0)**: El motor ahora garantiza una transparencia perfecta y profesional para broadcast, eliminando artefactos y fondos negros accidentales.
+*   **Arrastrar y Soltar:** Arrastra la zona del Builder directamente a tu chat de IA favorito (Claude, GPT-4, etc.). El PDF exportado contiene las reglas del motor, la especificación de tus artefactos y los límites del Sandbox.
+*   **Modo Experto:** Pídele a la IA externa que genere el código para el plugin basándose estrictamente en las reglas del PDF. Copia el resultado y pégalo en el editor.
 
-### Seguridad de Datos
-
-Gracias al **Guardado Atómico** (Atomic Saving), tu trabajo está protegido contra cierres inesperados. El indicador de guardado en la esquina inferior izquierda confirma cuando tu archivo está escrito de forma segura en el disco.
+### Inspector Dinámico
+- **Cambios Instantáneos**: Cualquier ajuste en el Inspector se refleja de inmediato en el Canvas.
+- **Artifact Linking**: Puedes vincular campos del inspector directamente a tus artefactos (ej. usar una imagen cargada en la galería como fondo).
 
 ---
 
-## Exportación Profesional
+## 4. Exportación Broadcast
 
-1. Haz clic en **"Renderizar"** (Render).
-2. El motor genera un video **ProRes 4444 con canal Alfa** (transparencia nativa).
-3. **Arrastrar y Soltar**: Arrastra el archivo `.mov` exportado directamente desde **Ember Motion Studio** a tu línea de tiempo en **DaVinci Resolve, Premiere Pro o After Effects**.
+1.  Haz clic en **"RENDER VIDEO"**.
+2.  Elige el formato: **ProRes 4444** (con transparencia), **H.264** (MP4) o **GIF**.
+3.  **Arrastrar y Soltar**: Una vez finalizado, arrastra el archivo directamente a tu editor (Premiere, DaVinci, After Effects).
 
-:::important[Tip para DaVinci Resolve]
-Si al importar el video ves un fondo negro, haz clic derecho sobre el clip en el **Media Pool** → **Clip Attributes** → Pestaña **Video** → Cambia **Alpha Mode** a **"Straight"** o **"Premultiplied"**.
+:::important[Transparencia en DaVinci Resolve]
+Si el video ProRes aparece con fondo negro: Clic derecho sobre el clip → **Clip Attributes** → **Video** → Cambia **Alpha Mode** a **"Straight"**.
 :::
 
-La transparencia se preservará automáticamente — gracias al motor determinista, lo que ves en la previsualización es exactamente lo que obtienes en el archivo final.
-
----
-
-## Knowledge Bridge AI (v5.5.0)
-
-El nuevo flujo de trabajo para generar gráficos con asistentes de IA:
-
-1. Abre cualquier proyecto con el plugin **"Ember Studio Master"**.
-2. En el panel de propiedades, localiza el campo **"Ember Master Rules"**.
-3. **Arrastra** la zona indicada directamente al chat de tu IA (Claude, Gemini, ChatGPT).
-4. El motor entrega un PDF con todas las reglas del sandbox — la IA genera el plugin correcto al primer intento.
-5. Pega la respuesta en el campo **"Artefacto Universal"** del inspector — el motor extrae el HTML, CSS y JS automáticamente.
-
-:::tip[Sin copiar texto]
-El Knowledge Bridge usa drag nativo de Electron. No necesitas copiar ni pegar el texto de las reglas — el PDF lo hace todo.
-:::
-
----
-
-## Solución de Problemas
-
-| Problema | Solución |
-| :--- | :--- |
-| Pantalla de vista previa en blanco | Abre las Herramientas de Desarrollador (`Ctrl+Shift+I`) y revisa la consola en busca de errores. |
-| El plugin no aparece | Verifica que la carpeta del plugin contiene los archivos requeridos. |
-| Desincronización en el Render | Asegúrate de que el plugin no utilice bibliotecas de animación externas en tiempo real. |
-| Error I/O al guardar | Confirma que la aplicación tiene permisos de escritura en tu carpeta de Documentos. |
+(Actualizado para v5.9.0 Stable Release)

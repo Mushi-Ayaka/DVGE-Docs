@@ -55,32 +55,34 @@ Guarda en caché las referencias del DOM en `awake`. Nunca llames a `ctx.root.ge
 
 ## El Objeto de Contexto (`ctx`)
 
-Cada hook recibe el mismo objeto `ctx`:
+Cada hook recibe el mismo objeto `ctx`, el cual proporciona el entorno aislado necesario para renderizados con fondos transparentes y canal alfa:
 
 | Propiedad | Tipo | Descripción |
 | :--- | :--- | :--- |
 | `ctx.frame` | `number` | Fotograma de animación actual (comienza en 0). |
-| `ctx.timeline` | `object` | Ayudantes de sincronización normalizados (ver abajo). |
+| `ctx.timeline` | `object` | Ayudantes de sincronización normalizados para diseño de movimiento preciso. |
 | `ctx.root` | `ShadowRoot` | La raíz aislada del Shadow DOM. **Usa siempre esto en lugar de `document`.** |
 | `ctx.props` | `object` | Valores en vivo del formulario del inspector, indexados por los IDs del esquema de `manifest.json`. |
 | `ctx.refs` | `object` | Tu propia caché de referencias del DOM (persistente a través de fotogramas). |
 | `ctx.state` | `object` | Tu propio almacén de estado persistente (persistente a través de fotogramas). |
-| `ctx.utils` | `object` | Biblioteca integrada de funciones matemáticas y de suavizado (easing). |
-| `ctx.settings` | `object` | Metadatos del motor: `fps`, `duration`, `width`, `height`. |
+| `ctx.utils` | `object` | Biblioteca integrada de funciones matemáticas, de suavizado y adaptabilidad responsiva. |
+| `ctx.env` | `object` | Parámetros de entorno de ejecución del motor: `isExporting`, `resolution`, `aspectRatio`, `isPortrait`, `safeArea`. |
+| `ctx.global` | `object` | Contexto global compartido (persistente durante el tiempo de ejecución de la aplicación). |
 
-**Valores de `ctx.settings`:**
+**Valores de `ctx.env`:**
 ```javascript
-ctx.settings.fps        // number — fotogramas por segundo (ej. 60)
-ctx.settings.duration   // number — duración total en fotogramas (ej. 120 para 2s a 60fps)
-ctx.settings.width      // number — ancho del lienzo en píxeles (ej. 1920)
-ctx.settings.height     // number — alto del lienzo en píxeles (ej. 1080)
+ctx.env.isExporting     // boolean — true al renderizar la salida de alta resolución ProRes/MOV/WebM
+ctx.env.resolution      // object — resolución del lienzo, ej. { width: 1920, height: 1080 }
+ctx.env.aspectRatio     // number — relación de aspecto actual del lienzo (ej. 1.777 para 16:9)
+ctx.env.isPortrait      // boolean — true si la altura > anchura (diseño de overlay móvil)
+ctx.env.safeArea        // object — márgenes para evitar el recorte del texto en transmisión: { top, right, bottom, left }
 ```
 
 ---
 
 ## `ctx.timeline`
 
-Reemplaza la aritmética directa de fotogramas con valores normalizados basados en intención.
+Reemplaza la aritmética directa de fotogramas con valores normalizados basados en intención. Esto es crucial para la creación de plantillas de gráficos animados adaptables.
 
 | Propiedad | Tipo | Descripción |
 | :--- | :--- | :--- |
@@ -101,20 +103,23 @@ update: (ctx) => {
 
 ---
 
-## `ctx.utils` — Biblioteca de Suavizado (Easing)
+## `ctx.utils` — Biblioteca de Animación y Suavizado (Easing)
+
+Diseñada específicamente para requisitos de animación vectorial de alto rendimiento y transmisiones adaptables:
 
 | Función | Firma | Descripción |
 | :--- | :--- | :--- |
 | `lerp` | `(a, b, t)` | Interpolación lineal. |
-| `clamp` | `(val, min, max)` | Restringe un valor a un rango. |
-| `spring` | `(t)` | Efecto de resorte con rebote. |
-| `easeOutCubic` | `(t)` | Suavizado de salida fluido. |
-| `easeInOutCubic` | `(t)` | Suavizado simétrico. |
-| `easeOutBounce` | `(t)` | Rebote elástico al entrar. |
-| `easeOutElastic` | `(t)` | Efecto elástico tipo resorte. |
+| `clamp` | `(val, min, max)` | Restringe un valor a un rango especificado. |
+| `loop` | `(frame, duration)` | Devuelve un valor de fotograma repetitivo entre `0` y `duration - 1` para animaciones en bucle. |
+| `mapRange` | `(val, inMin, inMax, outMin, outMax)` | Mapea un valor desde un rango de entrada a un rango de salida correspondiente. |
+| `bezier` | `(curveParams, t)` | Devuelve el valor de bezier cúbico en el progreso `t` (ej. `curveParams = [0.25, 0.1, 0.25, 1.0]`). |
+| `remapX` | `(x, designWidth, currentWidth)` | Ayudante de responsividad: escala las coordenadas en el eje X desde la resolución de diseño a la resolución de ejecución. |
+| `remapY` | `(y, designHeight, currentHeight)` | Ayudante de responsividad: escala las coordenadas en el eje Y desde la resolución de diseño a la resolución de ejecución. |
+| `spring` | `(t, stiffness = 100, damping = 10)` | Solucionador orgánico de física de resorte (spring) que devuelve una proporción basada en el tiempo/progreso `t`. |
 | `hexToRgb` | `(hex)` | Devuelve un string `"r, g, b"` para usar en `rgba()` de CSS. |
-| `typewriter` | `(text, frame, fps)` | Devuelve la subcadena visible para un efecto de máquina de escribir. |
-| `tickerOffset` | `(frame, speed, cW, tW)` | Calcula el desplazamiento en X para una cinta de noticias infinita. |
+| `typewriter` | `(text, frame, framesPerChar = 2)` | Devuelve la subcadena visible para un efecto de máquina de escribir en el fotograma actual. |
+| `tickerOffset` | `(frame, speed, textWidth)` | Calcula el desplazamiento en X para una cinta de noticias infinita en bucle. |
 
 ---
 
