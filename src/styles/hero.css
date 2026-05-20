@@ -10,6 +10,7 @@
   align-items: center;
   padding: 5rem 1.25rem 3rem;
   overflow: hidden;
+  box-sizing: border-box;
 }
 
 /* Línea de acento vertical — solo desktop */
@@ -44,6 +45,7 @@
   display: flex;
   flex-direction: column;
   gap: 0;
+  box-sizing: border-box;
 }
 
 @media (min-width: 768px) {
@@ -104,8 +106,9 @@
 
 .title-line {
   display: block;
-  font-size: clamp(2.8rem, 10vw, 7rem);
+  font-size: clamp(2.3rem, 9vw, 7rem);
   color: #ffffff;
+  word-wrap: break-word;
 }
 
 /* "Vector" — la palabra de acento, ligeramente desplazada */
@@ -160,6 +163,8 @@
   border: none;
   transition: all 0.2s ease;
   white-space: nowrap;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .btn-primary {
@@ -437,6 +442,8 @@
   border-radius: 4px;
   flex-shrink: 0;
   transition: all 0.2s ease;
+  box-sizing: border-box;
+  max-width: 100%;
 }
 
 .vt-report-btn:hover {
