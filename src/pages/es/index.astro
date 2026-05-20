@@ -79,57 +79,54 @@ import "../../styles/hero.css";
 				<div class="use-cases-grid">
 					<div class="use-case-item">
 						<div class="use-case-preview">
-							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
-								<source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
-							</video>
-						</div>
-						<span class="use-case-tag">Tercios Inferiores</span>
-						<p>
-							Bandas de texto animadas para entrevistas, noticias
-							y documentales. Exportación directa como .mov con
-							canal alpha. Compatible con transiciones dinámicas y
-							fondos transparentes.
-						</p>
-					</div>
-					<div class="use-case-item">
-						<div class="use-case-preview">
-							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
+							<video muted loop playsinline preload="none" class="lazy-video use-case-video">
 								<source src={`${import.meta.env.BASE_URL}multimedia/demo1.mp4`} type="video/mp4" />
 							</video>
 						</div>
-						<span class="use-case-tag">Gráficos de Transmisión</span>
+						<span class="use-case-tag">Aperturas Cinemáticas</span>
 						<p>
-							Marcadores, relojes, widgets de clima y puntuaciones
-							para transmisiones en vivo. Fuente de navegador
-							compatible con OBS y vMix — eficiente en CPU y listo
-							para WebM.
+							Animaciones de intro profesionales para YouTube, cine y
+							vídeos de marca. Estilo cinematográfico con movimiento
+							vectorial y exportación transparente.
 						</p>
 					</div>
 					<div class="use-case-item">
 						<div class="use-case-preview">
-							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
-								<source src={`${import.meta.env.BASE_URL}multimedia/demo5.mp4`} type="video/mp4" />
+							<video muted loop playsinline preload="none" class="lazy-video use-case-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`} type="video/mp4" />
 							</video>
 						</div>
-						<span class="use-case-tag">Títulos Animados</span>
+						<span class="use-case-tag">Gráficos para Redes Sociales</span>
 						<p>
-							Aperturas cinemáticas y títulos de sección con
-							animaciones vectoriales de precisión exacta,
-							reproducibles en cualquier hardware. Control total
-							de gráficos en movimiento.
+							Tarjetas animadas, reels y publicaciones creadas directamente
+							en Ember. Exporta como .mov transparente y úneselo a tu
+							línea de tiempo al instante.
 						</p>
 					</div>
 					<div class="use-case-item">
 						<div class="use-case-preview">
-							<video muted loop playsinline preload="metadata" class="lazy-video use-case-video">
+							<video muted loop playsinline preload="none" class="lazy-video use-case-video">
 								<source src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`} type="video/mp4" />
 							</video>
 						</div>
-						<span class="use-case-tag">Automatización</span>
+						<span class="use-case-tag">Gráficos de Datos</span>
 						<p>
-							Genera gráficos basados en datos en lote desde
-							fuentes externas. Ideal para producción de noticias
-							y deportes con renderizado en tiempo real.
+							Gráficas de barras, estadísticas y feeds de datos en vivo
+							para noticias, deportes e informes corporativos. Renderizado
+							en tiempo real, cero lag.
+						</p>
+					</div>
+					<div class="use-case-item">
+						<div class="use-case-preview">
+							<video muted loop playsinline preload="none" class="lazy-video use-case-video">
+								<source src={`${import.meta.env.BASE_URL}multimedia/demo5.mp4`} type="video/mp4" />
+							</video>
+						</div>
+						<span class="use-case-tag">Tarjetas de Código</span>
+						<p>
+							Fragmentos de código animados y tarjetas de contenido
+							para desarrolladores. Ideal para tutoriales técnicos,
+							canales de programación y streams de desarrollo.
 						</p>
 					</div>
 				</div>
@@ -158,10 +155,10 @@ import "../../styles/hero.css";
 								muted
 								loop
 								playsinline
-								preload="metadata"
+								preload="none"
 								poster={`${import.meta.env.BASE_URL}logo-square.png`}
-								aria-label="Vista previa de Plantilla Horizons"
-								title="Plantilla Horizons - Gráficos Broadcast"
+								aria-label="Vista previa de Apertura Cinemática"
+								title="Apertura Cinemática — Intro Profesional"
 								class="lazy-video"
 							>
 								<source
@@ -171,7 +168,66 @@ import "../../styles/hero.css";
 							</video>
 						</div>
 						<div class="example-info">
-							<span class="template-tag"
+							<span class="template-tag">Cine y Producción</span>
+							<h4>Apertura Cinemática</h4>
+							<p class="template-action">
+								Cargar plantilla en Ember y Personalizar →
+							</p>
+						</div>
+					</div>
+					<div class="example-item">
+						<div class="video-preview">
+							<video
+								muted
+								loop
+								playsinline
+								preload="none"
+								poster={`${import.meta.env.BASE_URL}logo-square.png`}
+								aria-label="Vista previa de Pack Redes Sociales"
+								title="Pack Redes Sociales — Posts y Reels Animados"
+								class="lazy-video"
+							>
+								<source
+									src={`${import.meta.env.BASE_URL}multimedia/demo2.mp4`}
+									type="video/mp4"
+								/>
+							</video>
+						</div>
+						<div class="example-info">
+							<span class="template-tag">Redes Sociales</span>
+							<h4>Pack Redes Sociales</h4>
+							<p class="template-action">
+								Cargar plantilla en Ember y Personalizar →
+							</p>
+						</div>
+					</div>
+					<div class="example-item">
+						<div class="video-preview">
+							<video
+								muted
+								loop
+								playsinline
+								preload="none"
+								poster={`${import.meta.env.BASE_URL}logo-square.png`}
+								aria-label="Vista previa de Gráficos de Datos Animados"
+								title="Gráficos de Datos Animados"
+								class="lazy-video"
+							>
+								<source
+									src={`${import.meta.env.BASE_URL}multimedia/demo3.mp4`}
+									type="video/mp4"
+								/>
+							</video>
+						</div>
+						<div class="example-info">
+							<span class="template-tag">Datos y Análisis</span>
+							<h4>Gráficos de Datos Animados</h4>
+							<p class="template-action">
+								Cargar plantilla en Ember y Personalizar →
+							</p>
+						</div>
+					</div>
+				</div>
 								>Broadcast y Noticias</span
 							>
 							<h4>Plantilla Horizons</h4>

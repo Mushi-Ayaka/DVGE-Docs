@@ -93,27 +93,39 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
               </a>
             </motion.div>
 
-            {/* VirusTotal Trust Seal */}
+
+            {/* VirusTotal Trust Block — Transparency Signal */}
             <motion.div
-              className="virustotal-seal"
+              className="vt-trust-block"
               initial={{ opacity: 0, y: 8 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.75 }}
             >
-              <a
-                href={virusTotalUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="vt-link"
-              >
-                <ShieldCheck size={16} className="vt-icon" />
-                <span className="vt-text">
-                  {lang === 'es'
-                    ? '0/58 Detecciones en VirusTotal (Instalador 100% Seguro)'
-                    : '0/58 Detections on VirusTotal (100% Safe Clean Scan)'}
-                </span>
-              </a>
+              <div className="vt-trust-inner">
+                <div className="vt-trust-info">
+                  <ShieldCheck size={18} className="vt-shield" />
+                  <div className="vt-trust-copy">
+                    <span className="vt-trust-title">
+                      {lang === 'es' ? '0/58 amenazas detectadas' : '0/58 threats detected'}
+                    </span>
+                    <span className="vt-trust-desc">
+                      {lang === 'es'
+                        ? 'Sin firma digital porque el código fuente es 100% público y auditable en GitHub.'
+                        : 'Not code-signed because the full source code is 100% public & auditable on GitHub.'}
+                    </span>
+                  </div>
+                </div>
+                <a
+                  href={virusTotalUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="vt-report-btn"
+                >
+                  {lang === 'es' ? 'Ver informe →' : 'View Report →'}
+                </a>
+              </div>
             </motion.div>
+
 
             {/* Metadatos técnicos en línea */}
             <motion.div
@@ -122,11 +134,11 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
               animate={{ opacity: 1 }}
               transition={{ duration: 0.5, delay: 0.8 }}
             >
-              <span>Electron + React + Remotion</span>
+              <span>Free for Windows 10/11</span>
               <span className="meta-sep" aria-hidden="true">·</span>
               <span>ProRes 4444 + Alpha</span>
               <span className="meta-sep" aria-hidden="true">·</span>
-              <span>Shadow DOM Sandbox</span>
+              <span>OBS &amp; DaVinci Ready</span>
               <span className="meta-sep" aria-hidden="true">·</span>
               <span>60fps Preview</span>
             </motion.div>

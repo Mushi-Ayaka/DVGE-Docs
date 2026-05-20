@@ -8,7 +8,7 @@
   min-height: 100svh;
   display: flex;
   align-items: center;
-  padding: 7rem 1.5rem 4rem;
+  padding: 5rem 1.25rem 3rem;
   overflow: hidden;
 }
 
@@ -215,15 +215,23 @@
     gap: 0.1rem;
   }
   .title-line--accent {
-    padding-left: 0.75rem;
+    padding-left: 0.5rem;
   }
   .hero-actions {
     flex-direction: column;
-    align-items: flex-start;
+    align-items: stretch;
   }
   .btn-primary {
     width: 100%;
     justify-content: center;
+  }
+  .btn-ghost {
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    padding: 0.7rem 1rem;
+    border: 1px solid #333;
+    border-radius: 4px;
   }
   .meta-sep {
     display: none;
@@ -347,70 +355,107 @@
 
 @media (max-width: 959px) {
   .hero-layout-split {
-    gap: 4rem;
+    gap: 2.5rem;
   }
   .hero-video-side {
-    max-width: 500px;
-    order: -1; /* Muestra el video arriba en móviles para enganchar al visitante al instante */
+    max-width: 480px;
+    /* text first on mobile — F-pattern research (NN Group 2024) */
+    /* video shows after the copy so users have context */
   }
 }
 
 /* ============================================================
-   VirusTotal Trust Seal
+   VirusTotal Trust Block (redesigned)
    ============================================================ */
 
-.virustotal-seal {
-  margin-top: -1.5rem;
+.vt-trust-block {
   margin-bottom: 2.25rem;
-  display: inline-flex;
 }
 
-.vt-link {
+.vt-trust-inner {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  padding: 0.45rem 0.8rem;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.875rem 1rem;
   background: rgba(46, 213, 115, 0.04);
-  border: 1px solid rgba(46, 213, 115, 0.15);
-  border-radius: 6px;
+  border: 1px solid rgba(46, 213, 115, 0.18);
+  border-radius: 8px;
+  transition: border-color 0.2s ease, background 0.2s ease;
+}
+
+.vt-trust-inner:hover {
+  background: rgba(46, 213, 115, 0.07);
+  border-color: rgba(46, 213, 115, 0.3);
+}
+
+.vt-trust-info {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.vt-shield {
+  color: #2ed573;
+  filter: drop-shadow(0 0 5px rgba(46, 213, 115, 0.5));
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.vt-trust-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.vt-trust-title {
+  font-family: 'JetBrains Mono', 'Fira Code', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #2ed573;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+
+.vt-trust-desc {
+  font-size: 0.76rem;
+  color: #555;
+  line-height: 1.45;
+}
+
+.vt-report-btn {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  font-weight: 600;
+  color: #2ed573;
   text-decoration: none;
+  white-space: nowrap;
+  padding: 0.4rem 0.8rem;
+  border: 1px solid rgba(46, 213, 115, 0.3);
+  border-radius: 4px;
+  flex-shrink: 0;
   transition: all 0.2s ease;
 }
 
-.vt-link:hover {
-  background: rgba(46, 213, 115, 0.08);
-  border-color: rgba(46, 213, 115, 0.35);
-  box-shadow: 0 0 15px rgba(46, 213, 115, 0.12);
-  transform: translateY(-1px);
+.vt-report-btn:hover {
+  background: rgba(46, 213, 115, 0.1);
+  border-color: rgba(46, 213, 115, 0.55);
+  box-shadow: 0 0 12px rgba(46, 213, 115, 0.15);
 }
 
-.vt-icon {
-  color: #2ed573;
-  filter: drop-shadow(0 0 4px rgba(46, 213, 115, 0.4));
-  flex-shrink: 0;
-}
-
-.vt-text {
-  font-family: 'JetBrains Mono', 'Fira Code', monospace;
-  font-size: 0.68rem;
-  font-weight: 500;
-  color: #8c8c8c;
-  letter-spacing: 0.02em;
-}
-
-.vt-link:hover .vt-text {
-  color: #ffffff;
-}
-
-@media (max-width: 480px) {
-  .virustotal-seal {
-    width: 100%;
-    margin-top: -1.5rem;
-    margin-bottom: 2rem;
+@media (max-width: 600px) {
+  .vt-trust-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.75rem;
   }
-  .vt-link {
+  .vt-report-btn {
     width: 100%;
-    justify-content: center;
+    text-align: center;
+    display: block;
+    padding: 0.55rem 1rem;
   }
 }
 

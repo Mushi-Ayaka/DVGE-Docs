@@ -25,7 +25,7 @@ export const ui = {
     'nav.download': 'Download',
 
     // Hero
-    'hero.badge': '✓ Virus-Free Verified (v5.9.0) · OBS & DaVinci Resolve Workflow',
+    'hero.badge': 'Broadcast Graphic Design · v5.9.0',
     'hero.headline.1': 'Vibe Motion',
     'hero.headline.2': 'Professional',
     'hero.headline.3': 'Animations',
@@ -79,7 +79,7 @@ export const ui = {
     'nav.download': 'Descargar',
 
     // Hero
-    'hero.badge': '✓ Verificado Libre de Virus (v5.9.0) · Flujo para OBS y DaVinci',
+    'hero.badge': 'Diseño Gráfico Broadcast · v5.9.0',
     'hero.headline.1': 'Vibe Motion',
     'hero.headline.2': 'Animaciones',
     'hero.headline.3': 'Profesionales',
