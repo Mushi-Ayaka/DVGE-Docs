@@ -1,6 +1,6 @@
 ---
 title: Changelog
-description: Complete version history and release notes for the Dynamic Vector Graphics Engine (DVGE) and Ember Motion Studio.
+description: Complete version history and release notes for the DVGE (Dynamic Vector Graphics Engine) Runtime Bridge and Ember Motion Studio.
 sidebar:
   order: 2
 ---

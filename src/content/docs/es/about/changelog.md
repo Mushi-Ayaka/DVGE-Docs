@@ -1,6 +1,6 @@
 ---
 title: Changelog (Registro de Cambios)
-description: Historial completo de versiones para el Dynamic Vector Graphics Engine (DVGE).
+description: Historial completo de versiones para el DVGE (Dynamic Vector Graphics Engine) Runtime Bridge.
 sidebar:
   order: 2
 ---

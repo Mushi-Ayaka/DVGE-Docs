@@ -7,7 +7,7 @@ sidebar:
 
 The visual identity of this project is divided into two distinct layers: **Ember Motion Studio** (the user-facing production suite and design environment) and **DVGE** (the technical engine that powers the entire platform).
 
-> **Ember Motion Studio** is the commercial and user-experience layer, designed for broadcast production. **DVGE (Dynamic Vector Graphics Engine)** is the open-source (MIT) rendering engine residing at the core, guaranteeing deterministic frame calculations.
+> **Ember Motion Studio** is the commercial and user-experience layer, designed for broadcast production. **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** is the open-source (MIT) runtime rendering bridge residing at the core, guaranteeing deterministic frame calculations.
 
 ---
 
@@ -16,7 +16,7 @@ The visual identity of this project is divided into two distinct layers: **Ember
 To avoid any confusion within our community and codebase, here is the official definition of the terms used across the ecosystem:
 
 *   **Ember Motion Studio**: The visual desktop application (Electron + React) where video editors create, manage, configure, and render their dynamic graphics.
-*   **DVGE (Dynamic Vector Graphics Engine)**: The underlying high-performance, deterministic core rendering engine. It handles frame-by-frame calculations and media compiling.
+*   **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**: The underlying high-performance, deterministic core runtime rendering bridge. It handles frame-by-frame calculations and media compiling.
 *   **Vibe Motion Workflow**: The design and development methodology where creators style animations by defining their creative "vibe" and using an external AI chat to write deterministic code, then pasting it into the Studio for instant feedback.
 *   **Knowledge Bridge**: The application's native context exporter. It extracts the canvas properties and sandbox limits into a single, structured PDF file designed to perfectly train external LLMs.
 

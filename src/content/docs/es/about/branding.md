@@ -7,7 +7,7 @@ sidebar:
 
 La identidad visual de este proyecto se divide en dos capas: **Ember Motion Studio** (la suite de usuario y entorno de diseño) y **DVGE** (el motor técnico que potencia toda la plataforma).
 
-> **Ember Motion Studio** es la capa comercial y de experiencia de usuario, diseñada para la producción broadcast. **DVGE (Dynamic Vector Graphics Engine)** es el motor de renderizado de código abierto (MIT) que reside en el núcleo y garantiza el determinismo de cada fotograma.
+> **Ember Motion Studio** es la capa comercial y de experiencia de usuario, diseñada para la producción broadcast. **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** es el puente runtime de renderizado de código abierto (MIT) que reside en el núcleo y garantiza el determinismo de cada fotograma.
 
 ---
 
@@ -16,7 +16,7 @@ La identidad visual de este proyecto se divide en dos capas: **Ember Motion Stud
 Para evitar cualquier tipo de confusión dentro de nuestra comunidad y el código fuente, aquí definimos oficialmente los términos utilizados en todo el ecosistema:
 
 *   **Ember Motion Studio**: La aplicación visual de escritorio (Electron + React) donde los editores de video crean, gestionan, configuran y renderizan sus gráficos dinámicos.
-*   **DVGE (Dynamic Vector Graphics Engine)**: El motor técnico de renderizado determinista de alto rendimiento que corre en el núcleo de la aplicación. Gestiona el cálculo fotograma a fotograma y la compilación multimedia.
+*   **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**: El puente runtime de renderizado determinista de alto rendimiento que corre en el núcleo de la aplicación. Gestiona el cálculo fotograma a fotograma y la compilación multimedia.
 *   **Flujo Vibe Motion**: La metodología de diseño y desarrollo donde los creadores definen una "vibra" o dirección artística y usan un chat de IA externo para escribir código determinista compatible, pegándolo luego en el Studio para ver los resultados al instante.
 *   **Knowledge Bridge**: El exportador de contexto nativo de la aplicación. Extrae las propiedades del canvas y los límites del sandbox en un único archivo PDF estructurado, diseñado para entrenar perfectamente a modelos de IA externos.
 
