@@ -11,7 +11,7 @@ All notable changes to the DVGE engine are documented here. Versioning strictly 
 
 ---
 
-## [5.9.0] — 2026-05-04 ✦ Current Release
+## [5.9.1] — 2026-05-04 ✦ Current Release
 
 ### Studio Master Integration & Advanced Inspector (The Power Update)
 

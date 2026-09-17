@@ -75,7 +75,7 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
               transition={{ duration: 0.5, delay: 0.65 }}
             >
               <a
-                href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.1/EmberMotionStudio-Setup-5.9.0.exe"
+                href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.1/EmberMotionStudio-Setup-5.9.1.exe"
                 className="btn btn-primary"
               >
                 <Download size={18} />

@@ -11,7 +11,7 @@ Todos los cambios notables en DVGE están documentados aquí. El versionado sigu
 
 ---
 
-## [5.9.0] — 2026-05-04 ✦ Versión Actual
+## [5.9.1] — 2026-05-04 ✦ Versión Actual
 
 ### Integración Studio Master e Inspector Avanzado (The Power Update)
 
