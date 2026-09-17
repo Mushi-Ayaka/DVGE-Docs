@@ -5,7 +5,9 @@ sidebar:
   order: 1
 ---
 
-**Ember Motion Studio** is a production tool designed for video editors, producers, and content creators to build, customize, and export broadcast motion graphics quickly — without requiring advanced technical knowledge. The system is powered by the **DVGE rendering engine**.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+**Ember Motion Studio™** is a production tool designed for video editors, producers, and content creators to build, customize, and export broadcast motion graphics quickly — without requiring advanced technical knowledge. The system is powered by the **DVGE rendering engine**.
 
 ## The Workflow
 
@@ -68,7 +70,7 @@ Thanks to **Atomic Saving**, your work is protected against unexpected crashes. 
 
 1. Click **"Render"**.
 2. The engine generates a **ProRes 4444 video with an Alpha channel** (native transparency).
-3. **Drag and Drop**: Drag the exported `.mov` file directly from **Ember Motion Studio** into your timeline in **DaVinci Resolve, Premiere Pro, or After Effects**.
+3. **Drag and Drop**: Drag the exported `.mov` file directly from **Ember Motion Studio™** into your timeline in **DaVinci Resolve, Premiere Pro, or After Effects**.
 
 :::important[Tip for DaVinci Resolve]
 If you see a black background when importing the video, right-click the clip in the **Media Pool** → **Clip Attributes** → **Video** tab → Change **Alpha Mode** to **"Straight"** or **"Premultiplied"**.
@@ -83,7 +85,7 @@ Transparency is automatically preserved — thanks to the deterministic engine, 
 The modern workflow for generating dynamic broadcast graphics with AI assistants:
 
 > [!NOTE]  
-> **No Built-in LLM:** Ember Motion Studio is designed as a high-performance sandbox and rendering engine. It does **not** contain an integrated local AI model or native chat interface. This keeps the application extremely lightweight, eliminates subscription costs, and allows you to always use the most advanced external models (like Claude 3.5 Sonnet or GPT-4o) without hardware constraints.
+> **No Built-in LLM:** Ember Motion Studio™ is designed as a high-performance sandbox and rendering engine. It does **not** contain an integrated local AI model or native chat interface. This keeps the application extremely lightweight, eliminates subscription costs, and allows you to always use the most advanced external models (like Claude 3.5 Sonnet or GPT-4o) without hardware constraints.
 
 ### How it works:
 

@@ -1,11 +1,13 @@
 ---
 title: Manual de Usuario
-description: Guía completa para editores y productores. Aprende a crear, personalizar y exportar gráficos broadcast profesionales con Ember Motion Studio.
+description: Guía completa para editores y productores. Aprende a crear, personalizar y exportar gráficos broadcast profesionales con Ember Motion Studio™.
 sidebar:
   order: 1
 ---
 
-**Ember Motion Studio** (v5.9.0) es una herramienta de producción diseñada para que editores, productores y creadores de contenido construyan, personalicen y exporten gráficos broadcast rápidamente. El sistema está impulsado por el motor de renderizado determinista **Ember**.
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
+**Ember Motion Studio™** (v5.9.1) es una herramienta de producción diseñada para que editores, productores y creadores de contenido construyan, personalicen y exporten gráficos broadcast rápidamente. El sistema está impulsado por el motor de renderizado determinista **Ember**.
 
 ## El Flujo Maestro (5 Pasos)
 
@@ -46,7 +48,7 @@ Si no sabes por dónde empezar, el sistema mostrará un recordatorio sutil en el
 El corazón del diseño ágil asistido por IA:
 
 > [!NOTE]  
-> **Sin IA Integrada:** Ember Motion Studio es un entorno de ejecución y sandbox de altísimo rendimiento. **No** incluye un modelo de IA local o chat integrado dentro del software. Esto mantiene la aplicación extremadamente ligera, libre de suscripciones de API, y te permite usar siempre el modelo externo más avanzado (como Claude 3.5 Sonnet o GPT-4o) sin restricciones de hardware de tu PC.
+> **Sin IA Integrada:** Ember Motion Studio™ es un entorno de ejecución y sandbox de altísimo rendimiento. **No** incluye un modelo de IA local o chat integrado dentro del software. Esto mantiene la aplicación extremadamente ligera, libre de suscripciones de API, y te permite usar siempre el modelo externo más avanzado (como Claude 3.5 Sonnet o GPT-4o) sin restricciones de hardware de tu PC.
 
 *   **Arrastrar y Soltar:** Arrastra la zona del Builder directamente a tu chat de IA favorito (Claude, GPT-4, etc.). El PDF exportado contiene las reglas del motor, la especificación de tus artefactos y los límites del Sandbox.
 *   **Modo Experto:** Pídele a la IA externa que genere el código para el plugin basándose estrictamente en las reglas del PDF. Copia el resultado y pégalo en el editor.
@@ -67,4 +69,4 @@ El corazón del diseño ágil asistido por IA:
 Si el video ProRes aparece con fondo negro: Clic derecho sobre el clip → **Clip Attributes** → **Video** → Cambia **Alpha Mode** a **"Straight"**.
 :::
 
-(Actualizado para v5.9.0 Stable Release)
+(Actualizado para v5.9.1 Stable Release)

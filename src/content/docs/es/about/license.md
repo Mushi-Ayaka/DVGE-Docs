@@ -1,13 +1,13 @@
 ---
 title: Licencia
-description: Términos de licencia del DVGE (Dynamic Vector Graphics Engine) Runtime Bridge y Ember Motion Studio.
+description: Términos de licencia del DVGE (Dynamic Vector Graphics Engine) Runtime Bridge y Ember Motion Studio™.
 sidebar:
   order: 6
 ---
 
-## Modelo de Licenciamiento: Open Core
+## Modelo de licencia: código abierto y sin lucro
 
-Este ecosistema opera bajo un **modelo de doble licencia** diseñado para mantener la tecnología central libre y abierta, mientras que el producto comercial pueda ser sostenible.
+DVGE y Ember Motion Studio™ se desarrollan y publican como un **proyecto de código abierto y sin finalidad lucrativa**. No existe un nivel de pago, suscripción, EULA comercial ni promesa de beneficios. “Sin lucro” describe el propósito del proyecto; no limita los usos permitidos por la Licencia MIT.
 
 ### DVGE (Dynamic Vector Graphics Engine) Runtime Bridge — Licencia MIT
 
@@ -27,36 +27,23 @@ El texto completo de la licencia MIT está disponible en el archivo `LICENSE` en
 
 ---
 
-### Ember Motion Studio — Licencia Propietaria
+### Ember Motion Studio™ — Proyecto de código abierto
 
-**Ember Motion Studio** es la suite de escritorio profesional construida sobre el DVGE Runtime Bridge. **No es de código abierto** y se distribuye bajo una **licencia comercial propietaria**.
+**Ember Motion Studio™** es la aplicación y marca orientada al usuario construida alrededor de DVGE. Su código fuente y documentación están destinados a permanecer disponibles para auditoría pública y bajo la **Licencia MIT**, sujetos a los avisos de licencia de cada repositorio y a los términos de las dependencias de terceros.
 
-- ❌ El código fuente de Ember Motion Studio **no está disponible** para uso público, modificación ni redistribución.
-- ❌ No está permitido aplicar ingeniería inversa, descompilar o desensamblar el software.
-- ✅ Puedes usar el instalador distribuido para trabajo creativo personal y profesional según lo establecido en el EULA.
-- ✅ Se otorga a los usuarios finales una licencia no transferible y no exclusiva para usar la aplicación.
-
-Los términos específicos de uso están definidos en el [Acuerdo de Licencia de Usuario Final (EULA)](/es/about/terms/) que aceptas al momento de la instalación.
+El nombre **Ember Motion Studio™**, el nombre DVGE, los logotipos y las demás marcas identifican al proyecto. El símbolo ™ comunica una reivindicación o intención de uso como marca; no convierte el código en propietario ni añade restricciones a la Licencia MIT. El uso de estos nombres no debe sugerir respaldo o afiliación.
 
 ---
 
-## Niveles Comerciales Planificados (Próximamente)
+## Propósito sin lucro
 
-Como parte del roadmap a largo plazo, se planifican módulos comerciales adicionales:
-
-| Nivel | Descripción |
-|---|---|
-| **FREE** | DVGE Runtime Bridge (MIT). Ideal para la comunidad, estudiantes e individuos. |
-| **PRO** *(Próximamente)* | Herramientas Power User de Ember — Panel de Batch Render, controles avanzados de timeline. |
-| **ENTERPRISE** *(Próximamente)* | Plugins compilados en C++/Rust de alto rendimiento para orquestación de render farms y workflows de broadcast críticos. |
-
-> **Nota de Infraestructura**: El licenciamiento comercial será manejado de forma segura vía *Lemon Squeezy* y *Cloudflare*, con validación por License Key — sin cuentas de usuario invasivas.
+El proyecto se mantiene para el aprendizaje, la colaboración, la transparencia y el acceso público a herramientas de gráficos deterministas. Las donaciones, patrocinios, alojamiento u otro apoyo voluntario, si alguna vez se aceptan, no cambian su carácter open source ni transfieren la propiedad de las marcas. No se requiere ningún pago para obtener, usar, estudiar, modificar o compartir el código bajo MIT.
 
 ---
 
 ## Licencias de Dependencias de Terceros
 
-**Ember Motion Studio** y el **DVGE Runtime Bridge** se apoyan en tecnologías de terceros con sus propios términos de licencia. Nuestras licencias no reemplazan a las de ellas:
+**Ember Motion Studio™** y el **DVGE Runtime Bridge** se apoyan en tecnologías de terceros con sus propios términos de licencia. Nuestras licencias no reemplazan a las de ellas:
 
 ### Remotion (Motor de Renderizado)
 
@@ -65,7 +52,7 @@ Remotion opera bajo una **licencia dual** — **no es MIT**:
 - **Nivel gratuito**: Individuos, organizaciones sin fines de lucro y empresas de hasta 3 empleados.
 - **Comercial (de pago)**: Empresas u organizaciones que superen ese umbral.
 
-**Al utilizar Ember Motion Studio o el DVGE Runtime Bridge, reconoces que:**
+**Al utilizar Ember Motion Studio™ o el DVGE Runtime Bridge, reconoces que:**
 
 1. Los componentes de Remotion integrados están sujetos a la [Remotion License](https://www.remotion.dev/license).
 2. Si tu organización requiere una licencia comercial de Remotion, es **tu responsabilidad** adquirirla directamente con ellos.
@@ -82,4 +69,4 @@ Los siguientes componentes de código abierto también son utilizados. Sus respe
 
 ---
 
-*Copyright © 2026 Jonatan Barón. Todos los derechos reservados respecto a la suite comercial Ember Motion Studio. El núcleo DVGE Runtime Bridge tiene licencia MIT.*
+*Copyright © 2026 Jonatan Barón. El código fuente está publicado bajo la Licencia MIT. “Ember Motion Studio™” y “DVGE” son identificadores y marcas del proyecto; el símbolo ™ no cambia la licencia del software.*

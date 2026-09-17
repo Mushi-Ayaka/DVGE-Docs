@@ -1,13 +1,13 @@
 ---
 title: Brand Identity
-description: Official brand assets and visual identity for Ember Motion Studio and the DVGE engine.
+description: Official brand assets and visual identity for Ember Motion Studio™ and the DVGE engine.
 sidebar:
   order: 5
 ---
 
-The visual identity of this project is divided into two distinct layers: **Ember Motion Studio** (the user-facing production suite and design environment) and **DVGE** (the technical engine that powers the entire platform).
+The visual identity of this **open-source, non-profit project** has two related names: **Ember Motion Studio™** (the user-facing production suite and design environment) and **DVGE** (the technical engine that powers the platform).
 
-> **Ember Motion Studio** is the commercial and user-experience layer, designed for broadcast production. **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** is the open-source (MIT) runtime rendering bridge residing at the core, guaranteeing deterministic frame calculations.
+> **Ember Motion Studio™** is the user-facing project name, designed for broadcast production. **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** is the open-source runtime rendering bridge at the core, released under the MIT License. Neither name implies a commercial product or a paywall.
 
 ---
 
@@ -15,14 +15,14 @@ The visual identity of this project is divided into two distinct layers: **Ember
 
 To avoid any confusion within our community and codebase, here is the official definition of the terms used across the ecosystem:
 
-*   **Ember Motion Studio**: The visual desktop application (Electron + React) where video editors create, manage, configure, and render their dynamic graphics.
+*   **Ember Motion Studio™**: The visual desktop application (Electron + React) where video editors create, manage, configure, and render their dynamic graphics.
 *   **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**: The underlying high-performance, deterministic core runtime rendering bridge. It handles frame-by-frame calculations and media compiling.
 *   **Vibe Motion Workflow**: The design and development methodology where creators style animations by defining their creative "vibe" and using an external AI chat to write deterministic code, then pasting it into the Studio for instant feedback.
 *   **Knowledge Bridge**: The application's native context exporter. It extracts the canvas properties and sandbox limits into a single, structured PDF file designed to perfectly train external LLMs.
 
 ---
 
-## Ember Motion Studio (The Suite)
+## Ember Motion Studio™ (The Suite)
 
 The **Ember** logo represents the energy, heat, and movement of modern broadcast graphics.
 
@@ -64,6 +64,8 @@ We maintain the original engine identity for developers and contributors within 
 
 ## Official Color Palette
 
+The name **Ember Motion Studio™** and the ™ symbol identify the project's brand. They are separate from the copyright license: MIT grants rights to the code, while use of the marks must not misrepresent authorship, endorsement, or affiliation.
+
 | Token | Hex | Usage |
 | :--- | :--- | :--- |
 | **Ember Base** | `#E44C30` | Core brand color, primary buttons, accents. |
@@ -83,7 +85,7 @@ We maintain the original engine identity for developers and contributors within 
 
 ## License & Attribution
 
-Ember Motion Studio is released under the **MIT License**. If you use the engine in your project, we appreciate including the following attribution:
+The source code for Ember Motion Studio™ and DVGE is released under the **MIT License**. The project has no lucrative purpose and accepts no payment as a condition of access. If you use the engine in your project, we appreciate including the following attribution:
 
-> *"Graphics powered by the DVGE engine in Ember Motion Studio"*
+> *"Graphics powered by the DVGE engine in Ember Motion Studio™"*
 

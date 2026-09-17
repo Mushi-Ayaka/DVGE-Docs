@@ -1,11 +1,13 @@
 ---
 title: Performance & Determinism
-description: Why frame-based animation is critical for professional broadcast overlays and motion design software in Ember Motion Studio.
+description: Why frame-based animation is critical for professional broadcast overlays and motion design software in Ember Motion Studio™.
 sidebar:
   order: 2
 ---
 
-In the world of broadcast graphics and live motion design, **determinism** is not a feature; it is a strict requirement. **Ember Motion Studio** (powered by the **DVGE engine**) is engineered to deliver mathematically identical frames every single time a graphic is rendered or previewed.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+In the world of broadcast graphics and live motion design, **determinism** is not a feature; it is a strict requirement. **Ember Motion Studio™** (powered by the **DVGE engine**) is engineered to deliver mathematically identical frames every single time a graphic is rendered or previewed.
 
 ## The Problem with Real-Time Animation
 

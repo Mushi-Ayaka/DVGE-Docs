@@ -5,6 +5,8 @@ sidebar:
   order: 4
 ---
 
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
 Modern AI coding assistants can generate complete, production-ready motion graphics for DVGE. Starting with **v5.5.0 GA**, the engine includes the **Knowledge Bridge** — the fastest and most precise method to provide technical context to any AI model.
 
 ## Recommended Method: Knowledge Bridge (v5.5.0 GA)

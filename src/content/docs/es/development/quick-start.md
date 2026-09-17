@@ -1,22 +1,24 @@
 ---
 title: Inicio Rápido
-description: Construye tu primer Template para Ember Motion Studio desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
+description: Construye tu primer Template para Ember Motion Studio™ desde cero. Pasa de cero a un gráfico broadcast en 5 minutos.
 sidebar:
   order: 1
 ---
 
-Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) para **Ember Motion Studio** desde cero. No se requiere experiencia previa con el motor **DVGE**.
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
+Esta guía te llevará paso a paso para crear tu primer **Template** (Plantilla de animación) para **Ember Motion Studio™** desde cero. No se requiere experiencia previa con el motor **DVGE**.
 
 ## Requisitos Previos
 
-- **Ember Motion Studio** (v5.8.0+) instalado y ejecutándose.
+- **Ember Motion Studio™** (v5.8.0+) instalado y ejecutándose.
 - Un editor de texto (se recomienda VS Code).
 
 ---
 
 ## Paso 1: Crear la Carpeta del Template
 
-Abre **Ember Motion Studio**, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
+Abre **Ember Motion Studio™**, ve a **Ayuda → Abrir Carpeta de Plugins**. Dentro de ese directorio, crea una nueva carpeta llamada `mi-primer-template`.
 
 ```txt
 Ember_Plugins/
@@ -138,14 +140,14 @@ dvEngine.register({
 ---
 
 :::tip[La Regla de Oro]
-Toda la lógica de animación debe basarse en `ctx.timeline` o `ctx.frame`. Esto es lo que hace que los renders de **Ember Motion Studio** sean perfectos por fotograma cuando se exportan a ProRes 4444. Nunca uses `requestAnimationFrame`, `setTimeout`, o bibliotecas de tiempo real.
+Toda la lógica de animación debe basarse en `ctx.timeline` o `ctx.frame`. Esto es lo que hace que los renders de **Ember Motion Studio™** sean perfectos por fotograma cuando se exportan a ProRes 4444. Nunca uses `requestAnimationFrame`, `setTimeout`, o bibliotecas de tiempo real.
 :::
 
 ---
 
 ## Paso 6: Cargar y Previsualizar
 
-1. En **Ember Motion Studio**, crea un **Nuevo Proyecto**.
+1. En **Ember Motion Studio™**, crea un **Nuevo Proyecto**.
 2. Selecciona `Mi Primer Template` de la lista de plantillas disponibles en el Studio.
 3. El gráfico debería aparecer inmediatamente en la ventana de vista previa.
 4. Edita los campos de **Nombre** y **Rol** en el inspector — el gráfico se actualizará en tiempo real.

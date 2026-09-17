@@ -1,6 +1,6 @@
 ---
 title: Transparencia y Ética
-description: Por qué Ember Motion Studio genera confianza a nivel Enterprise.
+description: Por qué Ember Motion Studio™ genera confianza a nivel Enterprise.
 sidebar:
   order: 5
 ---
@@ -17,9 +17,9 @@ Para eliminar esta advertencia automática de Windows, los ejecutables de escrit
 Como proyecto independiente desarrollado y mantenido por una sola persona, este gasto anual es inviable en esta etapa.
 
 ### Nuestro Compromiso de Seguridad
-Ember Motion Studio está construido sobre el **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**, cuyo núcleo es de código abierto bajo la **Licencia MIT**.
+Ember Motion Studio™ está construido sobre el **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**, cuyo núcleo es de código abierto bajo la **Licencia MIT**.
 *   **Núcleo Open Source:** El código fuente del DVGE Runtime Bridge está disponible públicamente en [GitHub](https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-). Puedes auditarlo en cualquier momento.
-*   **Auditado por VirusTotal:** Cada instalador se somete a una auditoría sistemática de seguridad. El archivo de instalación de la versión actual `v5.9.0` cuenta con una calificación limpia de **0/58 Detecciones en VirusTotal**, lo que garantiza que es 100% seguro y libre de malware o falsos positivos. Puedes consultar el [Reporte Verificable de VirusTotal](https://www.virustotal.com/gui/file/83b295c023586758c1364a87e41382ee86250eb8e70ac91bb8cd4abf6b966f47?nocache=1) de forma directa.
+*   **Auditado por VirusTotal:** Cada instalador se somete a una auditoría sistemática de seguridad. El archivo de instalación de la versión actual `v5.9.1` cuenta con una calificación limpia de **0/58 Detecciones en VirusTotal**, lo que garantiza que es 100% seguro y libre de malware o falsos positivos. Puedes consultar el [Reporte Verificable de VirusTotal](https://www.virustotal.com/gui/file/83b295c023586758c1364a87e41382ee86250eb8e70ac91bb8cd4abf6b966f47?nocache=1) de forma directa.
 *   **Sin Malware ni Telemetría:** No introducimos rastreadores ocultos, telemetría maliciosa ni librerías publicitarias de terceros. Todo lo que diseñas y editas permanece de manera estrictamente local en tu ordenador.
 
 ### Cómo instalar de manera segura:
@@ -37,9 +37,11 @@ No ocultamos las métricas. Los datos de rendimiento están documentados con met
 - **Overhead del Sandbox**: Impacto medido del sistema de seguridad en el loop de 60fps.
 - **Persistencia Atómica**: Garantía de integridad de datos ante cierres inesperados.
 
-## Cumplimiento de Código Abierto
+## Cumplimiento open source y sin lucro
 
-**Ember Motion Studio** se apoya en los hombros de gigantes tecnológicos. Reconocemos públicamente y respetamos las licencias de las infraestructuras open source críticas que hacen posible la existencia de este proyecto:
+DVGE y Ember Motion Studio™ son proyectos de código abierto mantenidos sin finalidad lucrativa. El código fuente se publica bajo la Licencia MIT, mientras que el símbolo ™ identifica el nombre y los logotipos del proyecto como marcas. La licencia MIT y la identificación de marca cumplen funciones distintas: MIT regula el código y las marcas no deben usarse para falsear respaldo o afiliación.
+
+**Ember Motion Studio™** se apoya en los hombros de gigantes tecnológicos. Reconocemos públicamente y respetamos las licencias de las infraestructuras open source críticas que hacen posible la existencia de este proyecto:
 
 - **Electron** (Capa de sistema y ventanas)
 - **Chromium** (Motor V8 y WebGL)

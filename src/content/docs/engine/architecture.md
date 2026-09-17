@@ -1,11 +1,13 @@
 ---
 title: Core Architecture
-description: Deep dive into the Ember Motion Studio architecture, IPC communication, and the DVGE rendering engine.
+description: Deep dive into the Ember Motion Studio™ architecture, IPC communication, and the DVGE rendering engine.
 sidebar:
   order: 1
 ---
 
-**Ember Motion Studio** is built on a high-performance hybrid architecture engineered for broadcast-grade reliability. The core of the system is powered by the **DVGE rendering engine**.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+**Ember Motion Studio™** is built on a high-performance hybrid architecture engineered for broadcast-grade reliability. The core of the system is powered by the **DVGE rendering engine**.
 
 ## Hybrid Process Model
 
@@ -69,7 +71,7 @@ Runs in a Node.js environment and is responsible for:
 
 ## Security Sandbox & Isolation
 
-**Ember Motion Studio** implements a multi-layer security strategy to ensure that third-party plugins cannot compromise the host system.
+**Ember Motion Studio™** implements a multi-layer security strategy to ensure that third-party plugins cannot compromise the host system.
 
 ### 1. `fakeWindow` Proxy
 

@@ -1,11 +1,13 @@
 ---
 title: Hoja de Ruta (Roadmap)
-description: El pasado, presente y futuro de Ember Motion Studio y su motor DVGE.
+description: El pasado, presente y futuro de Ember Motion Studio™ y su motor DVGE.
 sidebar:
   order: 3
 ---
 
-El futuro de **Ember Motion Studio** se construye en torno a la autonomía, la profesionalización y la sostenibilidad. Esta hoja de ruta refleja el compromiso de transformar un motor experimental en un estándar de la industria broadcast.
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
+El futuro de **Ember Motion Studio™** se construye en torno a la autonomía, la profesionalización y la sostenibilidad. Esta hoja de ruta refleja el compromiso de transformar un motor experimental en un estándar de la industria broadcast.
 
 ## Fase 1: Estabilización Atmosférica (v5.6 - v5.9)
 
@@ -19,11 +21,11 @@ Esta fase se centra en eliminar la fricción técnica y garantizar que la suite 
   - Transparencia Técnica: Visualización del proceso de compilación (esbuild) en UI.
   - Implementación del Loader Dinámico para eliminar la pantalla negra.
 - **✅ v5.8.0 Master (Actual)**:
-  - **Rebranding Completo**: Transición a **Ember Motion Studio**.
+  - **Rebranding Completo**: Transición a **Ember Motion Studio™**.
   - **Secuencia de Carga Real**: Escaneo de Hardware y montaje de módulos reportado al usuario.
   - **Cumplimiento Legal**: Nuevo EULA detallado para dependencias de terceros (Remotion).
   - **UX Polish**: Gestión de enlaces externos y refinamiento de modales de contacto.
-- **✅ v5.9.0 (Actual)**:
+- **✅ v5.9.1 (Actual)**:
   - **Studio Master Core**: "Proyecto Vacío" nativo para programación con IA desde cero.
   - **Dynamic Inspector v2**: Auto-extracción de tags `/* @dv-prop */` y tipos de campo avanzados.
   - **Motor i18n**: Soporte reactivo completo para Inglés y Español.
@@ -31,12 +33,12 @@ Esta fase se centra en eliminar la fricción técnica y garantizar que la suite 
 
 ## Fase 2: Expansión y Sostenibilidad (v6.0+)
 
-El salto hacia la producción masiva y el modelo profesional.
+El proyecto crecerá mediante colaboración abierta, documentación pública y apoyo voluntario de la comunidad. Esta hoja de ruta no introduce niveles de pago ni módulos propietarios.
 
 - **🔲 v6.0.0**:
   - **Batch Render Panel**: Renderizado masivo mediante CSV/Excel.
-  - Implementación del sistema de licencias (Lemon Squeezy) para funciones PRO.
-  - Módulos premium con licencia comercial (el núcleo del motor permanece MIT).
+  - APIs públicas y herramientas de plugins publicadas bajo la Licencia MIT.
+  - Guías de contribución ampliadas, benchmarks reproducibles e integraciones mantenidas por la comunidad.
 
 ## Visión a Largo Plazo
 

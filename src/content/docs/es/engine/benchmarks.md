@@ -1,11 +1,13 @@
 ---
 title: Benchmarks y Estabilidad
-description: Datos técnicos verificados sobre la consistencia de renderizado, rendimiento de exportación y overhead del sistema de seguridad de Ember Motion Studio.
+description: Datos técnicos verificados sobre la consistencia de renderizado, rendimiento de exportación y overhead del sistema de seguridad de Ember Motion Studio™.
 sidebar:
   order: 4
 ---
 
-**Ember Motion Studio** está construido para entornos de transmisión profesional donde el fallo no es una opción. Medimos el rendimiento no solo en velocidad, sino en **consistencia y resiliencia**. El motor **DVGE** garantiza que cada fotograma sea perfecto.
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
+**Ember Motion Studio™** está construido para entornos de transmisión profesional donde el fallo no es una opción. Medimos el rendimiento no solo en velocidad, sino en **consistencia y resiliencia**. El motor **DVGE** garantiza que cada fotograma sea perfecto.
 
 ---
 

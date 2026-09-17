@@ -1,11 +1,13 @@
 ---
 title: Benchmarks & Stability
-description: Verified technical data on rendering consistency, ProRes export performance, and the security sandbox overhead of Ember Motion Studio.
+description: Verified technical data on rendering consistency, ProRes export performance, and the security sandbox overhead of Ember Motion Studio™.
 sidebar:
   order: 4
 ---
 
-**Ember Motion Studio** is built for professional broadcast environments where failure is not an option. We measure performance not just in raw speed, but in **absolute consistency and resilience**. The **DVGE engine** guarantees that every single frame is frame-perfect.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+**Ember Motion Studio™** is built for professional broadcast environments where failure is not an option. We measure performance not just in raw speed, but in **absolute consistency and resilience**. The **DVGE engine** guarantees that every single frame is frame-perfect.
 
 ---
 

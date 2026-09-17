@@ -1,11 +1,13 @@
 ---
 title: Extension API
-description: Comprehensive technical reference for developing Ember Motion Studio plugins. Covers dvEngine.register, the ctx object, and all available utilities.
+description: Comprehensive technical reference for developing Ember Motion Studio™ plugins. Covers dvEngine.register, the ctx object, and all available utilities.
 sidebar:
   order: 2
 ---
 
-Every **Ember Motion Studio** plugin is registered through the `dvEngine.register()` technical interface. This page serves as the complete reference for building broadcast-ready, deterministic motion graphics that fully utilize the **DVGE engine**.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+Every **Ember Motion Studio™** plugin is registered through the `dvEngine.register()` technical interface. This page serves as the complete reference for building broadcast-ready, deterministic motion graphics that fully utilize the **DVGE engine**.
 
 ## `dvEngine.register(lifecycle)`
 

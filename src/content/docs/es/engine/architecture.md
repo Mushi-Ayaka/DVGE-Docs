@@ -1,11 +1,13 @@
 ---
 title: Arquitectura Central
-description: Análisis profundo de la arquitectura de Ember Motion Studio, la comunicación de procesos y el motor de renderizado determinista.
+description: Análisis profundo de la arquitectura de Ember Motion Studio™, la comunicación de procesos y el motor de renderizado determinista.
 sidebar:
   order: 1
 ---
 
-**Ember Motion Studio** (v5.9.0) está construido sobre una arquitectura híbrida de alto rendimiento diseñada para la confiabilidad en la producción broadcast. El núcleo del sistema es el motor de renderizado determinista **Ember**.
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
+**Ember Motion Studio™** (v5.9.1) está construido sobre una arquitectura híbrida de alto rendimiento diseñada para la confiabilidad en la producción broadcast. El núcleo del sistema es el motor de renderizado determinista **Ember**.
 
 ## Modelo de Procesos Híbrido
 
@@ -41,7 +43,7 @@ graph TD
     P3 -->|Sandbox Isolation| P2
 ```
 
-## Evolución v5.9.0: Master Workflow
+## Evolución v5.9.1: Master Workflow
 
 La arquitectura 5.9 introduce el **Master Workflow**, un sistema de orquestación que guía al usuario y a la IA a través de un pipeline predecible:
 
@@ -79,4 +81,4 @@ El motor asegura una transparencia profesional mediante tres capas:
 - **Atomic JS Injection**: Forzado de `background-color: transparent` antes de cada captura de cuadro.
 - **YUVA 4:4:4:4**: Exportación en 10 bits para compatibilidad nativa con Premiere y DaVinci Resolve.
 
-(Actualizado para Ember v5.9.0 Stable)
+(Actualizado para Ember v5.9.1 Stable)

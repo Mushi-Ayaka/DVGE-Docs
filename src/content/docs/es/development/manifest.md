@@ -5,6 +5,8 @@ sidebar:
   order: 2
 ---
 
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
 El archivo `manifest.json` es el corazón de cualquier componente en el ecosistema DVGE. A partir de la versión 5.x, DVGE implementa una taxonomía estricta para diferenciar el propósito de cada módulo y garantizar la seguridad del usuario.
 
 ## Estructura Base

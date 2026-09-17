@@ -5,6 +5,8 @@ sidebar:
   order: 1
 ---
 
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
 ## El Estándar
 
 El ecosistema de DVGE se basa en una taxonomía clara. Bajo la arquitectura del Manifest, ahora existen tres capas distintas:

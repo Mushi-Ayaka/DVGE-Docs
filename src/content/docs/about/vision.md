@@ -1,9 +1,11 @@
 ---
 title: The Vision
-description: Why Jonatan Barón built Ember Motion Studio using web technology and how it revolutionizes broadcast motion graphics automation.
+description: Why Jonatan Barón built Ember Motion Studio™ using web technology and how it revolutionizes broadcast motion graphics automation.
 sidebar:
   order: 3
 ---
+
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
 
 ## The Core Pitch
 
@@ -13,7 +15,7 @@ sidebar:
 
 We do not compete with Adobe After Effects. **We automate what takes After Effects hours to render and adjust.**
 
-The traditional broadcasting industry demands slow, heavy, and highly manual workflows. **Ember Motion Studio** (powered by the **DVGE engine**) is designed to be the backbone of graphic automation:
+The traditional broadcasting industry demands slow, heavy, and highly manual workflows. **Ember Motion Studio™** (powered by the **DVGE engine**) is designed to be the backbone of graphic automation:
 
 - **Deterministic Rendering**: A render today or in a year will output the mathematically identical pixels.
 - **Frame-Perfect Math**: Pure mathematical animations that never rely on system clock variation.
@@ -29,7 +31,7 @@ The decision to build on Electron, React, and Remotion was highly intentional:
 2. **Extensibility**: A JSON manifest schema plus four files is an infinitely more accessible plugin system than C++ SDKs or proprietary scripting languages.
 3. **Portability**: The final output is a standard `.mov` file with an alpha channel, compatible with any major non-linear editor (NLE) like Premiere Pro, DaVinci Resolve, or Final Cut.
 
-**Ember Motion Studio** proves that web technology, when sandboxed and restricted correctly, can meet and exceed the most demanding professional video production standards.
+**Ember Motion Studio™** proves that web technology, when sandboxed and restricted correctly, can meet and exceed the most demanding professional video production standards.
 
 ---
 

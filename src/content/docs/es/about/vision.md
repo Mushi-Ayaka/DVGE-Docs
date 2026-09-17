@@ -1,9 +1,11 @@
 ---
 title: La Visión
-description: Por qué Jonatan Barón construyó Ember Motion Studio utilizando tecnología web.
+description: Por qué Jonatan Barón construyó Ember Motion Studio™ utilizando tecnología web.
 sidebar:
   order: 3
 ---
+
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
 
 ## El Pitch Central
 
@@ -13,7 +15,7 @@ sidebar:
 
 No competimos con After Effects. **Automatizamos lo que a After Effects le toma horas.**
 
-La industria tradicional exige flujos de trabajo lentos, pesados y manuales. **Ember Motion Studio** (impulsado por el motor **DVGE**) está diseñado para ser la columna vertebral de la automatización gráfica:
+La industria tradicional exige flujos de trabajo lentos, pesados y manuales. **Ember Motion Studio™** (impulsado por el motor **DVGE**) está diseñado para ser la columna vertebral de la automatización gráfica:
 
 - **Renderizado Determinista**: Un render hoy o en un año producirá exactamente los mismos píxeles.
 - **Frame-Math Perfecto**: Animaciones matemáticas puras sin depender de la variación del reloj del sistema.
@@ -29,7 +31,7 @@ La decisión de construir sobre Electron, React y Remotion fue intencional:
 2. **Extensibilidad**: Un esquema de manifiesto JSON más cuatro archivos es un sistema de plugins infinitamente más accesible que los SDKs en C++ o lenguajes de scripting privativos.
 3. **Portabilidad**: El resultado es un archivo `.mov` estándar con canal alfa, compatible con cualquier editor de video importante.
 
-**Ember Motion Studio** demuestra que la tecnología web, cuando se restringe correctamente, puede cumplir con los estándares de producción de video profesional más exigentes.
+**Ember Motion Studio™** demuestra que la tecnología web, cuando se restringe correctamente, puede cumplir con los estándares de producción de video profesional más exigentes.
 
 ---
 

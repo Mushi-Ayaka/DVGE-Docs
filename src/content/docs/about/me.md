@@ -1,9 +1,11 @@
 ---
 title: About Me
-description: Meet the lead developer behind DVGE and Ember Motion Studio.
+description: Meet the lead developer behind DVGE and Ember Motion Studio™.
 sidebar:
   order: 4
 ---
+
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
 
 I am **Jonatan Barón**, a Full-Stack Developer specializing in the construction of high-performance systems and robust software architecture.
 

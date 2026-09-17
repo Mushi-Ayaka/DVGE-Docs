@@ -1,22 +1,22 @@
 ---
 title: Terms of Service
-description: Terms and conditions of use for the DVGE documentation site and Ember Motion Studio software.
+description: Terms and conditions of use for the DVGE documentation site and Ember Motion Studio™ software.
 sidebar:
   order: 8
 ---
 
-*Last updated: 2026 — applies to Ember Motion Studio v5.9.0+ and the DVGE documentation site.*
+*Last updated: 2026 — applies to Ember Motion Studio™ v5.9.1+ and the DVGE documentation site.*
 
 ---
 
-Welcome. By accessing the DVGE documentation site or installing and using Ember Motion Studio, you agree to be bound by these Terms of Service. Please read them carefully.
+Welcome. By accessing the DVGE documentation site or installing and using Ember Motion Studio™, you agree to be bound by these Terms of Service. Please read them carefully.
 
 ---
 
 ## 1. Definitions
 
 - **"DVGE"** or **"Engine"** refers to the **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**, the open-source core engine licensed under the MIT License.
-- **"Ember Motion Studio"** or **"the Software"** refers to the proprietary desktop application suite.
+- **"Ember Motion Studio™"** or **"the Software"** refers to the open-source desktop application and project mark.
 - **"the Site"** refers to the DVGE documentation website hosted at `mushi-ayaka.github.io/DVGE-Docs`.
 - **"Author"** refers to Jonatan Barón, the independent developer.
 
@@ -28,9 +28,9 @@ Welcome. By accessing the DVGE documentation site or installing and using Ember 
 
 The **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** is distributed under the **MIT License**. Use of the engine's source code is governed by that license. You are free to use, modify, and distribute the engine in accordance with the MIT License terms.
 
-### 2.2 Ember Motion Studio (Proprietary)
+### 2.2 Ember Motion Studio™ (Open Source)
 
-**Ember Motion Studio** is distributed under a **proprietary license**. By installing the software, you agree to the **End User License Agreement (EULA)** that is presented during the installation process. Unauthorized reproduction, redistribution, reverse engineering, or modification of Ember Motion Studio is strictly prohibited.
+**Ember Motion Studio™** is part of this open-source, non-profit project and is distributed under the **MIT License**, subject to third-party dependency notices. You may reproduce, modify, and redistribute the MIT-licensed code while preserving the required copyright and license notices. The name and logos remain project marks; do not use them to misrepresent endorsement or affiliation.
 
 ---
 
@@ -39,8 +39,8 @@ The **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** is distributed unde
 You agree **not** to use the Site or Software to:
 
 - Engage in any unlawful, harmful, or malicious activity.
-- Attempt to reverse-engineer, decompile, or disassemble proprietary components.
-- Distribute modified versions of the proprietary Ember Motion Studio software without authorization.
+- Remove required copyright or license notices from MIT-licensed code.
+- Use the Ember Motion Studio™ or DVGE marks to misrepresent endorsement, origin, or affiliation.
 - Introduce malicious code, viruses, or malware through the plugin system.
 - Misrepresent the origin or authorship of the software.
 
@@ -54,7 +54,7 @@ The content of the DVGE documentation site is provided for general informational
 
 ## 5. Disclaimer of Warranties
 
-The information, documentation, and software provided on this site and through the Ember Motion Studio installer are offered **"AS IS"**, without warranties of any kind, express or implied, including but not limited to:
+The information, documentation, and software provided on this site and through the Ember Motion Studio™ installer are offered **"AS IS"**, without warranties of any kind, express or implied, including but not limited to:
 
 - Warranties of merchantability or fitness for a particular purpose.
 - Warranties that the software will operate without interruption or errors.
@@ -80,13 +80,13 @@ This limitation applies even if Jonatan Barón has been advised of the possibili
 
 The source code of the **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** is owned by Jonatan Barón and licensed to you under the MIT License.
 
-### 7.2 Ember Motion Studio (Proprietary)
+### 7.2 Ember Motion Studio™ and the project marks
 
-All intellectual property rights for **Ember Motion Studio** — including its source code, design, user interface, proprietary algorithms, and branding — are owned exclusively by **Jonatan Barón**. All rights not expressly granted by the EULA are reserved.
+The source code, documentation, and original technical contributions are released under the MIT License unless a file says otherwise. **Ember Motion Studio™**, **DVGE**, and their logos identify the project and may be protected as marks. The MIT License does not grant permission to imply endorsement or affiliation through use of those marks.
 
 ### 7.3 Documentation Site
 
-Unless otherwise stated, all original content on the DVGE documentation site (text, graphics, logos) is the intellectual property of Jonatan Barón and may not be reproduced without permission.
+Unless otherwise stated, original source code and documentation are available under the MIT License. Logos and project marks are identified separately and may not be used to misrepresent endorsement or affiliation.
 
 ---
 

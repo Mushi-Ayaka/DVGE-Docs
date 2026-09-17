@@ -1,9 +1,11 @@
 ---
 title: Manifest Reference (v5.x)
-description: Structure and configuration options for manifest.json under the new taxonomy (Templates, Tools, Extensions) for Ember Motion Studio.
+description: Structure and configuration options for manifest.json under the new taxonomy (Templates, Tools, Extensions) for Ember Motion Studio™.
 sidebar:
   order: 2
 ---
+
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
 
 The `manifest.json` file is the heart of any component in the DVGE ecosystem. As of version 5.x, DVGE implements a strict taxonomy to differentiate the purpose of each module and guarantee broadcast-grade user security.
 

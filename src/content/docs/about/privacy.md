@@ -1,17 +1,19 @@
 ---
 title: Privacy Policy
-description: How your data is handled when using Ember Motion Studio and the DVGE documentation site.
+description: How your data is handled when using Ember Motion Studio™ and the DVGE documentation site.
 sidebar:
   order: 7
 ---
 
-*Last updated: 2026 — applies to Ember Motion Studio v5.9.0+ and the DVGE documentation site.*
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+*Last updated: 2026 — applies to Ember Motion Studio™ v5.9.1+ and the DVGE documentation site.*
 
 ---
 
 ## Philosophy: Local-First, Privacy-First
 
-**Ember Motion Studio** is a **local-first** application. Your projects, assets, API keys, and generated content live exclusively on your machine and are **never uploaded to our servers**. We have no user accounts, no login system, and no central data storage.
+**Ember Motion Studio™** is a **local-first** application. Your projects, assets, API keys, and generated content live exclusively on your machine and are **never uploaded to our servers**. We have no user accounts, no login system, and no central data storage.
 
 The **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** documentation site (`mushi-ayaka.github.io/DVGE-Docs`) is a static site. We do not track visitors beyond what GitHub Pages inherently collects for infrastructure purposes.
 
@@ -19,7 +21,7 @@ The **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge** documentation site 
 
 ## 1. Data Collection
 
-### 1.1 Ember Motion Studio (Desktop Application)
+### 1.1 Ember Motion Studio™ (Desktop Application)
 
 The application processes data exclusively on your local machine. However, the following limited, anonymous technical data may be collected in future telemetry-enabled versions:
 
@@ -50,11 +52,11 @@ If you choose to contact the developer via email links on the site, we will coll
 
 ## 2. Third-Party AI Integrations
 
-When using the **AI Context Builder** within Ember Motion Studio, your project information (layer names, artifact descriptions, current code) is sent directly to the AI provider you configure (e.g., Claude, GPT-4, DeepSeek).
+When using the **AI Context Builder** within Ember Motion Studio™, your project information (layer names, artifact descriptions, current code) is sent directly to the AI provider you configure (e.g., Claude, GPT-4, DeepSeek).
 
 **Important details:**
 
-- **Ember Motion Studio does not store or log these conversations.**
+- **Ember Motion Studio™ does not store or log these conversations.**
 - Data travels directly from your machine to the AI provider's servers.
 - You are subject to the privacy policy of the AI provider you choose.
 - We strongly recommend **not including personally identifiable information** in artifact descriptions or project metadata.
@@ -72,7 +74,7 @@ We do **not** sell, rent, trade, or share your personal data with any third part
 
 ## 4. Data Security
 
-Since Ember Motion Studio is local-first, your project data is inherently protected by your own system's security. For the documentation site:
+Since Ember Motion Studio™ is local-first, your project data is inherently protected by your own system's security. For the documentation site:
 
 - All communications are served over **HTTPS** via GitHub Pages.
 - No sensitive user data is stored on our infrastructure.

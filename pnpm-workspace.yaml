@@ -1,0 +1,6 @@
+managePackageManagerVersions: false
+
+allowBuilds:
+  esbuild: true
+  ffmpeg-static: true
+  sharp: true

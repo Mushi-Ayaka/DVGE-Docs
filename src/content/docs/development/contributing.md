@@ -5,7 +5,9 @@ sidebar:
   order: 5
 ---
 
-We welcome all contributions to the **Dynamic Vector Engine Plugins** repository. Share your broadcast templates and tools with the entire Ember Motion Studio community.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+We welcome all contributions to the **Dynamic Vector Engine Plugins** repository. Share your broadcast templates and tools with the entire Ember Motion Studio™ community.
 
 ## Repository
 **Plugins Repository**: [github.com/Mushi-Ayaka/Dynamic-Vector-Engine-Plugins](https://github.com/Mushi-Ayaka/Dynamic-Vector-Engine-Plugins)

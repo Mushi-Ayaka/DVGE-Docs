@@ -5,6 +5,8 @@ sidebar:
   order: 4
 ---
 
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
 ## Standing on the Shoulders of Giants
 
 Let's be transparent: DVGE is called a "Graphics Engine", but in reality, it is an **advanced orchestrator**. We didn't reinvent the wheel by building a C++ rasterizer from scratch.

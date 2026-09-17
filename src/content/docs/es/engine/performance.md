@@ -1,11 +1,13 @@
 ---
 title: Rendimiento y Determinismo
-description: Por qué la animación basada en fotogramas es crítica para la producción de video profesional en Ember Motion Studio.
+description: Por qué la animación basada en fotogramas es crítica para la producción de video profesional en Ember Motion Studio™.
 sidebar:
   order: 2
 ---
 
-En el mundo de los gráficos para transmisión, el **determinismo** no es una característica; es un requisito. **Ember Motion Studio** (impulsado por el motor **DVGE**) está diseñado para proporcionar fotogramas idénticos cada vez que se renderiza un gráfico.
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
+En el mundo de los gráficos para transmisión, el **determinismo** no es una característica; es un requisito. **Ember Motion Studio™** (impulsado por el motor **DVGE**) está diseñado para proporcionar fotogramas idénticos cada vez que se renderiza un gráfico.
 
 ## El Problema con la Animación en Tiempo Real
 

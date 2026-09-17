@@ -1,22 +1,24 @@
 ---
 title: Quick Start
-description: Build your first broadcast template for Ember Motion Studio from scratch. Go from zero to a live motion graphics overlay in 5 minutes.
+description: Build your first broadcast template for Ember Motion Studio™ from scratch. Go from zero to a live motion graphics overlay in 5 minutes.
 sidebar:
   order: 1
 ---
 
-This guide will walk you step-by-step through creating your first **Template** (Motion Graphics Overlay) for **Ember Motion Studio** from scratch. No prior experience with the **DVGE engine** is required.
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
+
+This guide will walk you step-by-step through creating your first **Template** (Motion Graphics Overlay) for **Ember Motion Studio™** from scratch. No prior experience with the **DVGE engine** is required.
 
 ## Prerequisites
 
-- **Ember Motion Studio** (v5.8.0+) installed and running.
+- **Ember Motion Studio™** (v5.8.0+) installed and running.
 - A code editor (VS Code is recommended).
 
 ---
 
 ## Step 1: Create the Template Folder
 
-Open **Ember Motion Studio**, go to **Help → Open Plugins Folder**. Inside that directory, create a new folder named `my-first-template`.
+Open **Ember Motion Studio™**, go to **Help → Open Plugins Folder**. Inside that directory, create a new folder named `my-first-template`.
 
 ```txt
 Ember_Plugins/
@@ -138,14 +140,14 @@ dvEngine.register({
 ---
 
 :::tip[The Golden Rule]
-All animation logic must rely on `ctx.timeline` or `ctx.frame`. This ensures that **Ember Motion Studio** renders frame-perfect graphics when exporting to ProRes 4444 with an alpha channel. Never use `requestAnimationFrame`, `setTimeout`, or real-time libraries.
+All animation logic must rely on `ctx.timeline` or `ctx.frame`. This ensures that **Ember Motion Studio™** renders frame-perfect graphics when exporting to ProRes 4444 with an alpha channel. Never use `requestAnimationFrame`, `setTimeout`, or real-time libraries.
 :::
 
 ---
 
 ## Step 6: Load and Preview
 
-1. In **Ember Motion Studio**, create a **New Project**.
+1. In **Ember Motion Studio™**, create a **New Project**.
 2. Select `My First Template` from the list of available templates in the Studio.
 3. The graphic should appear immediately in the real-time preview window.
 4. Edit the **Name** and **Role** fields in the property inspector — the graphic will update instantly.

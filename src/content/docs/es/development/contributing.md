@@ -5,6 +5,8 @@ sidebar:
   order: 5
 ---
 
+> **Aviso legal del proyecto:** DVGE y Ember Motion Studio™ son proyectos de código abierto y sin finalidad lucrativa. El código fuente está disponible bajo la Licencia MIT. El símbolo ™ identifica la marca del proyecto y no cambia la licencia del software.
+
 Damos la bienvenida a todas las contribuciones al repositorio **Dynamic Vector Engine Plugins**. Comparte tus gráficos con toda la comunidad de DVGE.
 
 ## Repositorio

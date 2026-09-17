@@ -1,9 +1,11 @@
 ---
 title: Changelog
-description: Complete version history and release notes for the DVGE (Dynamic Vector Graphics Engine) Runtime Bridge and Ember Motion Studio.
+description: Complete version history and release notes for the DVGE (Dynamic Vector Graphics Engine) Runtime Bridge and Ember Motion Studio™.
 sidebar:
   order: 2
 ---
+
+> **Project legal notice:** DVGE and Ember Motion Studio™ are open-source, non-profit projects. Source code is available under the MIT License. The ™ symbol identifies the project mark and does not change the software license.
 
 All notable changes to the DVGE engine are documented here. Versioning strictly follows the [Semantic Versioning](https://semver.org/) standard.
 
