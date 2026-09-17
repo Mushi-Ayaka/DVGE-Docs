@@ -19,7 +19,7 @@ Como proyecto independiente desarrollado y mantenido por una sola persona, este 
 ### Nuestro Compromiso de Seguridad
 Ember Motion Studio™ está construido sobre el **DVGE (Dynamic Vector Graphics Engine) Runtime Bridge**, cuyo núcleo es de código abierto bajo la **Licencia MIT**.
 *   **Núcleo Open Source:** El código fuente del DVGE Runtime Bridge está disponible públicamente en [GitHub](https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-). Puedes auditarlo en cualquier momento.
-*   **Auditado por VirusTotal:** Cada instalador se somete a una auditoría sistemática de seguridad. El archivo de instalación de la versión actual `v5.9.1` cuenta con una calificación limpia de **0/58 Detecciones en VirusTotal**, lo que garantiza que es 100% seguro y libre de malware o falsos positivos. Puedes consultar el [Reporte Verificable de VirusTotal](https://www.virustotal.com/gui/file/83b295c023586758c1364a87e41382ee86250eb8e70ac91bb8cd4abf6b966f47?nocache=1) de forma directa.
+*   **Auditado por VirusTotal:** Cada instalador se somete a una auditoría sistemática de seguridad. El archivo de instalación de la versión actual `v5.9.1` cuenta con una calificación limpia de **0/58 Detecciones en VirusTotal**, lo que garantiza que es 100% seguro y libre de malware o falsos positivos. Puedes consultar el [Reporte Verificable de VirusTotal](https://www.virustotal.com/gui/file/162e380eb33279999064f5b87d4ff5a10b339936113bcb61aa7e5a47994074b4?nocache=1) de forma directa.
 *   **Sin Malware ni Telemetría:** No introducimos rastreadores ocultos, telemetría maliciosa ni librerías publicitarias de terceros. Todo lo que diseñas y editas permanece de manera estrictamente local en tu ordenador.
 
 ### Cómo instalar de manera segura:

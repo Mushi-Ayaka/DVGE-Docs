@@ -13,7 +13,8 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
     ? 'https://www.youtube.com/watch?v=2zsTmMPQ9kg'
     : 'https://www.youtube.com/watch?v=tjsKyZXpngQ';
 
-  const virusTotalUrl = 'https://www.virustotal.com/gui/file/83b295c023586758c1364a87e41382ee86250eb8e70ac91bb8cd4abf6b966f47?nocache=1';
+  const virusTotalUrl = 'https://www.virustotal.com/gui/file/162e380eb33279999064f5b87d4ff5a10b339936113bcb61aa7e5a47994074b4?nocache=1'; 
+  // v5.9.0 = https://www.virustotal.com/gui/file/83b295c023586758c1364a87e41382ee86250eb8e70ac91bb8cd4abf6b966f47?nocache=1
 
   return (
     <section className="hero-section">
@@ -75,7 +76,7 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
               transition={{ duration: 0.5, delay: 0.65 }}
             >
               <a
-                href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.1/EmberMotionStudio-Setup-5.9.1.exe"
+                href="https://github.com/Mushi-Ayaka/Ember-Motion-Studio/releases/download/v5.9.1/EmberMotionStudio-Setup-5.9.1.exe"
                 className="btn btn-primary"
               >
                 <Download size={18} />
