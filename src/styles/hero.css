@@ -416,12 +416,15 @@
 }
 
 .vt-trust-title {
+  display: inline-block;
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.7rem;
   font-weight: 600;
   color: #2ed573;
   letter-spacing: 0.03em;
   text-transform: uppercase;
+  border-bottom: 1px solid #394eff;
+  padding-bottom: 0.18rem;
 }
 
 .vt-trust-desc {
