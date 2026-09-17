@@ -15,8 +15,8 @@ export const defaultLang = 'en';
 export const ui = {
   en: {
     // Meta
-    'meta.title': 'Ember Motion Studio | Motion Design & Animation Software for OBS, Twitch and Broadcast',
-    'meta.description': 'Create broadcast overlays, lower thirds and motion graphics in real time with Ember Motion Studio. Free animation software for OBS, Twitch and DaVinci Resolve.',
+    'meta.title': 'Ember Motion Studio™ | Motion Design & Animation Software for OBS, Twitch and Broadcast',
+    'meta.description': 'Create broadcast overlays, lower thirds and motion graphics in real time with Ember Motion Studio™. Free animation software for OBS, Twitch and DaVinci Resolve.',
 
     // Nav
     'nav.examples': 'Examples',
@@ -25,7 +25,7 @@ export const ui = {
     'nav.download': 'Download',
 
     // Hero
-    'hero.badge': 'Broadcast Graphic Design · v5.9.0',
+    'hero.badge': 'Broadcast Graphic Design · v5.9.1',
     'hero.headline.1': 'Vibe Motion',
     'hero.headline.2': 'Professional',
     'hero.headline.3': 'Animations',
@@ -36,7 +36,7 @@ export const ui = {
     // Use Cases section
     'usecases.label': 'Who it\'s for',
     'usecases.title': 'Motion Design Software for Streamers and Broadcast Producers',
-    'usecases.desc': 'Ember Motion Studio is the professional motion design and animation software powered by the DVGE engine, built for video editors, broadcast producers and developers who need animated graphics — drag-and-drop ready for DaVinci Resolve, Premiere Pro or After Effects.',
+    'usecases.desc': 'Ember Motion Studio™ is the professional motion design and animation software powered by the DVGE engine, built for video editors, broadcast producers and developers who need animated graphics — drag-and-drop ready for DaVinci Resolve, Premiere Pro or After Effects.',
 
     'usecases.lowerthirds.tag': 'Lower Thirds',
     'usecases.lowerthirds.desc': 'Animated text bands for interviews, news and documentaries. Direct export as .mov with alpha channel. Supports stinger transitions and transparent backgrounds.',
@@ -59,7 +59,7 @@ export const ui = {
     'pillars.label': 'Why Ember',
 
     // Footer
-    'footer.credit': 'Developed by Jonatan Barón — Ember Motion Studio v5.9.0, powered by DVGE',
+    'footer.credit': 'Developed by Jonatan Barón — Ember Motion Studio™ v5.9.1, powered by DVGE',
     'footer.rights': 'MIT License',
 
     // Language switcher
@@ -69,8 +69,8 @@ export const ui = {
 
   es: {
     // Meta
-    'meta.title': 'Ember Motion Studio | Software de Motion Design y Animación para OBS, Twitch y Broadcast',
-    'meta.description': 'Crea overlays broadcast, lower thirds y motion graphics en tiempo real con Ember Motion Studio. Software de animación gratuito para OBS, Twitch y DaVinci Resolve.',
+    'meta.title': 'Ember Motion Studio™ | Software de Motion Design y Animación para OBS, Twitch y Broadcast',
+    'meta.description': 'Crea overlays broadcast, lower thirds y motion graphics en tiempo real con Ember Motion Studio™. Software de animación gratuito para OBS, Twitch y DaVinci Resolve.',
 
     // Nav
     'nav.examples': 'Ejemplos',
@@ -79,7 +79,7 @@ export const ui = {
     'nav.download': 'Descargar',
 
     // Hero
-    'hero.badge': 'Diseño Gráfico Broadcast · v5.9.0',
+    'hero.badge': 'Diseño Gráfico Broadcast · v5.9.1',
     'hero.headline.1': 'Vibe Motion',
     'hero.headline.2': 'Animaciones',
     'hero.headline.3': 'Profesionales',
@@ -90,7 +90,7 @@ export const ui = {
     // Use Cases section
     'usecases.label': 'Para quién es',
     'usecases.title': 'Software de Motion Design para Streamers y Productores Broadcast',
-    'usecases.desc': 'Ember Motion Studio es el software profesional de motion design y animación impulsado por el motor DVGE, diseñado para editores de video, productores broadcast y desarrolladores que necesitan gráficos animados listos para DaVinci Resolve, Premiere Pro o After Effects.',
+    'usecases.desc': 'Ember Motion Studio™ es el software profesional de motion design y animación impulsado por el motor DVGE, diseñado para editores de video, productores broadcast y desarrolladores que necesitan gráficos animados listos para DaVinci Resolve, Premiere Pro o After Effects.',
 
     'usecases.lowerthirds.tag': 'Lower Thirds',
     'usecases.lowerthirds.desc': 'Bandas de texto animadas para entrevistas, noticias y documentales. Exportación directa como .mov con canal alpha. Compatible con stinger transitions y fondos transparentes.',
@@ -113,7 +113,7 @@ export const ui = {
     'pillars.label': 'Por qué Ember',
 
     // Footer
-    'footer.credit': 'Desarrollado por Jonatan Barón — Ember Motion Studio v5.9.0, powered by DVGE',
+    'footer.credit': 'Desarrollado por Jonatan Barón — Ember Motion Studio™ v5.9.1, powered by DVGE',
     'footer.rights': 'Licencia MIT',
 
     // Language switcher

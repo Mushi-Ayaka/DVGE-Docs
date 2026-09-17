@@ -4,7 +4,6 @@ import react from '@astrojs/react';
 import mermaid from 'astro-mermaid';
 import sitemap from '@astrojs/sitemap';
 
-// https://astro.build/config
 export default defineConfig({
   site: 'https://ember-motion-studio-landing.vercel.app',
   trailingSlash: 'always',
@@ -14,7 +13,7 @@ export default defineConfig({
   integrations: [
     mermaid(),
     starlight({
-      title: 'Ember Motion Studio',
+      title: 'Ember Motion Studio™',
       favicon: '/logo-square.png',
       logo: {
         src: './src/assets/logo-square.png',

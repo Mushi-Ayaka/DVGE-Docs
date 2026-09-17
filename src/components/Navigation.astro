@@ -2,7 +2,7 @@
 import { getLangFromUrl, getAlternateUrl, getAlternateLang } from '../i18n/utils';
 const base = import.meta.env.BASE_URL;
 const downloadUrl =
-  "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.0/EmberMotionStudio-Setup-5.9.0.exe";
+  "https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.1/EmberMotionStudio-Setup-5.9.0.exe";
 const currentLang = getLangFromUrl(Astro.url);
 const alternateLang = getAlternateLang(currentLang);
 const alternateUrl = getAlternateUrl(Astro.url, alternateLang);
@@ -148,28 +148,6 @@ const prefix = currentLang === 'en' ? '' : 'es/';
         </div>
       </div>
 
-      <!-- 
-      <div class="dropdown">
-        <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
-          Comunidad
-          <svg
-            width="12"
-            height="12"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"><path d="m6 9 6 6 6-6"></path></svg
-          >
-        </button>
-        <div class="dropdown-content" role="menu">
-          <a href={`${base}evidencias/`} role="menuitem"
-            >Evidencias de Trabajo</a
-          >
-          <a href={`${base}historias/`} role="menuitem">Historias de Usuarios</a>
-        </div>
-      </div>
-      -->
-
       <div class="dropdown">
         <button class="dropbtn" aria-expanded="false" aria-haspopup="true">
           {currentLang === 'en' ? 'Project' : 'Proyecto'}
@@ -239,7 +217,6 @@ const prefix = currentLang === 'en' ? '' : 'es/';
         </svg>
       </a>
 
-      <!-- Language Switcher (Desktop) -->
       <a
         href={alternateUrl}
         class="lang-switch desktop-only"
@@ -252,7 +229,7 @@ const prefix = currentLang === 'en' ? '' : 'es/';
       <a
         href={downloadUrl}
         class="nav-cta"
-        aria-label="Descargar Ember Motion Studio v5.9.0"
+        aria-label="Descargar Ember Motion Studio™ v5.9.1"
       >
         {currentLang === 'en' ? 'Download' : 'Descargar'}
       </a>
@@ -261,7 +238,6 @@ const prefix = currentLang === 'en' ? '' : 'es/';
 </nav>
 
 <script>
-  // Mobile toggle
   const toggle = document.querySelector(".mobile-toggle") as HTMLButtonElement;
   const navLinks = document.querySelector(".nav-links");
   const menuIcon = document.querySelector(".menu-icon") as HTMLElement;
@@ -277,18 +253,15 @@ const prefix = currentLang === 'en' ? '' : 'es/';
     }
   });
 
-  // Dropdowns: hover en desktop, click en móvil/touch
   document.querySelectorAll(".dropdown").forEach((dropdown) => {
     const btn = dropdown.querySelector(".dropbtn") as HTMLButtonElement;
     const content = dropdown.querySelector(".dropdown-content") as HTMLElement;
 
     btn?.addEventListener("click", (e) => {
-      // Solo activar click en móvil (cuando el toggle es visible)
       if (window.innerWidth <= 960) {
         e.preventDefault();
         const isOpen =
           content.style.maxHeight && content.style.maxHeight !== "0px";
-        // Cerrar todos los demás
         document.querySelectorAll(".dropdown-content").forEach((el) => {
           (el as HTMLElement).style.maxHeight = "0px";
         });
@@ -302,7 +275,6 @@ const prefix = currentLang === 'en' ? '' : 'es/';
       }
     });
 
-    // Keyboard: Enter/Space abre el dropdown
     btn?.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
@@ -316,7 +288,6 @@ const prefix = currentLang === 'en' ? '' : 'es/';
     });
   });
 
-  // Parallax 3D sutil para el logo con throttling para rendimiento
   const navLogo = document.getElementById("navLogo");
   if (navLogo) {
     const MAX_ROTATION = 15;
@@ -341,7 +312,6 @@ const prefix = currentLang === 'en' ? '' : 'es/';
     });
   }
 
-  // Cerrar menú móvil al hacer click fuera
   document.addEventListener("click", (e) => {
     if (
       !toggle?.contains(e.target as Node) &&

@@ -503,15 +503,15 @@
     },
     {
       "id": "ember-motion-studio-showcase",
-      "name": "Ember Motion Studio Showcase",
-      "description": "Plantilla oficial de demostración de marca para Ember Motion Studio.",
+      "name": "Ember Motion Studio™ Showcase",
+      "description": "Plantilla oficial de demostración de marca para Ember Motion Studio™.",
       "version": "1.0.0",
       "author": "Jonatan Barón",
       "updatedAt": "2026-05-01T07:38:00.000Z",
       "files": {
         "manifest": {
           "id": "ember-motion-studio-showcase",
-          "name": "Ember Motion Studio Showcase",
+          "name": "Ember Motion Studio™ Showcase",
           "description": "Plantilla de marca con logo animado y glow dinámico.",
           "version": "1.0.0",
           "author": "Jonatan Barón",

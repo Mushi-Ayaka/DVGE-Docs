@@ -1,6 +1,6 @@
-# Ember Motion Studio Docs — Landing & Documentación Oficial
+# Ember Motion Studio™ Docs — Landing & Documentación Oficial
 
-Sitio web oficial del **Ember Motion Studio**.
+Sitio web oficial del **Ember Motion Studio™**.
 Construido con Astro + Starlight. Desplegado en GitHub Pages.
 
 **Producción:** https://mushi-ayaka.github.io/DVGE-Docs/
@@ -41,8 +41,7 @@ npm run preview   # preview del build
 
 ## Deploy
 
-El deploy es automático vía GitHub Actions al hacer push a `main`.
-El workflow está en `.github/workflows/`.
+El deploy es automático vía Vercel al hacer push a `main`.
 
 ## Sincronización con el motor
 
