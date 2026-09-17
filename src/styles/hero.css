@@ -383,30 +383,20 @@
   justify-content: space-between;
   gap: 1rem;
   padding: 0.875rem 1rem;
-  background: rgba(46, 213, 115, 0.04);
-  border: 1px solid rgba(46, 213, 115, 0.18);
+  background: transparent;
+  border: 0;
   border-radius: 8px;
-  transition: border-color 0.2s ease, background 0.2s ease;
 }
 
 .vt-trust-inner:hover {
-  background: rgba(46, 213, 115, 0.07);
-  border-color: rgba(46, 213, 115, 0.3);
+  background: transparent;
 }
 
 .vt-trust-info {
   display: flex;
   align-items: flex-start;
-  gap: 0.65rem;
   flex: 1;
   min-width: 0;
-}
-
-.vt-shield {
-  color: #2ed573;
-  filter: drop-shadow(0 0 5px rgba(46, 213, 115, 0.5));
-  flex-shrink: 0;
-  margin-top: 1px;
 }
 
 .vt-trust-copy {
@@ -420,7 +410,7 @@
   font-family: 'JetBrains Mono', 'Fira Code', monospace;
   font-size: 0.7rem;
   font-weight: 600;
-  color: #2ed573;
+  color: #fff;
   letter-spacing: 0.03em;
   text-transform: uppercase;
   border-bottom: 1px solid #394eff;
@@ -437,11 +427,11 @@
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.68rem;
   font-weight: 600;
-  color: #2ed573;
+  color: #fff;
   text-decoration: none;
   white-space: nowrap;
   padding: 0.4rem 0.8rem;
-  border: 1px solid rgba(46, 213, 115, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 4px;
   flex-shrink: 0;
   transition: all 0.2s ease;
@@ -450,9 +440,8 @@
 }
 
 .vt-report-btn:hover {
-  background: rgba(46, 213, 115, 0.1);
-  border-color: rgba(46, 213, 115, 0.55);
-  box-shadow: 0 0 12px rgba(46, 213, 115, 0.15);
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.45);
 }
 
 @media (max-width: 600px) {

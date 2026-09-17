@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion';
-import { Download, Play, ShieldCheck } from 'lucide-react';
+import { Download, Play } from 'lucide-react';
 import { ui } from '../i18n/ui';
 
 interface HeroProps {
@@ -33,7 +33,6 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5 }}
             >
-              <span className="label-dot" />
               <span>{t['hero.badge']}</span>
             </motion.div>
 
@@ -76,7 +75,7 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
               transition={{ duration: 0.5, delay: 0.65 }}
             >
               <a
-                href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.0/EmberMotionStudio-Setup-5.9.0.exe"
+                href="https://github.com/Mushi-Ayaka/Dynamic-Vector-Graphics-Engine--DVGE-/releases/download/v5.9.1/EmberMotionStudio-Setup-5.9.0.exe"
                 className="btn btn-primary"
               >
                 <Download size={18} />
@@ -103,7 +102,6 @@ const Hero = ({ lang = 'en' }: HeroProps) => {
             >
               <div className="vt-trust-inner">
                 <div className="vt-trust-info">
-                  <ShieldCheck size={18} className="vt-shield" />
                   <div className="vt-trust-copy">
                     <span className="vt-trust-title">
                       {lang === 'es' ? '0/58 amenazas detectadas' : '0/58 threats detected'}
